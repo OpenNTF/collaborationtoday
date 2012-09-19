@@ -1,7 +1,86 @@
-OpenNTF - Collaboration Today
-http://ct.openntf.org
+Collaboration Today template
+(c) Copyright IBM Corporation 2012
+(c) Copyright PHL Consult 2012
+(c) Copyright Developi Information Systems 2012
+(c) Copyright Elguji Software Inc 2012
 
-© Copyright IBM Corp. 2012
+This product includes software developed at
+OpenNTF (http://www.OpenNTF.Org/).
 
-This product includes software contributed to 
-OpenNTF – (http://www.OpenNTF.org) 
+The project uses network services such as ReCaptcha, Motobit, Gravatar and Facebook.  It is your responsibility to ensure that your use of such services is in compliance with their associated Terms of Use or Terms of Service.  Further, use of the Twitter API is subject to the Twitter API Terms - https://dev.twitter.com/terms/api-terms and Twitters Terms of Service - http://twitter.com/tos, under your own contract with Twitter.  It is your responsibility to ensure compliance with these Terms.
+
+The project includes the software from the following third party packages:
+
+WatrCoolr - 0.8
+Licensed under Apache 2.0
+Available from http://www.openntf.org/internal/home.nsf/project.xsp?action=openDocument&name=watrCoolr
+
+Mobile Documents 1.1
+Licensed under Apache 2.0
+Available from http://www.openntf.org/internal/home.nsf/releases.xsp?action=openDocument&name=Mobile%20Documents&documentId=null 
+  © Copyright IBM Corp., Mindoo GmbH 2010
+
+myWebGate 1.1
+Licensed under Apache 2.0
+Available from http://www.openntf.org/internal/home.nsf/release.xsp?databaseName=CN=NotesOSS2/O=NotesOSS!!Projects\pmt.nsf&documentId=2F2D8EC7F13DD40086257A28004D4C0A&action=openDocument
+  Copyright 2012 WebGate Consulting AG
+Note third party components used from myWebGate used in this project are listed below.
+
+Feed Generator XPage Agent 0.11
+Licensed under Apache 2.0
+Available from http://www.openntf.org/internal/home.nsf/project.xsp?action=openDocument&documentId=B8CF334CBC81AFEA862577E6004F1C61
+  Copyright 2010 Thomas Ladehoff
+
+ReCaptcha Custom Control 1.02
+Licensed under Apache 2.0
+Available from http://www.openntf.org/internal/home.nsf/project.xsp?action=openDocument&documentId=668007F74C292D19862578E7006075C2
+  Copyright 2011 Marco Dreher
+  To Use the reCAPTCHA Web Services, you will need to register with Google 
+  - see http://www.google.com/recaptcha/whyrecaptcha
+
+Rome-1.0
+Licensed under Apache 2.0
+Available from http://rometools.org/
+
+Jdom - 1.1.2
+Licensed under BSD (license included with the product distribution)
+Available from http://www.jdom
+
+Nekohtml 1.9.15
+Licensed under Apache 2.0
+Available from http://nekohtml.sourceforge.net
+
+Apache HttpComponents client 4.2.1
+Licensed under Apache 2.0
+Available from http://hc.apache.org/httpcomponents-client-ga/
+  Copyright 1999-2012 The Apache Software Foundation
+  This product includes software developed by
+  The Apache Software Foundation (http://www.apache.org/).
+
+Apache HttpComponents Core 4.2.1
+Licensed under Apache 2.0
+Available from http://hc.apache.org/httpcomponents-client-ga/
+  Copyright 2005-2012 The Apache Software Foundation
+  This product includes software developed by
+  The Apache Software Foundation (http://www.apache.org/).
+  This project contains annotations derived from JCIP-ANNOTATIONS
+  Copyright (c) 2005 Brian Goetz and Tim Peierls. See http://www.jcip.net
+
+Jericho-3.1
+Licensed under EPL1.0  or LGPL2.1, used here under EPL
+Available from http://jericho.htmlparser.net/docs/index.html
+
+Jquery 1.7.1
+Licensed under MIT or GPL2, used here under MIT (license included with product distribution)
+Available from http://jquery.com/
+
+Twitter bootstrap 2.0.4,
+Licensed under Apache 2.0 
+Available from blogs.sitepointstatic.com/examples/tech/twitter/twitterwidget.zip
+
+PrettyTime 1.0.8
+Licensed under Apache 2.0
+Available from https://github.com/ocpsoft/prettytime
+  Copyright [2011] Lincoln Baxter, III
+  This product includes software developed at
+  OCPSoft (http://ocpsoft.org/).
