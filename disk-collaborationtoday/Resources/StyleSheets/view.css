@@ -1,0 +1,8 @@
+/*view styling*/
+table.viewPanel{position:relative;float:left;width:100%;}
+table.viewPanel table thead tr{border-bottom:1px solid #ccc;text-align:left;}
+table.dataTableViewPanel{position:relative;float:left;width:100%;}	
+table.dataTableViewPanel tr{border-bottom:1px solid #eee;}
+table.dataTableViewPanel tr td{line-height: 25px;}
+td.columnView25{width:25%;}
+td.columnView50{width:50%;}

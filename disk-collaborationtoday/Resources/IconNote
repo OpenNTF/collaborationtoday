@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='8.5'
+ maintenanceversion='4.0' replicaid='86257A780060902F'>
+<noteinfo noteid='122' unid='ADB7A45D56757D92C1257A4100254423' sequence='3'>
+<created><datetime dst='true'>20120720T084702,75+02</datetime></created>
+<modified><datetime dst='true'>20120918T091959,28+02</datetime></modified>
+<revised><datetime dst='true'>20120918T091959,27+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20120918T091959,28+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120914T085916,72+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Bruce Elgort/O=Sharepoint</name><name
+>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name
+>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<item name='IconBitmap' summary='true'>
+<rawitemdata type='6'>
+AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
+AYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAHAAAADwAAAA8AAAAPgAAAH4AAAB/AAAA/4AAAf
+/AAAP/4AAH//gAH///AP//////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiIiAAAAAAAAAAAAAAI
+jPZmZm/IgAAAAAAAAAAIjGZmZmZmZsiAAAAAAAAAjGZmZmZmZmZmyAAAAAAACMZmZmZmZmZmZmyA
+AAAAAIxmZmZmZmZmZmZmyAAAAAjGZmZmZmZmZmZmZmyAAAAIZmbyL2byL2byL2ZmgAAAjGZmIiJm
+IiJmIiJmZsgAAIZmZiIiZiIiZiIiZmZoAADGZmYiImYiImYiImZmbAAI9mZmIiJmIiJmIiJmZm+A
+CGZmZiIiZiIiZiIiZmZmgAhmZmYiImYiImYiImZmZoAIZmZmIiJmIiJmIiJmZmaACGZvIiIiZiIi
+ZiIiIvZmgAhmYiIiImYiImYiIiImZoAIZm8iIi9m8i9m8iIi9maACPZmZmZmZmZmZmZmZmZvgADG
+ZmbyL2byL2byL2ZmbAAAj2ZmIiJmIiJmIiJmZvgAAIxmZiIiZiIiZiIiZmbIAAAI9mbyL2byL2by
+L2ZvgAAACMZmZmZmZmZmZmZmbIAAAACMZmZmZmZmZmZmZsgAAAAACMZmZmZmZmZmZmyAAAAAAACM
+9mZmZmZmZm/IAAAAAAAACIz2ZmZmZm/IgAAAAAAAAAAIiMZmZmyIgAAAAAAAAAAAAACIiIiIAAAA
+AAAAUEECICABAAD/////+A4DgA==
+</rawitemdata></item>
+<item name='$DBTheme'><text>bootstrap.theme</text></item>
+<item name='$DefaultXPage'><text>home.xsp</text></item>
+<item name='$Daos'><text>0</text></item>
+<item name='$Flags'><text>J!</text></item>
+<item name='$FlagsNoRefresh'><text/></item>
+<item name='$TITLE'><text>Development Collaboration Today
+#1CTTemplate</text></item></note>
+

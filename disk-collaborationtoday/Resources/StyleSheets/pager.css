@@ -1,0 +1,70 @@
+.paginationwrapper {
+	padding: 8px 10px;
+	margin: 0 0 18px -12px;
+}
+
+.paginationwrapper span,.paginationpostswrapper .dropdown-toggle {
+	line-height: 24px;
+}
+
+.paginationwrapper img {
+	display: none;
+}
+
+.paginationwrapper .viewpager {
+	display: inline-block;
+	line-height: 24px;
+	position: relative;
+	top: 2px;
+}
+
+.paginationwrapper .icon-chevron-left {
+	width: 18px;
+	height: 24px;
+	margin-right: 12px;
+	border: 1px solid #e8e8e8;
+	vertical-align: middle;
+	background: url('chevron-left.png') no-repeat center center !important;
+}
+
+.paginationwrapper .icon-chevron-right {
+	width: 18px;
+	height: 24px;
+	margin-left: 12px;
+	border: 1px solid #e8e8e8;
+	vertical-align: middle;
+	background: url('chevron-right.png') no-repeat center center !important;
+}
+
+.paginationwrapper .icon-chevron-left a,.paginationwrapper .icon-chevron-right a
+	{
+	display: block;
+	width: 18px;
+	height: 24px;
+}
+
+.viewpager a {
+	margin: 1px;
+	padding: 6px;
+	color: #222;
+}
+
+.viewpagercurrent {
+	margin: 1px;
+	padding: 3px;
+	color:#08C;
+}
+
+.paginationpostswrapper {
+	padding: 9px 19px;
+	margin: 0 0 10px 0;
+	border: 1px solid #e8e8e8;
+}
+
+.paginationpostswrapper .nav {
+	margin-bottom: 0;
+}
+
+.paginationpostswrapper .nav a {
+	background-color: #fff !important;
+}

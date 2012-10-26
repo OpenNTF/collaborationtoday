@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	
+	<div class="well sidebar-nav">
+		<ul class="nav nav-list">
+			<li class="nav-header"><xp:label >
+			<xp:this.value><![CDATA[#{javascript:if (param.filter == "all") return "Popular";
+else return "Recent";}]]></xp:this.value>
+		</xp:label></li>
+			<xp:repeat id="repeat1" var="entry" rows="30" removeRepeat="true">
+			<xp:this.value><![CDATA[#{javascript:if (param.filter == "all") return newsCache.getEntriesByPopularity();
+else return newsCache.getEntries();
+}]]></xp:this.value>
+			
+				<!-- 
+				
+					li inline CSS: padding-left:42px;margin-bottom:6px;min-height:45px;
+					image inline CSS: style="height:30px;width:30px;float:left;clear:left;margin-left:-42px;vertical-align:text-top;"
+				
+				 -->
+				<li class="latest">
+					<div>
+						<xp:image styleClass="newsEntryImage" url="#{javascript:personsCache.getPerson(entry.getPID()).getPictureURL()}"></xp:image>
+					</div>
+					<div class="sidebarEntryMeta">
+						<small>
+							<xp:text value="#{javascript:personsCache.getPerson(entry.getPID()).getDisplayName()}"></xp:text>
+						</small>
+						<br />
+						<small>
+							<xp:text value="#{javascript:entry.getPrettyTime()}"></xp:text>
+						</small>
+						<br />
+						<small>
+							<xp:text>
+								<xp:this.value><![CDATA[#{javascript:try {
+	configCache.getCategory(configCache.getType(entry.getTID()).getCategoryId()).getDisplayName() + " - " + configCache.getType(entry.getTID()).getDisplayName()
+} catch(e) {
+} finally {
+	entry.getTID();
+}}]]></xp:this.value>
+							</xp:text>
+						</small>
+					</div>
+					<div class="sidebarEntry">
+						<xp:link value="#{javascript:entry.getLink()}"  target="_blank"
+							text="#{javascript:entry.getTitle()}">
+							<xp:eventHandler event="onclick" submit="false">
+							<xp:this.script><![CDATA[
+	var baseUrl = "#{javascript:var baseUrl = context.getUrl().toString();baseUrl = baseUrl.substring(0, baseUrl.indexOf('.nsf')+4);baseUrl }";
+	var url = baseUrl + "/log.xsp?" + "nid=" + "#{javascript:entry.getID()}";						
+	logClick(url);		
+	]]></xp:this.script>
+							</xp:eventHandler>
+						</xp:link>
+					</div>					
+				</li>
+			</xp:repeat>
+		</ul>
+	</div>
+</xp:view>

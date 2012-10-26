@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:div>
+		<xp:this.rendered><![CDATA[#{javascript:@UserName()=="Anonymous"}]]></xp:this.rendered>
+		<xp:text escape="false">
+			<xp:this.value><![CDATA[#{javascript:"Please <a href='" + view.getPageName() + "?open&login'>log in</a> first."}]]></xp:this.value>
+
+		</xp:text>
+	</xp:div>
+	<xp:div rendered="#{javascript:!configCache.isUserModerator(@UserName())}">
+		<xp:label value=" You need to be a moderator."></xp:label>
+	</xp:div>
+</xp:view>

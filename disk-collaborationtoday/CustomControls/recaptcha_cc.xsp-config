@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>recaptcha_cc</component-type>
+    <composite-name>recaptcha_cc</composite-name>
+    <composite-file>/recaptcha_cc.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+        <category>openNTF Custom Controls</category>
+      </designer-extension>
+    </composite-extension>
+    <icon>
+      <large-icon>/icons/a.jpg.gif</large-icon>
+      <small-icon>/icons/a.jpg.gif</small-icon>
+    </icon>
+    <description>openNTF Custom Control for verifying human user input with Google's reCAPTCHA API.&#xd;
+© Marco Dreher</description>
+    <property-type>
+      <property-name>recaptchaWidget</property-name>
+      <property>
+        <property-name>publicKey</property-name>
+        <property-class>string</property-class>
+        <display-name>publicKey</display-name>
+        <property-extension>
+          <designer-extension>
+            <editor/>
+          </designer-extension>
+        </property-extension>
+        <description>Please paste your personal public key here.&#xd;
+No key yet? Please go to: http:/www.google.com/recaptcha</description>
+      </property>
+      <display-name>recaptchaWidget</display-name>
+      <description>Your personal recaptcha keys from Google</description>
+      <property>
+        <property-name>privateKey</property-name>
+        <property-class>string</property-class>
+        <display-name>privateKey</display-name>
+        <description>Please paste your personal private key here.&#xd;
+No key yet? Please go to: http:/www.google.com/recaptcha</description>
+      </property>
+      <property>
+        <property-name>useHttps</property-name>
+        <property-class>boolean</property-class>
+        <property-extension>
+          <designer-extension>
+            <editor>com.ibm.std.Boolean</editor>
+            <default-value>false</default-value>
+          </designer-extension>
+        </property-extension>
+        <description>The custom control will add a script lib from Google to your web-document.&#xd;
+Set this property to TRUE to include this lib via HTTPS.&#xd;
+This avoids browser warnings on SSL sites.</description>
+      </property>
+      <property>
+        <property-name>theme</property-name>
+        <property-class>string</property-class>
+        <property-extension>
+          <designer-extension>
+            <default-value>white</default-value>
+          </designer-extension>
+        </property-extension>
+        <description>Choose a theme: oneui (english only), red, white (default), blackglass, clean</description>
+      </property>
+      <property>
+        <property-name>lang</property-name>
+        <property-class>string</property-class>
+        <description>Language (en,nl,fr,de,pt,ru,es,tr)&#xd;
+&#xd;
+Theme oneui supports en only (so far)</description>
+        <property-extension>
+          <designer-extension>
+            <editor>com.ibm.std.String</editor>
+            <default-value>en</default-value>
+          </designer-extension>
+        </property-extension>
+      </property>
+      <property>
+        <property-name>returnValIfServiceUnavailable</property-name>
+        <property-class>boolean</property-class>
+        <property-extension>
+          <designer-extension>
+            <editor>com.ibm.std.Boolean</editor>
+            <default-value>true</default-value>
+          </designer-extension>
+        </property-extension>
+        <description>If the recaptcha service API is currently unavailable, this value will be returned.&#xd;
+TRUE means that the captcha handled as solved.</description>
+      </property>
+    </property-type>
+    <property-type>
+      <property-name>behavior</property-name>
+      <property-type>
+        <property-name>userInterface</property-name>
+        <property>
+          <property-name>focusOnLoad</property-name>
+          <property-class>boolean</property-class>
+          <property-extension>
+            <designer-extension>
+              <editor>com.ibm.std.Boolean</editor>
+              <default-value>false</default-value>
+            </designer-extension>
+          </property-extension>
+          <description>Sets the focus to the recaptcha solution field when document is being loaded.</description>
+        </property>
+        <property>
+          <property-name>tabIndex</property-name>
+          <property-class>int</property-class>
+          <property-extension>
+            <designer-extension>
+              <editor>com.ibm.std.Integer</editor>
+            </designer-extension>
+          </property-extension>
+          <description>Sets the tab-index of the recaptcha solution field.&#xd;
+With this propertiy the captcha integrates into the tab flow of your web-form.</description>
+        </property>
+      </property-type>
+      <property-type>
+        <property-name>errorHandling</property-name>
+        <property>
+          <property-name>validateOnlyOnce</property-name>
+          <property-class>boolean</property-class>
+          <property-extension>
+            <designer-extension>
+              <editor>com.ibm.std.Boolean</editor>
+              <default-value>true</default-value>
+            </designer-extension>
+          </property-extension>
+          <description>You can decide if the user will have to solve a new captcha every time a validation formula of another field or of the submitted form fails or only once.&#xd;
+FALSE is more secure.&#xd;
+TRUE is more user-friendly.</description>
+        </property>
+        <property>
+          <property-name>errorMessageTxt</property-name>
+          <property-class>string</property-class>
+          <property-extension>
+            <designer-extension>
+              <default-value>You've entered an invalid captcha solution</default-value>
+            </designer-extension>
+          </property-extension>
+          <description>This text will be added to the xp:messages control, if the user enters a wrong captcha solution.&#xd;
+This text does NOT influence the message, that will be displayed within the recaptcha widget.</description>
+        </property>
+      </property-type>
+    </property-type>
+  </composite-component>
+</faces-config>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:table>
+		<xp:tr>
+			<xp:td>
+				<xp:button value="Edit" id="button1" styleClass="btn">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:var exCon = facesContext.getExternalContext();
+				var writer = facesContext.getResponseWriter();
+var response = exCon.getResponse();
+var output = "moderateEntry.xsp?nid=" + compositeData.nID;
+response.sendRedirect(output);}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:td>
+			<!-- 
+			<xp:td>
+				<xp:button value="Delete" id="button2" styleClass="btn">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:actionGroup>
+								<xp:confirm message="Are you sure to delete the entry?">
+								</xp:confirm>
+								<xp:executeScript>
+									<xp:this.script><![CDATA[#{javascript:var id = compositeData.nID;
+	if(id!=null && id!=""){
+		var view1 = database.getView("NewsAllByID");
+		var entry = view1.getEntryByKey(id, true);
+		if (entry != null) {
+			var unid = entry.getUniversalID();
+			var doc = database.getDocumentByUNID(unid);
+			if (doc != null) {
+				doc.remove(true);
+				newsCache.update();
+				context.redirectToPage("mod.xsp");
+			}
+		}
+	} else {
+	}}]]></xp:this.script>
+								</xp:executeScript>								
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:td>
+			-->
+			<xp:td>
+				<xp:this.rendered><![CDATA[#{javascript:if (compositeData.showRemoveTopStoryButton == null) return false;
+if (!compositeData.showRemoveTopStoryButton.equalsIgnoreCase("yes")) return false;
+return true;}]]></xp:this.rendered>
+				<xp:button value="Remove" id="button2"
+					styleClass="btn">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:actionGroup>
+								<xp:executeScript>
+									<xp:this.script><![CDATA[#{javascript:var id = compositeData.nID;
+	if(id!=null && id!=""){
+		var view1 = database.getView("NewsAllByID");
+		var entry = view1.getEntryByKey(id, true);
+		if (entry != null) {
+			var unid = entry.getUniversalID();
+			var doc = database.getDocumentByUNID(unid);
+			if (doc != null) {
+				doc.replaceItemValue("NTopStory", "no");
+				doc.replaceItemValue("NHistory", doc.getItemValueString("NHistory") + @UserName() + " " + new Date() + "\n" +"Top Story: no" + "\n\n");
+				doc.save(true);
+				newsCache.update();
+				context.redirectToPage("modTopStories.xsp");
+			}
+		}
+	} else {
+	}}]]></xp:this.script>
+								</xp:executeScript>
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:td>
+						<xp:td>
+				<xp:this.rendered><![CDATA[#{javascript:if (compositeData.showRemoveSpotlightButton == null) return false;
+if (!compositeData.showRemoveSpotlightButton.equalsIgnoreCase("yes")) return false;
+return true;}]]></xp:this.rendered>
+				<xp:button value="Remove" id="button3"
+					styleClass="btn">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:actionGroup>
+								<xp:executeScript>
+									<xp:this.script><![CDATA[#{javascript:var id = compositeData.nID;
+	if(id!=null && id!=""){
+		var view1 = database.getView("NewsAllByID");
+		var entry = view1.getEntryByKey(id, true);
+		if (entry != null) {
+			var unid = entry.getUniversalID();
+			var doc = database.getDocumentByUNID(unid);
+			if (doc != null) {
+				doc.replaceItemValue("NSpotlight", "no");
+				doc.replaceItemValue("NHistory", doc.getItemValueString("NHistory") + @UserName() + " " + new Date() + "\n" +"Spotlight: no" + "\n\n");
+				doc.save(true);
+				newsCache.update();
+				context.redirectToPage("modSpotlight.xsp");
+			}
+		}
+	} else {
+	}}]]></xp:this.script>
+								</xp:executeScript>
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:td>
+			<!-- 
+			<xp:repeat id="repeat1" rows="30"
+				value="#{javascript:configCache.getTypesForCurrentUser()}"
+				var="index">
+				<xp:this.rendered><![CDATA[#{javascript:compositeData.state != "approved"}]]></xp:this.rendered>
+				<xp:td>
+					<xp:button
+						value="#{javascript:index.getDisplayName()}" id="adsf">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:var id = compositeData.nID;
+	if(id!=null && id!=""){
+		var view1 = database.getView("NewsAllByID");
+		var entry = view1.getEntryByKey(id, true);
+		if (entry != null) {
+			var unid = entry.getUniversalID();
+			var doc = database.getDocumentByUNID(unid);
+			if (doc != null) {
+				doc.replaceItemValue("NState", "approved");
+				var dateNow = new java.util.Date();
+				doc.replaceItemValue("NModerationDate", session.createDateTime(dateNow));
+				doc.replaceItemValue("TID", index.getID());
+				doc.save(true);
+				context.redirectToPage("mod.xsp");
+			}
+		}
+	} else {
+	}}]]></xp:this.action>
+					</xp:eventHandler></xp:button>
+				</xp:td>
+			</xp:repeat>
+			 -->
+			<xp:td style="padding-left:5.0px">
+				<xp:link value="#{javascript:compositeData.link}" target="_blank" text="#{javascript:compositeData.title}">
+				</xp:link>
+				<br></br>
+				<xp:label value="#{javascript:compositeData.personDisplayName}">
+				</xp:label>
+				<xp:label value=" - Published: ">
+				</xp:label>
+				<xp:label value="#{javascript:compositeData.publicationDate}">
+				</xp:label>
+				<xp:panel>
+					<xp:this.rendered><![CDATA[#{javascript:if (compositeData.creationDate == null) {
+	return false;
+} else {return true;}}]]></xp:this.rendered>
+					<xp:label value=" - Created: ">
+					</xp:label>
+					<xp:label value="#{javascript:compositeData.creationDate}">
+					</xp:label>
+				</xp:panel>
+				<xp:panel>
+					<xp:this.rendered><![CDATA[#{javascript:if (compositeData.clicksTotal == null) {
+	return false;
+} else {return true;}}]]></xp:this.rendered>
+					<xp:label value=" - Clicks: "></xp:label>
+					<xp:label
+						value="#{javascript:compositeData.clicksTotal}">
+					</xp:label>
+					<xp:label value=" - Last Week Clicks: "></xp:label>
+					<xp:label
+						value="#{javascript:compositeData.clicksLastWeek}">
+					</xp:label>
+				</xp:panel>
+			</xp:td>
+		</xp:tr>
+	</xp:table>
+	<xp:br></xp:br>
+</xp:view>

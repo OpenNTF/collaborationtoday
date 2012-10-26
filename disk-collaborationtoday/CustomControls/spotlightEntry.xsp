@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<li class="span3">
+		<div class="thumbnail">
+			<xp:link target="_blank" styleClass="thumbnail">
+				<xp:this.value><![CDATA[#{javascript:var entry2 = newsCache.getSpotlightEntry(compositeData.position);
+if (entry2 == null) { "http://collaborationtoday.info"; }
+else {
+entry2.getLink()}}]]></xp:this.value>
+				<xp:image id="image1">
+					<xp:this.url><![CDATA[#{javascript:var entry3 = newsCache.getSpotlightEntry(compositeData.position);
+if (entry3 == null) { 
+	"spotlightPlaceholder.png"
+}
+else {
+	entry3.getSpotlightImageURL()
+}
+}]]></xp:this.url>
+					<xp:eventHandler event="onclick" submit="false">
+						<xp:this.script><![CDATA[								
+var baseUrl = "#{javascript:var baseUrl = context.getUrl().toString();baseUrl = baseUrl.substring(0, baseUrl.indexOf('.nsf')+4);baseUrl }";
+var url = baseUrl + "/log.xsp?" + "nid=" + "#{javascript:
+var entry6 = newsCache.getSpotlightEntry(compositeData.position);
+if (entry6 != null) {
+entry6.getID();
+}
+}";						
+logClick(url);		
+
+]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:image>
+			</xp:link>
+			<div class="caption">
+				<xp:text tagName="h5" id="header">
+					<xp:this.value><![CDATA[#{javascript:var entry4 = newsCache.getSpotlightEntry(compositeData.position);
+if (entry4 == null) {
+	"No title"
+}
+else {
+	entry4.getTitle();
+}}]]></xp:this.value>
+				</xp:text>
+				<!--<xp:text tagName="p" id="content">
+					<xp:this.value><![CDATA[#{javascript:var entry5 = newsCache.getSpotlightEntry(compositeData.position);
+if (entry5 == null) {
+	"No spotlight sentence"
+}
+else {
+	entry5.getSpotlightSentence();
+}}]]></xp:this.value>
+				</xp:text>
+			--></div>
+		</div>
+	</li>
+</xp:view>

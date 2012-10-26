@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	pageTitle="Moderated - Spotlight | Collaboration Today">
+	<xc:moderationLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="content">
+				<xc:moderatorCheck></xc:moderatorCheck>
+				<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
+					<xp:panel rendered="#{javascript:configCache.isUserSpotlightModerator(@UserName())}">
+						<div class="page-header">
+							<h1>
+								<small>News Entries - Approved / Moderated - Spotlight</small>
+							</h1>
+						</div>
+						<xp:br></xp:br>
+						<xp:repeat id="repeat5" var="entry" rows="50" value="#{javascript:newsCache.getSpotlightEntries();}">
+							<xc:moderationNewsEntry
+								link="#{javascript:entry.getLink()}"
+								nID="#{javascript:entry.getID()}"
+								personDisplayName="#{javascript:personsCache.getPerson(entry.getPID()).getDisplayName()}"
+								publicationDate="#{javascript:entry.getPrettyTime()}"
+								title="#{javascript:entry.getTitle()}"
+								state="#{javascript:entry.getState()}"
+								clicksTotal="#{javascript:entry.getClicksTotal()}"
+								clicksLastWeek="#{javascript:entry.getClicksLastWeek()}"
+								showRemoveSpotlightButton="yes">
+							</xc:moderationNewsEntry>
+						</xp:repeat>
+					</xp:panel>
+				</xp:panel>
+			</xp:panel>
+			<xc:moderationLeftColumn xp:key="leftColumn"></xc:moderationLeftColumn>
+		</xp:this.facets>
+	</xc:moderationLayout>
+</xp:view>

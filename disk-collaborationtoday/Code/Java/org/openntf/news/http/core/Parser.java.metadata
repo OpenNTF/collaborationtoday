@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="262" sequence="632" unid="1158E99E616F29C4C1257A48003668FC">
+<created><datetime dst="true">20120727T115418,20+02</datetime></created>
+<modified><datetime dst="true">20121022T084228,03+02</datetime></modified>
+<revised><datetime dst="true">20121022T084228,02+02</datetime></revised>
+<lastaccessed><datetime dst="true">20121022T084228,03+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120914T085926,58+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>org/openntf/news/http/core/Parser.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>org/openntf/news/http/core/Parser.java</text></item>
+
+
+</note>

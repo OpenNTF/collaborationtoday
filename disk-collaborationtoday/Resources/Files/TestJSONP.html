@@ -1,0 +1,23 @@
+<html>
+	<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.5.1/dojo/dojo.xd.js" 
+		type="text/javascript"></script>
+	
+<script type="text/javascript">
+dojo.require("dojo.io.script");
+  
+dojo.ready(function(){
+    dojo.io.script.get({
+        url: "http://collaborationtoday.info/api.xsp?filter=top",       
+        callbackParamName: "callback"
+    }).then(function(data){        
+ 
+        var entries = [];             
+        dojo.forEach(data.responseData.results, function(item,idx){
+        	entries.push("<li>" + decodeURIComponent(item.title) + "<br></br>" + decodeURIComponent(item.abstract_encoded) + "</li>" + "<br></br>");
+        });
+        dojo.byId("entries").innerHTML = entries.join('');
+    });
+});
+</script>
+<div id="entries"></div>
+</html>

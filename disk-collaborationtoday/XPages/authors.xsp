@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	pageTitle="Authors | Collaboration Today">
+	<xp:this.resources>
+		<xp:styleSheet href="/view.css"></xp:styleSheet>
+	</xp:this.resources>
+
+	<xc:moderationLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="content">
+				<xc:moderatorCheck></xc:moderatorCheck>
+				<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
+					<div class="page-header">
+						<h1>
+							<small>Authors</small>
+						</h1>
+					</div>
+					<xp:br></xp:br>
+					<xp:button value="New" id="button5" styleClass="btn">
+						<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+							<xp:this.action>
+								<xp:openPage name="/author.xsp" target="newDocument"></xp:openPage>
+							</xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+					<xp:br></xp:br>
+					<xc:ccPager pagerFor="viewPanel1"></xc:ccPager>
+					<xp:viewPanel rows="30" id="viewPanel1" pageName="/author.xsp" viewStyleClass="viewPanel" dataTableStyleClass="dataTableViewPanel">
+
+						<xp:this.data>
+							<xp:dominoView var="view1" viewName="PersonsAll" sortColumn="PDisplayName"></xp:dominoView>
+						</xp:this.data>
+						<xp:viewColumn columnName="PDisplayName" id="viewColumn2" displayAs="link" styleClass="columnView25">
+							<xp:viewColumnHeader value="Display Name" id="viewColumnHeader2" sortable="true"></xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="PEMail" id="viewColumn4" styleClass="columnView25">
+							<xp:viewColumnHeader value="E-Mail" id="viewColumnHeader4"></xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="PID" id="viewColumn1">
+							<xp:viewColumnHeader value="ID" id="viewColumnHeader1"></xp:viewColumnHeader>
+						</xp:viewColumn>
+					</xp:viewPanel>
+				</xp:panel>
+			</xp:panel>
+			<xc:moderationLeftColumn xp:key="leftColumn"></xc:moderationLeftColumn>
+		</xp:this.facets>
+	</xc:moderationLayout>
+</xp:view>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:panel readonly="true">
+		<xp:this.rendered><![CDATA[#{javascript:if (param.filter) return false;
+return true;}]]></xp:this.rendered>
+
+		<xp:div>
+			<xp:this.rendered><![CDATA[#{javascript:
+				if (newsCache.getSpotlightEntries().size() > 0) true; else false;	
+			}]]></xp:this.rendered>
+			<div class="page-header">
+				<h1>
+					<small>News about IBM Collaboration Solutions</small>
+				</h1>
+			</div>
+			<ul class="thumbnails">
+				<xc:spotlightEntry position="0"></xc:spotlightEntry>
+				<xc:spotlightEntry position="1"></xc:spotlightEntry>
+				<xc:spotlightEntry position="2"></xc:spotlightEntry>
+				<xc:spotlightEntry position="3"></xc:spotlightEntry>
+			</ul>
+		</xp:div>
+
+		<xp:div>
+			<xp:this.rendered><![CDATA[#{javascript:
+				if (newsCache.getTopTopStories().size() > 0) true; else false;	
+			}]]></xp:this.rendered>
+			<div class="page-header">
+				<h1>
+					<small>Featured</small>
+				</h1>
+			</div>
+			<xp:repeat id="r1" var="entryT" rows="4"
+				value="#{javascript:newsCache.getTopTopStories();}" >
+				<xc:newsEntry id = "lkj"
+					authorPictureURL="#{javascript:personsCache.getPerson(entryT.getPID()).getPictureURL()}"
+					imageURL="#{javascript:entryT.getImageURL()}" link="#{javascript:entryT.getLink()}"
+					newsAbstract="#{javascript:entryT.getAbstract()}" nID="#{javascript:entryT.getID()}"
+					personDisplayName="#{javascript:personsCache.getPerson(entryT.getPID()).getDisplayName()}"
+					typeId="#{javascript:entryT.getTID()}"
+					publicationDate="#{javascript:entryT.getPublicationDate()}" publicationDateString="#{javascript:entryT.getPrettyTime()}" title="#{javascript:entryT.getTitle()}">
+					<xc:this.category><![CDATA[#{javascript:
+							try {
+								configCache.getCategory(configCache.getType(entryT.getTID()).getCategoryId()).getDisplayName()
+							} catch(e) {
+							} finally {
+								"";
+							}}]]></xc:this.category>
+							<xc:this.type><![CDATA[#{javascript:
+							try {
+								configCache.getType(entryT.getTID()).getDisplayName()
+							} catch(e) {
+							} finally {
+								"";
+							}}]]></xc:this.type>
+				</xc:newsEntry>
+			</xp:repeat>
+		</xp:div>
+
+		<xp:repeat id="r2" rows="30" value="#{javascript:configCache.getCategories();}"
+			indexVar="index2" var="category" removeRepeat="true">
+			<xp:div>
+				<xp:this.rendered><![CDATA[#{javascript:
+					if (newsCache.getTopStories(category.getID()).size() > 0) true; else false;	
+				}]]></xp:this.rendered>
+				<div class="page-header">
+					<h1>
+						<small>
+							<xp:text value="#{category.displayName}"/>
+						</small>
+					</h1>
+				</div>
+				<xp:repeat id="r3" var="entryC" rows="4"
+					value="#{javascript:newsCache.getTopStories(category.getID());}" >
+					<xc:newsEntry id = "lkasdfj"
+						authorPictureURL="#{javascript:personsCache.getPerson(entryC.getPID()).getPictureURL()}"
+						typeId="#{javascript:entryC.getTID()}"
+						imageURL="#{javascript:entryC.getImageURL()}" link="#{javascript:entryC.getLink()}"
+						newsAbstract="#{javascript:entryC.getAbstract()}" nID="#{javascript:entryC.getID()}"
+						personDisplayName="#{javascript:personsCache.getPerson(entryC.getPID()).getDisplayName()}"
+						publicationDate="#{javascript:entryC.getPublicationDate()}" publicationDateString="#{javascript:entryC.getPrettyTime()}" title="#{javascript:entryC.getTitle()}">
+						<xc:this.category><![CDATA[#{javascript:
+							try {
+								configCache.getCategory(configCache.getType(entryC.getTID()).getCategoryId()).getDisplayName()
+							} catch(e) {
+							} finally {
+								"";
+							}}]]></xc:this.category>
+							<xc:this.type><![CDATA[#{javascript:
+							try {
+								configCache.getType(entryC.getTID()).getDisplayName()
+							} catch(e) {
+							} finally {
+								"";
+							}}]]></xc:this.type>
+					</xc:newsEntry>
+				</xp:repeat>
+			</xp:div>
+		</xp:repeat>
+
+	</xp:panel>
+</xp:view>

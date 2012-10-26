@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="25a" sequence="39" unid="15E56C82CB6C5F31C1257A44005B969A">
+<created><datetime dst="true">20120723T184023,30+02</datetime></created>
+<modified><datetime dst="true">20121004T090114,75+02</datetime></modified>
+<revised><datetime dst="true">20121004T090114,74+02</datetime></revised>
+<lastaccessed><datetime dst="true">20121004T090114,75+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120914T085926,44+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<item name="$TITLE" sign="true"><text>biz.webgate.mywebgate.micropublisher.js</text></item>
+<item name="$Flags"><text>h534Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+</note>

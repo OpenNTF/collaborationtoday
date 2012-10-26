@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="252" sequence="14" unid="A08BD60E93929EB2C1257A6F0019D7C7">
+<created><datetime dst="true">20120904T064216,39+02</datetime></created>
+<modified><datetime dst="true">20121004T090115,05+02</datetime></modified>
+<revised><datetime dst="true">20121004T090115,04+02</datetime></revised>
+<lastaccessed><datetime dst="true">20121004T090115,05+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120914T085926,40+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<item name="$TITLE"><text>ccPager.xsp</text></item>
+<item name="$Flags"><text>gC~4;</text></item>
+
+
+<item name="$FileNames" sign="true"><text>ccPager.xsp</text></item>
+
+
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+
+</note>

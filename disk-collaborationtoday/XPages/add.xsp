@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	pageTitle="Capture story | Collaboration Today">
+	<style>.lotusTitleBar h2.lotusEllipsis { width: 380px; } .xspPagerRight { color: #848484; float: left;}</style>
+	<style>
+		.busyShown { background-image: url("Loading.gif"); background-repeat: no-repeat; height: 32px; position: relative; width: 32px; } .busyHidden {
+		display:none; }
+	</style>
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:var exCon = facesContext.getExternalContext();
+var exReq = exCon.getRequest();
+var response = exCon.getResponse();
+var command=param.get("c");
+response.setHeader("Cache-Control", "no-cache");
+
+if (command="addurl") {
+	var body=param.get("b");
+	var subject=param.get("t");
+	
+	getComponent('inputText1').setValue(body);
+	}
+}]]></xp:this.beforeRenderResponse>
+
+	<xc:moderationLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="content">
+				<xc:moderatorCheck></xc:moderatorCheck>
+				
+				<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
+					<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
+					<xp:br></xp:br>
+					<xp:label value="Capture URL" style="font-weight:bold;font-size:12pt"></xp:label>
+					<xp:div id="nikcontent" style="">
+						<xp:scriptBlock type="text/javascript">
+							<xp:this.value>
+								<![CDATA[
+function showBusy() {
+	var buttonId = "#{id:button1}"; 
+	var buttonElement = document.getElementById(buttonId);
+	buttonElement.style.visibility = 'hidden'; 
+	var busyElement = document.getElementById("busy");
+	busyElement.className = "busyShown";
+}
+
+function hideBusy(){
+	var buttonId = "#{id:button1}"; 
+	var buttonElement = document.getElementById(buttonId);
+	buttonElement.style.visibility = 'hidden'; 
+	var busyElement = document.getElementById("busy");
+	busyElement.className = "busyHidden";
+	var docUnidClient =  "#{javascript:sessionScope.get("NikFileName")}"
+	window.location = "moderateEntry.xsp?action=editDocument&documentId=" + docUnidClient;
+}
+	]]>
+							</xp:this.value>
+						</xp:scriptBlock>
+						<br></br>
+						<br></br>
+						<xp:inputText id="inputText1" style="width:720px;"></xp:inputText>
+						<br></br>
+						<br></br>
+						<br></br>
+						<div id="busy" class="busyHidden"></div>
+						<xp:button value="Capture and Edit" id="button1" styleClass="btn">
+							<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="nikcontent">
+								<xp:this.action><![CDATA[#{javascript:var url = getComponent('inputText1').getValue();
+var docUNIDServer = org.openntf.news.http.core.Parser.getOutput(url);
+sessionScope.put("NikFileName", docUNIDServer);}]]></xp:this.action>
+								<xp:this.script><![CDATA[showBusy();]]></xp:this.script>
+								<xp:this.onComplete><![CDATA[hideBusy();]]></xp:this.onComplete>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:text escape="false">
+							<xp:this.value><![CDATA[#{javascript:
+"<input type='hidden' id='docUNID' value='" + sessionScope.get("NikFileName") + "'></input>"}]]>
+							</xp:this.value>
+						</xp:text>
+					</xp:div>
+				</xp:panel>
+			</xp:panel>
+			<xc:moderationLeftColumn xp:key="leftColumn"></xc:moderationLeftColumn>
+		</xp:this.facets>
+	</xc:moderationLayout>
+</xp:view>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:div id="duplicateContainer">
+		<!-- checkDuplicates -->
+		<xp:this.rendered><![CDATA[#{javascript:if(getComponent("repeatDuplicates").getRowCount()>0){
+	return true;
+}else{
+	return false;
+}}]]></xp:this.rendered>
+		<xp:repeat id="repeatDuplicates" rows="30" var="rowData"
+			indexVar="rowIndex" style="border:1px solid red">
+			<xp:this.value><![CDATA[#{javascript:/*parameter
+- NID
+- NTitle
+- NLink
+*/
+duplicateChecker.checkDuplicates(document1.getItemValueString("NID"),document1.getItemValueString("NTitle"),document1.getItemValueString("NLink"),false)}]]></xp:this.value>
+			<xp:this.facets>
+				<xp:text disableTheme="true" xp:key="header"
+					escape="false">
+					<xp:this.value><![CDATA[#{javascript:"<table class='table'><tr><th><b style='color:red;'>Warning: there might be duplicate entries</b></th></tr>"}]]></xp:this.value>
+				</xp:text>
+
+				<xp:text disableTheme="true" xp:key="footer"
+					escape="false">
+
+					<xp:this.value><![CDATA[#{javascript:"</table>"}]]></xp:this.value>
+				</xp:text>
+			</xp:this.facets>
+			<tr>
+				<td>
+					<xp:link escape="true"
+						text="#{javascript:rowData.getNTitle()}" id="link1"
+						target="_blank">
+						<xp:this.value><![CDATA[#{javascript:"/moderateEntry.xsp?nid="+rowData.getNid();}]]></xp:this.value>
+					</xp:link>
+				</td>
+				<td>
+					<xp:link escape="true"
+						text="#{javascript:rowData.getNLink()}" id="link2"
+						target="_blank">
+						<xp:this.value><![CDATA[#{javascript:rowData.getNLink();}]]></xp:this.value>
+					</xp:link>
+				</td>
+			</tr>
+		</xp:repeat>
+	</xp:div>
+</xp:view>
