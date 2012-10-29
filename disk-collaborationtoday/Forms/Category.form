@@ -1,18 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='4.0'
- replicaid='86257A780060902F'>
-<noteinfo noteid='196' unid='AB35E2788B694681C1257A68002E683A' sequence='19'>
-<created><datetime dst='true'>20120828T102653,38+02</datetime></created>
-<modified><datetime dst='true'>20121004T090115,03+02</datetime></modified>
-<revised><datetime dst='true'>20121004T090115,02+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20121004T090115,03+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20120914T085925,21+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='85257AA6004F5595'>
+<noteinfo noteid='28e' unid='1084BA63C661563785257AA6004F6B04' sequence='2'>
+<created><datetime dst='true'>20121029T102727,40-04</datetime></created>
+<modified><datetime dst='true'>20121029T102727,83-04</datetime></modified>
+<revised><datetime dst='true'>20121029T102727,82-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20121029T102727,82-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121029T102727,49-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='TOrder' summary='false' sign='true'><number>0</number></item>
 <item name='$HTMLCode' sign='true'>

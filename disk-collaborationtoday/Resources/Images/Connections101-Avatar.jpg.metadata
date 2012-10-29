@@ -1,21 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1ca" sequence="11" unid="DE09F7FE583F655686257A6B00748426">
-<created><datetime dst="true">20120831T161240,06-05</datetime></created>
-<modified><datetime dst="true">20121004T090115,23+02</datetime></modified>
-<revised><datetime dst="true">20121004T090115,22+02</datetime></revised>
-<lastaccessed><datetime dst="true">20121004T090115,23+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120914T085925,67+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Bruce Elgort/O=Sharepoint</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="262" sequence="3" unid="8CC88D25ED5E9A1B85257AA6004F673F">
+<created><datetime dst="true">20121029T102717,75-04</datetime></created>
+<modified><datetime dst="true">20121029T102718,07-04</datetime></modified>
+<revised><datetime dst="true">20121029T102718,06-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121029T102718,06-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121029T102717,83-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name="$TITLE"><text>Connections101-Avatar.jpg</text></item>
 <item name="$Flags"><text>34CiQ</text></item>
 <item name="$FlagsExt"><text>D</text></item>
 <item name="$ImagesWide" sign="true"><number>1</number></item>
 <item name="$ImagesHigh" sign="true"><number>1</number></item>
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
-
-
-<item name="$MimeType" sign="true"><text>image/jpeg</text></item>
 <item name="$FileModDT" sign="true"><datetime dst="true">20120831T141230,00-07</datetime></item>
 <item name="$ImageNames" sign="true"><text>Connections101-Avatar.jpg</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item></note>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

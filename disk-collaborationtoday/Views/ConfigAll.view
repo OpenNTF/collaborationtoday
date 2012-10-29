@@ -1,16 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='4.0'
- replicaid='86257A780060902F'>
-<noteinfo noteid='36e' unid='9169D5F781454C35C1257A790029A05B' sequence='11'>
-<created><datetime dst='true'>20120914T093440,27+02</datetime></created>
-<modified><datetime dst='true'>20121004T090115,21+02</datetime></modified>
-<revised><datetime dst='true'>20121004T090115,20+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20121004T090115,21+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20120914T093440,36+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='85257AA6004F5595'>
+<noteinfo noteid='1fa' unid='4AA3CE0D9D65A12285257AA6004F6188' sequence='2'>
+<created><datetime dst='true'>20121029T102703,12-04</datetime></created>
+<modified><datetime dst='true'>20121029T102703,41-04</datetime></modified>
+<revised><datetime dst='true'>20121029T102703,40-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20121029T102703,40-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121029T102703,21-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>ConfigAll</text></item>
 <item name='$Index' sign='true'><text/></item>

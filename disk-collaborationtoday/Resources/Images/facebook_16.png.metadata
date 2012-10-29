@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1b2" sequence="18" unid="29C0564C257DE229C1257A640023655B">
-<created><datetime dst="true">20120824T082637,07+02</datetime></created>
-<modified><datetime dst="true">20121004T090115,31+02</datetime></modified>
-<revised><datetime dst="true">20121004T090115,30+02</datetime></revised>
-<lastaccessed><datetime dst="true">20121004T090115,31+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120914T085925,51+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Bruce Elgort/O=Sharepoint</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Bruce Elgort/O=Sharepoint</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="242" sequence="3" unid="C2A8B25640C0D88C85257AA6004F65CE">
+<created><datetime dst="true">20121029T102714,06-04</datetime></created>
+<modified><datetime dst="true">20121029T102714,38-04</datetime></modified>
+<revised><datetime dst="true">20121029T102714,37-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121029T102714,37-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121029T102714,14-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name="$TITLE"><text>facebook_16.png</text></item>
 <item name="$FlagsExt"><text>D</text></item>
 <item name="$ImagesWide" sign="true"><number>1</number></item>
 <item name="$ImagesHigh" sign="true"><number>1</number></item>
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
 <item name="$FileModDT" sign="true"><datetime dst="true">20120802T142121,00-07</datetime></item>
 <item name="$ImageNames" sign="true"><text>facebook_16.PNG</text></item>
 <item name="$EditFilePath"><text>C:\Users\ADMINI~1\AppData\Local\Temp\notes87944B\~facebook_16.PNG</text></item>
-<item name="$Flags"><text>34CiQ$</text></item></note>
+<item name="$Flags"><text>34CiQ$</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

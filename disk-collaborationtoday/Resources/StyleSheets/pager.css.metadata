@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1a2" sequence="15" unid="4E2FA26C4AF438B7C1257A6F0019E7CD">
-<created><datetime dst="true">20120904T064257,41+02</datetime></created>
-<modified><datetime dst="true">20121004T090116,43+02</datetime></modified>
-<revised><datetime dst="true">20121004T090116,42+02</datetime></revised>
-<lastaccessed><datetime dst="true">20121004T090116,43+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120914T085925,35+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Bruce Elgort/O=Sharepoint</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="20e" sequence="3" unid="BA98D0E140C09AA185257AA6004F629A">
+<created><datetime dst="true">20121029T102705,86-04</datetime></created>
+<modified><datetime dst="true">20121029T102706,32-04</datetime></modified>
+<revised><datetime dst="true">20121029T102706,31-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121029T102706,31-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121029T102705,95-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name="$TITLE"><text>pager.css</text></item>
 <item name="$MimeType"><text>text/css</text></item>
 <item name="$Flags"><text>34C=Q</text></item>

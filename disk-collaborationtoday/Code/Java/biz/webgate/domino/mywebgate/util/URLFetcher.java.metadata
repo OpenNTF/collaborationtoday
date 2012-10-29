@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="29a" sequence="704" unid="78A1AF0033E82C9AC1257A44005B0372">
-<created><datetime dst="true">20120723T183406,58+02</datetime></created>
-<modified><datetime dst="true">20121022T084228,29+02</datetime></modified>
-<revised><datetime dst="true">20121022T084228,28+02</datetime></revised>
-<lastaccessed><datetime dst="true">20121022T084228,29+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120914T085929,24+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="32e" sequence="4" unid="3051CEE71ABE2CF385257AA6004F74F6">
+<created><datetime dst="true">20121029T102752,86-04</datetime></created>
+<modified><datetime dst="true">20121029T102933,05-04</datetime></modified>
+<revised><datetime dst="true">20121029T102933,04-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121029T102933,04-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121029T102752,95-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>biz/webgate/domino/mywebgate/util/URLFetcher.java</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>

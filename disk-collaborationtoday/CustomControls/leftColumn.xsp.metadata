@@ -1,22 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="23e" sequence="68" unid="934202871D7E9AD6C1257A63004DDEA9">
-<created><datetime dst="true">20120823T161032,73+02</datetime></created>
-<modified><datetime dst="true">20121004T090115,61+02</datetime></modified>
-<revised><datetime dst="true">20121004T090115,60+02</datetime></revised>
-<lastaccessed><datetime dst="true">20121004T090115,61+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120914T085926,30+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Bruce Elgort/O=Sharepoint</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2be" sequence="4" unid="75B5E24F50A0D51685257AA6004F6EA8">
+<created><datetime dst="true">20121029T102736,72-04</datetime></created>
+<modified><datetime dst="true">20121029T102737,19-04</datetime></modified>
+<revised><datetime dst="true">20121029T102737,18-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121029T102737,18-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121029T102736,81-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
-
-
 <item name="$TITLE" sign="true"><text>leftColumn.xsp</text></item>
-
-
-
-<item name="$FileNames" sign="true"><text>leftColumn.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5</text></item>
 
 
 
-</note>
+
+<item name="$FileNames" sign="true"><text>leftColumn.xsp</text></item></note>

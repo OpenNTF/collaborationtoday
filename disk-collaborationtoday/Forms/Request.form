@@ -1,18 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='4.0'
- replicaid='86257A780060902F'>
-<noteinfo noteid='1ae' unid='274E0637484717FEC1257A4C006015BA' sequence='22'>
-<created><datetime dst='true'>20120731T192930,18+02</datetime></created>
-<modified><datetime dst='true'>20121004T090116,53+02</datetime></modified>
-<revised><datetime dst='true'>20121004T090116,52+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20121004T090116,53+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20120914T085925,47+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='85257AA6004F5595'>
+<noteinfo noteid='27e' unid='5AD6F4925FDD9EF085257AA6004F6A06' sequence='2'>
+<created><datetime dst='true'>20121029T102724,86-04</datetime></created>
+<modified><datetime dst='true'>20121029T102725,27-04</datetime></modified>
+<revised><datetime dst='true'>20121029T102725,25-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20121029T102725,25-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121029T102724,94-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$HTMLCode' sign='true'>
 <rawitemdata type='1'>

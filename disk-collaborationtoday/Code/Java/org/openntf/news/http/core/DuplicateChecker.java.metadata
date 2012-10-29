@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="3ae" sequence="179" unid="DB514FAD1D4390BDC1257A7C004DC55B">
-<created><datetime dst="true">20120917T160927,95+02</datetime></created>
-<modified><datetime dst="true">20121022T084228,15+02</datetime></modified>
-<revised><datetime dst="true">20121022T084228,14+02</datetime></revised>
-<lastaccessed><datetime dst="true">20121022T084228,15+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120918T080307,26+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="312" sequence="4" unid="AB06FDEFCE4D18E885257AA6004F737F">
+<created><datetime dst="true">20121029T102749,11-04</datetime></created>
+<modified><datetime dst="true">20121029T102931,99-04</datetime></modified>
+<revised><datetime dst="true">20121029T102931,98-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121029T102931,98-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121029T102749,18-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>org/openntf/news/http/core/DuplicateChecker.java</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>

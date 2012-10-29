@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='8.5'
- maintenanceversion='4.0' replicaid='86257A780060902F'>
-<noteinfo noteid='122' unid='ADB7A45D56757D92C1257A4100254423' sequence='3'>
-<created><datetime dst='true'>20120720T084702,75+02</datetime></created>
-<modified><datetime dst='true'>20120918T091959,28+02</datetime></modified>
-<revised><datetime dst='true'>20120918T091959,27+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20120918T091959,28+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20120914T085916,72+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Bruce Elgort/O=Sharepoint</name><name
->CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name
->CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+ maintenanceversion='3.0' replicaid='85257AA6004F5595'>
+<noteinfo noteid='11e' unid='15B148A1FAD343B285257AA6004F55D0' sequence='8'>
+<created><datetime dst='true'>20121029T102633,12-04</datetime></created>
+<modified><datetime dst='true'>20121029T102757,45-04</datetime></modified>
+<revised><datetime dst='true'>20121029T102757,44-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20121029T102757,44-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20121029T102633,15-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
@@ -26,10 +26,9 @@ L2ZvgAAACMZmZmZmZmZmZmZmbIAAAACMZmZmZmZmZmZmZsgAAAAACMZmZmZmZmZmZmyAAAAAAACM
 AAAAUEECICABAAD/////+A4DgA==
 </rawitemdata></item>
 <item name='$DBTheme'><text>bootstrap.theme</text></item>
-<item name='$DefaultXPage'><text>home.xsp</text></item>
 <item name='$Daos'><text>0</text></item>
-<item name='$Flags'><text>J!</text></item>
-<item name='$FlagsNoRefresh'><text/></item>
-<item name='$TITLE'><text>Development Collaboration Today
-#1CTTemplate</text></item></note>
+<item name='$DefaultXPage'><text>home.xsp</text></item>
+<item name='$TITLE'><text>Development Collaboration Today</text></item>
+<item name='$FlagsNoRefresh'><text>rv</text></item>
+<item name='$Flags'><text>J!7</text></item></note>
 

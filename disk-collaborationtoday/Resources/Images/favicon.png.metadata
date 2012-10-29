@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="166" sequence="8" unid="424BEA0ED70398D0C1257A70007238ED">
-<created><datetime dst="true">20120905T224736,77+02</datetime></created>
-<modified><datetime dst="true">20121004T090115,35+02</datetime></modified>
-<revised><datetime dst="true">20121004T090115,34+02</datetime></revised>
-<lastaccessed><datetime dst="true">20121004T090115,35+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120914T085924,50+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="23a" sequence="3" unid="4373D348A18C11DB85257AA6004F6536">
+<created><datetime dst="true">20121029T102712,54-04</datetime></created>
+<modified><datetime dst="true">20121029T102712,89-04</datetime></modified>
+<revised><datetime dst="true">20121029T102712,88-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121029T102712,88-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121029T102712,63-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name="$TITLE"><text>favicon.png</text></item>
 <item name="$Flags"><text>34CiQ</text></item>
 <item name="$FlagsExt"><text>D</text></item>
 <item name="$ImagesWide" sign="true"><number>1</number></item>
 <item name="$ImagesHigh" sign="true"><number>1</number></item>
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
-
-
 <item name="$FileModDT" sign="true"><datetime dst="true">20120905T224703,00+02</datetime></item>
 <item name="$ImageNames" sign="true"><text>favicon.png</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item></note>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

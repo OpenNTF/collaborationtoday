@@ -1,22 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="24a" sequence="32" unid="EAE45D89CADAB3BBC1257A6400301844">
-<created><datetime dst="true">20120824T104519,40+02</datetime></created>
-<modified><datetime dst="true">20121004T090115,83+02</datetime></modified>
-<revised><datetime dst="true">20121004T090115,82+02</datetime></revised>
-<lastaccessed><datetime dst="true">20121004T090115,83+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120914T085926,36+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2aa" sequence="4" unid="4D07EF0F6F1D202785257AA6004F6CD1">
+<created><datetime dst="true">20121029T102732,01-04</datetime></created>
+<modified><datetime dst="true">20121029T102732,48-04</datetime></modified>
+<revised><datetime dst="true">20121029T102732,47-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121029T102732,47-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121029T102732,10-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE"><text>moderatorCheck.xsp</text></item>
-
-
-
-
-
-
-
-<item name="$FileNames" sign="true"><text>moderatorCheck.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5</text></item>
 
-</note>
+
+
+
+<item name="$FileNames" sign="true"><text>moderatorCheck.xsp</text></item></note>

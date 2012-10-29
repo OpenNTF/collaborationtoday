@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1a6" sequence="17" unid="49D9781A5D9C8710C1257A640023655D">
-<created><datetime dst="true">20120824T082637,09+02</datetime></created>
-<modified><datetime dst="true">20121004T090116,77+02</datetime></modified>
-<revised><datetime dst="true">20121004T090116,76+02</datetime></revised>
-<lastaccessed><datetime dst="true">20121004T090116,77+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120914T085925,43+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Bruce Elgort/O=Sharepoint</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="21e" sequence="3" unid="590C27558D1DDA5685257AA6004F6394">
+<created><datetime dst="true">20121029T102708,36-04</datetime></created>
+<modified><datetime dst="true">20121029T102708,76-04</datetime></modified>
+<revised><datetime dst="true">20121029T102708,75-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121029T102708,75-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121029T102708,46-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name="$TITLE"><text>twitter_16.png</text></item>
 <item name="$FlagsExt"><text>D</text></item>
 <item name="$ImagesWide" sign="true"><number>1</number></item>
 <item name="$ImagesHigh" sign="true"><number>1</number></item>
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
 <item name="$FileModDT" sign="true"><datetime dst="true">20120802T141541,00-07</datetime></item>
 <item name="$Flags"><text>D34CiQ</text></item>
-<item name="$ImageNames" sign="true"><text>twitter_16.PNG</text></item></note>
+<item name="$ImageNames" sign="true"><text>twitter_16.PNG</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

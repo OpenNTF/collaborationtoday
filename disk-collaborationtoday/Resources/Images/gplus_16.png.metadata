@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1ba" sequence="17" unid="775B2160003738B2C1257A640023655C">
-<created><datetime dst="true">20120824T082637,08+02</datetime></created>
-<modified><datetime dst="true">20121004T090115,43+02</datetime></modified>
-<revised><datetime dst="true">20121004T090115,42+02</datetime></revised>
-<lastaccessed><datetime dst="true">20121004T090115,43+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120914T085925,55+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Bruce Elgort/O=Sharepoint</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="236" sequence="3" unid="D26B032EEEFEE7E285257AA6004F64DC">
+<created><datetime dst="true">20121029T102711,64-04</datetime></created>
+<modified><datetime dst="true">20121029T102712,01-04</datetime></modified>
+<revised><datetime dst="true">20121029T102712,00-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121029T102712,00-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121029T102711,73-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
 <item name="$FlagsExt" sign="true"><text>D</text></item>
 <item name="$ImagesWide" sign="true"><number>1</number></item>
 <item name="$ImagesHigh" sign="true"><number>1</number></item>
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
 <item name="$TITLE" sign="true"><text>gplus_16.png</text></item>
-<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
-
-
 <item name="$FileModDT" sign="true"><datetime dst="true">20120802T141951,00-07</datetime></item>
 <item name="$Flags"><text>D34CiQ</text></item>
-<item name="$ImageNames" sign="true"><text>gplus_16.PNG</text></item></note>
+<item name="$ImageNames" sign="true"><text>gplus_16.PNG</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

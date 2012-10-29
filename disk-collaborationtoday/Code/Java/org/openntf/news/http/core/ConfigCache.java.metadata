@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="4.0" replicaid="86257A780060902F" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2be" sequence="703" unid="FCBE991174B31681C1257A4D00415D56">
-<created><datetime dst="true">20120801T135357,34+02</datetime></created>
-<modified><datetime dst="true">20121022T084228,17+02</datetime></modified>
-<revised><datetime dst="true">20121022T084228,16+02</datetime></revised>
-<lastaccessed><datetime dst="true">20121022T084228,17+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120914T085930,81+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Jesse Gallagher/O=Frost</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
-<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="316" sequence="4" unid="1F49A34EDE70CEFE85257AA6004F73AF">
+<created><datetime dst="true">20121029T102749,59-04</datetime></created>
+<modified><datetime dst="true">20121029T102932,15-04</datetime></modified>
+<revised><datetime dst="true">20121029T102932,14-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121029T102932,14-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20121029T102749,66-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>org/openntf/news/http/core/ConfigCache.java</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
