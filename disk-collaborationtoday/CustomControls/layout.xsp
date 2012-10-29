@@ -48,85 +48,18 @@
 		}
 	</script>
 
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="/">Collaboration Today</a>
-				
-				<!-- Dropdown for Categories for tablet only -->
-				<ul class="nav nav-pills visible-tablet">
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-							<xp:label value="Categories "/>
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu">
-							<xc:leftColumnLineItems showHeaders="no"/>
-						</ul>
-					</li>
-				</ul>
-
-				<xp:div styleClass="pull-right">
-					<xp:this.loaded><![CDATA[${javascript:@UserName() != "Anonymous"}]]></xp:this.loaded>
-					<ul class="nav">
-						<li>
-							<xp:link escape="true" text="Log out" id="link1" themeId="Link.Logout"/>
-						</li>
-					</ul>
-				</xp:div>
-
-				<div class="nav-collapse">
-					<ul class="nav">
-						<li class="${javascript:view.pageName == '/home.xsp' ? 'active' : ''}">
-							<xp:link text="Home" themeId="Link.Home"/>
-						</li>
-						<li class="${javascript:view.pageName == '/follow.xsp' ? 'active' : ''}">
-							<xp:link text="Follow" themeId="Link.Follow"/>
-						</li>						
-						<li class="${javascript:view.pageName == '/contact.xsp' ? 'active' : ''}">
-							<xp:link text="Contact" themeId="Link.Contact"/>
-						</li>
-						<li class="${javascript:view.pageName == '/about.xsp' ? 'active' : ''}">
-							<xp:link text="About" themeId="Link.About"/>
-						</li>
-						<xp:panel loaded="${javascript:configCache.isUserModerator(@UserName())}" tagName="li"
-							styleClass="${javascript: !@IsMember(view.pageName, ['/home.xsp', '/follow.xsp', '/about.xsp', '/contact.xsp']) ? 'active' : ''}">
-							<xp:link text="Moderation" themeId="Link.Moderation"/>
-						</xp:panel>
-					</ul>
-				</div>
-			</div>
-			<!-- Dropdown for Categories visible for phone only -->
-			<div class="container-fluid visible-phone">
-				<ul class="nav nav-pills">
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-							<xp:label value="Categories "></xp:label>
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu">
-							<xc:leftColumnLineItems showHeaders="no"></xc:leftColumnLineItems>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	<xc:header showCategories="true"/>
+	
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span2 hidden-iphone hidden-tablet">
-				<xp:callback facetName="leftColumn" disableTheme="true"></xp:callback>
+				<xp:callback facetName="leftColumn" disableTheme="true"/>
 			</div>
 			<div id="mainContent" class="span7">
-				<xp:callback facetName="content" disableTheme="true"></xp:callback>
+				<xp:callback facetName="content" disableTheme="true"/>
 			</div>
 			<div id="rightColumn" class="span3 hidden-phone">
-				<xp:callback facetName="rightColumn" disableTheme="true"></xp:callback>
+				<xp:callback facetName="rightColumn" disableTheme="true"/>
 			</div>
 		</div>
 		<xc:footer></xc:footer>

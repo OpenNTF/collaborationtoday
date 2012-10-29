@@ -6,63 +6,17 @@
 		<xp:this.value><![CDATA[#{javascript:"<style type='text/css'>body {padding-top: 60px; padding-bottom: 40px; }</style>"}]]></xp:this.value>
 	</xp:text>
 
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="/">Collaboration Today</a>
-				
-				<xp:div styleClass="pull-right">
-					<xp:this.loaded><![CDATA[${javascript:@UserName() != "Anonymous"}]]></xp:this.loaded>
-					<ul class="nav">
-						<li>
-							<xp:link escape="true" text="Log out" id="link1">
-								<xp:this.value><![CDATA[#{javascript:"/names.nsf?logout&RedirectTo=/"}]]></xp:this.value>
-							</xp:link>
-						</li>
-					</ul>
-				</xp:div>
-				
-				<div class="nav-collapse">
-					<ul class="nav">
-						<xp:panel tagName="li">
-							<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/home.xsp") "active"}]]></xp:this.styleClass>
-							<a href="home.xsp">Home</a>
-						</xp:panel>
-						<xp:panel tagName="li">
-							<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/follow.xsp") "active"}]]></xp:this.styleClass>
-							<a href="follow.xsp">Follow</a>
-						</xp:panel>
-						<xp:panel tagName="li">
-							<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/about.xsp") "active"}]]></xp:this.styleClass>
-							<a href="about.xsp">About</a>
-						</xp:panel>
-						<xp:panel tagName="li">
-							<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/contact.xsp") "active"}]]></xp:this.styleClass>
-							<a href="contact.xsp">Contact</a>
-						</xp:panel>
-						<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}" tagName="li">
-							<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()!="/home.xsp" && view.getPageName()!="/follow.xsp" && view.getPageName()!="/about.xsp" && view.getPageName()!="/contact.xsp") "active"}]]></xp:this.styleClass>
-							<xp:link text="Moderation" value="mod.xsp"></xp:link>
-						</xp:panel>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+	<xc:header showCategories="false"/>
+	
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span2 ">
-				<xp:callback facetName="leftColumn" id="callback1"></xp:callback>
+				<xp:callback facetName="leftColumn" id="callback1"/>
 			</div>
 			<div id="mainContent" class="span7">
-				<xp:callback facetName="content" id="callback2"></xp:callback>
+				<xp:callback facetName="content" id="callback2"/>
 			</div>
 		</div>
-		<xc:footer></xc:footer>
+		<xc:footer/>
 	</div>
 </xp:view>
