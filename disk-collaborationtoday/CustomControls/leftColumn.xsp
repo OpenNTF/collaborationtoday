@@ -3,7 +3,7 @@
 
 	<div class="sidebar-nav">
 		<ul class="nav nav-list hidden-phone hidden-tablet">
-			<xc:leftColumnLineItems showHeaders="yes"></xc:leftColumnLineItems>			
+			<xc:leftColumnLineItems showHeaders="yes"/>
 		</ul>
 	</div>
 </xp:view>

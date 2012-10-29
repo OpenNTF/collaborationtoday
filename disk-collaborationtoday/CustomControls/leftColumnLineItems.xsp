@@ -1,60 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/home.xsp" && param.filter == null) "active"}]]></xp:this.styleClass>
-		<xp:link text="Top Stories" value="home.xsp"></xp:link>
-	</xp:panel>
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (param.filter == "all") "active"}]]></xp:this.styleClass>
-		<xp:link text="Recent" value="home.xsp?filter=all"></xp:link>
-	</xp:panel>
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (param.filter == "popular") "active"}]]></xp:this.styleClass>
-		<xp:link text="Popular" value="home.xsp?filter=popular"></xp:link>
-	</xp:panel>
+	<li class="${javascript:view.pageName=='/home.xsp' &amp;&amp; param.filter == null ? 'active' : ''}">
+		<xp:link text="Top Stories" value="/home.xsp"></xp:link>
+	</li>
+	<li class="${javascript:param.filter == 'all' ? 'active' : ''}">
+		<xp:link text="Recent" value="/home.xsp?filter=all"></xp:link>
+	</li>
+	<li class="${javascript:param.filter == 'popular' ? 'active' : ''}">
+		<xp:link text="Popular" value="/home.xsp?filter=popular"></xp:link>
+	</li>
  
-	<xp:repeat rows="30"
-			value="#{javascript:configCache.getCategories();}"
-			indexVar="index2" var="category">
-		<xp:panel>
-			<xp:this.rendered><![CDATA[#{javascript:if (compositeData.showHeaders == null) {
-	false;
-}
-else {
-	if (compositeData.showHeaders == "yes") {
-		true;
-	}
-	else {
-		false;
-	}
-}}]]></xp:this.rendered>
-			<li class="nav-header">
-				<xp:text>
-					<xp:this.value><![CDATA[#{javascript:category.getDisplayName()}]]></xp:this.value>
-				</xp:text></li>
+	<xp:repeat rows="30" value="${configCache.categories}" indexVar="index2" var="category">
+		<xp:panel rendered="#{compositeData.showHeaders == 'yes'}" tagName="li" styleClass="nav-header">
+			<xp:text value="#{category.displayName}"/>
 		</xp:panel>
-		<xp:repeat rows="30"
-			value="#{javascript:configCache.getTypesForCategory(category.getID());}"
-			indexVar="index" var="entry">
-			<xp:panel tagName="li">
-				<xp:this.styleClass><![CDATA[#{javascript:if (param.filter == entry.getID()) "active"}]]></xp:this.styleClass>
-				<xp:link>
-					<xp:this.text><![CDATA[#{javascript:if (compositeData.showHeaders == null) {
-	category.getDisplayName() + " - " + entry.getDisplayName();
-}
-else {
-	if (compositeData.showHeaders == "yes") {
-		entry.getDisplayName();
-	}
-	else {
-		category.getDisplayName() + " - " + entry.getDisplayName();
-	}
-}
-}]]></xp:this.text>
-					<xp:this.value><![CDATA[#{javascript:"home.xsp?filter=" + entry.getID()}]]></xp:this.value>
+		
+		<xp:repeat rows="30" value="#{javascript:configCache.getTypesForCategory(category.getID())}" indexVar="index" var="entry">
+			<li class="#{javascript:param.filter == entry.getID() ? 'active' : ''}">
+				<xp:link value="/home.xsp?filter=#{entry.ID}">
+					<xp:this.text><![CDATA[#{javascript:
+						(compositeData.showHeaders != "yes" ? category.getDisplayName() + " - " : "") + entry.getDisplayName()
+					}]]></xp:this.text>
 				</xp:link>
-			</xp:panel>
+			</li>
 		</xp:repeat>
 	</xp:repeat>
 
