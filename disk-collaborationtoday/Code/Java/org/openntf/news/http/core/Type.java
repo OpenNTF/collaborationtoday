@@ -1,7 +1,7 @@
 package org.openntf.news.http.core;
 
 /*
- * © Copyright IBM, 2012
+ * ï¿½ Copyright IBM, 2012
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
  * you may not use this file except in compliance with the License. 
@@ -18,18 +18,19 @@ package org.openntf.news.http.core;
  * Author: Niklas Heidloff - niklas_heidloff@de.ibm.com
  */
 
+import java.util.List;
 import java.util.Vector;
 
 public class Type {
 
 	private String _iD;
 	private String _description;
-	private Vector _moderators;
+	private List<String> _moderators;
 	private String _displayName;
 	private String _categoryId;
 	private String _hashTags;
 
-	public Type(String iD, String displayName, Vector moderators,
+	public Type(String iD, String displayName, List<String> moderators,
 			String description, String categoryId, String hashTags) {
 		_iD = iD;
 		_description = description;
@@ -41,24 +42,24 @@ public class Type {
 			_hashTags = "";
 		}
 	}
-	
+
 	public static Type getEmptyType() {
-		return new Type("", "", new Vector(), "", "", "");
+		return new Type("", "", new Vector<String>(), "", "", "");
 	}
 
 	public String getCategoryId() {
 		return _categoryId;
 	}
-	
+
 	public String getHashTags() {
 		return _hashTags;
 	}
-	
+
 	public String getID() {
 		return _iD;
 	}
 
-	public Vector getModerators() {
+	public List<String> getModerators() {
 		return _moderators;
 	}
 

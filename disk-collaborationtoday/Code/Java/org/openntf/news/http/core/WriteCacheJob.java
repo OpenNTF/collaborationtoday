@@ -32,6 +32,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
+import java.util.Map;
 import lotus.domino.*;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -40,7 +42,6 @@ import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import com.ibm.domino.xsp.module.nsf.ThreadSessionExecutor;
-import java.util.Map;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 import java.io.ByteArrayInputStream;
@@ -48,7 +49,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import lotus.domino.*;
 
 public class WriteCacheJob {
 
@@ -87,6 +87,7 @@ public class WriteCacheJob {
 
 		private boolean cancel;
 
+		@SuppressWarnings("unused")
 		private String _title;
 		private HashSet<Click> _clicks;
 		private String _dbName;
@@ -106,14 +107,11 @@ public class WriteCacheJob {
 					main: if (cancel) {
 						break main;
 					}					
-				HashMap<String, HashSet<Click>> clicksByNID = new HashMap<String, HashSet<Click>>();
+				Map<String, Set<Click>> clicksByNID = new HashMap<String, Set<Click>>();
 
-				Iterator it = _clicks.iterator();
-				for (; it.hasNext();) {
-					Click click = (Click) it.next();
+				for(Click click : _clicks) {
 					if (clicksByNID.containsKey(click.getNID())) {
-						HashSet<Click> clicks = clicksByNID.get(click
-								.getNID());
+						Set<Click> clicks = clicksByNID.get(click.getNID());
 						clicks.add(click);
 						clicks = removeDublicateIPAddresses(clicks);
 						clicksByNID.put(click.getNID(), clicks);
@@ -141,7 +139,7 @@ public class WriteCacheJob {
 								Map.Entry entry = (Map.Entry) iterator
 								.next();
 								String nID = (String) entry.getKey();
-								HashSet<Click> clicksFromOneNID = (HashSet<Click>) entry.getValue();
+								Set<Click> clicksFromOneNID = (Set<Click>) entry.getValue();
 								session.setConvertMime(false) ;
 								doc = newsByIDView.getDocumentByKey(nID,
 										true);
@@ -155,7 +153,7 @@ public class WriteCacheJob {
 
 									doc.replaceItemValue("NClicksTotal", clicksFromOneNID.size());
 									doc.replaceItemValue("NClicksLastWeek", getClicksLastWeek(clicksFromOneNID));
-									saveState(session, clicksFromOneNID, doc, "NClicks");
+									saveState(session, (Serializable)clicksFromOneNID, doc, "NClicks");
 									doc.save();						
 									session.setConvertMime(true) ;
 
@@ -177,12 +175,10 @@ public class WriteCacheJob {
 				return Status.OK_STATUS;
 				}
 
-				int getClicksLastWeek(HashSet<Click> clicks) {
-					int output = 0;					
+				int getClicksLastWeek(Set<Click> clicks) {
+					int output = 0;
 					try {
-						Iterator iterator = clicks.iterator();
-						while (iterator.hasNext()) {
-							Click click = (Click) iterator.next();											
+						for(Click click : clicks) {											
 							Calendar now = Calendar.getInstance();
 							Calendar last = Calendar.getInstance();
 							now.setTime(new Date());
@@ -200,21 +196,17 @@ public class WriteCacheJob {
 					return output;
 				}
 
-				HashSet<Click> removeDublicateIPAddresses(HashSet<Click> clicks) {
-					HashSet<Click> output = new HashSet<Click>();
-					HashMap<String, Click> uniquesOnly = new HashMap<String, Click>();
+				Set<Click> removeDublicateIPAddresses(Set<Click> clicks) {
+					Set<Click> output = new HashSet<Click>();
+					Map<String, Click> uniquesOnly = new HashMap<String, Click>();
 
-					Iterator iterator = clicks.iterator();
-					while (iterator.hasNext()) {
-						Click click = (Click) iterator.next();
+					for(Click click : clicks) {
 						if (!uniquesOnly.containsKey(click.getIP())) {
 							uniquesOnly.put(click.getIP(), click);
 						}
 					}
-					Iterator iterator2 = uniquesOnly.entrySet().iterator();
-					while (iterator2.hasNext()) {
-						Map.Entry entry = (Map.Entry) iterator2.next();
-						Click click = (Click)entry.getValue();
+					for(Map.Entry<String, Click> entry : uniquesOnly.entrySet()) {
+						Click click = entry.getValue();
 						output.add(click);
 					}
 					return output;

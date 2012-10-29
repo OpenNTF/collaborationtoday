@@ -24,10 +24,7 @@ package org.openntf.news.http.core;
  * .getColumnValues() once per entry, and to use .setPreferJavaDates
  */
 
-import java.util.HashMap;
-import java.util.TreeMap;
-import java.util.Vector;
-import java.util.List;
+import java.util.*;
 import lotus.domino.Database;
 import lotus.domino.NotesException;
 import lotus.domino.View;
@@ -114,16 +111,15 @@ public class PersonsCache {
 		return person;
 	}
 
-	public Vector getPersonsForCombobox() {
+	public List<String> getPersonsForCombobox() {
 		initialize(); 
-		Vector output = null;
-		output = new Vector();
+		List<String> output = new Vector<String>();
 
 		PersonComparator personComparator =  new PersonComparator(_persons);
-		TreeMap<String,Person> sortedPersons = new TreeMap(personComparator);
+		Map<String, Person> sortedPersons = new TreeMap<String, Person>(personComparator);
 		sortedPersons.putAll(_persons);
 
-		for (String key : sortedPersons.keySet()) {       
+		for(String key : sortedPersons.keySet()) {       
 			Person person = (Person)sortedPersons.get(key);
 			output.add(person.getDisplayName() + "|" + person.getPID());
 		}

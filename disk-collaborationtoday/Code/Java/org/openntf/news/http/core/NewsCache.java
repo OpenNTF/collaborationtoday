@@ -30,6 +30,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.List;
+import java.util.Map;
 import javax.faces.context.FacesContext;
 import lotus.domino.Database;
 import lotus.domino.NotesException;
@@ -41,12 +42,12 @@ import com.ibm.xsp.extlib.util.ExtLibUtil;
 public class NewsCache {
 
 	private boolean _isCached = false;
-	private ArrayList<NewsEntry> _newsEntries;
-	private ArrayList<NewsEntry> _spotlightNewsEntries;
-	private ArrayList<NewsEntry> _topTopStories;
-	private ArrayList<NewsEntry> _popularNewsEntries;
-	private HashMap<String, ArrayList<NewsEntry>> _typedNewsEntries;
-	private HashMap<String, ArrayList<NewsEntry>> _categorizedTopNewsEntries;
+	private List<NewsEntry> _newsEntries;
+	private List<NewsEntry> _spotlightNewsEntries;
+	private List<NewsEntry> _topTopStories;
+	private List<NewsEntry> _popularNewsEntries;
+	private Map<String, List<NewsEntry>> _typedNewsEntries;
+	private Map<String, List<NewsEntry>> _categorizedTopNewsEntries;
 	private Date _lastUpdated;
 
 	public NewsCache() {
@@ -69,7 +70,7 @@ public class NewsCache {
 		initialize();
 	}
 
-	public HashMap<String, ArrayList<NewsEntry>> getCategorizedTopNewsEntries() {
+	public Map<String, List<NewsEntry>> getCategorizedTopNewsEntries() {
 		initialize();
 		return _categorizedTopNewsEntries;
 	}
@@ -100,8 +101,8 @@ public class NewsCache {
 		_newsEntries = new ArrayList<NewsEntry>();
 		_spotlightNewsEntries = new ArrayList<NewsEntry>();
 		_topTopStories = new ArrayList<NewsEntry>();
-		_typedNewsEntries = new HashMap<String, ArrayList<NewsEntry>>();
-		_categorizedTopNewsEntries = new HashMap<String, ArrayList<NewsEntry>>();
+		_typedNewsEntries = new HashMap<String, List<NewsEntry>>();
+		_categorizedTopNewsEntries = new HashMap<String, List<NewsEntry>>();
 
 		Database db = ExtLibUtil.getCurrentDatabase();
 		View view = null;
@@ -187,12 +188,12 @@ public class NewsCache {
 			_spotlightNewsEntries = sortSpotlightStories(_spotlightNewsEntries);
 			_topTopStories = sortTopStories(_topTopStories);
 			if (_categorizedTopNewsEntries != null) {
-				ArrayList<Category> categories = config.getCategories();
+				List<Category> categories = config.getCategories();
 				if (categories != null) {
 					Iterator it = categories.iterator();
 					for (; it.hasNext();) {
 						Category category = (Category) it.next();
-						ArrayList<NewsEntry> catTopNews = _categorizedTopNewsEntries.get(category.getID());
+						List<NewsEntry> catTopNews = _categorizedTopNewsEntries.get(category.getID());
 						catTopNews = sortTopStories(catTopNews);
 						_categorizedTopNewsEntries.put(category.getID(),
 								catTopNews);
@@ -228,11 +229,11 @@ public class NewsCache {
 		init();
 	}
 
-	public ArrayList<NewsEntry> getEntriesByPopularity() {
+	public List<NewsEntry> getEntriesByPopularity() {
 		initialize();
 		if (_popularNewsEntries != null)
 			return _popularNewsEntries;
-		HashMap<String, NewsEntry> news = new HashMap<String, NewsEntry>();
+		Map<String, NewsEntry> news = new HashMap<String, NewsEntry>();
 
 		_popularNewsEntries = new ArrayList<NewsEntry>();
 		for (int i = 0; i < _newsEntries.size(); i++) {
@@ -262,23 +263,23 @@ public class NewsCache {
 		return _popularNewsEntries;
 	}
 
-	public ArrayList<NewsEntry> getEntries() {
+	public List<NewsEntry> getEntries() {
 		initialize();
 		return _newsEntries;
 	}
 
-	public ArrayList<NewsEntry> getEntriesByType(String tID) {
+	public List<NewsEntry> getEntriesByType(String tID) {
 		initialize();
 		return getTypedEntriesList(tID);
 	}
 
-	public ArrayList<NewsEntry> getSpotlightEntries() {
+	public List<NewsEntry> getSpotlightEntries() {
 		initialize();
 		return _spotlightNewsEntries;
 	}
 
 	public NewsEntry getSpotlightEntry(int position) {
-		ArrayList<NewsEntry> entries = getSpotlightEntries();
+		List<NewsEntry> entries = getSpotlightEntries();
 		if (entries == null)
 			return null;
 		if (position < entries.size())
@@ -286,18 +287,18 @@ public class NewsCache {
 		return null;
 	}
 
-	public ArrayList<NewsEntry> getTopStories(String cID) {
+	public List<NewsEntry> getTopStories(String cID) {
 		initialize();
 		return getCategorizedTopEntriesList(cID);
 	}
 
-	public ArrayList<NewsEntry> getTopTopStories() {
+	public List<NewsEntry> getTopTopStories() {
 		initialize();
 		return _topTopStories;
 	}
 
-	private ArrayList<NewsEntry> sortTopStories(ArrayList<NewsEntry> newsEntries) {
-		ArrayList<NewsEntry> output = new ArrayList<NewsEntry>();
+	private List<NewsEntry> sortTopStories(List<NewsEntry> newsEntries) {
+		List<NewsEntry> output = new ArrayList<NewsEntry>();
 		if (newsEntries == null)
 			return null;
 		for (int i = 0; i < newsEntries.size(); i++) {
@@ -323,9 +324,9 @@ public class NewsCache {
 		return output;
 	}
 
-	private ArrayList<NewsEntry> sortSpotlightStories(
-			ArrayList<NewsEntry> newsEntries) {
-		ArrayList<NewsEntry> output = new ArrayList<NewsEntry>();
+	private List<NewsEntry> sortSpotlightStories(
+			List<NewsEntry> newsEntries) {
+		List<NewsEntry> output = new ArrayList<NewsEntry>();
 		for (int i = 0; i < newsEntries.size(); i++) {
 			NewsEntry newsEntry = newsEntries.get(i);
 			if (newsEntry.getSpotlightPosition() == 1)

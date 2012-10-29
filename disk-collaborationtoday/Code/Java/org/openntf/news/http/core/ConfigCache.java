@@ -25,14 +25,13 @@ package org.openntf.news.http.core;
  */
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Vector;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import lotus.domino.Database;
 import lotus.domino.Document;
 import lotus.domino.Item;
-import lotus.domino.Name;
 import lotus.domino.NotesException;
 import lotus.domino.View;
 import lotus.domino.ACL;
@@ -44,8 +43,8 @@ import com.ibm.xsp.extlib.util.ExtLibUtil;
 public class ConfigCache {
 
 	private boolean _isCached = false;
-	private ArrayList<Type> _types;
-	private ArrayList<Category> _categories;
+	private List<Type> _types;
+	private List<Category> _categories;
 	private String _captchaPublicKey;
 	private String _captchaPrivateKey;
 	private String _analyticsJS;
@@ -63,12 +62,12 @@ public class ConfigCache {
 		initialize();
 	}
 
-	public ArrayList<Type> getTypes() {
+	public List<Type> getTypes() {
 		initialize();
 		return _types;
 	}
 
-	public ArrayList<Category> getCategories() {
+	public List<Category> getCategories() {
 		initialize();
 		return _categories;
 	}
@@ -120,10 +119,10 @@ public class ConfigCache {
 					entry.setPreferJavaDates(true);
 					List<Object> columnValues = entry.getColumnValues();
 
-					Vector<Object> moderators = new Vector<Object>();
+					List<String> moderators = new Vector<String>();
 					Document doc = entry.getDocument();
 					Item moderatorsItem = doc.getFirstItem("TModerators");
-					if (moderatorsItem != null) moderators = moderatorsItem.getValues();
+					if (moderatorsItem != null) moderators = (Vector<String>)moderatorsItem.getValues();
 					Type type = new Type((String)columnValues.get(2),
 							(String)columnValues.get(3),
 							moderators,
@@ -231,18 +230,15 @@ public class ConfigCache {
 		return Category.getEmptyCategory();
 	}
 
-	public Vector<String> getTypesForCurrentUserCombobox() {
-		Vector<String> output = null;
+	public List<String> getTypesForCurrentUserCombobox() {
+		List<String> output = null;
 		try {
-			String userName; 
-			userName = com.ibm.xsp.extlib.social.SocialServicesFactory.getInstance().getAuthenticatedUserId(javax.faces.context.FacesContext.getCurrentInstance());
-			Name name = com.ibm.xsp.extlib.util.ExtLibUtil.getCurrentSession().createName(userName);
-			userName = name.getCommon();
+			String userName = MiscUtils.getCurrentCommonName();
 			initialize();  
 
 			output = new Vector<String>();
 			for(Type type : _types) {
-				Vector moderators = type.getModerators();
+				List<String> moderators = type.getModerators();
 				if (moderators != null) {
 					if (moderators.contains(userName)) {
 						Category category = getCategory(type.getCategoryId());
@@ -251,57 +247,45 @@ public class ConfigCache {
 					}
 				}
 			}
-		} catch (NotesException e) { }
+		} catch (NotesException e) { e.printStackTrace(); }
 		return output;
 	}
 
-	public Vector getCategoriesCombobox() {		
-		Vector output = new Vector();
+	public Vector<String> getCategoriesCombobox() {		
+		Vector<String> output = new Vector<String>();
 		output.add("Top|top");
 		initialize();  
 		if (_categories != null) {
-			Iterator it = _categories.iterator();
-			for (; it.hasNext();) {
-				Category category = (Category)it.next();
+			for(Category category : _categories) {
 				output.add(category.getDisplayName() + "|" + category.getID());
 			}
 		}
 		return output;
 	}
 
-	public Vector getTypesForCurrentUser() {
-		String user;
-		Vector output = null;
+	public List<Type> getTypesForCurrentUser() {
+		List<Type> output = null;
 		try {
-			String userName; 
-			userName = com.ibm.xsp.extlib.social.SocialServicesFactory.getInstance().getAuthenticatedUserId(javax.faces.context.FacesContext.getCurrentInstance());
-			Name name = com.ibm.xsp.extlib.util.ExtLibUtil.getCurrentSession().createName(userName);
-			userName = name.getCommon();
+			String userName = MiscUtils.getCurrentCommonName();
 			initialize();  
 
-			output = new Vector();
-			Iterator it = _types.iterator();
-			for (; it.hasNext();) {
-				Type type = (Type)it.next();
-				Vector moderators = type.getModerators();
+			output = new Vector<Type>();
+			for(Type type : _types) {
+				List<String> moderators = type.getModerators();
 				if (moderators != null) {
 					if (moderators.contains(userName))
 						output.add(type);
 				}
 			}
-		}
-		catch (NotesException e) {
-		}
+		} catch (NotesException e) { }
 		return output;
 	}
 
-	public Vector getTypesForCategory(String categoryId) {		
+	public Vector<Type> getTypesForCategory(String categoryId) {		
 		initialize();
-		Vector output = new Vector();
+		Vector<Type> output = new Vector<Type>();
 		if (_types == null) return output;
-		Iterator it = _types.iterator();
-		for (; it.hasNext();) {
-			Type type = (Type)it.next();        	
+		for(Type type : _types) {        	
 			if (categoryId.equalsIgnoreCase(type.getCategoryId())) {
 				output.add(type);
 			}
@@ -309,10 +293,10 @@ public class ConfigCache {
 		return output;		
 	}
 
-	private HashMap<String, Boolean> _moderators;
-	private HashMap<String, Boolean> _topStoriesModerators;
-	private HashMap<String, Boolean> _spotlightModerators;
-	private HashMap<String, Boolean> _avatarModerators;
+	private Map<String, Boolean> _moderators;
+	private Map<String, Boolean> _topStoriesModerators;
+	private Map<String, Boolean> _spotlightModerators;
+	private Map<String, Boolean> _avatarModerators;
 
 	public boolean isUserAvatarModerator(String user) {
 		if (_avatarModerators == null) _avatarModerators = new HashMap<String, Boolean>();
@@ -356,11 +340,9 @@ public class ConfigCache {
 
 	private boolean hasUserRole(String user, String roleName) {
 		boolean output = false;
-		Vector roles = getUserRoles(user);
+		List<String> roles = getUserRoles(user);
 		if (roles != null) {
-			Iterator it = roles.iterator();
-			for (; it.hasNext();) {
-				String role = (String)it.next();        	
+			for(String role : roles) {
 				if (role.equalsIgnoreCase(roleName)) {
 					output = true;
 				}
@@ -369,16 +351,19 @@ public class ConfigCache {
 		return output;
 	}
 
-	private Vector getUserRoles(String user) {
-		Vector roles = null;
+	@SuppressWarnings("unchecked")
+	private List<String> getUserRoles(String user) {
+		List<String> roles = null;
 		Database db = ExtLibUtil.getCurrentDatabase();
 		try {
 			ACL acl = db.getACL();
 			if (acl != null) {
 				ACLEntry entry = acl.getEntry(user);
 				if (entry != null) {
-					roles = entry.getRoles();
+					roles = (List<String>)entry.getRoles();
+					entry.recycle();
 				}
+				acl.recycle();
 			}
 		}
 		catch (Exception e) {

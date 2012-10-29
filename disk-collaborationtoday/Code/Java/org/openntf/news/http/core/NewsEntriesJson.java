@@ -19,6 +19,8 @@ package org.openntf.news.http.core;
  */
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.HashMap;
 import javax.faces.context.FacesContext;
 import java.net.URLEncoder;
@@ -131,7 +133,7 @@ public class NewsEntriesJson {
 		ConfigCache configCache = (ConfigCache) context.getApplication().getVariableResolver().resolveVariable(context, "configCache");
 		PersonsCache personsCache = (PersonsCache) context.getApplication().getVariableResolver().resolveVariable(context, "personsCache");
 		try {
-			ArrayList<NewsEntry> newsEntries;
+			List<NewsEntry> newsEntries;
 
 			if (_filter.equalsIgnoreCase(FILTER_ALL)) {
 				newsEntries = newsCache.getEntries();
@@ -143,10 +145,10 @@ public class NewsEntriesJson {
 					if (newsEntries == null) {
 						newsEntries = new java.util.ArrayList<NewsEntry>();
 					}
-					ArrayList<NewsEntry> moreEntries;					
-					HashMap<String, ArrayList<NewsEntry>> categorizedTopNewsEntries = newsCache.getCategorizedTopNewsEntries();
+					List<NewsEntry> moreEntries;					
+					Map<String, List<NewsEntry>> categorizedTopNewsEntries = newsCache.getCategorizedTopNewsEntries();
 					if (categorizedTopNewsEntries != null) {
-						ArrayList<Category> categories = configCache.getCategories();
+						List<Category> categories = configCache.getCategories();
 						if (categories != null) {
 							for(Category category : categories) {
 								moreEntries = categorizedTopNewsEntries.get(category.getID());
