@@ -3,18 +3,18 @@
 
 	<xp:text escape="false">
 		<xp:this.value><![CDATA[#{javascript:
-var output = "";
-var types:java.util.ArrayList;
-types = configCache.getTypes();
-if (types != null) {
-	var it = types.iterator();
-    for (; it.hasNext();) {
-	   	var type = it.next();
-	   	output = output + "<link title='" + configCache.getCategory(type.getCategoryId()).getDisplayName() + ' - ' + type.getDisplayName() + "' type='application/atom+xml' rel='alternate' href='./feed.xsp?filter=" + type.getID() + "'>";
-	}
-}
-output
-}]]></xp:this.value>
+			var output = "";
+			var types:java.util.ArrayList;
+			types = configCache.getTypes();
+			if (types != null) {
+				var it = types.iterator();
+			    for (; it.hasNext();) {
+				   	var type = it.next();
+				   	output = output + "<link title='" + configCache.getCategory(type.getCategoryId()).getDisplayName() + ' - ' + type.getDisplayName() + "' type='application/atom+xml' rel='alternate' href='./feed.xsp?filter=" + type.getID() + "'>";
+				}
+			}
+			output
+		}]]></xp:this.value>
 	</xp:text>
 	
 	<!-- Fix for IE8 -->
@@ -23,28 +23,28 @@ output
 	</xp:text>
 	
 	<xp:this.resources>
-		<xp:linkResource href="./feed.xsp" type="application/rss+xml" title="Top Stories" rel="alternate"></xp:linkResource>
-		<xp:linkResource href="./feed.xsp?filter=all" type="application/rss+xml" title="Recent" rel="alternate"></xp:linkResource>
-		<xp:linkResource href="./feed.xsp?filter=popular" type="application/rss+xml" title="Popular" rel="alternate"></xp:linkResource>
-		<xp:linkResource href="./feed.xsp?filter=spotlight" type="application/rss+xml" title="Spotlight" rel="alternate"></xp:linkResource>
+		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp" type="application/rss+xml" title="Top Stories" rel="alternate"/>
+		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=all" type="application/rss+xml" title="Recent" rel="alternate"/>
+		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=popular" type="application/rss+xml" title="Popular" rel="alternate"/>
+		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=spotlight" type="application/rss+xml" title="Spotlight" rel="alternate"/>
 		<xp:metaData name="description" content="Collaboration Today - News about IBM Collaboration Solutions"></xp:metaData>
 		
 		<!-- Facebook Open Graph image: used to proide an icon for Facebook shares -->
 		<xp:headTag tagName="meta" rendered="true" loaded="true">
-		    <xp:this.attributes>
-		        <xp:parameter name="property" value="og:image"></xp:parameter>
-		        <xp:parameter name="content" value="http://collaborationtoday.info/collaborationtoday_icon.png"></xp:parameter>
-		    </xp:this.attributes>
+			<xp:this.attributes>
+				<xp:parameter name="property" value="og:image"/>
+				<xp:parameter name="content" value="http://collaborationtoday.info/collaborationtoday_icon.png"/>
+			</xp:this.attributes>
 		</xp:headTag>
 	</xp:this.resources>
 	
 	<script type="text/javascript">
 		function logClick (url) {
-		url = encodeURI(url);
-		var httpRequest = new XMLHttpRequest();
-		httpRequest.open("GET", url, true );
-		httpRequest.timeout = 1;
-		httpRequest.send(null);
+			url = encodeURI(url);
+			var httpRequest = new XMLHttpRequest();
+			httpRequest.open("GET", url, true );
+			httpRequest.timeout = 1;
+			httpRequest.send(null);
 		}
 	</script>
 
@@ -62,11 +62,11 @@ output
 				<ul class="nav nav-pills visible-tablet">
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-							<xp:label value="Categories "></xp:label>
+							<xp:label value="Categories "/>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu">
-							<xc:leftColumnLineItems showHeaders="no"></xc:leftColumnLineItems>
+							<xc:leftColumnLineItems showHeaders="no"/>
 						</ul>
 					</li>
 				</ul>
@@ -75,34 +75,28 @@ output
 					<xp:this.loaded><![CDATA[${javascript:@UserName() != "Anonymous"}]]></xp:this.loaded>
 					<ul class="nav">
 						<li>
-							<xp:link escape="true" text="Log out" id="link1">
-								<xp:this.value><![CDATA[#{javascript:"/names.nsf?logout&RedirectTo=/"}]]></xp:this.value>
-							</xp:link>
+							<xp:link escape="true" text="Log out" id="link1" themeId="Link.Logout"/>
 						</li>
 					</ul>
 				</xp:div>
 
 				<div class="nav-collapse">
 					<ul class="nav">
-						<xp:panel tagName="li">
-							<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/home.xsp") "active"}]]></xp:this.styleClass>
-							<a href="/">Home</a>
-						</xp:panel>
-						<xp:panel tagName="li">
-							<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/follow.xsp") "active"}]]></xp:this.styleClass>
-							<a href="follow.xsp">Follow</a>
-						</xp:panel>						
-						<xp:panel tagName="li">
-							<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/contact.xsp") "active"}]]></xp:this.styleClass>
-							<a href="contact.xsp">Contact</a>
-						</xp:panel>
-						<xp:panel tagName="li">
-							<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/about.xsp") "active"}]]></xp:this.styleClass>
-							<a href="about.xsp">About</a>
-						</xp:panel>
-						<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}" tagName="li">
-							<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()!="/home.xsp" && view.getPageName()!="/follow.xsp" && view.getPageName()!="/about.xsp" && view.getPageName()!="/contact.xsp") "active"}]]></xp:this.styleClass>
-							<xp:link text="Moderation" value="add.xsp"></xp:link>
+						<li class="${javascript:view.pageName == '/home.xsp' ? 'active' : ''}">
+							<xp:link text="Home" themeId="Link.Home"/>
+						</li>
+						<li class="${javascript:view.pageName == '/follow.xsp' ? 'active' : ''}">
+							<xp:link text="Follow" themeId="Link.Follow"/>
+						</li>						
+						<li class="${javascript:view.pageName == '/contact.xsp' ? 'active' : ''}">
+							<xp:link text="Contact" themeId="Link.Contact"/>
+						</li>
+						<li class="${javascript:view.pageName == '/about.xsp' ? 'active' : ''}">
+							<xp:link text="About" themeId="Link.About"/>
+						</li>
+						<xp:panel loaded="${javascript:configCache.isUserModerator(@UserName())}" tagName="li"
+							styleClass="${javascript: !@IsMember(view.pageName, ['/home.xsp', '/follow.xsp', '/about.xsp', '/contact.xsp']) ? 'active' : ''}">
+							<xp:link text="Moderation" themeId="Link.Moderation"/>
 						</xp:panel>
 					</ul>
 				</div>

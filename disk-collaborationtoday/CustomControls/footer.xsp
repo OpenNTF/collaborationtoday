@@ -4,13 +4,13 @@
 	<footer>
 		<p>
 			<a href="http://www.openntf.org">Hosted by OpenNTF</a>
-			<xp:label value=" | "></xp:label>
+			<xp:label value=" | "/>
 			<a href="http://openntf.org/legal/terms">Terms of use</a>
-			<xp:label value=" | "></xp:label>
+			<xp:label value=" | "/>
 			<a href="http://openntf.org/legal/privacypolicy">Privacy Policy</a>
-			<xp:label value=" | "></xp:label>
+			<xp:label value=" | "/>
 			<a href="http://openntf.org/Internal/home.nsf/dx/Contact_OpenNTF">Contact OpenNTF</a>
-			<xp:label value=" | "></xp:label>
+			<xp:label value=" | "/>
 			<a href="http://openntf.org/Internal/home.nsf/dx/Follow_OpenNTF">Follow OpenNTF</a>
 		</p>
 	</footer>

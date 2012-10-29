@@ -59,8 +59,8 @@
 								<xp:text value="#{category.displayName}"/>
 							</span>
 							&#160;
-							<br></br>
-							<br></br>
+							<br />
+							<br />
 						</xp:panel>
 						<xp:repeat rows="30" value="#{javascript:configCache.getTypesForCategory(category.getID())}" indexVar="index" var="entry">
 							<xp:panel>
@@ -71,7 +71,7 @@
 										moderators == null ? "" : @Implode(moderators, ", ")
 									}]]></xp:this.value>
 								</xp:text>
-								<br></br>
+								<br />
 							</xp:panel>
 						</xp:repeat>
 						<br></br>

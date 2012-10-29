@@ -2,17 +2,13 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 
 	<xp:this.resources>
-		<xp:styleSheet href="/pager.css"></xp:styleSheet>
+		<xp:styleSheet href="/pager.css"/>
 	</xp:this.resources>
 	
-	<xp:pager id="pager3" 
-		for="#{javascript:compositeData.pagerFor}"
-		styleClass="paginationwrapper">
-		<xp:this.rendered><![CDATA[#{javascript:if(getComponent(compositeData.pagerFor).getRowCount() > 0){
-	return true;
-}else{
-	return false;
-}}]]></xp:this.rendered>
+	<xp:pager id="pager3" for="#{javascript:compositeData.pagerFor}" styleClass="paginationwrapper">
+		<xp:this.rendered><![CDATA[#{javascript:
+			getComponent(compositeData.pagerFor).getRowCount() > 0
+		}]]></xp:this.rendered>
 		<xp:pagerControl id="pagerControl1" type="Previous"
 			styleClass="icon-chevron-left" value="" image="/transparent.gif">
 		</xp:pagerControl>

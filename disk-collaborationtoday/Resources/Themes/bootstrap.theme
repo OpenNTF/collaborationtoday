@@ -61,6 +61,20 @@
 		</property>
 	</control>
 	<control>
+		<name>Link.About</name>
+		<property>
+			<name>value</name>
+			<value>/about.xsp</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Moderation</name>
+		<property>
+			<name>value</name>
+			<value>/add.xsp</value>
+		</property>
+	</control>
+	<control>
 		<name>Link.Lotus</name>
 		<property>
 			<name>value</name>
@@ -79,6 +93,13 @@
 		<property>
 			<name>value</name>
 			<value>/home.xsp?filter=popular</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Logout</name>
+		<property>
+			<name>value</name>
+			<value>/.ibmxspres/domino/names.nsf?Logout&amp;RedirectTo=/</value>
 		</property>
 	</control>
 </theme>
