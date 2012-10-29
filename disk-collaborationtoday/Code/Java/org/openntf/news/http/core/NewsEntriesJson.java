@@ -1,7 +1,7 @@
 package org.openntf.news.http.core;
 
 /*
- * © Copyright IBM, 2012
+ * ï¿½ Copyright IBM, 2012
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
  * you may not use this file except in compliance with the License. 
@@ -19,21 +19,8 @@ package org.openntf.news.http.core;
  */
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Vector;
-
 import javax.faces.context.FacesContext;
-
-import com.ibm.domino.xsp.module.nsf.NotesContext;
-
-import lotus.domino.Database;
-import lotus.domino.Session;
-import lotus.domino.NotesException;
-import lotus.domino.View;
-import lotus.domino.ViewEntry;
-import lotus.domino.ViewNavigator;
 import java.net.URLEncoder;
 
 public class NewsEntriesJson {
@@ -131,7 +118,7 @@ public class NewsEntriesJson {
 
 	public String getJson() {
 		String output;
-		
+
 		if (_format.equalsIgnoreCase(FORMAT_JSON)) {
 			output = "[";
 		} else {
@@ -140,7 +127,7 @@ public class NewsEntriesJson {
 
 		FacesContext context = FacesContext.getCurrentInstance();
 		NewsCache newsCache = (NewsCache) context.getApplication()
-				.getVariableResolver().resolveVariable(context, "newsCache");
+		.getVariableResolver().resolveVariable(context, "newsCache");
 		ConfigCache configCache = (ConfigCache) context.getApplication().getVariableResolver().resolveVariable(context, "configCache");
 		PersonsCache personsCache = (PersonsCache) context.getApplication().getVariableResolver().resolveVariable(context, "personsCache");
 		try {
@@ -161,16 +148,14 @@ public class NewsEntriesJson {
 					if (categorizedTopNewsEntries != null) {
 						ArrayList<Category> categories = configCache.getCategories();
 						if (categories != null) {
-							Iterator it = categories.iterator();
-					        for (; it.hasNext();) {
-					        	Category category = (Category)it.next();
-					        	moreEntries = categorizedTopNewsEntries.get(category.getID());
+							for(Category category : categories) {
+								moreEntries = categorizedTopNewsEntries.get(category.getID());
 								if (moreEntries != null) {
 									for (int a = 0; a < moreEntries.size(); a++) {
 										newsEntries.add(moreEntries.get(a));
 									}
 								}					        	
-					        }
+							}
 						}
 					}
 				} else {
@@ -189,29 +174,29 @@ public class NewsEntriesJson {
 			if (newsEntries != null) {
 				int amount = newsEntries.size();
 				if (amount > getCountAsInt()) amount = getCountAsInt();
-				
+
 				for (int i = 0; i < amount; i++) {
 					NewsEntry entry = newsEntries.get(i);					
 
 					output = output + "{" + 
-						"'" + NEWS_ENTRY_ID + "': '" + entry.getID() + "', " + 
-						"'" + NEWS_ENTRY_TYPE_DISPLAY_NAME+ "': '" + configCache.getType(entry.getTID()).getDisplayName() + "', " +
-						"'" + NEWS_ENTRY_TITLE + "': '" + encode(entry.getTitle()) + "', " + 
-						"'" + NEWS_ENTRY_PERSON_ID + "': '" + entry.getPID() + "', " +
-						"'" + NEWS_ENTRY_PERSON_DISPLAY_NAME+ "': '" + personsCache.getPerson(entry.getPID()).getDisplayName() + "', " +
-						"'" + NEWS_ENTRY_LINK + "': '" + entry.getLink() + "', " +
-						"'" + NEWS_ENTRY_IMAGE_URL + "': '" + entry.getImageURL() + "', " +
-						"'" + NEWS_ENTRY_ABSTRACT_ENCODED + "': '" + encode(entry.getAbstract()) + "', " + 
-						"'" + NEWS_ENTRY_MODERATION_DATE + "': '" + entry.getModerationDate() + "', " +
-						"'" + NEWS_ENTRY_PUBLICATION_DATE + "': '" + entry.getPublicationDate() + "', " +
-						"'" + NEWS_ENTRY_IS_SPOTLIGHT + "': " + entry.isSpotlight() + ", " +
-						"'" + NEWS_ENTRY_SPOTLIGHT_SENTENCE + "': '" + encode(entry.getSpotlightSentence()) + "', " +
-						"'" + NEWS_ENTRY_IS_TOP_STORY + "': " + entry.isTopStory() + ", " +
-						"'" + NEWS_ENTRY_TOP_STORY_CATEGORY + "': '" + entry.getTopStoryCategory() + "', " +
-						"'" + NEWS_ENTRY_TOP_STORY_POSITION + "': " + entry.getTopStoryPosition() + ", " +
-						"'" + NEWS_ENTRY_CLICKS_TOTAL + "': " + entry.getClicksTotal() + ", " +
-						"'" + NEWS_ENTRY_CLICKS_LAST_WEEK + "': " + entry.getClicksLastWeek() + ", " +
-						"'" + NEWS_ENTRY_TYPE_ID+ "': '" + entry.getTID() + "'},";
+					"'" + NEWS_ENTRY_ID + "': '" + entry.getID() + "', " + 
+					"'" + NEWS_ENTRY_TYPE_DISPLAY_NAME+ "': '" + configCache.getType(entry.getTID()).getDisplayName() + "', " +
+					"'" + NEWS_ENTRY_TITLE + "': '" + encode(entry.getTitle()) + "', " + 
+					"'" + NEWS_ENTRY_PERSON_ID + "': '" + entry.getPID() + "', " +
+					"'" + NEWS_ENTRY_PERSON_DISPLAY_NAME+ "': '" + personsCache.getPerson(entry.getPID()).getDisplayName() + "', " +
+					"'" + NEWS_ENTRY_LINK + "': '" + entry.getLink() + "', " +
+					"'" + NEWS_ENTRY_IMAGE_URL + "': '" + entry.getImageURL() + "', " +
+					"'" + NEWS_ENTRY_ABSTRACT_ENCODED + "': '" + encode(entry.getAbstract()) + "', " + 
+					"'" + NEWS_ENTRY_MODERATION_DATE + "': '" + entry.getModerationDate() + "', " +
+					"'" + NEWS_ENTRY_PUBLICATION_DATE + "': '" + entry.getPublicationDate() + "', " +
+					"'" + NEWS_ENTRY_IS_SPOTLIGHT + "': " + entry.isSpotlight() + ", " +
+					"'" + NEWS_ENTRY_SPOTLIGHT_SENTENCE + "': '" + encode(entry.getSpotlightSentence()) + "', " +
+					"'" + NEWS_ENTRY_IS_TOP_STORY + "': " + entry.isTopStory() + ", " +
+					"'" + NEWS_ENTRY_TOP_STORY_CATEGORY + "': '" + entry.getTopStoryCategory() + "', " +
+					"'" + NEWS_ENTRY_TOP_STORY_POSITION + "': " + entry.getTopStoryPosition() + ", " +
+					"'" + NEWS_ENTRY_CLICKS_TOTAL + "': " + entry.getClicksTotal() + ", " +
+					"'" + NEWS_ENTRY_CLICKS_LAST_WEEK + "': " + entry.getClicksLastWeek() + ", " +
+					"'" + NEWS_ENTRY_TYPE_ID+ "': '" + entry.getTID() + "'},";
 				}
 			}
 			if (_format.equalsIgnoreCase(FORMAT_JSON)) {
@@ -233,7 +218,7 @@ public class NewsEntriesJson {
 
 		return output;
 	}
-	
+
 	private String encode(String toBeEncoded) {	
 		if (toBeEncoded == null) return "";
 		String output = null;
@@ -244,6 +229,6 @@ public class NewsEntriesJson {
 		catch (Exception e) {
 			output = toBeEncoded.trim();
 		}
-        return output;
+		return output;
 	}
 }

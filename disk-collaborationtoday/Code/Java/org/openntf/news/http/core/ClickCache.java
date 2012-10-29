@@ -18,7 +18,6 @@ package org.openntf.news.http.core;
  * Author: Niklas Heidloff - niklas_heidloff@de.ibm.com
  */
 
-import java.util.Iterator;
 import java.util.HashSet;
 import java.util.Date;
 import com.ibm.xsp.extlib.util.ExtLibUtil;
@@ -82,6 +81,7 @@ public class ClickCache {
 			userName = com.ibm.xsp.extlib.social.SocialServicesFactory.getInstance().getAuthenticatedUserId(javax.faces.context.FacesContext.getCurrentInstance());
 			Name name = com.ibm.xsp.extlib.util.ExtLibUtil.getCurrentSession().createName(userName);
 			userName = name.getCommon();
+			name.recycle();
 
 			if (userName.equalsIgnoreCase("Anonymous")) {
 				return false;

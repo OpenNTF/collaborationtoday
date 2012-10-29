@@ -216,9 +216,7 @@ public class ConfigCache {
 	public Type getType(String tID) {
 		initialize();
 		if (_types == null) return Type.getEmptyType();
-		Iterator it = _types.iterator();
-		for (; it.hasNext();) {
-			Type type = (Type)it.next();
+		for(Type type : _types) {
 			if (type.getID().equalsIgnoreCase(tID)) return type;
 		}
 		return Type.getEmptyType();
@@ -227,17 +225,14 @@ public class ConfigCache {
 	public Category getCategory(String cID) {
 		initialize();
 		if (_categories == null) return Category.getEmptyCategory();
-		Iterator it = _categories.iterator();
-		for (; it.hasNext();) {
-			Category category = (Category)it.next();
+		for(Category category : _categories) {
 			if (category.getID().equalsIgnoreCase(cID)) return category;
 		}
 		return Category.getEmptyCategory();
 	}
 
-	public Vector getTypesForCurrentUserCombobox() {
-		String user;
-		Vector output = null;
+	public Vector<String> getTypesForCurrentUserCombobox() {
+		Vector<String> output = null;
 		try {
 			String userName; 
 			userName = com.ibm.xsp.extlib.social.SocialServicesFactory.getInstance().getAuthenticatedUserId(javax.faces.context.FacesContext.getCurrentInstance());
@@ -245,10 +240,8 @@ public class ConfigCache {
 			userName = name.getCommon();
 			initialize();  
 
-			output = new Vector();
-			Iterator it = _types.iterator();
-			for (; it.hasNext();) {
-				Type type = (Type)it.next();
+			output = new Vector<String>();
+			for(Type type : _types) {
 				Vector moderators = type.getModerators();
 				if (moderators != null) {
 					if (moderators.contains(userName)) {
@@ -258,9 +251,7 @@ public class ConfigCache {
 					}
 				}
 			}
-		}
-		catch (NotesException e) {
-		}
+		} catch (NotesException e) { }
 		return output;
 	}
 

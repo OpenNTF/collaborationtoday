@@ -1,7 +1,7 @@
 package org.openntf.news.http.core;
 
 /*
- * © Copyright IBM, 2012
+ * ï¿½ Copyright IBM, 2012
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
  * you may not use this file except in compliance with the License. 
@@ -21,14 +21,15 @@ package org.openntf.news.http.core;
 import java.util.Comparator;
 import java.util.Map;
 
-class PopularityComparator implements Comparator {
-	Map _map;
-	public PopularityComparator(Map map) {
+class PopularityComparator implements Comparator<String> {
+	private Map<String, NewsEntry> _map;
+
+	public PopularityComparator(Map<String, NewsEntry> map) {
 		_map = map;
 	}
-	public int compare(Object firstKey, Object secondKey) {				
-		NewsEntry first = (NewsEntry)_map.get(firstKey);
-		NewsEntry second = (NewsEntry)_map.get(secondKey);
+	public int compare(String firstKey, String secondKey) {				
+		NewsEntry first = _map.get(firstKey);
+		NewsEntry second = _map.get(secondKey);
 		if (first.getClicksLastWeek() > second.getClicksLastWeek()) {
 			return -1;
 		} if (first.getClicksLastWeek() < second.getClicksLastWeek()) {
