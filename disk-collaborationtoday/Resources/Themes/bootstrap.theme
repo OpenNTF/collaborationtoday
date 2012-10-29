@@ -7,23 +7,18 @@
 	-->
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
-	<!--
-		Use this pattern to include resources (such as style sheets and
-		JavaScript files that are used by this theme.
-	-->
-	<resource>
-		<content-type>text/css</content-type>
-		<href>bootstrap-2.0.4.combined.min.css</href>
-	</resource>
-	<resource>
-		<content-type>text/css</content-type>
-		<href>custom.css</href>
-	</resource>
+	
 	<resources>
+		<styleSheet type="text/css" href="bootstrap-2.0.4.combined.min.css"/>
+		<styleSheet type="text/css" href="custom.css"/>
+	
 		<script src="jquery-1.7.1.min.js" clientSide="true" type="text/javascript"></script>
 		<script src="bootstrap-2.0.4.min.js" clientSide="true" type="text/javascript"></script>
-		<metaData name="viewport" content="width=device-width, initial-scale=1,  maximum-scale=1"></metaData>		
+		<metaData name="viewport" content="width=device-width, initial-scale=1,  maximum-scale=1"></metaData>
+		
+		<linkResource href="collaborationtoday_icon.png" rel="apple-touch-icon"/>		
 	</resources>
+	
 	<control override="false">
 		<name>ViewRoot</name>
 		<property>
