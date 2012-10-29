@@ -36,4 +36,49 @@
 	</control>
 	
 	-->
+	
+	
+	<!-- Let's try setting up some link definitions here, in case they change -jpg -->
+	<control>
+		<name>Link.Home</name>
+		<property>
+			<name>value</name>
+			<value>/home.xsp</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Follow</name>
+		<property>
+			<name>value</name>
+			<value>/follow.xsp</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Contact</name>
+		<property>
+			<name>value</name>
+			<value>/contact.xsp</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Lotus</name>
+		<property>
+			<name>value</name>
+			<value>http://www-01.ibm.com/software/lotus/</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Stories.Recent</name>
+		<property>
+			<name>value</name>
+			<value>/home.xsp?filter=all</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Stories.Popular</name>
+		<property>
+			<name>value</name>
+			<value>/home.xsp?filter=popular</value>
+		</property>
+	</control>
 </theme>

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="About | Collaboration Today">
-	<xp:this.data>
-		<xp:dominoDocument var="document1" formName="Request"></xp:dominoDocument> 
-	</xp:this.data>
 
 	<xc:layout>
 		<xp:this.facets>
-			<xp:panel xp:key="content">
+			<xp:div xp:key="content">
 				<div class="well">
 					<h1>
 						<small>About Collaboration Today</small>
@@ -16,7 +13,7 @@
 					</h2>
 					<p>
 						Collaboration Today is a news aggregator for&#160;
-						<xp:link text="IBM Collaboration Solutions" value="http://www-01.ibm.com/software/lotus/"></xp:link>
+						<xp:link text="IBM Collaboration Solutions" themeId="Link.Lotus"/>
 						&#160;professionals covering news about various IBM products like IBM Connections, IBM Lotus Domino, IBM WebSphere Portal etc. and cross
 						product topics like mobile, cloud and analytics.
 					</p>
@@ -30,16 +27,16 @@
 					</p>
 					<p>
 						On the&#160;
-						<xp:link text="Home" value="home.xsp"></xp:link>
+						<xp:link text="Home" themeId="Link.Home"/>
 						&#160;page news entries are highlighted by moderators. The&#160;
-						<xp:link text="Recent" value="home.xsp?filter=all"></xp:link>
+						<xp:link text="Recent" themeId="Link.Stories.Recent"/>
 						&#160;page shows all entries sorted chronologically and the&#160;
-						<xp:link text="Popular" value="home.xsp?filter=popular"></xp:link>
+						<xp:link text="Popular" themeId="Link.Stories.Popular"/>
 						&#160;page shows the entries that have been accessed over&#160;the last seven days.
 					</p>
 					<p>
 						In addition to visiting the Collaboration Today web site via web&#160;browsers, smartphones and tablets, you can also&#160;
-						<xp:link text="follow" value="follow.xsp"></xp:link>
+						<xp:link text="follow" themeId="Link.Follow"/>
 						&#160;news&#160;updates via feeds or on&#160;Twitter. Application developers can embed news entries using our REST API.
 					</p>
 					<h2>
@@ -47,42 +44,32 @@
 					</h2>
 					<p>
 						Collaboration Today is owned by&#160;
-						<xp:link text="OpenNTF Inc." value="http://openntf.org/Internal/home.nsf/dx/About_openNTF"></xp:link>
+						<xp:link text="OpenNTF Inc." value="http://openntf.org/Internal/home.nsf/dx/About_openNTF"/>
 						, a group of 31 member companies who are leveraging IBM Collaboration Solutions technologies, and hosted by&#160;
-						<xp:link text="Prominic.NET" value="http://prominic.net/"></xp:link>
+						<xp:link text="Prominic.NET" value="http://prominic.net/"/>
 						. Moderators add content to the site, categorize it and can mark to show up on the home page. If you are interested in becoming a
 						content&#160;moderator, please&#160;
-						<xp:link text="contact">
-							<xp:this.value><![CDATA[#{javascript:"contact.xsp"}]]></xp:this.value>
-						</xp:link>
+						<xp:link text="contact" themeId="Link.Contact"/>
 						&#160;us.
 					</p>
 					<p>Each category has different content&#160;moderators. Below is a list of the current moderators.</p>
-					<xp:repeat rows="30" value="#{javascript:configCache.getCategories();}" indexVar="index2" var="category">
+					<xp:repeat rows="30" value="${configCache.categories}" indexVar="index2" var="category">
 						<xp:panel>
 							<span class="label">
-								<xp:text>
-									<xp:this.value><![CDATA[#{javascript:category.getDisplayName()}]]></xp:this.value>
-								</xp:text>
+								<xp:text value="#{category.displayName}"/>
 							</span>
 							&#160;
 							<br></br>
 							<br></br>
 						</xp:panel>
-						<xp:repeat rows="30" value="#{javascript:configCache.getTypesForCategory(category.getID());}" indexVar="index" var="entry">
+						<xp:repeat rows="30" value="#{javascript:configCache.getTypesForCategory(category.getID())}" indexVar="index" var="entry">
 							<xp:panel>
+								<xp:text value="#{entry.displayName}: "/>
 								<xp:text>
-									<xp:this.value><![CDATA[#{javascript:entry.getDisplayName() + ": "}]]></xp:this.value>
-								</xp:text>
-								<xp:text>
-									<xp:this.value><![CDATA[#{javascript:var output = "";
-var moderators = entry.getModerators();
-if (moderators == null) return output;
-for (i = 0; i < moderators.size(); i++) {
-	output = output + moderators.get(i);
-	if (i < moderators.size() - 1) output = output + ", ";
-}
-output}]]></xp:this.value>
+									<xp:this.value><![CDATA[#{javascript:
+										var moderators = entry.getModerators();
+										moderators == null ? "" : @Implode(moderators, ", ")
+									}]]></xp:this.value>
 								</xp:text>
 								<br></br>
 							</xp:panel>
@@ -94,9 +81,9 @@ output}]]></xp:this.value>
 						summer of 2012.
 					</p>
 				</div>
-			</xp:panel>
-			<xc:rightColumn xp:key="rightColumn"></xc:rightColumn>
-			<xc:leftColumn xp:key="leftColumn"></xc:leftColumn>
+			</xp:div>
+			<xc:rightColumn xp:key="rightColumn"/>
+			<xc:leftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
 	</xc:layout>
 </xp:view>

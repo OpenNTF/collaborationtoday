@@ -2,14 +2,14 @@
 <!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
  replicaid='85257AA6004F5595'>
-<noteinfo noteid='202' unid='25DCBF82819FC8FE85257AA6004F61E1' sequence='2'>
+<noteinfo noteid='202' unid='25DCBF82819FC8FE85257AA6004F61E1' sequence='3'>
 <created><datetime dst='true'>20121029T102704,01-04</datetime></created>
-<modified><datetime dst='true'>20121029T102704,31-04</datetime></modified>
-<revised><datetime dst='true'>20121029T102704,30-04</datetime></revised>
-<lastaccessed><datetime dst='true'>20121029T102704,30-04</datetime></lastaccessed>
+<modified><datetime dst='true'>20121029T140548,43-04</datetime></modified>
+<revised><datetime dst='true'>20121029T140548,42-04</datetime></revised>
+<lastaccessed><datetime dst='true'>20121029T140548,42-04</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20121029T102704,10-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
-<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>BlogsAll</text></item>
 <item name='$Index' sign='true'><text/></item>
