@@ -5,36 +5,30 @@
 		<xp:styleSheet href="/view.css"/>
 	</xp:this.resources>
 
-	<xc:moderationLayout>
+	<xc:moderationLayout pageHeader="Authors">
 		<xp:this.facets>
-			<xc:moderationLeftColumn xp:key="leftColumn"></xc:moderationLeftColumn>
+			<xc:moderationLeftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
 		
-		<xc:moderatorCheck/>
-		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<xc:pageHeader value="Authors"/>
-			
-			<br />
-			<xp:button value="New" id="button5" styleClass="btn">
-				<xp:eventHandler event="onclick" submit="true" refreshMode="complete" action="new-author"/>
-			</xp:button>
-			<br />
-			<xc:ccPager pagerFor="viewPanel1"></xc:ccPager>
-			<xp:viewPanel rows="30" id="viewPanel1" pageName="/author.xsp" viewStyleClass="viewPanel" dataTableStyleClass="dataTableViewPanel">
+		<xp:button value="New" id="button5" styleClass="btn">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete" action="new-author"/>
+		</xp:button>
+		<br />
+		<xc:ccPager pagerFor="viewPanel1"></xc:ccPager>
+		<xp:viewPanel rows="30" id="viewPanel1" pageName="/author.xsp" viewStyleClass="viewPanel" dataTableStyleClass="dataTableViewPanel">
 
-				<xp:this.data>
-					<xp:dominoView var="view1" viewName="PersonsAll" sortColumn="PDisplayName"></xp:dominoView>
-				</xp:this.data>
-				<xp:viewColumn columnName="PDisplayName" id="viewColumn2" displayAs="link" styleClass="columnView25">
-					<xp:viewColumnHeader value="Display Name" id="viewColumnHeader2" sortable="true"></xp:viewColumnHeader>
-				</xp:viewColumn>
-				<xp:viewColumn columnName="PEMail" id="viewColumn4" styleClass="columnView25">
-					<xp:viewColumnHeader value="E-Mail" id="viewColumnHeader4"></xp:viewColumnHeader>
-				</xp:viewColumn>
-				<xp:viewColumn columnName="PID" id="viewColumn1">
-					<xp:viewColumnHeader value="ID" id="viewColumnHeader1"></xp:viewColumnHeader>
-				</xp:viewColumn>
-			</xp:viewPanel>
-		</xp:panel>
+			<xp:this.data>
+				<xp:dominoView var="view1" viewName="PersonsAll" sortColumn="PDisplayName"></xp:dominoView>
+			</xp:this.data>
+			<xp:viewColumn columnName="PDisplayName" id="viewColumn2" displayAs="link" styleClass="columnView25">
+				<xp:viewColumnHeader value="Display Name" id="viewColumnHeader2" sortable="true"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="PEMail" id="viewColumn4" styleClass="columnView25">
+				<xp:viewColumnHeader value="E-Mail" id="viewColumnHeader4"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="PID" id="viewColumn1">
+				<xp:viewColumnHeader value="ID" id="viewColumnHeader1"></xp:viewColumnHeader>
+			</xp:viewColumn>
+		</xp:viewPanel>
 	</xc:moderationLayout>
 </xp:view>

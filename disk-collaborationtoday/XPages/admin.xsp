@@ -2,39 +2,32 @@
 <xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core"
 	xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Administration | Collaboration Today">
 	
-	<xc:moderationLayout>
+	<xc:moderationLayout pageHeader="Administration">
 		<xp:this.facets>
 			<xc:moderationLeftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
 		
-		<xc:moderatorCheck/>
-		
-		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<xc:pageHeader value="Administration"/>
-			
-			<br />
-			<xp:button value="Update Cache" id="button5" styleClass="btn">
-				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-					<xp:this.action><![CDATA[#{javascript:
-						personsCache.update();
-						newsCache.update();
-						configCache.update();
-						
-						return "go-home";
-					}]]></xp:this.action>
-				</xp:eventHandler>
-			</xp:button>
-			<br />
-			<br />
-			<xp:button value="Store Clicks" id="button1" styleClass="btn">
-				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-					<xp:this.action><![CDATA[#{javascript:
-						clickCache.addClick(null, true);
-						
-						return "go-home";
-					}]]></xp:this.action>
-				</xp:eventHandler>
-			</xp:button>
-		</xp:panel>
+		<xp:button value="Update Cache" id="button5" styleClass="btn">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+				<xp:this.action><![CDATA[#{javascript:
+					personsCache.update();
+					newsCache.update();
+					configCache.update();
+					
+					return "go-home";
+				}]]></xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+		<br />
+		<br />
+		<xp:button value="Store Clicks" id="button1" styleClass="btn">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+				<xp:this.action><![CDATA[#{javascript:
+					clickCache.addClick(null, true);
+					
+					return "go-home";
+				}]]></xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
 	</xc:moderationLayout>
 </xp:view>

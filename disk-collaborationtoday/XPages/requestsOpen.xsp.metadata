@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="176" sequence="3" unid="6D578915221A72E585257AA6004F5A11">
+<noteinfo noteid="176" sequence="23" unid="6D578915221A72E585257AA6004F5A11">
 <created><datetime dst="true">20121029T102644,01-04</datetime></created>
-<modified><datetime dst="true">20121029T102644,33-04</datetime></modified>
-<revised><datetime dst="true">20121029T102644,32-04</datetime></revised>
-<lastaccessed><datetime dst="true">20121029T102644,32-04</datetime></lastaccessed>
+<modified><datetime dst="true">20121030T153918,51-04</datetime></modified>
+<revised><datetime dst="true">20121030T153918,49-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121030T153918,49-04</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20121029T102644,09-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
-<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>requestsOpen.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+
+
+<item name="$Comment" sign="true"><text>Moderators Only</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
 
 
 <item name="$FileNames" sign="true"><text>requestsOpen.xsp</text></item></note>

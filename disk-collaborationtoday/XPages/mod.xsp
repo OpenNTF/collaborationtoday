@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	pageTitle="Not Moderated | Collaboration Today">
-	<xc:moderationLayout>
+	
+	<xc:moderationLayout pageHeader="News Entries - Not moderated - Automatically read">
 		<xp:this.facets>
 			<xc:moderationLeftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
 		
-		<xc:moderatorCheck/>
-		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<xc:pageHeader value="News Entries - Not moderated - Automatically read"/>
+		<xp:panel>
+			<xp:this.data>
+				<xp:dominoView var="view1" viewName="NewsAll" categoryFilter="queued"></xp:dominoView>
+			</xp:this.data>
 			
-			<xp:panel>
-				<xp:this.data>
-					<xp:dominoView var="view1" viewName="NewsAll" categoryFilter="queued"></xp:dominoView>
-				</xp:this.data>
-				
-				<br />
-				<xc:ccPager pagerFor="repeat1"/>
-				<br />
-				<xp:repeat id="repeat1" var="entry" rows="50" value="#{view1}">
-					<xc:moderationNewsEntry creationDate="#{javascript:entry.getColumnValue('NCreationDate')}"
-						link="#{javascript:entry.getColumnValue('NLink')}" nID="#{javascript:entry.getColumnValue('NID')}"
-						personDisplayName="#{javascript:personsCache.getPerson(entry.getColumnValue('PID')).getDisplayName()}"
-						publicationDate="#{javascript:entry.getColumnValue('NPublicationDate')}" title="#{javascript:entry.getColumnValue('NTitle')}"
-						state="#{javascript:entry.getColumnValue('NState')}">
-					</xc:moderationNewsEntry>
-				</xp:repeat>
-			</xp:panel>
-		</xp:panel>		
+			<br />
+			<xc:ccPager pagerFor="repeat1"/>
+			<br />
+			<xp:repeat id="repeat1" var="entry" rows="50" value="#{view1}">
+				<xc:moderationNewsEntry creationDate="#{javascript:entry.getColumnValue('NCreationDate')}"
+					link="#{javascript:entry.getColumnValue('NLink')}" nID="#{javascript:entry.getColumnValue('NID')}"
+					personDisplayName="#{javascript:personsCache.getPerson(entry.getColumnValue('PID')).getDisplayName()}"
+					publicationDate="#{javascript:entry.getColumnValue('NPublicationDate')}" title="#{javascript:entry.getColumnValue('NTitle')}"
+					state="#{javascript:entry.getColumnValue('NState')}">
+				</xc:moderationNewsEntry>
+			</xp:repeat>
+		</xp:panel>
 	</xc:moderationLayout>
 </xp:view>

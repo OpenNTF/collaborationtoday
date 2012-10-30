@@ -17,40 +17,34 @@
 		</xp:dominoDocument>
 	</xp:this.data>
 	<style>.lotusTitleBar h2.lotusEllipsis { width: 380px; } .xspPagerRight { color: #848484; float: left;}</style>
-	<xc:moderationLayout>
+	<xc:moderationLayout pageHeader="Author">
 		<xp:this.facets>
-			<xc:moderationLeftColumn xp:key="leftColumn"></xc:moderationLeftColumn>
+			<xc:moderationLeftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
 		
-		<xc:moderatorCheck/>
-		
-		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<xc:pageHeader value="Author"/>
-			
-			<br />
-			<xp:button value="Update" id="button5" styleClass="btn">
-				<xp:this.rendered><![CDATA[#{javascript:!document11.isNewNote()}]]></xp:this.rendered>
-				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-					<xp:this.action>
+		<xp:button value="Update" id="button5" styleClass="btn">
+			<xp:this.rendered><![CDATA[#{javascript:!document11.isNewNote()}]]></xp:this.rendered>
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+				<xp:this.action>
+					<xp:actionGroup>
 						<xp:actionGroup>
-							<xp:actionGroup>
-								<xp:saveDocument var="document11"></xp:saveDocument>
-								<xp:executeScript script="#{javascript:personsCache.update();}"></xp:executeScript>
-								<xp:openPage target="openDocument" name="/authors.xsp"></xp:openPage>
-							</xp:actionGroup>
+							<xp:saveDocument var="document11"></xp:saveDocument>
+							<xp:executeScript script="#{javascript:personsCache.update();}"></xp:executeScript>
+							<xp:openPage target="openDocument" name="/authors.xsp"></xp:openPage>
 						</xp:actionGroup>
-					</xp:this.action>
-				</xp:eventHandler>
-			</xp:button>
-			&#160;
-			<xp:button value="Create" id="button1" styleClass="btn">
-				<xp:this.rendered><![CDATA[#{javascript:document11.isNewNote()}]]></xp:this.rendered>
-				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-					<xp:this.action>
+					</xp:actionGroup>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+		&#160;
+		<xp:button value="Create" id="button1" styleClass="btn">
+			<xp:this.rendered><![CDATA[#{javascript:document11.isNewNote()}]]></xp:this.rendered>
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+				<xp:this.action>
+					<xp:actionGroup>
 						<xp:actionGroup>
-							<xp:actionGroup>
-								<xp:executeScript>
-									<xp:this.script><![CDATA[#{javascript:
+							<xp:executeScript>
+								<xp:this.script><![CDATA[#{javascript:
 var date = new java.util.Date();
 document11.replaceItemValue('PCreationDate', date);	
 
@@ -60,115 +54,114 @@ name = name.replaceAll("\\W","");
 name = name.toLowerCase();							
 document11.replaceItemValue('PID', name);									
 }]]></xp:this.script>
-								</xp:executeScript>
+							</xp:executeScript>
 
-								<xp:saveDocument var="document11"></xp:saveDocument>
-								<xp:executeScript script="#{javascript:personsCache.update();}"></xp:executeScript>
-								<xp:openPage target="editDocument">
-									<xp:this.name><![CDATA[#{javascript:if (newsId) { "moderateEntry.xsp"; }
+							<xp:saveDocument var="document11"></xp:saveDocument>
+							<xp:executeScript script="#{javascript:personsCache.update();}"></xp:executeScript>
+							<xp:openPage target="editDocument">
+								<xp:this.name><![CDATA[#{javascript:if (newsId) { "moderateEntry.xsp"; }
 else { "authors.xsp"; }}]]></xp:this.name>
-									<xp:this.documentId><![CDATA[#{javascript:newsId = sessionScope.nid;sessionScope.nid = null; newsId}]]></xp:this.documentId>
-								</xp:openPage>
-							</xp:actionGroup>
+								<xp:this.documentId><![CDATA[#{javascript:newsId = sessionScope.nid;sessionScope.nid = null; newsId}]]></xp:this.documentId>
+							</xp:openPage>
 						</xp:actionGroup>
-					</xp:this.action>
-				</xp:eventHandler>
-			</xp:button>
-			&#160;
-			<xp:button value="Cancel" id="button8" styleClass="btn">
-				<xp:eventHandler event="onclick" submit="false">
-					<xp:this.script><![CDATA[window.history.back()]]></xp:this.script>
-				</xp:eventHandler>
-			</xp:button>
-			<br></br>
-			<br></br>
-			<br></br>
-			<xp:table>
+					</xp:actionGroup>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+		&#160;
+		<xp:button value="Cancel" id="button8" styleClass="btn">
+			<xp:eventHandler event="onclick" submit="false">
+				<xp:this.script><![CDATA[window.history.back()]]></xp:this.script>
+			</xp:eventHandler>
+		</xp:button>
+		<br></br>
+		<br></br>
+		<br></br>
+		<xp:table>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Display Name (*)" id="pDisplayName_Label1" for="pDisplayName1"></xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText value="#{document11.PDisplayName}" id="pDisplayName1" style="width:500px" required="true">
+						<xp:this.validators>
+							<xp:validateRequired message="Define display name"></xp:validateRequired>
+							<xp:validateLength minimum="3" maximum="40" message="Define display name (5 - 40 chars)"></xp:validateLength>
+						</xp:this.validators>
+					</xp:inputText>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="E-Mail" id="pEMail_Label1" for="pEMail1"></xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText value="#{document11.PEMail}" style="width:500px" id="pEMail1"></xp:inputText>
+				</xp:td>
+			</xp:tr>
+			<xp:panel rendered="#{javascript:configCache.isUserAvatarModerator(@UserName())}">
 				<xp:tr>
 					<xp:td>
-						<xp:label value="Display Name (*)" id="pDisplayName_Label1" for="pDisplayName1"></xp:label>
+						<xp:label value="Picture Type" id="pPictureType_Label1" for="pPictureType1"></xp:label>
 					</xp:td>
 					<xp:td>
-						<xp:inputText value="#{document11.PDisplayName}" id="pDisplayName1" style="width:500px" required="true">
-							<xp:this.validators>
-								<xp:validateRequired message="Define display name"></xp:validateRequired>
-								<xp:validateLength minimum="3" maximum="40" message="Define display name (5 - 40 chars)"></xp:validateLength>
-							</xp:this.validators>
-						</xp:inputText>
+						<xp:comboBox value="#{document11.PPictureType}" style="width:500px" id="pPictureType1">
+							<xp:selectItem itemLabel="No Picture" itemValue="nopicture"></xp:selectItem>
+							<xp:selectItem itemLabel="Multiple Authors" itemValue="multiple"></xp:selectItem>
+							<xp:selectItem itemLabel="Gravator" itemValue="gravatar"></xp:selectItem>
+							<xp:selectItem itemLabel="URL" itemValue="url"></xp:selectItem>
+						</xp:comboBox>
 					</xp:td>
 				</xp:tr>
 				<xp:tr>
 					<xp:td>
-						<xp:label value="E-Mail" id="pEMail_Label1" for="pEMail1"></xp:label>
+						<xp:label value="Picture URL" id="pPictureURL_Label1" for="pPictureURL1"></xp:label>
 					</xp:td>
 					<xp:td>
-						<xp:inputText value="#{document11.PEMail}" style="width:500px" id="pEMail1"></xp:inputText>
+						<xp:inputText value="#{document11.PPictureURL}" id="pPictureURL1" style="width:500px"></xp:inputText>
 					</xp:td>
 				</xp:tr>
-				<xp:panel rendered="#{javascript:configCache.isUserAvatarModerator(@UserName())}">
-					<xp:tr>
-						<xp:td>
-							<xp:label value="Picture Type" id="pPictureType_Label1" for="pPictureType1"></xp:label>
-						</xp:td>
-						<xp:td>
-							<xp:comboBox value="#{document11.PPictureType}" style="width:500px" id="pPictureType1">
-								<xp:selectItem itemLabel="No Picture" itemValue="nopicture"></xp:selectItem>
-								<xp:selectItem itemLabel="Multiple Authors" itemValue="multiple"></xp:selectItem>
-								<xp:selectItem itemLabel="Gravator" itemValue="gravatar"></xp:selectItem>
-								<xp:selectItem itemLabel="URL" itemValue="url"></xp:selectItem>
-							</xp:comboBox>
-						</xp:td>
-					</xp:tr>
-					<xp:tr>
-						<xp:td>
-							<xp:label value="Picture URL" id="pPictureURL_Label1" for="pPictureURL1"></xp:label>
-						</xp:td>
-						<xp:td>
-							<xp:inputText value="#{document11.PPictureURL}" id="pPictureURL1" style="width:500px"></xp:inputText>
-						</xp:td>
-					</xp:tr>
-				</xp:panel>
-				<xp:tr>
-					<xp:td>
-						<xp:label value="Twitter" id="pTwitter_Label1" for="pTwitter1"></xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:inputText value="#{document11.PTwitter}" style="width:500px" id="pTwitter1"></xp:inputText>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
-						<xp:label value="StackOverflow" id="pStackOverflow_Label1" for="pStackOverflow1"></xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:inputText style="width:500px" value="#{document11.PStackOverflow}" id="pStackOverflow1"></xp:inputText>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
-						<xp:label value="LinkedIn" id="pLinkedIn_Label1" for="pLinkedIn1"></xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:inputText value="#{document11.PLinkedIn}" style="width:500px" id="pLinkedIn1"></xp:inputText>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
-						<xp:label value="OpenNTF" id="pOpenNTF_Label1" for="pOpenNTF1"></xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:inputText value="#{document11.POpenNTF}" style="width:500px" id="pOpenNTF1"></xp:inputText>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
-						<xp:label value="Lotus Registration" id="pLotusRegistration_Label1" for="pLotusRegistration1"></xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:inputText style="width:500px" value="#{document11.PLotusRegistration}" id="pLotusRegistration1"></xp:inputText>
-					</xp:td>
-				</xp:tr>
-			</xp:table>
-		</xp:panel>
+			</xp:panel>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Twitter" id="pTwitter_Label1" for="pTwitter1"></xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText value="#{document11.PTwitter}" style="width:500px" id="pTwitter1"></xp:inputText>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="StackOverflow" id="pStackOverflow_Label1" for="pStackOverflow1"></xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText style="width:500px" value="#{document11.PStackOverflow}" id="pStackOverflow1"></xp:inputText>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="LinkedIn" id="pLinkedIn_Label1" for="pLinkedIn1"></xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText value="#{document11.PLinkedIn}" style="width:500px" id="pLinkedIn1"></xp:inputText>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="OpenNTF" id="pOpenNTF_Label1" for="pOpenNTF1"></xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText value="#{document11.POpenNTF}" style="width:500px" id="pOpenNTF1"></xp:inputText>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Lotus Registration" id="pLotusRegistration_Label1" for="pLotusRegistration1"></xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText style="width:500px" value="#{document11.PLotusRegistration}" id="pLotusRegistration1"></xp:inputText>
+				</xp:td>
+			</xp:tr>
+		</xp:table>
 	</xc:moderationLayout>
 </xp:view>

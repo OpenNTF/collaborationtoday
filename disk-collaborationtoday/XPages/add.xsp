@@ -24,63 +24,58 @@
 		}
 	}]]></xp:this.beforeRenderResponse>
 
-	<xc:moderationLayout>
+	<xe:keepSessionAlive id="keepSessionAlive1"/>
+
+	<xc:moderationLayout pageHeader="Capture URL">
 		<xp:this.facets>
 			<xc:moderationLeftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
 		
-		<xc:moderatorCheck/>
-				
-		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<xe:keepSessionAlive id="keepSessionAlive1"/>
+		<xp:div id="nikcontent" style="">
+			<xp:scriptBlock type="text/javascript">
+				<xp:this.value><![CDATA[
+					function showBusy() {
+						var buttonId = "#{id:button1}"; 
+						var buttonElement = document.getElementById(buttonId);
+						buttonElement.style.visibility = 'hidden'; 
+						var busyElement = document.getElementById("busy");
+						busyElement.className = "busyShown";
+					}
+					
+					function hideBusy(){
+						var buttonId = "#{id:button1}"; 
+						var buttonElement = document.getElementById(buttonId);
+						buttonElement.style.visibility = 'hidden'; 
+						var busyElement = document.getElementById("busy");
+						busyElement.className = "busyHidden";
+						var docUnidClient =  "#{javascript:sessionScope.get("NikFileName")}"
+						window.location = "moderateEntry.xsp?action=editDocument&documentId=" + docUnidClient;
+					}
+				]]></xp:this.value>
+			</xp:scriptBlock>
 			<br />
-			<xp:label value="Capture URL" style="font-weight:bold;font-size:12pt"></xp:label>
-			<xp:div id="nikcontent" style="">
-				<xp:scriptBlock type="text/javascript">
-					<xp:this.value><![CDATA[
-						function showBusy() {
-							var buttonId = "#{id:button1}"; 
-							var buttonElement = document.getElementById(buttonId);
-							buttonElement.style.visibility = 'hidden'; 
-							var busyElement = document.getElementById("busy");
-							busyElement.className = "busyShown";
-						}
-						
-						function hideBusy(){
-							var buttonId = "#{id:button1}"; 
-							var buttonElement = document.getElementById(buttonId);
-							buttonElement.style.visibility = 'hidden'; 
-							var busyElement = document.getElementById("busy");
-							busyElement.className = "busyHidden";
-							var docUnidClient =  "#{javascript:sessionScope.get("NikFileName")}"
-							window.location = "moderateEntry.xsp?action=editDocument&documentId=" + docUnidClient;
-						}
-					]]></xp:this.value>
-				</xp:scriptBlock>
-				<br />
-				<br />
-				<xp:inputText id="inputText1" style="width:720px;"/>
-				<br />
-				<br />
-				<br />
-				<div id="busy" class="busyHidden"></div>
-				<xp:button value="Capture and Edit" id="button1" styleClass="btn">
-					<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="nikcontent">
-						<xp:this.action><![CDATA[#{javascript:
-							var url = getComponent('inputText1').getValue();
-							var docUNIDServer = org.openntf.news.http.core.Parser.getOutput(url);
-							sessionScope.put("NikFileName", docUNIDServer);
-						}]]></xp:this.action>
-						<xp:this.script><![CDATA[showBusy()]]></xp:this.script>
-						<xp:this.onComplete><![CDATA[hideBusy()]]></xp:this.onComplete>
-					</xp:eventHandler>
-				</xp:button>
-				<xp:text escape="false">
-					<xp:this.value><![CDATA[#{javascript:
-						"<input type='hidden' id='docUNID' value='" + sessionScope.get("NikFileName") + "'></input>"
-					}]]></xp:this.value>
-				</xp:text>
-			</xp:div>
-		</xp:panel>
+			<br />
+			<xp:inputText id="inputText1" style="width:720px;"/>
+			<br />
+			<br />
+			<br />
+			<div id="busy" class="busyHidden"></div>
+			<xp:button value="Capture and Edit" id="button1" styleClass="btn">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="nikcontent">
+					<xp:this.action><![CDATA[#{javascript:
+						var url = getComponent('inputText1').getValue();
+						var docUNIDServer = org.openntf.news.http.core.Parser.getOutput(url);
+						sessionScope.put("NikFileName", docUNIDServer);
+					}]]></xp:this.action>
+					<xp:this.script><![CDATA[showBusy()]]></xp:this.script>
+					<xp:this.onComplete><![CDATA[hideBusy()]]></xp:this.onComplete>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:text escape="false">
+				<xp:this.value><![CDATA[#{javascript:
+					"<input type='hidden' id='docUNID' value='" + sessionScope.get("NikFileName") + "'></input>"
+				}]]></xp:this.value>
+			</xp:text>
+		</xp:div>
 	</xc:moderationLayout>
 </xp:view>

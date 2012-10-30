@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	pageTitle="Moderated - Spotlight | Collaboration Today">
-	<xc:moderationLayout>
+	
+	<xc:moderationLayout pageHeader="News Entries - Approved / Moderated - Spotlight">
 		<xp:this.facets>
-			<xc:moderationLeftColumn xp:key="leftColumn"></xc:moderationLeftColumn>
+			<xc:moderationLeftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
 		
-		<xc:moderatorCheck/>
-		
-		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<xp:panel rendered="#{javascript:configCache.isUserSpotlightModerator(@UserName())}">
-				<xc:pageHeader value="News Entries - Approved / Moderated - Spotlight"/>
-				
-				<br />
-				<xp:repeat id="repeat5" var="entry" rows="50" value="#{javascript:newsCache.getSpotlightEntries();}">
-					<xc:moderationNewsEntry
-						link="#{javascript:entry.getLink()}"
-						nID="#{javascript:entry.getID()}"
-						personDisplayName="#{javascript:personsCache.getPerson(entry.getPID()).getDisplayName()}"
-						publicationDate="#{javascript:entry.getPrettyTime()}"
-						title="#{javascript:entry.getTitle()}"
-						state="#{javascript:entry.getState()}"
-						clicksTotal="#{javascript:entry.getClicksTotal()}"
-						clicksLastWeek="#{javascript:entry.getClicksLastWeek()}"
-						showRemoveSpotlightButton="yes">
-					</xc:moderationNewsEntry>
-				</xp:repeat>
-			</xp:panel>
+		<xp:panel loaded="${javascript:configCache.isUserSpotlightModerator(@UserName())}">
+			
+			<xp:repeat id="repeat5" var="entry" rows="50" value="${newsCache.spotlightEntries}">
+				<xc:moderationNewsEntry
+					link="#{entry.link}"
+					nID="#{entry.ID}"
+					personDisplayName="#{javascript:personsCache.getPerson(entry.getPID()).getDisplayName()}"
+					publicationDate="#{entry.prettyTime}"
+					title="#{entry.title}"
+					state="#{entry.state}"
+					clicksTotal="#{entry.clicksTotal}"
+					clicksLastWeek="#{entry.clicksLastWeek}"
+					showRemoveSpotlightButton="yes">
+				</xc:moderationNewsEntry>
+			</xp:repeat>
 		</xp:panel>
 	</xc:moderationLayout>
 </xp:view>
