@@ -15,96 +15,81 @@
 	
 	<xc:layout>
 		<xp:this.facets>
-			<xp:div xp:key="content">
-				<xp:panel readonly="true" loaded="${param.filter != null and param.filter != 'popular'}">
-
-					<xp:div styleClass="page-header" loaded="${param.filter == 'all'}">
-						<h1>
-							<small>Recent</small>
-						</h1>
-					</xp:div>
-
-					<xp:div styleClass="page-header" loaded="${param.filter != 'all'}">
-						<h1>
-							<small>
-								<xp:text value="${javascript:configCache.getType(param.filter).getDisplayName()}" />
-							</small>
-						</h1>
-					</xp:div>
-
-					<xp:repeat id="r1" var="entryA" rows="30" removeRepeat="true">
-						<xp:this.value><![CDATA[${javascript:
-							param.filter == 'all' ? newsCache.getEntries() : newsCache.getEntriesByType(param.filter)
-						}]]></xp:this.value>
-						
-						<xc:newsEntry id="lkewrej"
-							authorPictureURL="#{javascript:personsCache.getPerson(entryA.getPID()).getPictureURL()}"
-							typeId="#{javascript:entryA.getTID()}"
-							imageURL="#{javascript:entryA.getImageURL()}" link="#{javascript:entryA.getLink()}" newsAbstract="#{javascript:entryA.getAbstract()}"
-							nID="#{javascript:entryA.getID()}" personDisplayName="#{javascript:personsCache.getPerson(entryA.getPID()).getDisplayName()}"
-							publicationDate="#{javascript:entryA.getPublicationDate()}" publicationDateString="#{javascript:entryA.getPrettyTime()}"
-							title="#{javascript:entryA.getTitle()}">
-							<xc:this.category><![CDATA[#{javascript:
-								// try/catch added to catch cases where an entry is for a category/type that no longer exists
-								try {
-									configCache.getCategory(configCache.getType(entryA.getTID()).getCategoryId()).getDisplayName()
-								} catch(e) {
-								} finally {
-									"";
-								}
-							}]]></xc:this.category>
-							<xc:this.type><![CDATA[#{javascript:
-								// try/catch added to catch cases where an entry is for a category/type that no longer exists
-								try {
-									configCache.getType(entryA.getTID()).getDisplayName()
-								} catch(e) {
-								} finally {
-									"";
-								}
-							}]]></xc:this.type>
-						</xc:newsEntry>
-					</xp:repeat>
-				</xp:panel>
-
-				<xp:panel readonly="true" loaded="${param.filter == 'popular'}">
-					<div class="page-header">
-						<h1>
-							<small>Popular</small>
-						</h1>
-					</div>
-					<xp:repeat id="r2" var="entryAB" rows="30" value="#{javascript:newsCache.getEntriesByPopularity();}" removeRepeat="true">
-						<xc:newsEntry id="lasdfekj"
-							authorPictureURL="#{javascript:personsCache.getPerson(entryAB.getPID()).getPictureURL()}"
-							typeId="#{javascript:entryAB.getTID()}"
-							imageURL="#{javascript:entryAB.getImageURL()}" link="#{javascript:entryAB.getLink()}" newsAbstract="#{javascript:entryAB.getAbstract()}"
-							nID="#{javascript:entryAB.getID()}" personDisplayName="#{javascript:personsCache.getPerson(entryAB.getPID()).getDisplayName()}"
-							publicationDate="#{javascript:entryAB.getPublicationDate()}" publicationDateString="#{javascript:entryAB.getPrettyTime()}"
-							title="#{javascript:entryAB.getTitle()}">
-							<xc:this.category><![CDATA[#{javascript:
-								try {
-									configCache.getCategory(configCache.getType(entryAB.getTID()).getCategoryId()).getDisplayName()
-								} catch(e) {
-								} finally {
-									"";
-								}
-							}]]></xc:this.category>
-							<xc:this.type><![CDATA[#{javascript:
-								try {
-									configCache.getType(entryAB.getTID()).getDisplayName()
-								} catch(e) {
-								} finally {
-									"";
-								}
-							}]]></xc:this.type>
-						</xc:newsEntry>
-					</xp:repeat>
-				</xp:panel>
-
-				<xc:topStories/>
-			</xp:div>
-
 			<xc:rightColumn xp:key="rightColumn"/>
 			<xc:leftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
+		
+		<xp:panel readonly="true" loaded="${param.filter != null and param.filter != 'popular'}">
+
+			<xc:pageHeader value="Recent" loaded="${param.filter == 'all'}"/>
+
+			<xc:pageHeader value="${javascript:configCache.getType(param.filter).getDisplayName()}" loaded="${param.filter != 'all'}"/>
+
+			<xp:repeat id="r1" var="entryA" rows="30" removeRepeat="true">
+				<xp:this.value><![CDATA[${javascript:
+					param.filter == 'all' ? newsCache.getEntries() : newsCache.getEntriesByType(param.filter)
+				}]]></xp:this.value>
+				
+				<xc:newsEntry id="lkewrej"
+					authorPictureURL="#{javascript:personsCache.getPerson(entryA.getPID()).getPictureURL()}"
+					typeId="#{entryA.TID}"
+					imageURL="#{entryA.imageURL}" link="#{entryA.link}" newsAbstract="#{entryA.abstract}"
+					nID="#{entryA.ID}" personDisplayName="#{javascript:personsCache.getPerson(entryA.getPID()).getDisplayName()}"
+					publicationDate="#{entryA.publicationDate}" publicationDateString="#{entryA.prettyTime}"
+					title="#{entryA.title}">
+					<xc:this.category><![CDATA[#{javascript:
+						// try/catch added to catch cases where an entry is for a category/type that no longer exists
+						try {
+							configCache.getCategory(configCache.getType(entryA.getTID()).getCategoryId()).getDisplayName()
+						} catch(e) {
+						} finally {
+							"";
+						}
+					}]]></xc:this.category>
+					<xc:this.type><![CDATA[#{javascript:
+						// try/catch added to catch cases where an entry is for a category/type that no longer exists
+						try {
+							configCache.getType(entryA.getTID()).getDisplayName()
+						} catch(e) {
+						} finally {
+							"";
+						}
+					}]]></xc:this.type>
+				</xc:newsEntry>
+			</xp:repeat>
+		</xp:panel>
+
+		<xp:panel readonly="true" loaded="${param.filter == 'popular'}">
+			<xc:pageHeader value="Popular"/>
+			
+			<xp:repeat id="r2" var="entryAB" rows="30" value="${newsCache.entriesByPopularity}" removeRepeat="true">
+				<xc:newsEntry id="lasdfekj"
+					authorPictureURL="#{javascript:personsCache.getPerson(entryAB.getPID()).getPictureURL()}"
+					typeId="#{entryAB.TID}"
+					imageURL="#{entryAB.imageURL}" link="#{entryAB.link}" newsAbstract="#{entryAB.abstract}"
+					nID="#{entryAB.ID}" personDisplayName="#{javascript:personsCache.getPerson(entryAB.getPID()).getDisplayName()}"
+					publicationDate="#{entryAB.publicationDate}" publicationDateString="#{entryAB.prettyTime}"
+					title="#{entryAB.title}">
+					<xc:this.category><![CDATA[#{javascript:
+						try {
+							configCache.getCategory(configCache.getType(entryAB.getTID()).getCategoryId()).getDisplayName()
+						} catch(e) {
+						} finally {
+							"";
+						}
+					}]]></xc:this.category>
+					<xc:this.type><![CDATA[#{javascript:
+						try {
+							configCache.getType(entryAB.getTID()).getDisplayName()
+						} catch(e) {
+						} finally {
+							"";
+						}
+					}]]></xc:this.type>
+				</xc:newsEntry>
+			</xp:repeat>
+		</xp:panel>
+
+		<xc:topStories/>
 	</xc:layout>
 </xp:view>

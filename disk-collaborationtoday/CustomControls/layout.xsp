@@ -56,7 +56,7 @@
 				<xp:callback facetName="leftColumn" disableTheme="true"/>
 			</div>
 			<div id="mainContent" class="span7">
-				<xp:callback facetName="content" disableTheme="true"/>
+				<xp:callback disableTheme="true"/>
 			</div>
 			<div id="rightColumn" class="span3 hidden-phone">
 				<xp:callback facetName="rightColumn" disableTheme="true"/>
