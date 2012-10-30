@@ -26,7 +26,6 @@ import java.util.Calendar;
 import javax.faces.context.FacesContext;
 
 import lotus.domino.Database;
-import lotus.domino.Name;
 import lotus.domino.NotesException;
 
 public class ClickCache {
@@ -77,11 +76,7 @@ public class ClickCache {
 		int minutes = 5;
 
 		try {
-			String userName; 
-			userName = com.ibm.xsp.extlib.social.SocialServicesFactory.getInstance().getAuthenticatedUserId(javax.faces.context.FacesContext.getCurrentInstance());
-			Name name = com.ibm.xsp.extlib.util.ExtLibUtil.getCurrentSession().createName(userName);
-			userName = name.getCommon();
-			name.recycle();
+			String userName = MiscUtils.getCurrentCommonName();
 
 			if (userName.equalsIgnoreCase("Anonymous")) {
 				return false;

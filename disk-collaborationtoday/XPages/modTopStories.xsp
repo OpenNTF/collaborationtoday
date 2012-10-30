@@ -3,61 +3,60 @@
 	pageTitle="Moderated - Top Stories | Collaboration Today">
 	<xc:moderationLayout>
 		<xp:this.facets>
-			<xp:panel xp:key="content">
-				<xc:moderatorCheck></xc:moderatorCheck>
-				<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-					<xp:panel rendered="#{javascript:configCache.isUserTopStoriesModerator(@UserName())}">
-						<div class="page-header">
-							<h1>
-								<small>News Entries - Approved / Moderated - Top Stories</small>
-							</h1>
-						</div>
-						<xp:br></xp:br>
-						<xp:label value="Top" style="font-weight:bold;"></xp:label>
-						<xp:br></xp:br>
-						<xp:br></xp:br>
-						<xp:repeat id="repedatasdf2" var="entryMTT" rows="10" value="#{javascript:newsCache.getTopTopStories();}">
-							<xc:moderationNewsEntry id="ndifm"
-								link="#{javascript:entryMTT.getLink()}"
-								nID="#{javascript:entryMTT.getID()}"
-								personDisplayName="#{javascript:personsCache.getPerson(entryMTT.getPID()).getDisplayName()}"
-								publicationDate="#{javascript:entryMTT.getPrettyTime()}"
-								title="#{javascript:entryMTT.getTitle()}"
-								state="#{javascript:entryMTT.getState()}"
-								clicksTotal="#{javascript:entryMTT.getClicksTotal()}"
-								clicksLastWeek="#{javascript:entryMTT.getClicksLastWeek()}"
-								showRemoveTopStoryButton="yes">
-							</xc:moderationNewsEntry>
-						</xp:repeat>
-					</xp:panel>
+			<xc:moderationLeftColumn xp:key="leftColumn"/>
+		</xp:this.facets>
+		
+		<xc:moderatorCheck/>
+		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
+			<xp:panel rendered="#{javascript:configCache.isUserTopStoriesModerator(@UserName())}">
+				<div class="page-header">
+					<h1>
+						<small>News Entries - Approved / Moderated - Top Stories</small>
+					</h1>
+				</div>
+				<xp:br></xp:br>
+				<xp:label value="Top" style="font-weight:bold;"></xp:label>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:repeat id="repedatasdf2" var="entryMTT" rows="10" value="#{javascript:newsCache.getTopTopStories();}">
+					<xc:moderationNewsEntry id="ndifm"
+						link="#{javascript:entryMTT.getLink()}"
+						nID="#{javascript:entryMTT.getID()}"
+						personDisplayName="#{javascript:personsCache.getPerson(entryMTT.getPID()).getDisplayName()}"
+						publicationDate="#{javascript:entryMTT.getPrettyTime()}"
+						title="#{javascript:entryMTT.getTitle()}"
+						state="#{javascript:entryMTT.getState()}"
+						clicksTotal="#{javascript:entryMTT.getClicksTotal()}"
+						clicksLastWeek="#{javascript:entryMTT.getClicksLastWeek()}"
+						showRemoveTopStoryButton="yes">
+					</xc:moderationNewsEntry>
+				</xp:repeat>
+			</xp:panel>
 
-					<xp:repeat id="lkjljsdf" rows="30" value="#{javascript:configCache.getCategories();}" indexVar="index2" var="category">
-						<xp:panel>
-							<xp:br></xp:br>
-							<xp:br></xp:br>
-							<xp:label style="font-weight:bold;">
-								<xp:this.value><![CDATA[#{javascript:category.getDisplayName()}]]></xp:this.value>
-							</xp:label>
-							<xp:br></xp:br>
-							<xp:br></xp:br>
-							<xp:repeat id="r2epeadfat3" var="entryMTC" rows="10" value="#{javascript:newsCache.getTopStories(category.getID());}">
-								<xc:moderationNewsEntry id="ndiflkjm"
-									link="#{javascript:entryMTC.getLink()}"
-									nID="#{javascript:entryMTC.getID()}"
-									personDisplayName="#{javascript:personsCache.getPerson(entryMTC.getPID()).getDisplayName()}"
-									publicationDate="#{javascript:entryMTC.getPrettyTime()}"
-									title="#{javascript:entryMTC.getTitle()}"
-									state="#{javascript:entryMTC.getState()}"
-									clicksTotal="#{javascript:entryMTC.getClicksTotal()}"
-									clicksLastWeek="#{javascript:entryMTC.getClicksLastWeek()}"
-									showRemoveTopStoryButton="yes">
-								</xc:moderationNewsEntry>
-							</xp:repeat>
-						</xp:panel>
+			<xp:repeat id="lkjljsdf" rows="30" value="#{javascript:configCache.getCategories();}" indexVar="index2" var="category">
+				<xp:panel>
+					<xp:br></xp:br>
+					<xp:br></xp:br>
+					<xp:label style="font-weight:bold;">
+						<xp:this.value><![CDATA[#{javascript:category.getDisplayName()}]]></xp:this.value>
+					</xp:label>
+					<xp:br></xp:br>
+					<xp:br></xp:br>
+					<xp:repeat id="r2epeadfat3" var="entryMTC" rows="10" value="#{javascript:newsCache.getTopStories(category.getID());}">
+						<xc:moderationNewsEntry id="ndiflkjm"
+							link="#{javascript:entryMTC.getLink()}"
+							nID="#{javascript:entryMTC.getID()}"
+							personDisplayName="#{javascript:personsCache.getPerson(entryMTC.getPID()).getDisplayName()}"
+							publicationDate="#{javascript:entryMTC.getPrettyTime()}"
+							title="#{javascript:entryMTC.getTitle()}"
+							state="#{javascript:entryMTC.getState()}"
+							clicksTotal="#{javascript:entryMTC.getClicksTotal()}"
+							clicksLastWeek="#{javascript:entryMTC.getClicksLastWeek()}"
+							showRemoveTopStoryButton="yes">
+						</xc:moderationNewsEntry>
 					</xp:repeat>
 				</xp:panel>
-			</xp:panel>
-			<xc:moderationLeftColumn xp:key="leftColumn"></xc:moderationLeftColumn>
-		</xp:this.facets>
+			</xp:repeat>
+		</xp:panel>
 	</xc:moderationLayout>
 </xp:view>

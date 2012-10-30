@@ -1,12 +1,22 @@
 package org.openntf.news.http.core;
 
 import java.util.Date;
-
-import lotus.domino.DateTime;
-import lotus.domino.NotesException;
+import lotus.domino.*;
+import com.ibm.xsp.extlib.social.SocialServicesFactory;
+import javax.faces.context.FacesContext;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class MiscUtils {
 	private MiscUtils() { }
+
+	public static String getCurrentCommonName() throws NotesException {
+		String userName = SocialServicesFactory.getInstance().getAuthenticatedUserId(FacesContext.getCurrentInstance());
+		Name name = ExtLibUtil.getCurrentSession().createName(userName);
+		userName = name.getCommon();
+		name.recycle();
+
+		return userName;
+	}
 
 	// Methods for coaxing column values to desired data types, with DateTime recycling
 	public static Date getColumnValueAsDate(Object columnValue) {

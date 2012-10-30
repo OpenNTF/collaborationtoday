@@ -1,52 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core"
 	xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Administration | Collaboration Today">
+	
 	<xc:moderationLayout>
 		<xp:this.facets>
-			<xp:panel xp:key="content">
-				<xc:moderatorCheck></xc:moderatorCheck>
-				<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-					<div class="page-header">
-						<h1>
-							<small>Administration</small>
-						</h1>
-					</div>
-					<xp:panel>
-						<xp:br></xp:br>
-						<xp:button value="Update Cache" id="button5" styleClass="btn">
-							<xp:eventHandler event="onclick" submit="true"
-								refreshMode="complete">
-								<xp:this.action>
-									<xp:actionGroup>
-										<xp:actionGroup>
-											<xp:executeScript
-												script="#{javascript:personsCache.update();newsCache.update();configCache.update();}"></xp:executeScript>
-											<xp:openPage name="/home.xsp"></xp:openPage>
-										</xp:actionGroup>
-									</xp:actionGroup>
-								</xp:this.action>
-							</xp:eventHandler>
-						</xp:button>
-						<xp:br></xp:br>
-						<xp:br></xp:br>
-						<xp:button value="Store Clicks" id="button1" styleClass="btn">
-							<xp:eventHandler event="onclick" submit="true"
-								refreshMode="complete">
-								<xp:this.action>
-									<xp:actionGroup>
-										<xp:actionGroup>
-											<xp:executeScript
-												script="#{javascript:clickCache.addClick(null, true);}"></xp:executeScript>
-											<xp:openPage name="/home.xsp"></xp:openPage>
-										</xp:actionGroup>
-									</xp:actionGroup>
-								</xp:this.action>
-							</xp:eventHandler>
-						</xp:button>						
-					</xp:panel>
-				</xp:panel>
-			</xp:panel>
-			<xc:moderationLeftColumn xp:key="leftColumn"></xc:moderationLeftColumn>
+			<xc:moderationLeftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
+		
+		<xc:moderatorCheck/>
+		
+		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
+			<div class="page-header">
+				<h1>
+					<small>Administration</small>
+				</h1>
+			</div>
+			<xp:panel>
+				<br />
+				<xp:button value="Update Cache" id="button5" styleClass="btn">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:
+							personsCache.update();
+							newsCache.update();
+							configCache.update();
+							
+							return "go-home";
+						}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<br />
+				<br />
+				<xp:button value="Store Clicks" id="button1" styleClass="btn">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:
+							clickCache.addClick(null, true);
+							
+							return "go-home";
+						}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>						
+			</xp:panel>
+		</xp:panel>
 	</xc:moderationLayout>
 </xp:view>

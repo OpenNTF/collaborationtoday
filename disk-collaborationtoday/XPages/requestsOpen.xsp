@@ -6,36 +6,35 @@
 	</xp:this.resources>
 	<xc:moderationLayout>
 		<xp:this.facets>
-			<xp:panel xp:key="content">
-				<xc:moderatorCheck></xc:moderatorCheck>
-				<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-					<div class="page-header">
-						<h1>
-							<small>Open Requests</small>
-						</h1>
-					</div>
-					<xp:panel>
-						<xp:br></xp:br>
-						<xc:ccPager pagerFor="viewPanel1"></xc:ccPager>
-						<xp:viewPanel rows="30" id="viewPanel1" pageName="/moderateRequest.xsp" viewStyleClass="viewPanel"
-							dataTableStyleClass="dataTableViewPanel">
-							<xp:this.data>
-								<xp:dominoView var="view1" viewName="RequestsAll" categoryFilter="open"></xp:dominoView>
-							</xp:this.data>
-							<xp:viewColumn columnName="RCreationDate" id="viewColumn1" styleClass="columnView25">
-								<xp:viewColumnHeader value="Creation Date" id="viewColumnHeader1"></xp:viewColumnHeader>
-							</xp:viewColumn>
-							<xp:viewColumn columnName="REMail" id="viewColumn3" styleClass="columnView25">
-								<xp:viewColumnHeader value="E-Mail" id="viewColumnHeader3"></xp:viewColumnHeader>
-							</xp:viewColumn>
-							<xp:viewColumn columnName="RSubject" id="viewColumn2" displayAs="link">
-								<xp:viewColumnHeader value="Subject" id="viewColumnHeader2"></xp:viewColumnHeader>
-							</xp:viewColumn>
-						</xp:viewPanel>
-					</xp:panel>
-				</xp:panel>
-			</xp:panel>
 			<xc:moderationLeftColumn xp:key="leftColumn"></xc:moderationLeftColumn>
 		</xp:this.facets>
+		
+		<xc:moderatorCheck/>
+		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
+			<div class="page-header">
+				<h1>
+					<small>Open Requests</small>
+				</h1>
+			</div>
+			<xp:panel>
+				<xp:br></xp:br>
+				<xc:ccPager pagerFor="viewPanel1"></xc:ccPager>
+				<xp:viewPanel rows="30" id="viewPanel1" pageName="/moderateRequest.xsp" viewStyleClass="viewPanel"
+					dataTableStyleClass="dataTableViewPanel">
+					<xp:this.data>
+						<xp:dominoView var="view1" viewName="RequestsAll" categoryFilter="open"></xp:dominoView>
+					</xp:this.data>
+					<xp:viewColumn columnName="RCreationDate" id="viewColumn1" styleClass="columnView25">
+						<xp:viewColumnHeader value="Creation Date" id="viewColumnHeader1"></xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="REMail" id="viewColumn3" styleClass="columnView25">
+						<xp:viewColumnHeader value="E-Mail" id="viewColumnHeader3"></xp:viewColumnHeader>
+					</xp:viewColumn>
+					<xp:viewColumn columnName="RSubject" id="viewColumn2" displayAs="link">
+						<xp:viewColumnHeader value="Subject" id="viewColumnHeader2"></xp:viewColumnHeader>
+					</xp:viewColumn>
+				</xp:viewPanel>
+			</xp:panel>
+		</xp:panel>
 	</xc:moderationLayout>
 </xp:view>

@@ -3,27 +3,26 @@
 	pageTitle="Moderated - Popular | Collaboration Today">
 	<xc:moderationLayout>
 		<xp:this.facets>
-			<xp:panel xp:key="content">
-				<xc:moderatorCheck></xc:moderatorCheck>
-				<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-					<div class="page-header">
-						<h1>
-							<small>News Entries - Approved / Moderated - Popular</small>
-						</h1>
-					</div>
-					<xp:br></xp:br>
-					<xc:ccPager pagerFor="repeat7"></xc:ccPager>
-					<xp:br></xp:br>
-					<xp:repeat id="repeat7" var="entry" rows="50" value="#{javascript:newsCache.getEntriesByPopularity();}">
-						<xc:moderationNewsEntry link="#{javascript:entry.getLink()}" nID="#{javascript:entry.getID()}"
-							personDisplayName="#{javascript:personsCache.getPerson(entry.getPID()).getDisplayName()}" publicationDate="#{javascript:entry.getPrettyTime()}"
-							title="#{javascript:entry.getTitle()}" state="#{javascript:entry.getState()}" clicksTotal="#{javascript:entry.getClicksTotal()}"
-							clicksLastWeek="#{javascript:entry.getClicksLastWeek()}">
-						</xc:moderationNewsEntry>
-					</xp:repeat>
-				</xp:panel>
-			</xp:panel>
 			<xc:moderationLeftColumn xp:key="leftColumn"></xc:moderationLeftColumn>
 		</xp:this.facets>
+		
+		<xc:moderatorCheck/>
+		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
+			<div class="page-header">
+				<h1>
+					<small>News Entries - Approved / Moderated - Popular</small>
+				</h1>
+			</div>
+			<xp:br></xp:br>
+			<xc:ccPager pagerFor="repeat7"></xc:ccPager>
+			<xp:br></xp:br>
+			<xp:repeat id="repeat7" var="entry" rows="50" value="#{javascript:newsCache.getEntriesByPopularity();}">
+				<xc:moderationNewsEntry link="#{javascript:entry.getLink()}" nID="#{javascript:entry.getID()}"
+					personDisplayName="#{javascript:personsCache.getPerson(entry.getPID()).getDisplayName()}" publicationDate="#{javascript:entry.getPrettyTime()}"
+					title="#{javascript:entry.getTitle()}" state="#{javascript:entry.getState()}" clicksTotal="#{javascript:entry.getClicksTotal()}"
+					clicksLastWeek="#{javascript:entry.getClicksLastWeek()}">
+				</xc:moderationNewsEntry>
+			</xp:repeat>
+		</xp:panel>
 	</xc:moderationLayout>
 </xp:view>

@@ -18,17 +18,17 @@
  -->
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
 	<xp:this.resources>
-		<xp:script src="/xpNewsFeedGenerator.jss" clientSide="false"></xp:script>
+		<xp:script src="/xpNewsFeedGenerator.jss" clientSide="false"/>
 	</xp:this.resources>
 	<xp:this.afterRenderResponse><![CDATA[#{javascript:
-	try {
-	var generator = new FeedGenerator();
-	generator.getFeed();
-} catch (e) {
-	print(e);
-	facesContext.getExternalContext().getResponse().sendError(500,"Internal Server Error");
-}
-}]]></xp:this.afterRenderResponse>
+		try {
+			var generator = new FeedGenerator();
+			generator.getFeed();
+		} catch (e) {
+			print(e);
+			facesContext.getExternalContext().getResponse().sendError(500,"Internal Server Error");
+		}
+	}]]></xp:this.afterRenderResponse>
 
 
 </xp:view>
