@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="46e" sequence="5" unid="28D4BED8B39C901B85257AA700566504">
+<noteinfo noteid="46e" sequence="8" unid="28D4BED8B39C901B85257AA700566504">
 <created><datetime dst="true">20121030T114339,56-04</datetime></created>
-<modified><datetime dst="true">20121030T114402,70-04</datetime></modified>
-<revised><datetime dst="true">20121030T114402,68-04</datetime></revised>
-<lastaccessed><datetime dst="true">20121030T114402,68-04</datetime></lastaccessed>
+<modified><datetime dst="true">20121030T122316,73-04</datetime></modified>
+<revised><datetime dst="true">20121030T122316,71-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121030T122316,71-04</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20121030T114339,60-04</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
@@ -11,6 +11,12 @@
 <item name="$TITLE"><text>navigationRules.xsp</text></item>
 
 
-<item name="$FileNames" sign="true"><text>navigationRules.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
 
-</note>
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>navigationRules.xsp</text></item></note>

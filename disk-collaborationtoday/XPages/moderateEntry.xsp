@@ -33,6 +33,8 @@ if (param.nid) {
 }}]]></xp:this.documentId>
 		</xp:dominoDocument>
 	</xp:this.data>
+	
+	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
 	<input type="hidden" name="hiddenLink" id="hiddenLink" value="#{javascript:document1.getItemValueString('NLink')}" />
 
 	<xc:moderationLayout>
@@ -48,9 +50,7 @@ if (param.nid) {
 			<xp:label value="You need to be a moderator."></xp:label>
 		</xp:panel>
 		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
-			<xp:br></xp:br>
-			<xp:label value="News Entry" style="font-weight:bold;font-size:12pt"></xp:label>
+			<xc:pageHeader value="News Entry"/>
 			<xp:br></xp:br>
 			<xp:br></xp:br>
 			<xp:br></xp:br>

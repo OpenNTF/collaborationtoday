@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom"
 	pageTitle="Moderate Request | Collaboration Today">
+	
+	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
+			
 	<xp:this.data>
 		<xp:dominoDocument var="document1" formName="Request"></xp:dominoDocument>
 	</xp:this.data>
@@ -11,12 +14,10 @@
 		
 		<xc:moderatorCheck/>
 		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
-			<xp:br></xp:br>
-			<xp:label value="Moderate Request" style="font-weight:bold;font-size:14pt"></xp:label>
-			<xp:br></xp:br>
-			<xp:br></xp:br>
-			<xp:br></xp:br>
+			<xc:pageHeader value="Moderate Request"/>
+			<br />
+			<br />
+			<br />
 			<xp:table>
 				<xp:tr>
 					<xp:td>

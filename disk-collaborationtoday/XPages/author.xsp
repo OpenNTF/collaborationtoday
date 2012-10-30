@@ -25,12 +25,9 @@
 		<xc:moderatorCheck/>
 		
 		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<div class="page-header">
-				<h1>
-					<small>Author</small>
-				</h1>
-			</div>
-			<xp:br></xp:br>
+			<xc:pageHeader value="Author"/>
+			
+			<br />
 			<xp:button value="Update" id="button5" styleClass="btn">
 				<xp:this.rendered><![CDATA[#{javascript:!document11.isNewNote()}]]></xp:this.rendered>
 				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">

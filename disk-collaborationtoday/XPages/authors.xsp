@@ -12,20 +12,13 @@
 		
 		<xc:moderatorCheck/>
 		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<div class="page-header">
-				<h1>
-					<small>Authors</small>
-				</h1>
-			</div>
-			<xp:br></xp:br>
+			<xc:pageHeader value="Authors"/>
+			
+			<br />
 			<xp:button value="New" id="button5" styleClass="btn">
-				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-					<xp:this.action>
-						<xp:openPage name="/author.xsp" target="newDocument"></xp:openPage>
-					</xp:this.action>
-				</xp:eventHandler>
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete" action="new-author"/>
 			</xp:button>
-			<xp:br></xp:br>
+			<br />
 			<xc:ccPager pagerFor="viewPanel1"></xc:ccPager>
 			<xp:viewPanel rows="30" id="viewPanel1" pageName="/author.xsp" viewStyleClass="viewPanel" dataTableStyleClass="dataTableViewPanel">
 

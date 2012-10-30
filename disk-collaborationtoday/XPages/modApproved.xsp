@@ -10,17 +10,15 @@
 		<xc:moderatorCheck/>
 		
 		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<div class="page-header">
-				<h1>
-					<small>News Entries - Approved / Moderated - All</small>
-				</h1>
-			</div>
-			<xp:br></xp:br>
-			<xc:ccPager pagerFor="repeat6"></xc:ccPager>
-			<xp:br></xp:br>
 			<xp:this.data>
-				<xp:dominoView var="view6" viewName="NewsAll" categoryFilter="approved"></xp:dominoView>
+				<xp:dominoView var="view6" viewName="NewsAll" categoryFilter="approved"/>
 			</xp:this.data>
+			
+			<xc:pageHeader value="News Entries - Approved / Moderated - All"/>
+			
+			<br />
+			<xc:ccPager pagerFor="repeat6"></xc:ccPager>
+			<br />
 			<xp:repeat id="repeat6" var="entry" rows="50" value="#{view6}">
 				<xc:moderationNewsEntry creationDate="#{javascript:entry.getColumnValue('NCreationDate')}"
 					link="#{javascript:entry.getColumnValue('NLink')}" nID="#{javascript:entry.getColumnValue('NID')}"

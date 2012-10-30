@@ -9,15 +9,12 @@
 		<xc:moderatorCheck/>
 		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
 			<xp:panel rendered="#{javascript:configCache.isUserTopStoriesModerator(@UserName())}">
-				<div class="page-header">
-					<h1>
-						<small>News Entries - Approved / Moderated - Top Stories</small>
-					</h1>
-				</div>
-				<xp:br></xp:br>
+				<xc:pageHeader value="News Entries - Approved / Moderated - Top Stories"/>
+				
+				<br />
 				<xp:label value="Top" style="font-weight:bold;"></xp:label>
-				<xp:br></xp:br>
-				<xp:br></xp:br>
+				<br />
+				<br />
 				<xp:repeat id="repedatasdf2" var="entryMTT" rows="10" value="#{javascript:newsCache.getTopTopStories();}">
 					<xc:moderationNewsEntry id="ndifm"
 						link="#{javascript:entryMTT.getLink()}"

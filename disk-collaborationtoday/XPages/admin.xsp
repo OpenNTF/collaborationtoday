@@ -10,36 +10,31 @@
 		<xc:moderatorCheck/>
 		
 		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<div class="page-header">
-				<h1>
-					<small>Administration</small>
-				</h1>
-			</div>
-			<xp:panel>
-				<br />
-				<xp:button value="Update Cache" id="button5" styleClass="btn">
-					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-						<xp:this.action><![CDATA[#{javascript:
-							personsCache.update();
-							newsCache.update();
-							configCache.update();
-							
-							return "go-home";
-						}]]></xp:this.action>
-					</xp:eventHandler>
-				</xp:button>
-				<br />
-				<br />
-				<xp:button value="Store Clicks" id="button1" styleClass="btn">
-					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-						<xp:this.action><![CDATA[#{javascript:
-							clickCache.addClick(null, true);
-							
-							return "go-home";
-						}]]></xp:this.action>
-					</xp:eventHandler>
-				</xp:button>						
-			</xp:panel>
+			<xc:pageHeader value="Administration"/>
+			
+			<br />
+			<xp:button value="Update Cache" id="button5" styleClass="btn">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action><![CDATA[#{javascript:
+						personsCache.update();
+						newsCache.update();
+						configCache.update();
+						
+						return "go-home";
+					}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<br />
+			<br />
+			<xp:button value="Store Clicks" id="button1" styleClass="btn">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action><![CDATA[#{javascript:
+						clickCache.addClick(null, true);
+						
+						return "go-home";
+					}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
 		</xp:panel>
 	</xc:moderationLayout>
 </xp:view>

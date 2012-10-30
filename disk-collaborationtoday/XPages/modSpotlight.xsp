@@ -10,12 +10,9 @@
 		
 		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
 			<xp:panel rendered="#{javascript:configCache.isUserSpotlightModerator(@UserName())}">
-				<div class="page-header">
-					<h1>
-						<small>News Entries - Approved / Moderated - Spotlight</small>
-					</h1>
-				</div>
-				<xp:br></xp:br>
+				<xc:pageHeader value="News Entries - Approved / Moderated - Spotlight"/>
+				
+				<br />
 				<xp:repeat id="repeat5" var="entry" rows="50" value="#{javascript:newsCache.getSpotlightEntries();}">
 					<xc:moderationNewsEntry
 						link="#{javascript:entry.getLink()}"

@@ -8,14 +8,11 @@
 		
 		<xc:moderatorCheck/>
 		<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
-			<div class="page-header">
-				<h1>
-					<small>News Entries - Approved / Moderated - Popular</small>
-				</h1>
-			</div>
-			<xp:br></xp:br>
+			<xc:pageHeader value="News Entries - Approved / Moderated - Popular"/>
+			
+			<br />
 			<xc:ccPager pagerFor="repeat7"></xc:ccPager>
-			<xp:br></xp:br>
+			<br />
 			<xp:repeat id="repeat7" var="entry" rows="50" value="#{javascript:newsCache.getEntriesByPopularity();}">
 				<xc:moderationNewsEntry link="#{javascript:entry.getLink()}" nID="#{javascript:entry.getID()}"
 					personDisplayName="#{javascript:personsCache.getPerson(entry.getPID()).getDisplayName()}" publicationDate="#{javascript:entry.getPrettyTime()}"
