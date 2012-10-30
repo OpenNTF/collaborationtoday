@@ -1,7 +1,7 @@
 package org.openntf.news.http.core;
 
 /*
- * © Copyright IBM, 2011, 2012
+ * ï¿½ Copyright IBM, 2011, 2012
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
  * you may not use this file except in compliance with the License. 
@@ -23,14 +23,12 @@ import javax.faces.context.FacesContext;
 import net.htmlparser.jericho.*;
 import java.util.*;
 import java.net.*;
-import java.io.*;
 
 public class Parser { 
 	static public String getOutput(String urlToIndex) {
 
 		String unid = "";
-		String line = "";		
-		try {			 
+		try {
 			MicrosoftTagTypes.register();
 			PHPTagTypes.register();
 			PHPTagTypes.PHP_SHORT.deregister(); 
@@ -46,11 +44,11 @@ public class Parser {
 			if (description.equalsIgnoreCase("")) {
 				description = title;
 			}
-			
+
 			Session session = getCurrentSession();
 			Database db = getCurrentDatabase();
 			Document newsEntry = db.createDocument();
-										
+
 			newsEntry.appendItemValue("Form", "News");
 			newsEntry.appendItemValue("NState", "queued");
 			newsEntry.appendItemValue("NID", generateUniqueId());				
@@ -61,17 +59,17 @@ public class Parser {
 			newsEntry.appendItemValue("NAbstract", "");
 			Date date = new Date();
 			newsEntry.appendItemValue("NCreationDate", session.createDateTime(date));
-					
+
 			newsEntry.save();						
-		        
+
 			unid = newsEntry.getUniversalID();			
 		} 
 		catch (Exception err) {
-		 	err.printStackTrace();
+			err.printStackTrace();
 		} 
 		return unid;
 	}
-	
+
 	private static String generateUniqueId() {
 		String allowed= "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		StringBuilder sb = new StringBuilder(6);
@@ -79,9 +77,9 @@ public class Parser {
 		for (int i=0; i < 6; i++) 	            {
 			sb.append(allowed.charAt(random.nextInt(allowed.length())));
 		}
-	    return sb.toString().toLowerCase();            
+		return sb.toString().toLowerCase();            
 	}
-	
+
 	private static String getTitle(Source s) {
 		Element e = s.getFirstElement(HTMLElementName.TITLE);
 		if (e == null) return null;
@@ -98,7 +96,7 @@ public class Parser {
 		}
 		return null;
 	}
-	
+
 	public static Session getCurrentSession() {
 		FacesContext ctx = FacesContext.getCurrentInstance();
 		return (Session)ctx.getApplication().getVariableResolver().resolveVariable(ctx, "session");

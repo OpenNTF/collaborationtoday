@@ -18,10 +18,8 @@ package org.openntf.news.http.core;
  * Author: Niklas Heidloff - niklas_heidloff@de.ibm.com
  */
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 import javax.faces.context.FacesContext;
 import java.net.URLEncoder;
 
