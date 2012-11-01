@@ -18,6 +18,11 @@ public class MiscUtils {
 		return userName;
 	}
 
+	public static void logException(Throwable e) {
+		// Eventually, this should store in a document or elsewhere. For now, print to the console
+		e.printStackTrace();
+	}
+
 	// Methods for coaxing column values to desired data types, with DateTime recycling
 	public static Date getColumnValueAsDate(Object columnValue) {
 		try {
@@ -42,5 +47,14 @@ public class MiscUtils {
 			}
 		} catch(NotesException ne) { }
 		return 0d;
+	}
+
+
+	public static void incinerate(Base... domObjects) {
+		for(Base domObject : domObjects) {
+			if(domObject != null) {
+				try { domObject.recycle(); } catch(NotesException ne) { }
+			}
+		}
 	}
 }

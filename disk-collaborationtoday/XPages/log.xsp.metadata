@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="19a" sequence="3" unid="36D13E37E6900C5D85257AA6004F5BA9">
+<noteinfo noteid="19a" sequence="10" unid="36D13E37E6900C5D85257AA6004F5BA9">
 <created><datetime dst="true">20121029T102648,09-04</datetime></created>
-<modified><datetime dst="true">20121029T102648,45-04</datetime></modified>
-<revised><datetime dst="true">20121029T102648,44-04</datetime></revised>
-<lastaccessed><datetime dst="true">20121029T102648,44-04</datetime></lastaccessed>
+<modified><datetime dst="true">20121030T131238,98-04</datetime></modified>
+<revised><datetime dst="true">20121030T131238,97-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121030T131238,97-04</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20121029T102648,18-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
-<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$TITLE"><text>log.xsp</text></item>
 <item name="$Flags"><text>gC~4K</text></item>
-<item name="$DesignerVersion"><text>8.5</text></item>
 
 
-<item name="$FileNames" sign="true"><text>log.xsp</text></item></note>
+
+
+
+<item name="$FileNames" sign="true"><text>log.xsp</text></item>
+
+
+<item name="$Comment" sign="true"><text>Non-UI</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>
