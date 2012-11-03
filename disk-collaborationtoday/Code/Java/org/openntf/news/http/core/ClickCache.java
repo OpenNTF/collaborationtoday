@@ -62,7 +62,7 @@ public class ClickCache {
 			_clicks = new HashSet<Click>();
 			_lastJob = new Date();
 			try {
-				Database db = ExtLibUtil.getCurrentDatabase();						
+				Database db = ExtLibUtil.getCurrentDatabase();
 				WriteCacheJob.start(clicksToBeSaved, db.getFilePath());
 			} catch (NotesException e) {
 				e.printStackTrace();

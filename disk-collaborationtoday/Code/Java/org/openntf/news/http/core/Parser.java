@@ -19,15 +19,19 @@ package org.openntf.news.http.core;
  */
 
 import lotus.domino.*;
-import javax.faces.context.FacesContext;
 import net.htmlparser.jericho.*;
 import java.util.*;
 import java.net.*;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
 
-public class Parser { 
+public class Parser {
+	// No need to instantiate this class
+	private Parser() { }
+
 	static public String getOutput(String urlToIndex) {
 
 		String unid = "";
+		Document newsEntry = null;
 		try {
 			MicrosoftTagTypes.register();
 			PHPTagTypes.register();
@@ -36,22 +40,19 @@ public class Parser {
 			Source source = new Source(new URL(urlToIndex));
 			source.fullSequentialParse();
 
-			String title=getTitle(source);
+			String title = getTitle(source);
 			String description = getMetaValue(source, "description");
-			if (description == null) {
-				description = title;
-			}
-			if (description.equalsIgnoreCase("")) {
+			if (description == null || description.isEmpty()) {
 				description = title;
 			}
 
-			Session session = getCurrentSession();
-			Database db = getCurrentDatabase();
-			Document newsEntry = db.createDocument();
+			Session session = ExtLibUtil.getCurrentSession();
+			Database db = ExtLibUtil.getCurrentDatabase();
+			newsEntry = db.createDocument();
 
 			newsEntry.appendItemValue("Form", "News");
 			newsEntry.appendItemValue("NState", "queued");
-			newsEntry.appendItemValue("NID", generateUniqueId());				
+			newsEntry.appendItemValue("NID", generateUniqueId());
 			newsEntry.appendItemValue("NLink", urlToIndex);
 			newsEntry.appendItemValue("PID", "unknown");
 			newsEntry.appendItemValue("NTitle", title);
@@ -60,13 +61,14 @@ public class Parser {
 			Date date = new Date();
 			newsEntry.appendItemValue("NCreationDate", session.createDateTime(date));
 
-			newsEntry.save();						
+			newsEntry.save();
 
-			unid = newsEntry.getUniversalID();			
-		} 
-		catch (Exception err) {
+			unid = newsEntry.getUniversalID();
+		} catch(Exception err) {
 			err.printStackTrace();
-		} 
+		} finally {
+			MiscUtils.incinerate(newsEntry);
+		}
 		return unid;
 	}
 
@@ -74,10 +76,10 @@ public class Parser {
 		String allowed= "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		StringBuilder sb = new StringBuilder(6);
 		Random random = new Random();
-		for (int i=0; i < 6; i++) 	            {
+		for (int i=0; i < 6; i++) {
 			sb.append(allowed.charAt(random.nextInt(allowed.length())));
 		}
-		return sb.toString().toLowerCase();            
+		return sb.toString().toLowerCase();
 	}
 
 	private static String getTitle(Source s) {
@@ -95,14 +97,5 @@ public class Parser {
 			p = startTag.getEnd();
 		}
 		return null;
-	}
-
-	public static Session getCurrentSession() {
-		FacesContext ctx = FacesContext.getCurrentInstance();
-		return (Session)ctx.getApplication().getVariableResolver().resolveVariable(ctx, "session");
-	}
-	public static Database getCurrentDatabase() {
-		FacesContext ctx = FacesContext.getCurrentInstance();
-		return (Database)ctx.getApplication().getVariableResolver().resolveVariable(ctx, "database");
 	}
 }

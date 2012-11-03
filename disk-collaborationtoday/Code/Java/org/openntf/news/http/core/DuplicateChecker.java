@@ -63,7 +63,7 @@ public class DuplicateChecker {
 					dup.setNLink(doc.getItemValueString("NLink"));
 					dup.setNTitle(doc.getItemValueString("NTitle"));
 
-					duplicatesList.add(dup);	
+					duplicatesList.add(dup);
 				}
 
 				Document tempDoc = doc;
@@ -95,7 +95,7 @@ public class DuplicateChecker {
 					dup.setNLink(doc.getItemValueString("NLink"));
 					dup.setNTitle(doc.getItemValueString("NTitle"));
 
-					duplicatesList.add(dup);	
+					duplicatesList.add(dup);
 				}
 
 				Document tempDoc = doc;

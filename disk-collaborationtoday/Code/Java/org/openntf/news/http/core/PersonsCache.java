@@ -38,7 +38,7 @@ public class PersonsCache {
 	}    
 
 	private boolean _isCached = false;
-	private HashMap<String, Person> _persons;
+	private Map<String, Person> _persons;
 
 	private void initialize() {
 		if (_isCached) return;
@@ -98,7 +98,7 @@ public class PersonsCache {
 				e.printStackTrace();
 			}
 		}
-		_isCached = true;		
+		_isCached = true;
 	}
 
 	public Person getPerson(String pID) {
@@ -124,5 +124,5 @@ public class PersonsCache {
 			output.add(person.getDisplayName() + "|" + person.getPID());
 		}
 		return output;
-	}	
+	}
 }

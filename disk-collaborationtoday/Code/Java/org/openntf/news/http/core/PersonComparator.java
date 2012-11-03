@@ -26,7 +26,7 @@ class PersonComparator implements Comparator<String> {
 	public PersonComparator(Map<String, Person> map) {
 		_map = map;
 	}
-	public int compare(String firstKey, String secondKey) {				
+	public int compare(String firstKey, String secondKey) {
 		Person firstPerson = _map.get(firstKey);
 		Person secondPerson = _map.get(secondKey);
 		return firstPerson.getDisplayName().toLowerCase().compareTo(secondPerson.getDisplayName().toLowerCase());

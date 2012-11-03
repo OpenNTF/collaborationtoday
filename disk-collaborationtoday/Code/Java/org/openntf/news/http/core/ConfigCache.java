@@ -135,7 +135,7 @@ public class ConfigCache {
 				tmpEntry = viewNavigatorTypes.getNext();
 				entry.recycle();
 				entry = tmpEntry;
-			}				
+			}
 
 			viewCategoriesAll = db.getView("CategoriesAll");
 			viewCategoriesAll.setAutoUpdate(false);
@@ -155,7 +155,7 @@ public class ConfigCache {
 				tmpEntry = viewNavigatorCategories.getNext();
 				entry.recycle();
 				entry = tmpEntry;
-			}	
+			}
 
 			viewConfigAll = db.getView("ConfigAll");
 			viewConfigAll.setAutoUpdate(false);
@@ -168,8 +168,8 @@ public class ConfigCache {
 					setCaptchaPrivateKey(doc.getItemValueString("COCaptchaPrivateKey"));
 					_analyticsJS = doc.getItemValueString("COAnalytics");
 					doc.recycle();
-				}				
-				entry.recycle();		        
+				}
+				entry.recycle();
 			}	
 		}
 		catch (Exception e) {
@@ -181,29 +181,9 @@ public class ConfigCache {
 			return;
 		}
 		finally {
-			try {
-				if (viewNavigatorTypes != null) {
-					viewNavigatorTypes.recycle();
-				}
-				if (viewNavigatorCategories != null) {
-					viewNavigatorCategories.recycle();
-				}
-				if (viewTypesAll != null) {
-					viewTypesAll.recycle();
-				}	
-				if (viewConfigAll != null) {
-					viewConfigAll.recycle();
-				}	
-				if (viewCategoriesAll != null) {
-					viewCategoriesAll.recycle();
-				}	
-			}
-			catch (NotesException e) {
-				e.printStackTrace();
-				return;
-			}
+			MiscUtils.incinerate(viewNavigatorTypes, viewNavigatorCategories, viewTypesAll, viewConfigAll, viewCategoriesAll);
 		}
-		_isCached = true;		
+		_isCached = true;
 	}
 
 	private void initialize() {
@@ -251,10 +231,10 @@ public class ConfigCache {
 		return output;
 	}
 
-	public Vector<String> getCategoriesCombobox() {		
+	public Vector<String> getCategoriesCombobox() {
 		Vector<String> output = new Vector<String>();
 		output.add("Top|top");
-		initialize();  
+		initialize();
 		if (_categories != null) {
 			for(Category category : _categories) {
 				output.add(category.getDisplayName() + "|" + category.getID());
@@ -267,7 +247,7 @@ public class ConfigCache {
 		List<Type> output = null;
 		try {
 			String userName = MiscUtils.getCurrentCommonName();
-			initialize();  
+			initialize();
 
 			output = new Vector<Type>();
 			for(Type type : _types) {
@@ -281,11 +261,11 @@ public class ConfigCache {
 		return output;
 	}
 
-	public Vector<Type> getTypesForCategory(String categoryId) {		
+	public Vector<Type> getTypesForCategory(String categoryId) {
 		initialize();
 		Vector<Type> output = new Vector<Type>();
 		if (_types == null) return output;
-		for(Type type : _types) {        	
+		for(Type type : _types) {
 			if (categoryId.equalsIgnoreCase(type.getCategoryId())) {
 				output.add(type);
 			}

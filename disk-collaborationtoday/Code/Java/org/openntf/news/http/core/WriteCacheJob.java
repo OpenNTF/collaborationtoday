@@ -63,8 +63,7 @@ public class WriteCacheJob {
 	public static void start(HashSet<Click> clicks, String dbName) {
 		synchronized (WriteCacheJob.class) {
 			if (runningJob == null) {
-				runningJob = new WriteClicksJob("News.nsf - Save Clicks",
-						clicks, dbName);
+				runningJob = new WriteClicksJob("News.nsf - Save Clicks", clicks, dbName);
 				runningJob.addJobChangeListener(new JobChangeAdapter() {
 					@Override
 					public void done(IJobChangeEvent event) {
@@ -102,11 +101,11 @@ public class WriteCacheJob {
 			this.executor = new ThreadSessionExecutor<IStatus>() {
 				@SuppressWarnings("unchecked")
 				@Override
-				protected IStatus run(Session session) throws NotesException {					
+				protected IStatus run(Session session) throws NotesException {
 
 					main: if (cancel) {
 						break main;
-					}					
+					}
 				Map<String, Set<Click>> clicksByNID = new HashMap<String, Set<Click>>();
 
 				for(Click click : _clicks) {
@@ -145,7 +144,7 @@ public class WriteCacheJob {
 										true);
 								if (doc != null) {
 									HashSet<Click> storedClicks = (HashSet<Click>)restoreState(session, doc, "NClicks");
-									if (storedClicks != null) {											
+									if (storedClicks != null) {
 										storedClicks.addAll(clicksFromOneNID);
 										clicksFromOneNID = storedClicks;
 									}
@@ -178,7 +177,7 @@ public class WriteCacheJob {
 				int getClicksLastWeek(Set<Click> clicks) {
 					int output = 0;
 					try {
-						for(Click click : clicks) {											
+						for(Click click : clicks) {
 							Calendar now = Calendar.getInstance();
 							Calendar last = Calendar.getInstance();
 							now.setTime(new Date());
@@ -188,8 +187,8 @@ public class WriteCacheJob {
 							long diff = millisecondsNow - millisecondsLast;
 							long diffDays = diff / (24 * 60 * 60 * 1000);
 
-							if (diffDays <= 7) output = output + 1;														
-						}												
+							if (diffDays <= 7) output = output + 1;
+						}
 					} catch (Exception e) {
 						e.printStackTrace();
 					}

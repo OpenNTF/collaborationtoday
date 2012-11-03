@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="172" sequence="8" unid="8C8FA21CD7D8EF8985257AA6004F59E4">
+<noteinfo noteid="172" sequence="9" unid="8C8FA21CD7D8EF8985257AA6004F59E4">
 <created><datetime dst="true">20121029T102643,56-04</datetime></created>
-<modified><datetime dst="true">20121030T131234,07-04</datetime></modified>
-<revised><datetime dst="true">20121030T131234,06-04</datetime></revised>
-<lastaccessed><datetime dst="true">20121030T131234,06-04</datetime></lastaccessed>
+<modified><datetime dst="true">20121103T112639,83-04</datetime></modified>
+<revised><datetime dst="true">20121103T112639,82-04</datetime></revised>
+<lastaccessed><datetime dst="true">20121103T112639,82-04</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20121029T102643,65-04</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
@@ -15,7 +15,7 @@
 
 
 
-
-
 <item name="$Comment" sign="true"><text>Non-UI</text></item>
-<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+</note>

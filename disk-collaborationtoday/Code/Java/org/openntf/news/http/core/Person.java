@@ -1,7 +1,7 @@
 package org.openntf.news.http.core;
 
 /*
- * © Copyright IBM, 2012
+ * ï¿½ Copyright IBM, 2012
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
  * you may not use this file except in compliance with the License. 
@@ -40,7 +40,7 @@ public class Person {
 		_pictureType = pictureType;
 		_pictureURL = pictureURL;
 	}
-	
+
 	public static Person getEmptyPerson() {
 		return new Person("", "", "", "", "", "");
 	}
@@ -62,7 +62,7 @@ public class Person {
 		if (_twitter.equalsIgnoreCase("")) return _displayName;
 		return "@" + _twitter;
 	}
-	
+
 	public String getDisplayName() {
 		return _displayName;
 	}
@@ -77,9 +77,8 @@ public class Person {
 				return getGravatarURL();
 			}
 			if (_pictureType.equalsIgnoreCase("url")) {
-				if (_pictureURL != null) {
-					if (!_pictureURL.equalsIgnoreCase(""))
-						return _pictureURL;
+				if (_pictureURL != null && !_pictureURL.isEmpty()) {
+					return _pictureURL;
 				}
 			}
 		}
@@ -91,7 +90,7 @@ public class Person {
 		try {
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			output = output
-					+ hex(md.digest(getEMailAddress().getBytes("CP1252")));
+			+ hex(md.digest(getEMailAddress().getBytes("CP1252")));
 		} catch (NoSuchAlgorithmException e) {
 		} catch (UnsupportedEncodingException e) {
 		}

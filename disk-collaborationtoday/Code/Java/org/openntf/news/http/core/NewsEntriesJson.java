@@ -19,99 +19,73 @@ package org.openntf.news.http.core;
  */
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 import javax.faces.context.FacesContext;
 import java.net.URLEncoder;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class NewsEntriesJson {
-	public NewsEntriesJson() {
-		_count = DEFAULT_COUNT;
-		_format = FORMAT_JSONP;
-		_filter = FILTER_ALL;
-	}
 
-	private String _count;
-	private String _filter;
-	private String _format;
+	public NewsEntriesJson() { }
 
-	public String FORMAT_JSON = "json";
-	public String FORMAT_JSONP = "jsonp";
+	private String _count = DEFAULT_COUNT;
+	private String _filter = FORMAT_JSONP;
+	private String _format = FILTER_ALL;
 
-	public String FILTER_TOP = "top";
-	public String FILTER_ALL = "all";
-	public String FILTER_POPULAR = "popular";
-	public String FILTER_SPOTLIGHT = "spotlight";
+	public static final String FORMAT_JSON = "json";
+	public static final String FORMAT_JSONP = "jsonp";
 
-	public String NEWS_ENTRY_ID = "id";
-	public String NEWS_ENTRY_TYPE_DISPLAY_NAME = "type_display_name";
-	public String NEWS_ENTRY_TYPE_ID = "type_id";
-	public String NEWS_ENTRY_TITLE = "title";
-	public String NEWS_ENTRY_PERSON_ID = "person_id";
-	public String NEWS_ENTRY_PERSON_DISPLAY_NAME = "person_display_name";
-	public String NEWS_ENTRY_LINK = "link";
-	public String NEWS_ENTRY_IMAGE_URL = "image_url";
-	public String NEWS_ENTRY_ABSTRACT_ENCODED = "abstract_encoded";
-	public String NEWS_ENTRY_MODERATION_DATE = "moderation_date";
-	public String NEWS_ENTRY_PUBLICATION_DATE = "publication_date";
-	public String NEWS_ENTRY_IS_SPOTLIGHT = "is_spotlight";
-	public String NEWS_ENTRY_SPOTLIGHT_SENTENCE = "spotlight_sentence";
-	public String NEWS_ENTRY_IS_TOP_STORY = "is_top_story";
-	public String NEWS_ENTRY_TOP_STORY_CATEGORY = "top_story_category";
-	public String NEWS_ENTRY_TOP_STORY_POSITION = "top_story_position";
-	public String NEWS_ENTRY_CLICKS_TOTAL = "clicks_total";
-	public String NEWS_ENTRY_CLICKS_LAST_WEEK = "clicks_last_week";
+	public static final String FILTER_TOP = "top";
+	public static final String FILTER_ALL = "all";
+	public static final String FILTER_POPULAR = "popular";
+	public static final String FILTER_SPOTLIGHT = "spotlight";
 
-	private final String DEFAULT_COUNT = "10";
+	public static final String NEWS_ENTRY_ID = "id";
+	public static final String NEWS_ENTRY_TYPE_DISPLAY_NAME = "type_display_name";
+	public static final String NEWS_ENTRY_TYPE_ID = "type_id";
+	public static final String NEWS_ENTRY_TITLE = "title";
+	public static final String NEWS_ENTRY_PERSON_ID = "person_id";
+	public static final String NEWS_ENTRY_PERSON_DISPLAY_NAME = "person_display_name";
+	public static final String NEWS_ENTRY_LINK = "link";
+	public static final String NEWS_ENTRY_IMAGE_URL = "image_url";
+	public static final String NEWS_ENTRY_ABSTRACT_ENCODED = "abstract_encoded";
+	public static final String NEWS_ENTRY_MODERATION_DATE = "moderation_date";
+	public static final String NEWS_ENTRY_PUBLICATION_DATE = "publication_date";
+	public static final String NEWS_ENTRY_IS_SPOTLIGHT = "is_spotlight";
+	public static final String NEWS_ENTRY_SPOTLIGHT_SENTENCE = "spotlight_sentence";
+	public static final String NEWS_ENTRY_IS_TOP_STORY = "is_top_story";
+	public static final String NEWS_ENTRY_TOP_STORY_CATEGORY = "top_story_category";
+	public static final String NEWS_ENTRY_TOP_STORY_POSITION = "top_story_position";
+	public static final String NEWS_ENTRY_CLICKS_TOTAL = "clicks_total";
+	public static final String NEWS_ENTRY_CLICKS_LAST_WEEK = "clicks_last_week";
+
+	private static final String DEFAULT_COUNT = "10";
 
 	public void setCount(String count) {
-		_count = count;
-		if (_count == null) {
-			_count = DEFAULT_COUNT;
-		} else {
-			if (count.equalsIgnoreCase(""))
-				_count = DEFAULT_COUNT;
-		}
+		_count = count == null || count.isEmpty() ? DEFAULT_COUNT : count;
 	}
-
 	public String getCount() {
 		return _count;
 	}
-
 	public int getCountAsInt() {
 		try {
-			Integer i = new Integer(_count);
-			return i.intValue();
+			return Integer.parseInt(_count, 10);
 		} catch (Exception e) {
-			Integer i = new Integer(DEFAULT_COUNT);
-			return i.intValue();
+			return Integer.parseInt(DEFAULT_COUNT, 10);
 		}
 	}
 
 	public void setFormat(String format) {
-		_format = FORMAT_JSONP;
-		if (format == null)
-			return;
-		if (format.equalsIgnoreCase(FORMAT_JSON)) {
-			_format = FORMAT_JSON;
-		}
+		_format = FORMAT_JSON.equalsIgnoreCase(format) ? FORMAT_JSON : FORMAT_JSONP;
 	}
-
 	public String getFormat() {
 		return _format;
 	}
 
 	public void setFilter(String filter) {
-		if (filter == null) {
-			_filter = FILTER_TOP;
-		} else {
-			if (filter.equalsIgnoreCase("")) {
-				_filter = FILTER_TOP;
-			} else {
-				_filter = filter;
-			}
-		}
+		_filter = filter == null || filter.isEmpty() ? FILTER_TOP : filter;
 	}
-
 	public String getFilter() {
 		return _filter;
 	}
@@ -119,56 +93,44 @@ public class NewsEntriesJson {
 	public String getJson() {
 		String output;
 
-		if (_format.equalsIgnoreCase(FORMAT_JSON)) {
+		if (FORMAT_JSON.equalsIgnoreCase(_format)) {
 			output = "[";
 		} else {
-			output = "dojo.io.script.jsonp_dojoIoScript1._jsonpCallback({'responseData': {'results': [";	
+			output = "dojo.io.script.jsonp_dojoIoScript1._jsonpCallback({'responseData': {'results': [";
 		}		
 
 		FacesContext context = FacesContext.getCurrentInstance();
-		NewsCache newsCache = (NewsCache) context.getApplication()
-		.getVariableResolver().resolveVariable(context, "newsCache");
-		ConfigCache configCache = (ConfigCache) context.getApplication().getVariableResolver().resolveVariable(context, "configCache");
-		PersonsCache personsCache = (PersonsCache) context.getApplication().getVariableResolver().resolveVariable(context, "personsCache");
+		NewsCache newsCache = (NewsCache)ExtLibUtil.resolveVariable(context, "newsCache");
+		ConfigCache configCache = (ConfigCache)ExtLibUtil.resolveVariable(context, "configCache");
+		PersonsCache personsCache = (PersonsCache)ExtLibUtil.resolveVariable(context, "personsCache");
 		try {
 			List<NewsEntry> newsEntries;
 
-			if (_filter.equalsIgnoreCase(FILTER_ALL)) {
+			if(FILTER_ALL.equalsIgnoreCase(_filter)) {
 				newsEntries = newsCache.getEntries();
-			} else {
-				if (_filter.equalsIgnoreCase(FILTER_TOP)) {
-					newsEntries = newsCache.getEntries();
-
-					newsEntries = newsCache.getTopTopStories();
-					if (newsEntries == null) {
-						newsEntries = new java.util.ArrayList<NewsEntry>();
-					}
-					List<NewsEntry> moreEntries;					
-					Map<String, List<NewsEntry>> categorizedTopNewsEntries = newsCache.getCategorizedTopNewsEntries();
-					if (categorizedTopNewsEntries != null) {
-						List<Category> categories = configCache.getCategories();
-						if (categories != null) {
-							for(Category category : categories) {
-								moreEntries = categorizedTopNewsEntries.get(category.getID());
-								if (moreEntries != null) {
-									for (int a = 0; a < moreEntries.size(); a++) {
-										newsEntries.add(moreEntries.get(a));
-									}
-								}					        	
+			} else if(FILTER_TOP.equalsIgnoreCase(_filter)) {
+				newsEntries = newsCache.getTopTopStories();
+				if (newsEntries == null) {
+					newsEntries = new ArrayList<NewsEntry>();
+				}
+				Map<String, List<NewsEntry>> categorizedTopNewsEntries = newsCache.getCategorizedTopNewsEntries();
+				if (categorizedTopNewsEntries != null) {
+					List<Category> categories = configCache.getCategories();
+					if (categories != null) {
+						for(Category category : categories) {
+							List<NewsEntry> moreEntries = categorizedTopNewsEntries.get(category.getID());
+							if (moreEntries != null) {
+								newsEntries.addAll(moreEntries);
 							}
 						}
 					}
-				} else {
-					if (_filter.equalsIgnoreCase(FILTER_POPULAR)) {
-						newsEntries = newsCache.getEntriesByPopularity();
-					} else {
-						if (_filter.equalsIgnoreCase(FILTER_SPOTLIGHT)) {
-							newsEntries = newsCache.getSpotlightEntries();
-						} else {
-							newsEntries = newsCache.getEntriesByType(_filter);
-						}
-					}
 				}
+			} else if(FILTER_POPULAR.equalsIgnoreCase(_filter)) {
+				newsEntries = newsCache.getEntriesByPopularity();
+			} else if(FILTER_SPOTLIGHT.equalsIgnoreCase(_filter)) {
+				newsEntries = newsCache.getSpotlightEntries();
+			} else {
+				newsEntries = newsCache.getEntriesByType(_filter);
 			}
 
 			if (newsEntries != null) {
@@ -176,9 +138,9 @@ public class NewsEntriesJson {
 				if (amount > getCountAsInt()) amount = getCountAsInt();
 
 				for (int i = 0; i < amount; i++) {
-					NewsEntry entry = newsEntries.get(i);					
+					NewsEntry entry = newsEntries.get(i);
 
-					output = output + "{" + 
+					output += "{" + 
 					"'" + NEWS_ENTRY_ID + "': '" + entry.getID() + "', " + 
 					"'" + NEWS_ENTRY_TYPE_DISPLAY_NAME+ "': '" + configCache.getType(entry.getTID()).getDisplayName() + "', " +
 					"'" + NEWS_ENTRY_TITLE + "': '" + encode(entry.getTitle()) + "', " + 
@@ -196,19 +158,18 @@ public class NewsEntriesJson {
 					"'" + NEWS_ENTRY_TOP_STORY_POSITION + "': " + entry.getTopStoryPosition() + ", " +
 					"'" + NEWS_ENTRY_CLICKS_TOTAL + "': " + entry.getClicksTotal() + ", " +
 					"'" + NEWS_ENTRY_CLICKS_LAST_WEEK + "': " + entry.getClicksLastWeek() + ", " +
-					"'" + NEWS_ENTRY_TYPE_ID+ "': '" + entry.getTID() + "'},";
+					"'" + NEWS_ENTRY_TYPE_ID+ "': '" + entry.getTID() +
+					"'},";
 				}
 			}
-			if (_format.equalsIgnoreCase(FORMAT_JSON)) {
-				output = output + "]";
+			if (FORMAT_JSON.equalsIgnoreCase(_format)) {
+				output += "]";
+			} else {
+				output += "], }, 'responseDetails': null,'responseStatus': 200})";
 			}
-			else {
-				output = output
-				+ "], }, 'responseDetails': null,'responseStatus': 200})";	
-			}			
 		} catch (Exception ne) {
-			ne.printStackTrace();
-			if (_format.equalsIgnoreCase(FORMAT_JSON)) {
+			MiscUtils.logException(ne);
+			if (FORMAT_JSON.equalsIgnoreCase(_format)) {
 				return "[]";
 			}
 			else {
@@ -219,11 +180,11 @@ public class NewsEntriesJson {
 		return output;
 	}
 
-	private String encode(String toBeEncoded) {	
+	private String encode(String toBeEncoded) {
 		if (toBeEncoded == null) return "";
 		String output = null;
 		try {
-			output = URLEncoder.encode(toBeEncoded, "UTF-8").replaceAll("\\+", "%20");	      
+			output = URLEncoder.encode(toBeEncoded, "UTF-8").replaceAll("\\+", "%20");
 			output = output.trim();
 		}
 		catch (Exception e) {

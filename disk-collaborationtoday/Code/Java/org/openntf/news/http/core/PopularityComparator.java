@@ -27,7 +27,7 @@ class PopularityComparator implements Comparator<String> {
 	public PopularityComparator(Map<String, NewsEntry> map) {
 		_map = map;
 	}
-	public int compare(String firstKey, String secondKey) {				
+	public int compare(String firstKey, String secondKey) {
 		NewsEntry first = _map.get(firstKey);
 		NewsEntry second = _map.get(secondKey);
 		if (first.getClicksLastWeek() > second.getClicksLastWeek()) {

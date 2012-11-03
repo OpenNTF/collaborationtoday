@@ -1,7 +1,7 @@
 package org.openntf.news.http.core;
 
 /*
- * © Copyright IBM, 2012
+ * ï¿½ Copyright IBM, 2012
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
  * you may not use this file except in compliance with the License. 
@@ -97,25 +97,21 @@ public class NewsEntry {
 		_state = state;
 		_spotlightSentence = spotlightSentence;
 		_spotlightImageURL = spotlightImageURL;
-		if ((isSpotlight != null) && (!isSpotlight.equalsIgnoreCase(""))) {
-			if (isSpotlight.equalsIgnoreCase("yes"))
-				_isSpotlight = true;
-		}
-		if ((isTopStory != null) && (!isTopStory.equalsIgnoreCase(""))) {
-			if (isTopStory.equalsIgnoreCase("yes"))
-				_isTopStory = true;
-		}
+
+		_isSpotlight = "yes".equalsIgnoreCase(isSpotlight);
+		_isTopStory = "yes".equalsIgnoreCase(isTopStory);
 		_topStoryCategory = topStoryCategory;
+
 		try {
-			if ((topStoryPosition != null) && (!topStoryPosition.equalsIgnoreCase("")))
+			if ((topStoryPosition != null) && (!topStoryPosition.isEmpty()))
 				_topStoryPosition = Integer.parseInt(topStoryPosition);
-			if ((spotlightPosition != null) && (!spotlightPosition.equalsIgnoreCase("")))
+			if ((spotlightPosition != null) && (!spotlightPosition.isEmpty()))
 				_spotlightPosition = Integer.parseInt(spotlightPosition);
 			if (clicksTotal != null) {
-				_clicksTotal = (int) clicksTotal.doubleValue();
+				_clicksTotal = clicksTotal.intValue();
 			}
 			if (clicksLastWeek != null) {
-				_clicksLastWeek = (int) clicksLastWeek.doubleValue();
+				_clicksLastWeek = clicksLastWeek.intValue();
 			}
 		} catch (Exception e) {
 		}
@@ -124,15 +120,15 @@ public class NewsEntry {
 	public String getModerator() {
 		return _moderator;
 	}
-	
+
 	public String getLastEditor() {
 		return _lastEditor;
 	}
-	
+
 	public Date getLastModified() {
 		return _lastModified;
 	}
-	
+
 	public void setSpotlightSentence(String spotlightSentence) {
 		_spotlightSentence = spotlightSentence;
 	}

@@ -169,8 +169,7 @@ public class NewsCache {
 						_spotlightNewsEntries.add(newsEntry);
 					getTypedEntriesList(newsEntry.getTID()).add(newsEntry);
 					if (newsEntry.isTopStory()) {
-						if (newsEntry.getTopStoryCategory().equalsIgnoreCase(
-						"top")) {
+						if(newsEntry.getTopStoryCategory().equalsIgnoreCase("top")) {
 							_topTopStories.add(newsEntry);
 						} else {
 							getCategorizedTopEntriesList(

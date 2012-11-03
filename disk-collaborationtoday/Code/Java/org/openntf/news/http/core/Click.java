@@ -1,7 +1,7 @@
 package org.openntf.news.http.core;
 
 /*
- * © Copyright IBM, 2012
+ * ï¿½ Copyright IBM, 2012
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
  * you may not use this file except in compliance with the License. 
@@ -24,34 +24,34 @@ import java.util.Date;
 public class Click implements Serializable {
 
 	static final long serialVersionUID = 1;
-	
+
 	private String _nID;
 	private String _ip;
 	private Date _date;
-	
-	public Click() {		
+
+	public Click() {
 	}
-	 
+
 	public void setNID(String nID) {
 		_nID = nID;
 	}
-	
+
 	public void setIP(String ip) {
 		_ip = ip;
 	}
-	
+
 	public void setDate(Date date) {
 		_date = date;
 	}
-	
+
 	public String getNID() {
 		return _nID;
 	}
-	
+
 	public String getIP() {
 		return _ip;
 	}
-	
+
 	public Date getDate() {
 		return _date;
 	}
