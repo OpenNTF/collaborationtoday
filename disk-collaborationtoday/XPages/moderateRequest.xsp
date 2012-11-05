@@ -66,16 +66,11 @@
 				<xp:this.action>
 					<xp:actionGroup>
 						<xp:actionGroup>
-							<xp:executeScript>
-								<xp:this.script><![CDATA[#{javascript:
-document1.replaceItemValue('RState', 'closed');										
-}]]></xp:this.script>
-							</xp:executeScript>
-
-							<xp:saveDocument var="document1"></xp:saveDocument>
-							<xp:openPage target="editDocument">
-								<xp:this.name><![CDATA[#{javascript:"requests.xsp"}]]></xp:this.name>
-							</xp:openPage>
+							<xp:executeScript><xp:this.script><![CDATA[#{javascript:
+								document1.replaceItemValue('RState', 'closed');
+								document1.save()
+								return "xsp-success"
+							}]]></xp:this.script></xp:executeScript>
 						</xp:actionGroup>
 					</xp:actionGroup>
 				</xp:this.action>
@@ -96,4 +91,8 @@ document1.replaceItemValue('RState', 'closed');
 			</xp:eventHandler>
 		</xp:button>
 	</xc:moderationLayout>
+	
+	<xp:this.navigationRules>
+		<xp:navigationRule outcome="xsp-success" viewId="requestsOpen.xsp"/>
+	</xp:this.navigationRules>
 </xp:view>
