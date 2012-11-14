@@ -2,13 +2,13 @@
 <!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
  replicaid='85257AA6004F5595'>
-<noteinfo noteid='1fe' unid='D1542BB16A4D039385257AA6004F61B4' sequence='3'>
+<noteinfo noteid='1fe' unid='D1542BB16A4D039385257AA6004F61B4' sequence='5'>
 <created><datetime dst='true'>20121029T102703,56-04</datetime></created>
-<modified><datetime dst='true'>20121029T140550,94-04</datetime></modified>
-<revised><datetime dst='true'>20121029T140550,93-04</datetime></revised>
-<lastaccessed><datetime dst='true'>20121029T140550,93-04</datetime></lastaccessed>
+<modified><datetime>20121114T090341,79-05</datetime></modified>
+<revised><datetime>20121114T090341,78-05</datetime></revised>
+<lastaccessed><datetime>20121114T090341,78-05</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20121029T102703,65-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>CategoriesAll</text></item>

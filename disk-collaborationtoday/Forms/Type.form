@@ -2,13 +2,13 @@
 <!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
 <note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
  replicaid='85257AA6004F5595'>
-<noteinfo noteid='27a' unid='B1A02395B990126485257AA6004F69CD' sequence='3'>
+<noteinfo noteid='27a' unid='B1A02395B990126485257AA6004F69CD' sequence='5'>
 <created><datetime dst='true'>20121029T102724,29-04</datetime></created>
-<modified><datetime dst='true'>20121029T140623,45-04</datetime></modified>
-<revised><datetime dst='true'>20121029T140623,44-04</datetime></revised>
-<lastaccessed><datetime dst='true'>20121029T140623,44-04</datetime></lastaccessed>
+<modified><datetime>20121114T090344,35-05</datetime></modified>
+<revised><datetime>20121114T090344,33-05</datetime></revised>
+<lastaccessed><datetime>20121114T090344,34-05</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20121029T102724,38-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$HTMLCode' sign='true'>
