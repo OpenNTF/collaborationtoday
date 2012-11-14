@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4d6" sequence="1" unid="90F8C6A0FE05A57A85257AB6007CE1C3">
+<created><datetime>20121114T174402,59-05</datetime></created>
+<modified><datetime>20121114T174403,08-05</datetime></modified>
+<revised><datetime>20121114T174403,07-05</datetime></revised>
+<lastaccessed><datetime>20121114T174403,07-05</datetime></lastaccessed>
+<addedtofile><datetime>20121114T174403,07-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>com/ZetaOne/mypic/ApplicationSettings.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>com/ZetaOne/mypic/ApplicationSettings.java</text></item>
+
+
+</note>

@@ -1,0 +1,256 @@
+<faces-config>
+	<faces-config-extension>
+		<namespace-uri>http://www.zetaone.com/xsp-core</namespace-uri>
+		<default-prefix>zonsf</default-prefix>
+	</faces-config-extension>
+	<component>
+		<description>Generates formatted login link with the users's mypic, username and Login/Logout action.</description>
+		<display-name>mypic Login Control</display-name>
+		<component-type>com.ZetaOne.mypic.Login</component-type>
+		<component-class>com.ZetaOne.mypic.MypicLoginControl</component-class>
+		<component-extension>
+			<component-family>javax.faces.Panel</component-family>
+			<tag-name>mypicLogin</tag-name>
+			<designer-extension>
+				<in-palette>true</in-palette>
+				<category>mypic</category>
+				<visible>true</visible>
+			</designer-extension>
+		</component-extension>
+		<property>
+			<description>Image Size of the graphic</description>
+			<display-name>Image Size</display-name>
+			<property-name>ImageSize</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+		<property>
+			<description>Foramt of the graphic. Either PNG, GIF, or JPG. Defaults to PNG</description>
+			<display-name>Format</display-name>
+			<property-name>Format</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+		<property>
+			<description>The URL for the API service, including the api.xsp</description>
+			<display-name>Service URL</display-name>
+			<property-name>ServiceUrl</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+		<property>
+			<description>The name of a specific mypic from the user's mypic collection</description>
+			<display-name>Image Name</display-name>
+			<property-name>ImageName</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+        <property>
+          <property-name>url</property-name>
+          <property-class>string</property-class>
+          <property-extension>
+            <designer-extension>
+              <visible>false</visible>
+            </designer-extension>
+          </property-extension>
+        </property>
+        <property>
+          <property-name>value</property-name>
+          <property-class>string</property-class>
+          <property-extension>
+            <designer-extension>
+              <visible>false</visible>
+            </designer-extension>
+          </property-extension>
+        </property>
+        <property>
+          <property-name>height</property-name>
+          <property-class>string</property-class>
+          <property-extension>
+            <designer-extension>
+              <visible>false</visible>
+            </designer-extension>
+          </property-extension>
+        </property> 
+        <property>
+          <property-name>width</property-name>
+          <property-class>string</property-class>
+          <property-extension>
+            <designer-extension>
+              <visible>false</visible>
+            </designer-extension>
+          </property-extension>
+        </property>
+        
+ 		<property>
+			<description>The phrase used in the link an anonymous user clicks to log in.</description>
+			<display-name>Log In Phrase</display-name>
+			<property-name>loginPhrase</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+ 		<property>
+			<description>The phrase used in the link an authenticated user clicks to log out.</description>
+			<display-name>Log Out Phrase</display-name>
+			<property-name>logoutPhrase</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+ 		<property>
+			<description>The phrase placed before the user's name.</description>
+			<display-name>Welcome Phrase</display-name>
+			<property-name>welcomePhrase</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+ 		<property>
+			<description>The style applied to the login control's container.</description>
+			<display-name>Container Style</display-name>
+			<property-name>containerStyle</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>	
+ 		<property>
+			<description>The style class applied to the login control's container.</description>
+			<display-name>Container Style Class</display-name>
+			<property-name>containerStyleClass</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>			
+ 		<property>
+			<description>The style applied to the login control's mypic.</description>
+			<display-name>mypic Style</display-name>
+			<property-name>mypicStyle</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>	
+ 		<property>
+			<description>The style class applied to the login control's mypic.</description>
+			<display-name>mypic Style Class</display-name>
+			<property-name>mypicStyleClass</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>					       
+ 		<property>
+			<description>The style applied to the login control's Log In/Log Out Phrase.</description>
+			<display-name>Log In/Out Text Style</display-name>
+			<property-name>logInOutTextStyle</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>	
+ 		<property>
+			<description>The style class applied to the login control's Log In/Log Out Phrase.</description>
+			<display-name>Log In/Out Text Style Class</display-name>
+			<property-name>logInOutTextStyleClass</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>		
+ 		<property>
+			<description>The style applied to the login control's User Name.</description>
+			<display-name>User Name Text Style</display-name>
+			<property-name>userNameTextStyle</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>	
+ 		<property>
+			<description>The style class applied to the login control's User Name.</description>
+			<display-name>User Name Text Style Class</display-name>
+			<property-name>userNameTextStyleClass</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>			
+ 		<property>
+			<description>The style applied to the login control's Welcome Phrase.</description>
+			<display-name>Welcome Phrase Style</display-name>
+			<property-name>welcomePhraseStyle</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>	
+ 		<property>
+			<description>The style class applied to the login control's Welcome Phrase.</description>
+			<display-name>Welcome Phrase Style Class</display-name>
+			<property-name>welcomePhraseStyleClass</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>			
+ 		<property>
+			<description>URL to redirect user to upon successful login</description>
+			<display-name>Log In Success URL</display-name>
+			<property-name>loginSuccessUrl</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>	
+	</component>
+</faces-config>

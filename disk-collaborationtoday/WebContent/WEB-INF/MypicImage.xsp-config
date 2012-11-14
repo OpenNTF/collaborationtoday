@@ -1,0 +1,132 @@
+ <faces-config>
+	<faces-config-extension>
+		<namespace-uri>http://www.zetaone.com/xsp-core</namespace-uri>
+		<default-prefix>zonsf</default-prefix>
+	</faces-config-extension>
+	<component>
+		<description>Generates an Image Tag for a user's mypic</description>
+		<display-name>mypic Image</display-name>
+		<component-type>com.ZetaOne.mypic.MypicImage</component-type>
+		<component-class>com.ZetaOne.mypic.MypicImage</component-class>
+		<component-extension>
+			<component-family>javax.faces.Graphic</component-family>
+			<base-component-type>com.ibm.xsp.GraphicImage</base-component-type>
+			<tag-name>mypic</tag-name>
+			<designer-extension>
+				<in-palette>true</in-palette>
+				<category>mypic</category>
+				<visible>true</visible>
+			</designer-extension>
+		</component-extension>
+		<property>
+			<description>
+				The subject user's canonical user name. Specify either the user's canonical name here or
+				the subject's API key in the UserId property. UserId property will take preference over
+				UserName			
+			</description>
+			<display-name>User Name</display-name>
+			<property-name>UserName</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+		<property>
+			<description>
+				The subject user's canonical user name. Specify either the user's canonical name here or
+				the subject's API key in the UserId property. UserId property will take preference over
+				UserName			
+			</description>
+			<display-name>User ID</display-name>
+			<property-name>UserId</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+		<property>
+			<description>Image Size of the graphic</description>
+			<display-name>Image Size</display-name>
+			<property-name>ImageSize</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+		<property>
+			<description>Foramt of the graphic. Either PNG, GIF, or JPG. Defaults to PNG</description>
+			<display-name>Format</display-name>
+			<property-name>Format</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+		<property>
+			<description>The URL for the API service, including the api.xsp</description>
+			<display-name>Service URL</display-name>
+			<property-name>ServiceUrl</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+		<property>
+			<description>The name of a specific mypic from the user's mypic collection</description>
+			<display-name>Image Name</display-name>
+			<property-name>ImageName</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+        <property>
+          <property-name>url</property-name>
+          <property-class>string</property-class>
+          <property-extension>
+            <designer-extension>
+              <visible>false</visible>
+            </designer-extension>
+          </property-extension>
+        </property>
+        <property>
+          <property-name>value</property-name>
+          <property-class>string</property-class>
+          <property-extension>
+            <designer-extension>
+              <visible>false</visible>
+            </designer-extension>
+          </property-extension>
+        </property>
+        <property>
+          <property-name>height</property-name>
+          <property-class>string</property-class>
+          <property-extension>
+            <designer-extension>
+              <visible>false</visible>
+            </designer-extension>
+          </property-extension>
+        </property> 
+        <property>
+          <property-name>width</property-name>
+          <property-class>string</property-class>
+          <property-extension>
+            <designer-extension>
+              <visible>false</visible>
+            </designer-extension>
+          </property-extension>
+        </property> 
+	</component>
+</faces-config>
