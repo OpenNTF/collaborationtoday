@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:zonsf="http://www.zetaone.com/xsp-core"
+	pageTitle="Author | Collaboration Today">
+	
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:
+		try {
+			var profileDoc = database.getDocumentByUNID(param.documentId)
+			var api = new com.ZetaOne.mypic.Api(profileDoc.getItemValueString("PDisplayName"))
+			profileDoc.recycle()
+			var result = api.checkForImport()
+			if(result == "xsp-success") {
+				facesContext.getExternalContext().redirect("mypicCrop.xsp?documentId=" + param.documentId)
+			}
+		} catch (e) {
+			print("api error: " + e.toString());
+		}
+	}]]></xp:this.beforeRenderResponse>
+	
+	<xc:moderationLayout>
+		<xp:this.facets>
+			<xc:moderationLeftColumn xp:key="leftColumn"/>
+		</xp:this.facets>
+		
+		<xp:text tagName="h1" styleClass="" value="Retrieve an Image from the Internet"/>
+
+		<xp:text tagName="p" styleClass=""
+			value="Provide your twitter or Facebook profile picture, or provide a URL to a picture on the Internet and mypic
+					will import your photo. (Note: The photo is imported, not linked to the profile picture. Changing your profile
+					picture on the associated service will not update your mypic.)"/>
+
+		<p>
+			<div class="serviceSelectors">
+				<xp:radio
+					id="twitterSelector"
+					groupName="serviceSelector"
+					value="#{requestScope.socialService}"
+					selectedValue="twitter"
+					disableTheme="true"
+					styleClass="serviceSelector">
+					<xp:eventHandler
+						event="onchange"
+						submit="false">
+						<xp:this.script><![CDATA[
+							dojo.html.set(dojo.byId('#{id:entryLabel}'), 'Enter your Twitter user name');
+						]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:radio>
+				<xp:label for="twitterSelector" style="margin-right:35px;">
+					<xp:image
+						url="/twitter.png"
+						styleClass="twitterLogo" />
+				</xp:label>
+
+				<xp:radio
+					id="facebookSelector"
+					groupName="serviceSelector"
+					value="#{requestScope.socialService}"
+					selectedValue="facebook"
+					disableTheme="true"
+					styleClass="serviceSelector">
+					<xp:eventHandler
+						event="onchange"
+						submit="false">
+						<xp:this.script><![CDATA[
+							dojo.html.set(dojo.byId('#{id:entryLabel}'), 'Enter your Facebook user name');
+						]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:radio>
+				<xp:label for="facebookSelector" style="margin-right:35px;">
+					<xp:image
+						url="/facebook.png"
+						styleClass="facebookLogo" />
+				</xp:label>
+				
+				<xp:radio
+					id="urlSelector"
+					groupName="serviceSelector"
+					value="#{requestScope.socialService}"
+					selectedValue="weburl"
+					disableTheme="true"
+					styleClass="serviceSelector"
+					defaultSelected="true">
+					<xp:eventHandler
+						event="onchange"
+						submit="false">
+						<xp:this.script><![CDATA[
+							dojo.html.set(dojo.byId('#{id:entryLabel}'), 'Enter the URL to the image');
+						]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:radio>
+				<xp:label for="urlSelector">
+					<xp:image
+						url="/webUrl.png"
+						styleClass="urlLogo" />
+				</xp:label>
+			</div>
+		
+			
+			<p style="margin-top:30px;">	
+				
+				<xp:text id="entryLabel" value="Enter the URL to the image" />
+				<br />
+				<xp:text id="errorField" value="#{requestScope.imageError}" style="color:#F00;"/>
+				<br />
+				<xp:inputText id="importURL" styleClass="twitterUserName" value="#{viewScope.importURL}" />
+<!--				<xp:button-->
+<!--					id="button1"-->
+<!--					value="Next"-->
+<!--					dojoType="dijit.form.Button">-->
+<!--					-->
+<!--					<xp:eventHandler-->
+<!--						event="onclick"-->
+<!--						submit="true"-->
+<!--						refreshMode="complete">-->
+<!--						<xp:this.script><![CDATA[-->
+<!--							dojo.html.set(dojo.byId('#{id:entryLabel}'), 'One Moment ...');-->
+<!--							dijit.byId('#{id:nextBtn}').setAttribute('disabled',true);-->
+<!--						]]></xp:this.script>-->
+<!--					</xp:eventHandler>-->
+<!--				</xp:button> -->
+			</p>
+		</p>
+
+		<p>
+			<xp:link styleClass="lotusBtn" value="/Profile.xsp" text="Cancel">
+				<xp:this.parameters>
+					<xp:parameter name="documentId" value="${param.documentId}"/>
+				</xp:this.parameters>
+			</xp:link>
+<!--			<xp:button id="cancelBtn" value="Cancel" dojoType="dijit.form.Button">-->
+<!--				<xp:eventHandler-->
+<!--					event="onclick"-->
+<!--					submit="false">-->
+<!--					<xp:this.script><![CDATA[-->
+<!--						window.location.href = 'home.xsp';-->
+<!--					]]></xp:this.script>-->
+<!--				</xp:eventHandler>-->
+<!--			</xp:button>-->
+
+			<xp:button id="nextBtn" value="Next">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete" />
+			</xp:button>
+
+		</p>
+	</xc:moderationLayout>
+</xp:view>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:zonsf="http://www.zetaone.com/xsp-core"
+	pageTitle="Author | Collaboration Today">
+	
+	<xp:this.data>
+		<xp:dominoDocument var="profile" ignoreRequestParams="true" action="openDocument" documentId="${param.documentId}"/>
+	</xp:this.data>
+	
+	<xp:eventHandler event="onClientLoad" submit="false">
+		<xp:this.script><![CDATA[
+			setupCrop({
+				cropTop: '#{id:cropTop}',
+				cropLeft: '#{id:cropLeft}',
+				cropWidth: '#{id:cropWidth}',
+				cropHeight: '#{id:cropHeight}',
+				smallPreview: '#{id:smallPreview}',
+				midPreview: '#{id:midPreview}',
+				largePreview: '#{id:largePreview}',
+				xLargePreview: '#{id:xLargePreview}'
+			})
+		]]></xp:this.script>
+	</xp:eventHandler>
+	
+	<xc:moderationLayout>
+		<xp:this.facets>
+			<xc:moderationLeftColumn xp:key="leftColumn"/>
+		</xp:this.facets>
+
+		<div>
+			<h1>Crop your mypic using the crop tool below.</h1>
+			<p><xp:text value="#{sessionScope.lastUpload}"/></p>
+
+			<div class="mypicCropperLeft">
+
+				<zonsf:mypic
+					id="mypic"
+					ServiceUrl="/#{javascript:database.getFilePath()}/mypicApi.xsp"
+					UserName="#{profile.PDisplayName}"
+					ImageSize="auto" 
+					ImageName="#{sessionScope.lastUpload}"
+					Format="PNG"
+					disableTheme="true"
+					styleClass="mypic-crop"
+					alt="mypic image" />
+
+			</div>
+
+			<div class="mypicCropperRight">
+				<p>Small Preview (25x25px)</p>
+				<div id="smallPreviewWindow">
+					<zonsf:mypic
+						id="smallPreview"
+						ServiceUrl="/#{javascript:database.getFilePath()}/mypicApi.xsp"
+						UserName="#{profile.PDisplayName}"
+						ImageSize="auto" 
+						ImageName="#{sessionScope.lastUpload}"
+						Format="PNG"
+						disableTheme="true"
+						styleClass="mypicSmallPreview"
+						style="width:25px;height:25px;top:0;left:0;"
+						alt="mypic image" />
+				</div>
+
+				<p>Medium Preview (50x50px)</p>
+				<div id="midPreviewWindow">
+					<zonsf:mypic
+						id="midPreview"
+						ServiceUrl="/#{javascript:database.getFilePath()}/mypicApi.xsp"
+						UserName="#{profile.PDisplayName}"
+						ImageSize="auto" 
+						ImageName="#{sessionScope.lastUpload}"
+						Format="PNG"
+						disableTheme="true"
+						styleClass="mypicMidPreview"
+						style="width:50px;height:50px;top:0;left:0;"
+						alt="mypic image" />
+				</div>
+
+				<p>Large Preview (75x75px)</p>
+				<div id="largePreviewWindow">
+					<zonsf:mypic
+						id="largePreview"
+						ServiceUrl="/#{javascript:database.getFilePath()}/mypicApi.xsp"
+						UserName="#{profile.PDisplayName}"
+						ImageSize="auto" 
+						ImageName="#{sessionScope.lastUpload}"
+						Format="PNG"
+						disableTheme="true"
+						styleClass="mypicLargePreview"
+						style="width:75px;height:75px;top:0;left:0;"
+						alt="mypic image" />
+				</div>
+
+				<p>Extra Large Preview (128x128px)</p>
+				<div id="xLargePreviewWindow">
+					<zonsf:mypic
+						id="xLargePreview"
+						ServiceUrl="/#{javascript:database.getFilePath()}/mypicApi.xsp"
+						UserName="#{profile.PDisplayName}"
+						ImageSize="auto" 
+						ImageName="#{sessionScope.lastUpload}"
+						Format="PNG"
+						disableTheme="true"
+						styleClass="mypicXLargePreview"
+						style="width:128px;height:128px;top:0;left:0;"
+						alt="mypic image" />
+				</div>
+			</div>
+		</div>
+
+		<div class="clear" />
+
+		<div style="margin-left:25px; margin-top:20px">
+			<xp:button id="cancelBtn" value="Cancel">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="full">
+					<xp:this.action><![CDATA[#{javascript:
+						var api = new com.ZetaOne.mypic.Api(profile.getItemValueString("PDisplayName"))
+						var doc:NotesDocument = profile.getDocument()
+						var rtItem:NotesRichTextItem = doc.getFirstItem('mypics')
+						var image:NotesEmbeddedObject = rtItem.getEmbeddedObject(sessionScope.get('lastUpload'))
+						image.remove()
+						var mypicNames = doc.getFirstItem('mypicNames')
+						var rVals = mypicNames.getValues()
+						rVals.remove(sessionScope.get('lastUpload'))
+						mypicNames.setValues(rVals)
+						doc.save()
+						return "xsp-success"
+					}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+
+			<xp:button id="nextBtn" value="Finish">
+
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action><![CDATA[#{javascript:
+						var api = new com.ZetaOne.mypic.Api(profile.getItemValueString("PDisplayName"))
+						api.cropMypic()
+					}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+		</div>
+	</xc:moderationLayout>
+
+	<xp:inputHidden
+		id="cropTop"
+		value="#{viewScope.cropTop}" />
+	<xp:inputHidden
+		id="cropLeft"
+		value="#{viewScope.cropLeft}" />
+	<xp:inputHidden
+		id="cropWidth"
+		value="#{viewScope.cropWidth}" />
+	<xp:inputHidden
+		id="cropHeight"
+		value="#{viewScope.cropHeight}" />
+		
+	<xp:this.navigationRules>
+		<xp:navigationRule outcome="xsp-success" viewId="/author.xsp?documentId=#{javascript:profile.getDocument().getUniversalID()}"/>
+	</xp:this.navigationRules>
+</xp:view>

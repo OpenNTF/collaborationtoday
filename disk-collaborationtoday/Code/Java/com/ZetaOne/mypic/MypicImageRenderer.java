@@ -62,7 +62,7 @@ public class MypicImageRenderer extends ImageExRenderer {
 				} else {
 					//userId = UNIDEncoder.encode(userName);
 					try {
-						View profiles = ExtLibUtil.getCurrentDatabase().getView("Profiles");
+						View profiles = ExtLibUtil.getCurrentDatabase().getView("PersonsAll");
 						profiles.setAutoUpdate(false);
 						ViewEntry profileEntry = profiles.getEntryByKey(userName);
 						userId = profileEntry.getUniversalID();

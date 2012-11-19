@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:zonsf="http://www.zetaone.com/xsp-core"
 	pageTitle="Author | Collaboration Today">
 	<xp:this.data>
 		<xp:dominoDocument var="document11" formName="Person" action="editDocument">
@@ -42,28 +42,27 @@
 			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
 				<xp:this.action>
 					<xp:actionGroup>
-						<xp:actionGroup>
-							<xp:executeScript>
-								<xp:this.script><![CDATA[#{javascript:
-var date = new java.util.Date();
-document11.replaceItemValue('PCreationDate', date);	
+						<xp:executeScript>
+							<xp:this.script><![CDATA[#{javascript:
+								var date = new java.util.Date();
+								document11.replaceItemValue('PCreationDate', date);	
+								
+								var name = currentDocument.getItemValueString("PDisplayName");
+								name = name.replaceAll("\\s","");
+								name = name.replaceAll("\\W","");	
+								name = name.toLowerCase();							
+								document11.replaceItemValue('PID', name);									
+							}]]></xp:this.script>
+						</xp:executeScript>
 
-var name = currentDocument.getItemValueString("PDisplayName");
-name = name.replaceAll("\\s","");
-name = name.replaceAll("\\W","");	
-name = name.toLowerCase();							
-document11.replaceItemValue('PID', name);									
-}]]></xp:this.script>
-							</xp:executeScript>
-
-							<xp:saveDocument var="document11"></xp:saveDocument>
-							<xp:executeScript script="#{javascript:personsCache.update();}"></xp:executeScript>
-							<xp:openPage target="editDocument">
-								<xp:this.name><![CDATA[#{javascript:if (newsId) { "moderateEntry.xsp"; }
-else { "authors.xsp"; }}]]></xp:this.name>
-								<xp:this.documentId><![CDATA[#{javascript:newsId = sessionScope.nid;sessionScope.nid = null; newsId}]]></xp:this.documentId>
-							</xp:openPage>
-						</xp:actionGroup>
+						<xp:saveDocument var="document11"></xp:saveDocument>
+						<xp:executeScript script="#{javascript:personsCache.update();}"></xp:executeScript>
+						<xp:openPage target="editDocument">
+							<xp:this.name><![CDATA[#{javascript:
+								newsId ? "moderateEntry.xsp" :"authors.xsp"
+							}]]></xp:this.name>
+							<xp:this.documentId><![CDATA[#{javascript:newsId = sessionScope.nid;sessionScope.nid = null; newsId}]]></xp:this.documentId>
+						</xp:openPage>
 					</xp:actionGroup>
 				</xp:this.action>
 			</xp:eventHandler>
@@ -77,91 +76,159 @@ else { "authors.xsp"; }}]]></xp:this.name>
 		<br></br>
 		<br></br>
 		<br></br>
-		<xp:table>
-			<xp:tr>
-				<xp:td>
+		<xp:table id="userInfoTable">
+			<tr>
+				<td>
 					<xp:label value="Display Name (*)" id="pDisplayName_Label1" for="pDisplayName1"></xp:label>
-				</xp:td>
-				<xp:td>
+				</td>
+				<td>
 					<xp:inputText value="#{document11.PDisplayName}" id="pDisplayName1" style="width:500px" required="true">
 						<xp:this.validators>
 							<xp:validateRequired message="Define display name"></xp:validateRequired>
 							<xp:validateLength minimum="3" maximum="40" message="Define display name (5 - 40 chars)"></xp:validateLength>
 						</xp:this.validators>
 					</xp:inputText>
-				</xp:td>
-			</xp:tr>
-			<xp:tr>
-				<xp:td>
+				</td>
+			</tr>
+			<tr>
+				<td>
 					<xp:label value="E-Mail" id="pEMail_Label1" for="pEMail1"></xp:label>
-				</xp:td>
-				<xp:td>
+				</td>
+				<td>
 					<xp:inputText value="#{document11.PEMail}" style="width:500px" id="pEMail1"></xp:inputText>
-				</xp:td>
-			</xp:tr>
+				</td>
+			</tr>
 			<xp:panel rendered="#{javascript:configCache.isUserAvatarModerator(@UserName())}">
-				<xp:tr>
-					<xp:td>
+				<tr>
+					<td>
 						<xp:label value="Picture Type" id="pPictureType_Label1" for="pPictureType1"></xp:label>
-					</xp:td>
-					<xp:td>
+					</td>
+					<td>
 						<xp:comboBox value="#{document11.PPictureType}" style="width:500px" id="pPictureType1">
-							<xp:selectItem itemLabel="No Picture" itemValue="nopicture"></xp:selectItem>
-							<xp:selectItem itemLabel="Multiple Authors" itemValue="multiple"></xp:selectItem>
-							<xp:selectItem itemLabel="Gravator" itemValue="gravatar"></xp:selectItem>
-							<xp:selectItem itemLabel="URL" itemValue="url"></xp:selectItem>
+							<xp:eventHandler event="onchange" submit="true" disableValidators="true"
+								refreshMode="partial" refreshId="userInfoTable" execMode="partial" execId="userInfoTable"/>
+						
+							<xp:selectItem itemLabel="No Picture" itemValue="nopicture"/>
+							<xp:selectItem itemLabel="Multiple Authors" itemValue="multiple"/>
+							<xp:selectItem itemLabel="Gravatar" itemValue="gravatar"/>
+							<xp:selectItem itemLabel="URL" itemValue="url"/>
+							<xp:selectItem itemLabel="mypic" itemValue="mypic"/>
 						</xp:comboBox>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
+					</td>
+				</tr>
+				<xp:tr rendered="#{document11.PPictureType != 'mypic'}">
+					<td>
 						<xp:label value="Picture URL" id="pPictureURL_Label1" for="pPictureURL1"></xp:label>
-					</xp:td>
-					<xp:td>
+					</td>
+					<td>
 						<xp:inputText value="#{document11.PPictureURL}" id="pPictureURL1" style="width:500px"></xp:inputText>
-					</xp:td>
+					</td>
+				</xp:tr>
+				<xp:tr rendered="#{document11.PPictureType == 'mypic'}">
+					<td>myPic</td>
+					<td>
+						<xp:repeat value="#{document11.myPicNames}" var="name" rows="1000" id="mypicList">
+							<div class="#{javascript:name == document11.getValue('currentMypic') ? ' selected' : ''} mypicImage">
+								<xp:image url="/delete.png" id="delete" styleClass="deleteMypic">
+									<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="mypicList">
+										<xp:this.script><![CDATA[
+											return XSP.confirm('Are you sure you want to permanently delete this mypic?')
+										]]></xp:this.script>
+										<xp:this.action><![CDATA[#{javascript:
+											var mypic = document11.getDocument(true)
+											var rtItem:NotesRichTextItem = mypic.getFirstItem('mypics')
+											var image:NotesEmbeddedObject = rtItem.getEmbeddedObject(name)
+											image.remove()
+											var mypicNames = mypic.getFirstItem('mypicNames')
+											var rVals = mypicNames.getValues()
+											rVals.remove(name)
+											mypicNames.setValues(rVals)
+											if (mypic.getItemValueString('currentMypic') == name) {
+												if (mypicNames.getValues() == null) {
+													mypic.replaceItemValue('currentMypic', '')
+												} else {
+													mypic.replaceItemValue('currentMypic', mypicNames.getValues().get(0))
+												}
+											}
+											document11.save()
+										}]]></xp:this.action>
+									</xp:eventHandler>
+								</xp:image>
+							
+								<zonsf:mypic
+									ImageSize="75"
+									UserName="#{document11.PDisplayName}"
+									ServiceUrl="#{facesContext.externalContext.requestContextPath}/mypicApi.xsp"
+									Format="PNG"
+									id="mypicImage"
+									ImageName="#{name}">
+									<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="mypicList">
+										<xp:this.action><![CDATA[#{javascript:
+		                                      			document11.replaceItemValue('currentMypic', name)
+											document11.save()
+										}]]></xp:this.action>
+									</xp:eventHandler>
+								</zonsf:mypic>
+							</div>
+						</xp:repeat>
+						<xp:panel tagName="p" rendered="#{javascript:!document11.isNewNote()}" style="clear: left">
+							<xp:text tagName="b" value="Replace:"/>
+							<br />
+							<xp:link text="Image File" value="/mypicUploadFile.xsp">
+								<xp:this.parameters>
+									<xp:parameter name="documentId" value="#{javascript:document11.getDocument().getUniversalID()}"/>
+								</xp:this.parameters>
+							</xp:link>
+							<br />
+							<xp:link text="Internet Profile" value="/mypicUploadInternet.xsp">
+								<xp:this.parameters>
+									<xp:parameter name="documentId" value="#{javascript:document11.getDocument().getUniversalID()}"/>
+								</xp:this.parameters>
+							</xp:link>
+						</xp:panel>
+					</td>
 				</xp:tr>
 			</xp:panel>
-			<xp:tr>
-				<xp:td>
+			<tr>
+				<td>
 					<xp:label value="Twitter" id="pTwitter_Label1" for="pTwitter1"></xp:label>
-				</xp:td>
-				<xp:td>
+				</td>
+				<td>
 					<xp:inputText value="#{document11.PTwitter}" style="width:500px" id="pTwitter1"></xp:inputText>
-				</xp:td>
-			</xp:tr>
-			<xp:tr>
-				<xp:td>
+				</td>
+			</tr>
+			<tr>
+				<td>
 					<xp:label value="StackOverflow" id="pStackOverflow_Label1" for="pStackOverflow1"></xp:label>
-				</xp:td>
-				<xp:td>
+				</td>
+				<td>
 					<xp:inputText style="width:500px" value="#{document11.PStackOverflow}" id="pStackOverflow1"></xp:inputText>
-				</xp:td>
-			</xp:tr>
-			<xp:tr>
-				<xp:td>
+				</td>
+			</tr>
+			<tr>
+				<td>
 					<xp:label value="LinkedIn" id="pLinkedIn_Label1" for="pLinkedIn1"></xp:label>
-				</xp:td>
-				<xp:td>
+				</td>
+				<td>
 					<xp:inputText value="#{document11.PLinkedIn}" style="width:500px" id="pLinkedIn1"></xp:inputText>
-				</xp:td>
-			</xp:tr>
-			<xp:tr>
-				<xp:td>
+				</td>
+			</tr>
+			<tr>
+				<td>
 					<xp:label value="OpenNTF" id="pOpenNTF_Label1" for="pOpenNTF1"></xp:label>
-				</xp:td>
-				<xp:td>
+				</td>
+				<td>
 					<xp:inputText value="#{document11.POpenNTF}" style="width:500px" id="pOpenNTF1"></xp:inputText>
-				</xp:td>
-			</xp:tr>
-			<xp:tr>
-				<xp:td>
+				</td>
+			</tr>
+			<tr>
+				<td>
 					<xp:label value="Lotus Registration" id="pLotusRegistration_Label1" for="pLotusRegistration1"></xp:label>
-				</xp:td>
-				<xp:td>
+				</td>
+				<td>
 					<xp:inputText style="width:500px" value="#{document11.PLotusRegistration}" id="pLotusRegistration1"></xp:inputText>
-				</xp:td>
-			</xp:tr>
+				</td>
+			</tr>
 		</xp:table>
 	</xc:moderationLayout>
 </xp:view>

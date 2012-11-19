@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="53a" sequence="2" unid="EB76EE47314AE81785257ABB0058509F">
+<created><datetime>20121119T110438,07-05</datetime></created>
+<modified><datetime>20121119T110445,29-05</datetime></modified>
+<revised><datetime>20121119T110445,28-05</datetime></revised>
+<lastaccessed><datetime>20121119T110445,28-05</datetime></lastaccessed>
+<addedtofile><datetime>20121119T110438,20-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$Flags"><text>h534Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+
+<item name="$POID"><datetime dst="true">20110606T194845,28-04</datetime></item>
+<item name="$TITLE" sign="true"><text>cropTool.js</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>

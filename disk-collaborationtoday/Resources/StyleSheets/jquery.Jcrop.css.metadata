@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="532" sequence="1" unid="5A0AD4C710DC1CD485257ABB00582EED">
+<created><datetime>20121119T110311,81-05</datetime></created>
+<modified><datetime>20121119T110311,92-05</datetime></modified>
+<revised><datetime>20121119T110311,90-05</datetime></revised>
+<lastaccessed><datetime>20121119T110311,91-05</datetime></lastaccessed>
+<addedtofile><datetime>20121119T110311,91-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jeremy G Hodge/O=ZO_OPERATIONS</name><name>CN=Jesse Gallagher/O=Frost</name><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$TITLE"><text>jquery.Jcrop.css</text></item>
+<item name="$Flags"><text>34C=Q</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20090420T115216,00-04</datetime></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>jquery.Jcrop.css</text></item>
+<item name="$MimeCharSet"><text>UTF-8</text></item></note>

@@ -55,7 +55,7 @@ public class Api {
 
 	public String getDocumentId() throws NotesException {
 		Database database = ExtLibUtil.getCurrentDatabase();
-		View profiles = database.getView("Profiles");
+		View profiles = database.getView("PersonsAll");
 		profiles.setAutoUpdate(false);
 		ViewEntry entry = profiles.getEntryByKey(this.username, true);
 		String id = null;
@@ -288,6 +288,12 @@ public class Api {
 					""
 			);
 			doc.replaceItemValue("currentMypic", sessionScope.get("lastUpload"));
+			rtItem.compact();
+
+
+			// Set the pic type to mypic
+			// TODO: Don't do this here
+			doc.replaceItemValue("PPictureType", "mypic");
 
 			doc.save();
 
@@ -366,6 +372,7 @@ public class Api {
 					tempFile.getParentFile().getAbsolutePath() + File.separator + fileName,
 					""
 			);
+			rtItem.compact();
 			doc.save();
 
 			Item mypicNames = doc.getFirstItem("mypicNames");
@@ -488,6 +495,7 @@ public class Api {
 					xspupload + File.separator + fileName,
 					""
 			);
+			rtItem.compact();
 			doc.save();
 
 			Item mypicNames = doc.getFirstItem("mypicNames");

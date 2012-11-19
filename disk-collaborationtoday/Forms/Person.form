@@ -2,11 +2,11 @@
 <!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
 <note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
  replicaid='85257AA6004F5595'>
-<noteinfo noteid='282' unid='344734D44144623B85257AA6004F6A44' sequence='5'>
+<noteinfo noteid='282' unid='344734D44144623B85257AA6004F6A44' sequence='11'>
 <created><datetime dst='true'>20121029T102725,48-04</datetime></created>
-<modified><datetime>20121114T090345,93-05</datetime></modified>
-<revised><datetime>20121114T090345,92-05</datetime></revised>
-<lastaccessed><datetime>20121114T090345,92-05</datetime></lastaccessed>
+<modified><datetime>20121119T140744,70-05</datetime></modified>
+<revised><datetime>20121119T140744,69-05</datetime></revised>
+<lastaccessed><datetime>20121119T140744,69-05</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20121029T102725,57-04</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
@@ -24,6 +24,7 @@ X/8QAAIADwAHAAAAAAAAAA==
 <rawitemdata type='1'>
 hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
 </rawitemdata></item>
+<item name='$Flags'><text>w</text></item>
 <item name='$DesignerVersion'><text>8.5.3</text></item>
 <item name='$$ScriptName' summary='false' sign='true'><text>Person</text></item>
 <item name='PID' placeholder='true'>
@@ -60,8 +61,18 @@ AAAAAAAAAAA=
 <item name='PPictureURL' placeholder='true'>
 <rawitemdata type='0'>
 </rawitemdata></item>
-<item name='$Fields'><textlist><text>PPictureURL</text><text>PPictureType</text><text
->PEMail</text><text>PLotusRegistration</text><text>POpenNTF</text><text>PLinkedIn</text><text
+<item name='mypics' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='myPicNames' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='currentMypic' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='$Fields'><textlist><text>CurrentMypic</text><text>MypicNames</text><text
+>Mypics</text><text>PPictureURL</text><text>PPictureType</text><text>PEMail</text><text
+>PLotusRegistration</text><text>POpenNTF</text><text>PLinkedIn</text><text
 >PStackOverflow</text><text>PTwitter</text><text>PDisplayName</text><text
 >PCreationDate</text><text>PID</text></textlist></item>
 <item name='$Body' sign='true'>
@@ -106,13 +117,23 @@ TWFpbGIOAQCEAAAAAAAAAAAA3gYAAIr/hf8mAAEAAAogdXNlZCB0byBmaW5kIEdyYXZhdGFyIHBp
 Y3R1cmWBAoMEAQCF/wgAAQAACoECgwQBAIX/FQABAAAKUGljdHVyZVR5cGU6IADdBgAA9//3/yQA
 AQAAgAAAoAVoAQAAAAAAAAAAZAAAAAAAAAAAAAAAAAD+/1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAB4AHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALD/
-FAAAAARAgAAAAAAAAAAAAAAAiv9WAIoCAAUAIAIAAAAAAAACAQAACgAAAAAAAAAADAAAACYAUFBp
-Y3R1cmVUeXBlBAAJAAgACAADAG5vcGljdHVyZW11bHRpcGxlZ3JhdmF0YXJ1cmzSCAEAAAAAANII
-CQD///8A3gYAAPf/hf80AAEAAAogR3JhdmF0YXIsIG5vIHBpY3R1cmUsIG11bHRpcGxlIGF1dGhv
-cnMsIFVSTIECgwQBAIX/CAABAAAKgQKDBAEAhf8VAAEAAApQaWN0dXJlIFVSTDogAN0GAACK//7/
-UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgAeAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAiv8wAIoAAAUAMAIAAAAAAAACAQAACgAAAAAAAAAACwAAAAAA
-UFBpY3R1cmVVUkwAYg4BAIQAAAAAAAAAAADeBgAAiv+F/wgAAQAACoECgwQBAIX/CAABAAAK
-</rawitemdata></item>
-<item name='$Flags'><text>w</text></item></note>
+FAAAAARAgAAAAAAAAAAAAAAAiv9eAIoCAAUAIAIAAAAAAAACAQAACgAAAAAAAAAADAAAAC0AUFBp
+Y3R1cmVUeXBlBQAJAAgACAADAAUAbm9waWN0dXJlbXVsdGlwbGVncmF2YXRhcnVybG15cGljANII
+AQAAAAAA0ggJAP///wDeBgAA9/+F/zQAAQAACiBHcmF2YXRhciwgbm8gcGljdHVyZSwgbXVsdGlw
+bGUgYXV0aG9ycywgVVJMgQKDBAEAhf8IAAEAAAqBAoMEAQCF/xUAAQAAClBpY3R1cmUgVVJMOiAA
+3QYAAIr//v9QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAB4AAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACK/zAAigAABQAwAgAAAAAAAAIBAAAKAAAAAAAA
+AAALAAAAAABQUGljdHVyZVVSTABiDgEAhAAAAAAAAAAAAN4GAACK/4X/CAABAAAKgQKDBAEAhf8I
+AAEAAAqBAoMEAQCF/wgAAQAACoECgwQBAIX/DQABAQAKTXlwaWMAgQKDBAEAhf8QAAEAAApNeXBp
+Y3M6IN0GAACK//7/UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgAeAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiv8qAIIAAQAAAAIAAAAAAAACAQAACgAA
+AAAAAAAABgAAAAAATXlwaWNzYg4BAIQAAAAAAAEAAADeBgAAiv+F/wgAAQAACoECgwQBAIX/FQAB
+AAAKTXlwaWMgTmFtZXM6IADdBgAAiv/+/1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAB4AHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIr/LgCKAAEFBjAC
+AAAAAAAAAgEAAAoAAAAAAAAAAAoAAAAAAE15cGljTmFtZXNiDgEAhAAAAAAAAAAAAN4GAACK/4X/
+CAABAAAKgQKDBAEAhf8XAAEAAApDdXJyZW50IE15cGljOiAA3QYAAIr//v9QAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAACK/zAAigAABQAwAgAAAAAAAAIBAAAKAAAAAAAAAAAMAAAAAABDdXJyZW50TXlwaWNi
+DgEAhAAAAAAAAAAAAN4GAACK/4X/CAABAAAKgQKDBAEAhf8IAAEAAAo=
+</rawitemdata></item></note>
 

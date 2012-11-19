@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="54e" sequence="3" unid="08452882F8EB746085257ABB00588DB6">
+<created><datetime>20121119T110714,46-05</datetime></created>
+<modified><datetime>20121119T110810,49-05</datetime></modified>
+<revised><datetime>20121119T110810,48-05</datetime></revised>
+<lastaccessed><datetime>20121119T110810,48-05</datetime></lastaccessed>
+<addedtofile><datetime>20121119T110715,15-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$TITLE"><text>Jcrop.gif</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20080720T205932,00-04</datetime></item>
+<item name="$ImageNames" sign="true"><text>Jcrop.gif</text></item>
+<item name="$Comment" sign="true"><text>For mypic</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>

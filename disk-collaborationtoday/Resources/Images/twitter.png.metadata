@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="552" sequence="3" unid="CD9DC8CD5CBEEDFC85257ABB00588DB7">
+<created><datetime>20121119T110714,47-05</datetime></created>
+<modified><datetime>20121119T110814,33-05</datetime></modified>
+<revised><datetime>20121119T110814,32-05</datetime></revised>
+<lastaccessed><datetime>20121119T110814,32-05</datetime></lastaccessed>
+<addedtofile><datetime>20121119T110715,44-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$TITLE"><text>twitter.png</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$FileModDT" sign="true"><datetime dst="true">20110531T173921,82-04</datetime></item>
+<item name="$ImageNames" sign="true"><text>twitter.png</text></item>
+<item name="$Comment" sign="true"><text>For mypic</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>

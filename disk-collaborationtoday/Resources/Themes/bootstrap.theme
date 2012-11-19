@@ -12,11 +12,18 @@
 		<styleSheet type="text/css" href="bootstrap-2.0.4.combined.min.css"/>
 		<styleSheet type="text/css" href="custom.css"/>
 	
-		<script src="jquery-1.7.1.min.js" clientSide="true" type="text/javascript"></script>
-		<script src="bootstrap-2.0.4.min.js" clientSide="true" type="text/javascript"></script>
-		<metaData name="viewport" content="width=device-width, initial-scale=1,  maximum-scale=1"></metaData>
+		<script src="jquery-1.7.1.min.js" clientSide="true" type="text/javascript"/>
+		<script src="bootstrap-2.0.4.min.js" clientSide="true" type="text/javascript"/>
+		<metaData name="viewport" content="width=device-width, initial-scale=1,  maximum-scale=1"/>
 		
-		<linkResource href="collaborationtoday_icon.png" rel="apple-touch-icon"/>		
+		<linkResource href="collaborationtoday_icon.png" rel="apple-touch-icon"/>
+		
+		<!-- myPic elements -->
+		<styleSheet type="text/css" href="/jquery.Jcrop.css"/>
+		<styleSheet type="text/css" href="/mypic.css"/>
+		<script src="/jquery.Jcrop.js" clientSide="true" type="text/javascript"/>
+		<script src="/cropTool.js" clientSide="true" type="text/javascript"/>
+		<script src="/mypic.js" clientSide="true" type="text/javascript"/>
 	</resources>
 	
 	<control override="false">
