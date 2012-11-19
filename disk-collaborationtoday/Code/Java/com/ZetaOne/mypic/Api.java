@@ -163,8 +163,7 @@ public class Api {
 				mypic = JSFUtil.getCurrentDatabase().getDocumentByUNID(mypicId);
 			}
 
-			ApplicationSettings appSettings = (ApplicationSettings) JSFUtil.resolveVariable("ApplicationSettings");
-			String format = (JSFUtil.getContext().getUrl().hasParameter("format")) ? JSFUtil.getContext().getUrl().getParameter("format") : appSettings.getDefaultFormat();
+			String format = (JSFUtil.getContext().getUrl().hasParameter("format")) ? JSFUtil.getContext().getUrl().getParameter("format") : "png";
 
 			BufferedImage img;
 			if (null == mypic) {
@@ -210,8 +209,8 @@ public class Api {
 					h = new Integer(JSFUtil.getContext().getUrl().getParameter("size"));
 				}
 			} else {
-				w = new Integer(appSettings.getDefaultSize());
-				h = new Integer(appSettings.getDefaultSize());
+				w = 64;
+				h = 64;
 			}
 
 			BufferedImage dst = null;

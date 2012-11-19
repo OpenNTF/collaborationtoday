@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.dataContexts>
+		<xp:dataContext var="authorPictureURL" value="#{javascript:personsCache.getPerson(compositeData.author).getPictureURL()}"/>
+	</xp:this.dataContexts>
+
 	<div class="row-fluid newsentry">
-		<!--
-			<div class="span1"> <xp:link
-			value="#{javascript:compositeData.authorPictureURL}" target="_blank">
-			<xp:image url="#{javascript:compositeData.authorPictureURL}"
-			style="margin:0px 0 0 0;width:42px;height:42px;"></xp:image>
-			</xp:link> </div>
-		-->
 		<div class="span12">
-			<!--<xp:link
-				style="height:80px;width:80px;float:left;clear:left;margin-left:0;vertical-align:text-top;"
-				value="#{javascript:compositeData.authorPictureURL}" target="_blank">
-				<xp:image styleClass="newsEntryImage" url="#{javascript:compositeData.authorPictureURL}"
-					style="margin:0px 0 0 0;width:64px;height:64px;"></xp:image>
-			</xp:link>
-			-->
 			<div class="newsEntryImageDiv">
-				<xp:image styleClass="newsEntryImage" url="#{javascript:compositeData.authorPictureURL}"></xp:image>
+				<xp:image styleClass="newsEntryImage" url="#{authorPictureURL}"></xp:image>
 			</div>
 			<!--<xp:div styleClass="expandNews" id="expandDiv">
 				<xp:this.rendered><![CDATA[#{javascript:if (compositeData.imageURL == null) {

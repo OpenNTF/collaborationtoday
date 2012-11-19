@@ -34,7 +34,7 @@ return true;}]]></xp:this.rendered>
 			<xp:repeat id="r1" var="entryT" rows="4"
 				value="#{javascript:newsCache.getTopTopStories();}" >
 				<xc:newsEntry id = "lkj"
-					authorPictureURL="#{javascript:personsCache.getPerson(entryT.getPID()).getPictureURL()}"
+					author="#{entryT.PID}"
 					imageURL="#{javascript:entryT.getImageURL()}" link="#{javascript:entryT.getLink()}"
 					newsAbstract="#{javascript:entryT.getAbstract()}" nID="#{javascript:entryT.getID()}"
 					personDisplayName="#{javascript:personsCache.getPerson(entryT.getPID()).getDisplayName()}"
@@ -74,7 +74,7 @@ return true;}]]></xp:this.rendered>
 				<xp:repeat id="r3" var="entryC" rows="4"
 					value="#{javascript:newsCache.getTopStories(category.getID());}" >
 					<xc:newsEntry id = "lkasdfj"
-						authorPictureURL="#{javascript:personsCache.getPerson(entryC.getPID()).getPictureURL()}"
+						author="#{entryC.PID}"
 						typeId="#{javascript:entryC.getTID()}"
 						imageURL="#{javascript:entryC.getImageURL()}" link="#{javascript:entryC.getLink()}"
 						newsAbstract="#{javascript:entryC.getAbstract()}" nID="#{javascript:entryC.getID()}"

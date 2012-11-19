@@ -30,19 +30,22 @@ public class Person {
 	private String _displayName;
 	private String _pictureType;
 	private String _pictureURL;
+	private String documentId;
 
 	public Person(String pID, String displayName, String twitter,
-			String eMailAddress, String pictureType, String pictureURL) {
+			String eMailAddress, String pictureType, String pictureURL,
+			String documentId) {
 		_pID = pID;
 		_eMailAddress = eMailAddress;
 		_twitter = twitter;
 		_displayName = displayName;
 		_pictureType = pictureType;
 		_pictureURL = pictureURL;
+		this.documentId = documentId;
 	}
 
 	public static Person getEmptyPerson() {
-		return new Person("", "", "", "", "", "");
+		return new Person("", "", "", "", "", "", "");
 	}
 
 	public String getPID() {
@@ -68,10 +71,9 @@ public class Person {
 	}
 
 	public String getPictureURL() {
-		String output = "head.png";
 		if (_pictureType != null) {
 			if (_pictureType.equalsIgnoreCase("multiple")) {
-				output = "heads.png";
+				return "heads.png";
 			}
 			if (_pictureType.equalsIgnoreCase("gravatar")) {
 				return getGravatarURL();
@@ -81,8 +83,11 @@ public class Person {
 					return _pictureURL;
 				}
 			}
+			if(_pictureType.equalsIgnoreCase("mypic")) {
+				return "/mypicApi.xsp?method=getmypic&id=" + this.documentId;
+			}
 		}
-		return output;
+		return "head.png";
 	}
 
 	public String getGravatarURL() {

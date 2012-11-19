@@ -31,7 +31,7 @@
 				}]]></xp:this.value>
 				
 				<xc:newsEntry id="lkewrej"
-					authorPictureURL="#{javascript:personsCache.getPerson(entryA.getPID()).getPictureURL()}"
+					author="#{entryA.PID}"
 					typeId="#{entryA.TID}"
 					imageURL="#{entryA.imageURL}" link="#{entryA.link}" newsAbstract="#{entryA.abstract}"
 					nID="#{entryA.ID}" personDisplayName="#{javascript:personsCache.getPerson(entryA.getPID()).getDisplayName()}"
@@ -64,7 +64,7 @@
 			
 			<xp:repeat id="r2" var="entryAB" rows="30" value="${newsCache.entriesByPopularity}" removeRepeat="true">
 				<xc:newsEntry id="lasdfekj"
-					authorPictureURL="#{javascript:personsCache.getPerson(entryAB.getPID()).getPictureURL()}"
+					author="#{entryAB.PID}"
 					typeId="#{entryAB.TID}"
 					imageURL="#{entryAB.imageURL}" link="#{entryAB.link}" newsAbstract="#{entryAB.abstract}"
 					nID="#{entryAB.ID}" personDisplayName="#{javascript:personsCache.getPerson(entryAB.getPID()).getDisplayName()}"

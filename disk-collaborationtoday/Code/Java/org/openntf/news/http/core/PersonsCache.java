@@ -70,12 +70,13 @@ public class PersonsCache {
 				List<Object> columnValues = entry.getColumnValues();
 
 				Person person = new Person(
-						(String)columnValues.get(5), 
+						(String)columnValues.get(5),
 						(String)columnValues.get(0),
-						(String)columnValues.get(1), 
-						(String)columnValues.get(2), 
-						(String)columnValues.get(3), 
-						(String)columnValues.get(4));
+						(String)columnValues.get(1),
+						(String)columnValues.get(2),
+						(String)columnValues.get(3),
+						(String)columnValues.get(4),
+						entry.getUniversalID());
 				_persons.put((String)columnValues.get(5), person);
 
 				tmpEntry = viewNavigator.getNext();
