@@ -6,70 +6,45 @@
 	
 	<div class="sidebar-nav">
 		<ul class="nav nav-list hidden-phone hidden-tablet">
-	
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/home.xsp" && param.filter == null) "active"}]]></xp:this.styleClass>
-		<xp:link escape="true" text="Home" id="link1" value="home.xsp"></xp:link>
-	</xp:panel>
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/add.xsp") "active"}]]></xp:this.styleClass>
-		<xp:link escape="true" text="Add URL" id="link3" value="add.xsp"></xp:link>
-	</xp:panel>
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/mod.xsp") "active"}]]></xp:this.styleClass>
-		<xp:link escape="true" text="Queued" id="link2" value="mod.xsp">
-		</xp:link>
-	</xp:panel>
-	<xp:panel tagName="li" rendered="#{javascript:configCache.isUserTopStoriesModerator(@UserName())}">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/modTopStories.xsp") "active"}]]></xp:this.styleClass>
-		<xp:link escape="true" text="Top Stories" id="link6"
-				value="modTopStories.xsp">
-			</xp:link>
-	</xp:panel>
-	<xp:panel tagName="li" rendered="#{javascript:configCache.isUserSpotlightModerator(@UserName())}">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/modSpotlight.xsp") "active"}]]></xp:this.styleClass>
-			<xp:link escape="true" text="Spotlight" id="link7" value="modSpotlight.xsp">
-			</xp:link>
-	</xp:panel>
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/modPopular.xsp") "active"}]]></xp:this.styleClass>
-		<xp:link escape="true" text="Popular" id="link8" value="modPopular.xsp">
-		</xp:link>
-	</xp:panel>
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/modApproved.xsp") "active"}]]></xp:this.styleClass>
-		<xp:link escape="true" text="Approved" id="link9" value="modApproved.xsp">
-		</xp:link>
-	</xp:panel>
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/authors.xsp") "active"}]]></xp:this.styleClass>
-		<xp:link escape="true" text="Authors" id="link4" value="authors.xsp">
-		</xp:link>
-	</xp:panel>
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/requestsOpen.xsp") "active"}]]></xp:this.styleClass>
-		<xp:link escape="true" text="Open Requests" id="link5"
-			value="requestsOpen.xsp">
-		</xp:link>
-	</xp:panel>
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/requestsClosed.xsp") "active"}]]></xp:this.styleClass>
-		<xp:link escape="true" text="Closed Requests" id="link10"
-			value="requestsClosed.xsp">
-		</xp:link>
-	</xp:panel>
-	<xp:panel tagName="li">
-		<xp:this.styleClass><![CDATA[#{javascript:if (view.getPageName()=="/admin.xsp") "active"}]]></xp:this.styleClass>
-		<xp:link escape="true" text="Administration" id="link12"
-			value="admin.xsp">
-		</xp:link>
-	</xp:panel>
-	<xp:panel tagName="li">		
-		<xp:link escape="true" text="Moderation Policies" id="link11"
-			value="/ct.nsf/ModerationPolicies.pdf">
-		</xp:link>
-	</xp:panel>
-	</ul>
+			<li class="${view.pageName=='/home.xsp' and page.filter == null ? 'active' : ''}">
+				<xp:link escape="true" text="Home" id="link1" value="/home.xsp"/>
+			</li>
+			<li class="${view.pageName=='/add.xsp' ? 'active' : ''}">
+				<xp:link escape="true" text="Add URL" id="link3" value="/add.xsp"/>
+			</li>
+			<li class="${view.pageName=='/mod.xsp' ? 'active' : ''}">
+				<xp:link escape="true" text="Queued" id="link2" value="/mod.xsp"/>
+			</li>
+			<xp:panel tagName="li" loaded="${javascript:configCache.isUserTopStoriesModerator(@UserName())}"
+				styleClass="${view.pageName=='/modTopStories.xsp' ? 'active' : ''}">
+				<xp:link escape="true" text="Top Stories" id="link6" value="/modTopStories.xsp"/>
+			</xp:panel>
+			<xp:panel tagName="li" loaded="${javascript:configCache.isUserSpotlightModerator(@UserName())}"
+				styleClass="${view.pageName=='/modSpotlight.xsp' ? 'active' : ''}">
+					<xp:link escape="true" text="Spotlight" id="link7" value="/modSpotlight.xsp"/>
+			</xp:panel>
+			<li class="${view.pageName=='/modPopular.xsp' ? 'active' : ''}">
+				<xp:link escape="true" text="Popular" id="link8" value="/modPopular.xsp"/>
+			</li>
+			<li class="${view.pageName=='/modApproved.xsp' ? 'active' : ''}">
+				<xp:link escape="true" text="Approved" id="link9" value="/modApproved.xsp"/>
+			</li>
+			<li class="${view.pageName=='/authors.xsp' ? 'active' : ''}">
+				<xp:link escape="true" text="Authors" id="link4" value="/authors.xsp"/>
+			</li>
+			<li class="${view.pageName=='/requestsOpen.xsp' ? 'active' : ''}">
+				<xp:link escape="true" text="Open Requests" id="link5" value="/requestsOpen.xsp"/>
+			</li>
+			<li class="${view.pageName=='/requestsClosed.xsp' ? 'active' : ''}">
+				<xp:link escape="true" text="Closed Requests" id="link10" value="/requestsClosed.xsp"/>
+			</li>
+			<li class="${view.pageName=='/admin.xsp' ? 'active' : ''}">
+				<xp:link escape="true" text="Administration" id="link12" value="/admin.xsp"/>
+			</li>
+			<li>
+				<xp:link escape="true" text="Moderation Policies" id="link11" value="/ModerationPolicies.pdf"/>
+			</li>
+		</ul>
 	</div>
 	
 	<div class="sidebar-nav">

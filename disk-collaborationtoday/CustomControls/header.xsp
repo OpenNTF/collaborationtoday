@@ -8,7 +8,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="/">Collaboration Today</a>
+				<xp:link styleClass="brand" value="/" text="Collaboration Today"/>
 				
 				<!-- Dropdown for Categories for tablet only -->
 				<xp:panel tagName="ul" styleClass="nav nav-pills visible-tablet" loaded="${compositeData.showCategories}">
