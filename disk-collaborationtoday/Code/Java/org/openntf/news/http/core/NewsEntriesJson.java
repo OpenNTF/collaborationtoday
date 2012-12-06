@@ -18,9 +18,7 @@ package org.openntf.news.http.core;
  * Author: Niklas Heidloff - niklas_heidloff@de.ibm.com
  */
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
+import java.util.*;
 import javax.faces.context.FacesContext;
 import java.net.URLEncoder;
 import com.ibm.xsp.extlib.util.ExtLibUtil;
@@ -104,21 +102,21 @@ public class NewsEntriesJson {
 		ConfigCache configCache = (ConfigCache)ExtLibUtil.resolveVariable(context, "configCache");
 		PersonsCache personsCache = (PersonsCache)ExtLibUtil.resolveVariable(context, "personsCache");
 		try {
-			List<NewsEntry> newsEntries;
+			Collection<NewsEntry> newsEntries;
 
 			if(FILTER_ALL.equalsIgnoreCase(_filter)) {
-				newsEntries = newsCache.getEntries();
+				newsEntries = (List<NewsEntry>)newsCache.getEntries();
 			} else if(FILTER_TOP.equalsIgnoreCase(_filter)) {
 				newsEntries = newsCache.getTopTopStories();
 				if (newsEntries == null) {
 					newsEntries = new ArrayList<NewsEntry>();
 				}
-				Map<String, List<NewsEntry>> categorizedTopNewsEntries = newsCache.getCategorizedTopNewsEntries();
+				Map<String, Collection<NewsEntry>> categorizedTopNewsEntries = newsCache.getCategorizedTopNewsEntries();
 				if (categorizedTopNewsEntries != null) {
 					List<Category> categories = configCache.getCategories();
 					if (categories != null) {
 						for(Category category : categories) {
-							List<NewsEntry> moreEntries = categorizedTopNewsEntries.get(category.getID());
+							Collection<NewsEntry> moreEntries = categorizedTopNewsEntries.get(category.getID());
 							if (moreEntries != null) {
 								newsEntries.addAll(moreEntries);
 							}
@@ -137,8 +135,7 @@ public class NewsEntriesJson {
 				int amount = newsEntries.size();
 				if (amount > getCountAsInt()) amount = getCountAsInt();
 
-				for (int i = 0; i < amount; i++) {
-					NewsEntry entry = newsEntries.get(i);
+				for(NewsEntry entry : newsEntries) {
 
 					output += "{" + 
 					"'" + NEWS_ENTRY_ID + "': '" + entry.getID() + "', " + 

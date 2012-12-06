@@ -4,10 +4,10 @@
 	<li class="${view.pageName=='/home.xsp' and param.filter == null ? 'active' : ''}">
 		<xp:link text="Top Stories" value="/home.xsp"></xp:link>
 	</li>
-	<li class="${param.filter == 'all' ? 'active' : ''}">
+	<li class="${view.pageName=='/home.xsp' and param.filter=='all' ? 'active' : ''}">
 		<xp:link text="Recent" value="/home.xsp?filter=all"></xp:link>
 	</li>
-	<li class="${param.filter == 'popular' ? 'active' : ''}">
+	<li class="${view.pageName=='/home.xsp' and param.filter=='popular' ? 'active' : ''}">
 		<xp:link text="Popular" value="/home.xsp?filter=popular"></xp:link>
 	</li>
  

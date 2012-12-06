@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
 	<xp:this.resources>
-		<xp:script src="/Bookmarklet.jss" clientSide="false"></xp:script>
+		<xp:script src="/Bookmarklet.jss" clientSide="false" />
 	</xp:this.resources>
 	
 	<div class="sidebar-nav">
@@ -50,13 +50,13 @@
 	<div class="sidebar-nav">
 		<ul class="nav nav-list hidden-phone hidden-tablet">
 			<li>
-				<xp:label value="Bookmarklet " style="font-weight:bold;"></xp:label>
-				<br></br>
-				<xp:label value="Drag and drop link onto browser's bookmark bar: "></xp:label>
+				<xp:label value="Bookmarklet " style="font-weight:bold" />
+				<br />
+				<xp:label value="Drag and drop link onto browser's bookmark bar: " />
 				<xp:link text="Add CT News" id="bookmarkletLink"
-					value="#{javascript:buildAddUrlBookmarkletCode(true);}"></xp:link>
+					value="#{javascript:buildAddUrlBookmarkletCode(true)}" />
 				<xe:tooltip id="tooltip1" dynamicContent="false" for="bookmarkletLink"
-					label="Drag and drop this link onto the browser's bookmark bar"></xe:tooltip>
+					label="Drag and drop this link onto the browser's bookmark bar" />
 			</li>
 		</ul>
 	</div>

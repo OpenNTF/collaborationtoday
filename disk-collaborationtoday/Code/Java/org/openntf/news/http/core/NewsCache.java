@@ -24,30 +24,21 @@ package org.openntf.news.http.core;
  * .getColumnValues() once per entry, and to use .setPreferJavaDates
  */
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.TreeMap;
-import java.util.List;
-import java.util.Map;
-import javax.faces.context.FacesContext;
-import lotus.domino.Database;
-import lotus.domino.NotesException;
-import lotus.domino.View;
-import lotus.domino.ViewEntry;
-import lotus.domino.ViewNavigator;
+import java.util.*;
+import lotus.domino.*;
+
+import com.ibm.commons.util.StringUtil;
 import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class NewsCache {
 
 	private boolean _isCached = false;
-	private List<NewsEntry> _newsEntries;
-	private List<NewsEntry> _spotlightNewsEntries;
-	private List<NewsEntry> _topTopStories;
+	private Collection<NewsEntry> _newsEntries;
+	private Collection<NewsEntry> _spotlightNewsEntries;
+	private Collection<NewsEntry> _topTopStories;
 	private List<NewsEntry> _popularNewsEntries;
-	private Map<String, List<NewsEntry>> _typedNewsEntries;
-	private Map<String, List<NewsEntry>> _categorizedTopNewsEntries;
+	private Map<String, Collection<NewsEntry>> _typedNewsEntries;
+	private Map<String, Collection<NewsEntry>> _categorizedTopNewsEntries;
 	private Date _lastUpdated;
 
 	public NewsCache() {
@@ -70,27 +61,26 @@ public class NewsCache {
 		initialize();
 	}
 
-	public Map<String, List<NewsEntry>> getCategorizedTopNewsEntries() {
+	public Map<String, Collection<NewsEntry>> getCategorizedTopNewsEntries() {
 		initialize();
 		return _categorizedTopNewsEntries;
 	}
 
-	private ArrayList<NewsEntry> getTypedEntriesList(String tID) {
-		ArrayList<NewsEntry> newsEntries = null;
-		newsEntries = (ArrayList<NewsEntry>) _typedNewsEntries.get(tID);
+	private Collection<NewsEntry> getTypedEntriesList(String tID) {
+		Collection<NewsEntry> newsEntries = null;
+		newsEntries = _typedNewsEntries.get(tID);
 		if (newsEntries == null) {
-			newsEntries = new ArrayList<NewsEntry>();
+			newsEntries = new TreeSet<NewsEntry>(new NewsEntry.DescendingComparator());
 			_typedNewsEntries.put(tID, newsEntries);
 		}
 		return newsEntries;
 	}
 
-	private ArrayList<NewsEntry> getCategorizedTopEntriesList(String cID) {
-		ArrayList<NewsEntry> newsEntries = null;
-		newsEntries = (ArrayList<NewsEntry>) _categorizedTopNewsEntries
-		.get(cID);
+	private Collection<NewsEntry> getCategorizedTopEntriesList(String cID) {
+		Collection<NewsEntry> newsEntries = null;
+		newsEntries = _categorizedTopNewsEntries.get(cID);
 		if (newsEntries == null) {
-			newsEntries = new ArrayList<NewsEntry>();
+			newsEntries = new TreeSet<NewsEntry>(new NewsEntry.DescendingComparator());
 			_categorizedTopNewsEntries.put(cID, newsEntries);
 		}
 		return newsEntries;
@@ -98,125 +88,104 @@ public class NewsCache {
 
 	@SuppressWarnings("unchecked")
 	private synchronized void init() {
-		_newsEntries = new ArrayList<NewsEntry>();
-		_spotlightNewsEntries = new ArrayList<NewsEntry>();
-		_topTopStories = new ArrayList<NewsEntry>();
-		_typedNewsEntries = new HashMap<String, List<NewsEntry>>();
-		_categorizedTopNewsEntries = new HashMap<String, List<NewsEntry>>();
+		_newsEntries = new TreeSet<NewsEntry>(new NewsEntry.DescendingComparator());
+		_spotlightNewsEntries = new TreeSet<NewsEntry>(new NewsEntry.SpotlightComparator());
+		_topTopStories = new TreeSet<NewsEntry>(new NewsEntry.TopStoryComparator());
+		_typedNewsEntries = new HashMap<String, Collection<NewsEntry>>();
+		_categorizedTopNewsEntries = new HashMap<String, Collection<NewsEntry>>();
 
 		Database db = ExtLibUtil.getCurrentDatabase();
 		View view = null;
 		ViewNavigator navigator = null;
-		FacesContext context = FacesContext.getCurrentInstance();
-		ConfigCache config = (ConfigCache) context.getApplication()
-		.getVariableResolver().resolveVariable(context, "configCache");
 
 		try {
 			view = db.getView("NewsModeratedCached");
 			view.setAutoUpdate(false);
+			view.resortView("NModerationDate");
+
+			// Look for entries in the last month only
+			DateTime today = ExtLibUtil.getCurrentSession().createDateTime("Today");
+			DateTime dt = ExtLibUtil.getCurrentSession().createDateTime("Today");
+			dt.adjustMonth(-1);
+			ViewEntry entry = null;
+			int failsafe = 0;
+			while(entry == null && dt.timeDifference(today) < 0) {
+				entry = view.getEntryByKey(dt);
+				dt.adjustDay(1);
+
+				// You never know when it will go haywire
+				if(failsafe++ > 100) break;
+			}
+			dt.recycle();
+			today.recycle();
+
 			navigator = view.createViewNav();
-			ViewEntry tmpEntry;
-			ViewEntry entry = navigator.getFirst();
+			if(entry != null) navigator.gotoEntry(entry);
+
 			while (entry != null) {
-				try {
-					entry.setPreferJavaDates(true);
-					List<Object> columnValues = entry.getColumnValues();
+				entry.setPreferJavaDates(true);
+				List<Object> columnValues = entry.getColumnValues();
 
-					Date d1 = MiscUtils.getColumnValueAsDate(columnValues.get(4));
-					Date d2 = MiscUtils.getColumnValueAsDate(columnValues.get(0));
-					Date d3 = MiscUtils.getColumnValueAsDate(columnValues.get(15));
-					Date d4 = MiscUtils.getColumnValueAsDate(columnValues.get(22));
+				Date d1 = MiscUtils.getColumnValueAsDate(columnValues.get(4));
+				Date d2 = MiscUtils.getColumnValueAsDate(columnValues.get(0));
+				Date d3 = MiscUtils.getColumnValueAsDate(columnValues.get(15));
+				Date d4 = MiscUtils.getColumnValueAsDate(columnValues.get(22));
 
-					Double clicksTotalDouble = MiscUtils.getColumnValueAsDouble(columnValues.get(13));
-					Double clicksLastWeekDouble = MiscUtils.getColumnValueAsDouble(columnValues.get(14));
+				Double clicksTotalDouble = MiscUtils.getColumnValueAsDouble(columnValues.get(13));
+				Double clicksLastWeekDouble = MiscUtils.getColumnValueAsDouble(columnValues.get(14));
 
-					String spotlightImageURL = (String)columnValues.get(18);
-					if (spotlightImageURL != null) {
-						if (!spotlightImageURL.equals("")) {
-							spotlightImageURL = entry.getUniversalID()
-							+ "/$file/" + spotlightImageURL;
-						} else {
-							spotlightImageURL = null;
-						}
+				String spotlightImageURL = (String)columnValues.get(18);
+				if(!StringUtil.isEmpty(spotlightImageURL)) {
+					spotlightImageURL = entry.getUniversalID() + "/$file/" + spotlightImageURL;
+				} else {
+					spotlightImageURL = null;
+				}
+				NewsEntry newsEntry = new NewsEntry(
+						(String)columnValues.get(8),	// NID
+						(String)columnValues.get(1),	// TID
+						(String)columnValues.get(2),	// NTitle
+						(String)columnValues.get(3),	// PID
+						(String)columnValues.get(5),	// NLink
+						(String)columnValues.get(6),	// NImageURL
+						(String)columnValues.get(7),	// NAbstract
+						d1,					// NModerationDate
+						d2,					// NPublicationDate
+						(String)columnValues.get(9),	// NSpotlight
+						(String)columnValues.get(10),	// NTopStory
+						(String)columnValues.get(11),	// NTopStoryCategory
+						(String)columnValues.get(12),	// NTopStoryPosition
+						clicksTotalDouble,		// NClicksTotal
+						clicksLastWeekDouble,		// NClicksLastWeek
+						d3,					// NCreationDate
+						(String)columnValues.get(16),	// NState
+						(String)columnValues.get(17),	// NSpotlightSentence
+						spotlightImageURL,		// SpotlightPicture
+						(String)columnValues.get(19),	// NSpotlightPosition
+						(String)columnValues.get(20),	// NModerator
+						(String)columnValues.get(21),	// NLastEditor
+						d4					// NLastModified
+				);
+				_newsEntries.add(newsEntry);
+				if (newsEntry.isSpotlight())
+					_spotlightNewsEntries.add(newsEntry);
+				getTypedEntriesList(newsEntry.getTID()).add(newsEntry);
+				if (newsEntry.isTopStory()) {
+					if(newsEntry.getTopStoryCategory().equalsIgnoreCase("top")) {
+						_topTopStories.add(newsEntry);
+					} else {
+						getCategorizedTopEntriesList(newsEntry.getTopStoryCategory()).add(newsEntry);
 					}
-					NewsEntry newsEntry = new NewsEntry(
-							(String)columnValues.get(8),
-							(String)columnValues.get(1),
-							(String)columnValues.get(2),
-							(String)columnValues.get(3),
-							(String)columnValues.get(5),
-							(String)columnValues.get(6),
-							(String)columnValues.get(7),
-							d1,
-							d2,
-							(String)columnValues.get(9),
-							(String)columnValues.get(10),
-							(String)columnValues.get(11),
-							(String)columnValues.get(12),
-							clicksTotalDouble,
-							clicksLastWeekDouble,
-							d3,
-							(String)columnValues.get(16),
-							(String)columnValues.get(17),
-							spotlightImageURL,
-							(String)columnValues.get(19),
-							(String)columnValues.get(20),
-							(String)columnValues.get(21),
-							d4
-					);
-					_newsEntries.add(newsEntry);
-					if (newsEntry.isSpotlight())
-						_spotlightNewsEntries.add(newsEntry);
-					getTypedEntriesList(newsEntry.getTID()).add(newsEntry);
-					if (newsEntry.isTopStory()) {
-						if(newsEntry.getTopStoryCategory().equalsIgnoreCase("top")) {
-							_topTopStories.add(newsEntry);
-						} else {
-							getCategorizedTopEntriesList(
-									newsEntry.getTopStoryCategory()).add(
-											newsEntry);
-						}
-					}
-				} catch (Exception e) {
 				}
 
-				tmpEntry = navigator.getNext();
-				entry.recycle();
-				entry = tmpEntry;
+				ViewEntry tmpEntry = entry;
+				entry = navigator.getNext();
+				tmpEntry.recycle();
 			}
-			_spotlightNewsEntries = sortSpotlightStories(_spotlightNewsEntries);
-			_topTopStories = sortTopStories(_topTopStories);
-			if (_categorizedTopNewsEntries != null) {
-				List<Category> categories = config.getCategories();
-				if (categories != null) {
-					Iterator it = categories.iterator();
-					for (; it.hasNext();) {
-						Category category = (Category) it.next();
-						List<NewsEntry> catTopNews = _categorizedTopNewsEntries.get(category.getID());
-						catTopNews = sortTopStories(catTopNews);
-						_categorizedTopNewsEntries.put(category.getID(),
-								catTopNews);
-					}
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			return;
 		} catch (Throwable t) {
-			t.printStackTrace();
+			MiscUtils.logException(t);
 			return;
 		} finally {
-			try {
-				if (navigator != null) {
-					navigator.recycle();
-				}
-				if (view != null) {
-					view.recycle();
-				}
-			} catch (NotesException e) {
-				e.printStackTrace();
-				return;
-			}
+			MiscUtils.incinerate(navigator, view);
 		}
 
 		_isCached = true;
@@ -228,124 +197,49 @@ public class NewsCache {
 		init();
 	}
 
-	public List<NewsEntry> getEntriesByPopularity() {
+	public Collection<NewsEntry> getEntriesByPopularity() {
 		initialize();
-		if (_popularNewsEntries != null)
-			return _popularNewsEntries;
-		Map<String, NewsEntry> news = new HashMap<String, NewsEntry>();
+		if (_popularNewsEntries == null) {
+			// Limit popular stories to the last week only
+			Date weekAgo = new Date();
+			weekAgo.setTime(weekAgo.getTime() - (7 * 24 * 60 * 60 * 1000));
 
-		_popularNewsEntries = new ArrayList<NewsEntry>();
-		for (int i = 0; i < _newsEntries.size(); i++) {
-			NewsEntry n = _newsEntries.get(i);
-			NewsEntry copy = new NewsEntry(n.getID(), n.getTID(), n.getTitle(),
-					n.getPID(), n.getLink(), n.getImageURL(), n.getAbstract(),
-					n.getModerationDate(), n.getPublicationDate(), n
-					.isSpotlight(), n.isTopStory(), n
-					.getTopStoryCategory(), n.getTopStoryPosition(), n
-					.getClicksTotal(), n.getClicksLastWeek(), n
-					.getCreationDate(), n.getState(), n
-					.getSpotlightSentence(), n.getSpotlightImageURL(),
-					n.getSpotlightPosition(), n.getModerator(), n
-					.getLastEditor(), n.getLastModified());
-			news.put(copy.getID(), copy);
-		}
+			_popularNewsEntries = new ArrayList<NewsEntry>();
+			for(NewsEntry n : _newsEntries) {
+				if(n.getCreationDate().after(weekAgo)) {
+					// TODO: figure out if cloning is actually necessary here
+					_popularNewsEntries.add(n.clone());
+				}
+			}
 
-		PopularityComparator comparator = new PopularityComparator(news);
-		TreeMap<String, NewsEntry> sortedNews = new TreeMap<String, NewsEntry>(comparator);
-		sortedNews.putAll(news);
-
-		for (String key : sortedNews.keySet()) {
-			NewsEntry ne = (NewsEntry) news.get(key);
-			_popularNewsEntries.add(ne);
+			Collections.sort(_popularNewsEntries, new NewsEntry.PopularityComparator());
 		}
 
 		return _popularNewsEntries;
 	}
 
-	public List<NewsEntry> getEntries() {
+	public Collection<NewsEntry> getEntries() {
 		initialize();
 		return _newsEntries;
 	}
 
-	public List<NewsEntry> getEntriesByType(String tID) {
+	public Collection<NewsEntry> getEntriesByType(String tID) {
 		initialize();
 		return getTypedEntriesList(tID);
 	}
 
-	public List<NewsEntry> getSpotlightEntries() {
+	public Collection<NewsEntry> getSpotlightEntries() {
 		initialize();
 		return _spotlightNewsEntries;
 	}
 
-	public NewsEntry getSpotlightEntry(int position) {
-		List<NewsEntry> entries = getSpotlightEntries();
-		if (entries == null)
-			return null;
-		if (position < entries.size())
-			return entries.get(position);
-		return null;
-	}
-
-	public List<NewsEntry> getTopStories(String cID) {
+	public Collection<NewsEntry> getTopStories(String cID) {
 		initialize();
 		return getCategorizedTopEntriesList(cID);
 	}
 
-	public List<NewsEntry> getTopTopStories() {
+	public Collection<NewsEntry> getTopTopStories() {
 		initialize();
 		return _topTopStories;
-	}
-
-	private List<NewsEntry> sortTopStories(List<NewsEntry> newsEntries) {
-		List<NewsEntry> output = new ArrayList<NewsEntry>();
-		if (newsEntries == null)
-			return null;
-		for (int i = 0; i < newsEntries.size(); i++) {
-			NewsEntry newsEntry = newsEntries.get(i);
-			if (newsEntry.getTopStoryPosition() == 1)
-				output.add(newsEntry);
-		}
-		for (int i = 0; i < newsEntries.size(); i++) {
-			NewsEntry newsEntry = newsEntries.get(i);
-			if (newsEntry.getTopStoryPosition() == 2)
-				output.add(newsEntry);
-		}
-		for (int i = 0; i < newsEntries.size(); i++) {
-			NewsEntry newsEntry = newsEntries.get(i);
-			if (newsEntry.getTopStoryPosition() == 3)
-				output.add(newsEntry);
-		}
-		for (int i = 0; i < newsEntries.size(); i++) {
-			NewsEntry newsEntry = newsEntries.get(i);
-			if (newsEntry.getTopStoryPosition() == 4)
-				output.add(newsEntry);
-		}
-		return output;
-	}
-
-	private List<NewsEntry> sortSpotlightStories(
-			List<NewsEntry> newsEntries) {
-		List<NewsEntry> output = new ArrayList<NewsEntry>();
-		for (int i = 0; i < newsEntries.size(); i++) {
-			NewsEntry newsEntry = newsEntries.get(i);
-			if (newsEntry.getSpotlightPosition() == 1)
-				output.add(newsEntry);
-		}
-		for (int i = 0; i < newsEntries.size(); i++) {
-			NewsEntry newsEntry = newsEntries.get(i);
-			if (newsEntry.getSpotlightPosition() == 2)
-				output.add(newsEntry);
-		}
-		for (int i = 0; i < newsEntries.size(); i++) {
-			NewsEntry newsEntry = newsEntries.get(i);
-			if (newsEntry.getSpotlightPosition() == 3)
-				output.add(newsEntry);
-		}
-		for (int i = 0; i < newsEntries.size(); i++) {
-			NewsEntry newsEntry = newsEntries.get(i);
-			if (newsEntry.getSpotlightPosition() == 4)
-				output.add(newsEntry);
-		}
-		return output;
 	}
 }

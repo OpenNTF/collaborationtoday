@@ -28,7 +28,7 @@ else return newsCache.getEntries();
 						</small>
 						<br />
 						<small>
-							<xp:text value="#{javascript:entry.getPrettyTime()}"></xp:text>
+							<xp:text value="#{entry.prettyTime}"></xp:text>
 						</small>
 						<br />
 						<small>

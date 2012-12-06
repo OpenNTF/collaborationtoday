@@ -7,7 +7,7 @@ return true;}]]></xp:this.rendered>
 
 		<xp:div>
 			<xp:this.rendered><![CDATA[#{javascript:
-				if (newsCache.getSpotlightEntries().size() > 0) true; else false;	
+				newsCache.getSpotlightEntries().size() > 0	
 			}]]></xp:this.rendered>
 			<div class="page-header">
 				<h1>
@@ -15,10 +15,9 @@ return true;}]]></xp:this.rendered>
 				</h1>
 			</div>
 			<ul class="thumbnails">
-				<xc:spotlightEntry position="0"></xc:spotlightEntry>
-				<xc:spotlightEntry position="1"></xc:spotlightEntry>
-				<xc:spotlightEntry position="2"></xc:spotlightEntry>
-				<xc:spotlightEntry position="3"></xc:spotlightEntry>
+				<xp:repeat disableTheme="true" value="#{newsCache.spotlightEntries}" var="entry" rows="4">
+					<xc:spotlightEntry value="#{entry}"/>
+				</xp:repeat>
 			</ul>
 		</xp:div>
 
@@ -39,7 +38,7 @@ return true;}]]></xp:this.rendered>
 					newsAbstract="#{javascript:entryT.getAbstract()}" nID="#{javascript:entryT.getID()}"
 					personDisplayName="#{javascript:personsCache.getPerson(entryT.getPID()).getDisplayName()}"
 					typeId="#{javascript:entryT.getTID()}"
-					publicationDate="#{javascript:entryT.getPublicationDate()}" publicationDateString="#{javascript:entryT.getPrettyTime()}" title="#{javascript:entryT.getTitle()}">
+					publicationDate="#{javascript:entryT.getPublicationDate()}" publicationDateString="#{entryT.prettyTime}" title="#{javascript:entryT.getTitle()}">
 					<xc:this.category><![CDATA[#{javascript:
 							try {
 								configCache.getCategory(configCache.getType(entryT.getTID()).getCategoryId()).getDisplayName()
@@ -79,7 +78,7 @@ return true;}]]></xp:this.rendered>
 						imageURL="#{javascript:entryC.getImageURL()}" link="#{javascript:entryC.getLink()}"
 						newsAbstract="#{javascript:entryC.getAbstract()}" nID="#{javascript:entryC.getID()}"
 						personDisplayName="#{javascript:personsCache.getPerson(entryC.getPID()).getDisplayName()}"
-						publicationDate="#{javascript:entryC.getPublicationDate()}" publicationDateString="#{javascript:entryC.getPrettyTime()}" title="#{javascript:entryC.getTitle()}">
+						publicationDate="#{javascript:entryC.getPublicationDate()}" publicationDateString="#{entryC.prettyTime}" title="#{javascript:entryC.getTitle()}">
 						<xc:this.category><![CDATA[#{javascript:
 							try {
 								configCache.getCategory(configCache.getType(entryC.getTID()).getCategoryId()).getDisplayName()
