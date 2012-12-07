@@ -1,56 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.dataContexts>
+		<xp:dataContext var="baseURL"><xp:this.value><![CDATA[${javascript:
+			var result = context.getUrl().toString();
+			result = result.substring(0, result.indexOf('.nsf') + 4);
+			return result;
+		}]]></xp:this.value></xp:dataContext>
+	</xp:this.dataContexts>
 
 	<li class="span3">
 		<div class="thumbnail">
 			<xp:link target="_blank" styleClass="thumbnail">
 				<xp:this.value><![CDATA[#{javascript:
-				if (compositeData.value == null) { "http://collaborationtoday.info"; }
-				else {
-				compositeData.value.getLink()}}]]></xp:this.value>
+					compositeData.value == null ? "http://collaborationtoday.info" : compositeData.value.getLink()
+				}]]></xp:this.value>
 				<xp:image id="image1">
 					<xp:this.url><![CDATA[#{javascript:
-if (compositeData.value == null) { 
-	"spotlightPlaceholder.png"
-}
-else {
-	compositeData.value.getSpotlightImageURL()
-}
-}]]></xp:this.url>
+						compositeData.value == null ? "spotlightPlaceholder.png" : compositeData.value.getSpotlightImageURL()
+					}]]></xp:this.url>
 					<xp:eventHandler event="onclick" submit="false">
 						<xp:this.script><![CDATA[								
-var baseUrl = "#{javascript:var baseUrl = context.getUrl().toString();baseUrl = baseUrl.substring(0, baseUrl.indexOf('.nsf')+4);baseUrl }";
-var url = baseUrl + "/log.xsp?" + "nid=" + "#{javascript:
-if (compositeData.value != null) {
-compositeData.value.getID();
-}
-}";
-logClick(url);
-
-]]></xp:this.script>
+							var baseUrl = "#{javascript:baseURL}";
+							var url = baseUrl + "/log.xsp?nid=#{javascript: compositeData.value != null ? compositeData.value.getID() : ''}";
+							logClick(url);
+						]]></xp:this.script>
 					</xp:eventHandler>
 				</xp:image>
 			</xp:link>
 			<div class="caption">
 				<xp:text tagName="h5" id="header">
 					<xp:this.value><![CDATA[#{javascript:
-if (compositeData.value == null) {
-	"No title"
-}
-else {
-	compositeData.value.getTitle();
-}}]]></xp:this.value>
+						compositeData.value == null ? "No title" : compositeData.value.getTitle()
+					}]]></xp:this.value>
 				</xp:text>
-				<!--<xp:text tagName="p" id="content">
-					<xp:this.value><![CDATA[#{javascript:var entry5 = newsCache.getSpotlightEntry(compositeData.position);
-if (entry5 == null) {
-	"No spotlight sentence"
-}
-else {
-	entry5.getSpotlightSentence();
-}}]]></xp:this.value>
-				</xp:text>
-			--></div>
+			</div>
 		</div>
 	</li>
 </xp:view>
