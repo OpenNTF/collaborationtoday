@@ -21,7 +21,7 @@
 					state="#{entryMTT.state}"
 					clicksTotal="#{entryMTT.clicksTotal}"
 					clicksLastWeek="#{entryMTT.clicksLastWeek}"
-					showRemoveTopStoryButton="yes">
+					showRemoveTopStoryButton="true">
 				</xc:moderationNewsEntry>
 			</xp:repeat>
 		</xp:panel>
@@ -40,7 +40,7 @@
 					state="#{entryMTC.state}"
 					clicksTotal="#{entryMTC.clicksTotal}"
 					clicksLastWeek="#{entryMTC.clicksLastWeek}"
-					showRemoveTopStoryButton="yes">
+					showRemoveTopStoryButton="true">
 				</xc:moderationNewsEntry>
 			</xp:repeat>
 		</xp:repeat>

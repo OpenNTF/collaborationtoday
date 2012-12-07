@@ -19,7 +19,7 @@
 					state="#{entry.state}"
 					clicksTotal="#{entry.clicksTotal}"
 					clicksLastWeek="#{entry.clicksLastWeek}"
-					showRemoveSpotlightButton="yes">
+					showRemoveSpotlightButton="true">
 				</xc:moderationNewsEntry>
 			</xp:repeat>
 		</xp:panel>

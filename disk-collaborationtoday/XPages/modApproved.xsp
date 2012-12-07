@@ -12,15 +12,14 @@
 				<xp:dominoView var="view6" viewName="NewsAll" categoryFilter="approved"/>
 			</xp:this.data>
 			
-			<xc:ccPager pagerFor="repeat6"></xc:ccPager>
+			<xc:ccPager pagerFor="repeat6"/>
 			<br />
 			<xp:repeat id="repeat6" var="entry" rows="50" value="#{view6}">
-				<xc:moderationNewsEntry creationDate="#{javascript:entry.getColumnValue('NCreationDate')}"
-					link="#{javascript:entry.getColumnValue('NLink')}" nID="#{javascript:entry.getColumnValue('NID')}"
+				<xc:moderationNewsEntry creationDate="#{entry.NCreationDate}"
+					link="#{entry.NLink}" nID="#{entry.NID}"
 					personDisplayName="#{javascript:personsCache.getPerson(entry.getColumnValue('PID')).getDisplayName()}"
-					publicationDate="#{javascript:entry.getColumnValue('NPublicationDate')}" title="#{javascript:entry.getColumnValue('NTitle')}"
-					state="#{javascript:entry.getColumnValue('NState')}">
-				</xc:moderationNewsEntry>
+					publicationDate="#{entry.NPublicationDate}" title="#{entry.NTitle}"
+					state="#{entry.NState}" />
 			</xp:repeat>
 		</xp:panel>
 	</xc:moderationLayout>

@@ -3,10 +3,12 @@
 
 	<xc:navigationRules/>	
 
-	<!-- Fix for IE8 -->
-	<xp:text escape="false" id="computedField1" rendered="#{javascript:context.getUserAgent().isIE(0,8)}">
-		<xp:this.value><![CDATA[#{javascript:"<style type='text/css'>body {padding-top: 60px; padding-bottom: 40px; }</style>"}]]></xp:this.value>
-	</xp:text>
+	<xp:this.resources>
+		<!-- Fix for IE8 -->
+		<xp:styleSheet loaded="${javascript:context.getUserAgent().isIE(0, 8)}"><xp:this.contents><![CDATA[
+			body { padding-top: 60px; padding-bottom: 40px; }
+		]]></xp:this.contents></xp:styleSheet>
+	</xp:this.resources>
 
 	<xc:header showCategories="false"/>
 	

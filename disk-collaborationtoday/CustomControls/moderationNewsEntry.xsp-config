@@ -51,11 +51,21 @@
     </property>
     <property>
       <property-name>showRemoveTopStoryButton</property-name>
-      <property-class>string</property-class>
+      <property-class>boolean</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>false</default-value>
+        </designer-extension>
+      </property-extension>
     </property>
     <property>
       <property-name>showRemoveSpotlightButton</property-name>
-      <property-class>string</property-class>
+      <property-class>boolean</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>false</default-value>
+        </designer-extension>
+      </property-extension>
     </property>
   </composite-component>
 </faces-config>
