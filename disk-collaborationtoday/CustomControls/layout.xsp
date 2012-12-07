@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 
-	<xp:text escape="false">
-		<xp:this.value><![CDATA[#{javascript:
-			var output = "";
-			var types:java.util.ArrayList;
-			types = configCache.getTypes();
-			if (types != null) {
-				var it = types.iterator();
-			    for (; it.hasNext();) {
-				   	var type = it.next();
-				   	output = output + "<link title='" + configCache.getCategory(type.getCategoryId()).getDisplayName() + ' - ' + type.getDisplayName() + "' type='application/atom+xml' rel='alternate' href='./feed.xsp?filter=" + type.getID() + "'>";
-				}
-			}
-			output
-		}]]></xp:this.value>
-	</xp:text>
-	
-	<!-- Fix for IE8 -->
-	<xp:text escape="false" id="computedField1" rendered="#{javascript:context.getUserAgent().isIE(0,8)}">
-		<xp:this.value><![CDATA[#{javascript:"<style type='text/css'>body {padding-top: 60px; padding-bottom: 40px; }</style>"}]]></xp:this.value>
-	</xp:text>
+	<xp:repeat disableTheme="true" value="${configCache.types}" var="type">
+		<link title="#{javascript:configCache.getCategory(type.getCategoryId()).getDisplayName()} - #{type.displayName}" type="application/atom+xml" rel="alternate" href="#{facesContext.externalContext.requestContextPath}/feed.xsp?filter=#{type.ID}" />
+	</xp:repeat>
 	
 	<xp:this.resources>
 		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp" type="application/rss+xml" title="Top Stories" rel="alternate"/>
 		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=all" type="application/rss+xml" title="Recent" rel="alternate"/>
 		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=popular" type="application/rss+xml" title="Popular" rel="alternate"/>
 		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=spotlight" type="application/rss+xml" title="Spotlight" rel="alternate"/>
-		<xp:metaData name="description" content="Collaboration Today - News about IBM Collaboration Solutions"></xp:metaData>
+		<xp:metaData name="description" content="Collaboration Today - News about IBM Collaboration Solutions" />
+		
+		<!-- Fix for IE8 -->
+		<xp:styleSheet loaded="${javascript:context.getUserAgent().isIE(0, 8)}"><xp:this.contents><![CDATA[
+			body {padding-top: 60px; padding-bottom: 40px; }
+		]]></xp:this.contents></xp:styleSheet>
 		
 		<!-- Facebook Open Graph image: used to proide an icon for Facebook shares -->
 		<xp:headTag tagName="meta" rendered="true" loaded="true">
