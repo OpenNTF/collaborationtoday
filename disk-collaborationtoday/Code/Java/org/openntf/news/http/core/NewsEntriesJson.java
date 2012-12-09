@@ -30,8 +30,8 @@ public class NewsEntriesJson {
 	public NewsEntriesJson() { }
 
 	private String _count = DEFAULT_COUNT;
-	private String _filter = FORMAT_JSONP;
-	private String _format = FILTER_ALL;
+	private String _filter = FILTER_ALL;
+	private String _format = FORMAT_JSONP;
 
 	public static final String FORMAT_JSON = "json";
 	public static final String FORMAT_JSONP = "jsonp";
