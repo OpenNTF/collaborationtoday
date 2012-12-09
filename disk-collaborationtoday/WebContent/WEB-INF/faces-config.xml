@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config>
   <managed-bean>
-    <managed-bean-name>newsEntriesAsJson</managed-bean-name>
-    <managed-bean-class>org.openntf.news.http.core.NewsEntriesJson</managed-bean-class>
-    <managed-bean-scope>application</managed-bean-scope>
-  </managed-bean>
-  <managed-bean>
     <managed-bean-name>newsCache</managed-bean-name>
     <managed-bean-class>org.openntf.news.http.core.NewsCache
 		</managed-bean-class>

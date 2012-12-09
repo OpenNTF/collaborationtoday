@@ -8,6 +8,7 @@
 		
 		response.setContentType("application/json"); 
 		
+		var newsEntriesAsJson = new org.openntf.news.http.core.NewsEntriesJson();
 		newsEntriesAsJson.setCount(param.count);
 		newsEntriesAsJson.setFilter(param.filter);
 		newsEntriesAsJson.setFormat(param.format);
