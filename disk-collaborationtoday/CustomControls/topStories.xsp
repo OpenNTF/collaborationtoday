@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 
-	<xp:panel readonly="true">
-		<xp:this.rendered><![CDATA[#{javascript:if (param.filter) return false;
-return true;}]]></xp:this.rendered>
+	<xp:panel readonly="true" loaded="${param.filter == null}">
 
 		<xp:div>
 			<xp:this.rendered><![CDATA[#{javascript:
@@ -23,45 +21,46 @@ return true;}]]></xp:this.rendered>
 
 		<xp:div>
 			<xp:this.rendered><![CDATA[#{javascript:
-				if (newsCache.getTopTopStories().size() > 0) true; else false;	
+				newsCache.getTopTopStories().size() > 0	
 			}]]></xp:this.rendered>
 			<div class="page-header">
 				<h1>
 					<small>Featured</small>
 				</h1>
 			</div>
-			<xp:repeat id="r1" var="entryT" rows="4"
-				value="#{javascript:newsCache.getTopTopStories();}" >
-				<xc:newsEntry id = "lkj"
+			<xp:repeat id="r1" var="entryT" rows="4" value="${newsCache.topTopStories}">
+				<xc:newsEntry id="lkj"
 					author="#{entryT.PID}"
-					imageURL="#{javascript:entryT.getImageURL()}" link="#{javascript:entryT.getLink()}"
-					newsAbstract="#{javascript:entryT.getAbstract()}" nID="#{javascript:entryT.getID()}"
+					imageURL="#{entryT.imageURL}" link="#{entryT.link}"
+					newsAbstract="#{entryT.abstract}" nID="#{entryT.ID}"
 					personDisplayName="#{javascript:personsCache.getPerson(entryT.getPID()).getDisplayName()}"
-					typeId="#{javascript:entryT.getTID()}"
-					publicationDate="#{javascript:entryT.getPublicationDate()}" publicationDateString="#{entryT.prettyTime}" title="#{javascript:entryT.getTitle()}">
+					typeId="#{entryT.TID}"
+					publicationDate="#{entryT.publicationDate}" publicationDateString="#{entryT.prettyTime}" title="#{entryT.title}">
 					<xc:this.category><![CDATA[#{javascript:
-							try {
-								configCache.getCategory(configCache.getType(entryT.getTID()).getCategoryId()).getDisplayName()
-							} catch(e) {
-							} finally {
-								"";
-							}}]]></xc:this.category>
-							<xc:this.type><![CDATA[#{javascript:
-							try {
-								configCache.getType(entryT.getTID()).getDisplayName()
-							} catch(e) {
-							} finally {
-								"";
-							}}]]></xc:this.type>
+						try {
+							configCache.getCategory(configCache.getType(entryT.getTID()).getCategoryId()).getDisplayName()
+						} catch(e) {
+						} finally {
+							"";
+						}
+					}]]></xc:this.category>
+					<xc:this.type><![CDATA[#{javascript:
+						try {
+							configCache.getType(entryT.getTID()).getDisplayName()
+						} catch(e) {
+						} finally {
+							"";
+						}
+					}]]></xc:this.type>
 				</xc:newsEntry>
 			</xp:repeat>
 		</xp:div>
 
-		<xp:repeat id="r2" rows="30" value="#{javascript:configCache.getCategories();}"
+		<xp:repeat id="r2" rows="30" value="${configCache.categories}"
 			indexVar="index2" var="category" removeRepeat="true">
 			<xp:div>
 				<xp:this.rendered><![CDATA[#{javascript:
-					if (newsCache.getTopStories(category.getID()).size() > 0) true; else false;	
+					newsCache.getTopStories(category.getID()).size() > 0	
 				}]]></xp:this.rendered>
 				<div class="page-header">
 					<h1>
@@ -71,28 +70,30 @@ return true;}]]></xp:this.rendered>
 					</h1>
 				</div>
 				<xp:repeat id="r3" var="entryC" rows="4"
-					value="#{javascript:newsCache.getTopStories(category.getID());}" >
+					value="#{javascript:newsCache.getTopStories(category.getID())}" >
 					<xc:newsEntry id = "lkasdfj"
 						author="#{entryC.PID}"
-						typeId="#{javascript:entryC.getTID()}"
-						imageURL="#{javascript:entryC.getImageURL()}" link="#{javascript:entryC.getLink()}"
-						newsAbstract="#{javascript:entryC.getAbstract()}" nID="#{javascript:entryC.getID()}"
+						typeId="#{entryC.TID}"
+						imageURL="#{entryC.imageURL}" link="#{entryC.link}"
+						newsAbstract="#{entryC.abstract}" nID="#{entryC.ID}"
 						personDisplayName="#{javascript:personsCache.getPerson(entryC.getPID()).getDisplayName()}"
-						publicationDate="#{javascript:entryC.getPublicationDate()}" publicationDateString="#{entryC.prettyTime}" title="#{javascript:entryC.getTitle()}">
+						publicationDate="#{entryC.publicationDate}" publicationDateString="#{entryC.prettyTime}" title="#{entryC.title}">
 						<xc:this.category><![CDATA[#{javascript:
 							try {
 								configCache.getCategory(configCache.getType(entryC.getTID()).getCategoryId()).getDisplayName()
 							} catch(e) {
 							} finally {
 								"";
-							}}]]></xc:this.category>
-							<xc:this.type><![CDATA[#{javascript:
+							}
+						}]]></xc:this.category>
+						<xc:this.type><![CDATA[#{javascript:
 							try {
 								configCache.getType(entryC.getTID()).getDisplayName()
 							} catch(e) {
 							} finally {
 								"";
-							}}]]></xc:this.type>
+							}
+						}]]></xc:this.type>
 					</xc:newsEntry>
 				</xp:repeat>
 			</xp:div>

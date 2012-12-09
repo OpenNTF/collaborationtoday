@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="306" sequence="4" unid="E2FD8DA7C5D79A7085257AA6004F72E5">
-<created><datetime dst="true">20121029T102747,57-04</datetime></created>
-<modified><datetime dst="true">20121029T102931,59-04</datetime></modified>
-<revised><datetime dst="true">20121029T102931,58-04</datetime></revised>
-<lastaccessed><datetime dst="true">20121029T102931,58-04</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20121029T102747,66-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257ACD0072E6A8" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="35a" sequence="5" unid="57A69B2F52EC2AC985257ACD0072ECD8">
+<created><datetime>20121207T155517,36-05</datetime></created>
+<modified><datetime>20121209T114623,67-05</datetime></modified>
+<revised><datetime>20121209T114623,65-05</datetime></revised>
+<lastaccessed><datetime>20121209T114623,65-05</datetime></lastaccessed>
+<addedtofile><datetime>20121207T155517,36-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>org/openntf/news/http/core/NewsCache.java</text></item>
+
+
+
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>org/openntf/news/http/core/NewsCache.java</text></item>
-
-
-</note>
+<item name="$FileNames" sign="true"><text>org/openntf/news/http/core/NewsCache.java</text></item></note>

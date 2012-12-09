@@ -166,8 +166,10 @@ public class NewsCache {
 						d4					// NLastModified
 				);
 				_newsEntries.add(newsEntry);
-				if (newsEntry.isSpotlight())
+				if (newsEntry.isSpotlight()) {
+					System.out.println("Adding spotlight story");
 					_spotlightNewsEntries.add(newsEntry);
+				}
 				getTypedEntriesList(newsEntry.getTID()).add(newsEntry);
 				if (newsEntry.isTopStory()) {
 					if(newsEntry.getTopStoryCategory().equalsIgnoreCase("top")) {
