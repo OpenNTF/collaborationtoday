@@ -16,6 +16,7 @@ import org.openntf.news.shared.Constants;
 import org.openntf.news.shared.StoryReaderException;
 import org.openntf.news.shared.Utilities;
 
+// Story element for news items
 public class Story {
 
 	//From Entry
