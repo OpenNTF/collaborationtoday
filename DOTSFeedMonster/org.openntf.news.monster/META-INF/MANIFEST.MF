@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.openntf.news.monster;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: org.openntf.news.dots.activator.Activator
+Bundle-Vendor: OpenNTF
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6,
+ J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.ibm.dots
+Bundle-ClassPath: lib/rome-1.0.jar,
+ .,
+ lib/jdom.jar,
+ lib/commons-logging-api-1.1.1.jar,
+ lib/jericho-html-3.1.jar
+
