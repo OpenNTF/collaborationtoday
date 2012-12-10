@@ -60,6 +60,7 @@ public final class FeedMonster {
 				try {
 					blogDocument.replaceItemValue("BLastTry", now);
 
+					// FIXME: DateTime object to be recycled
 					DateTime lastStoryDate=null;
 
 					Item lastSuccess=blogDocument.getFirstItem("BLastSuccess");

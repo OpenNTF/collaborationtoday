@@ -19,16 +19,10 @@ public class DOTSFeedMonster extends AbstractServerTask {
 	public DOTSFeedMonster() {
 	}
 
-	/* (non-Javadoc)
-	 * @see com.ibm.dots.task.IServerTaskRunnable#dispose()
-	 */
 	public void dispose() throws NotesException {
 		if(db!=null) db.recycle();
 	}
 	
-	/* (non-Javadoc)
-	 * This is version 1
-	 */
 	public void run(RunWhen runWhen, String[] args, IProgressMonitor monitor) throws NotesException {
 		
 		monitor.beginTask(Constants.APPLICATION_NAME + ": " + Constants.TASK_ID, 0 );
@@ -49,7 +43,8 @@ public class DOTSFeedMonster extends AbstractServerTask {
 			if(!db.isOpen()) {
 				throw new MonsterException(Constants.EXCEPTION_NEWSDB_ERROR + ": "+dbname);
 			}
-			
+		
+			// TODO: Add console logging
 			new FeedMonster(db).ReadFeeds();
 		} catch(MonsterException e) {
 			if(Constants.debug) e.printStackTrace();

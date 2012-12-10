@@ -138,6 +138,7 @@ public class Story {
 
 			storyDoc.replaceItemValue("NLink", getLink());
 
+			// FIXME: DateTime objects to be recycled
 			storyDoc.replaceItemValue("NCreationDate", session.createDateTime(getCreationDate()));
 			storyDoc.replaceItemValue("NPublicationDate", session.createDateTime(getDate()));
 			storyDoc.replaceItemValue("NTitle", getTitle());
