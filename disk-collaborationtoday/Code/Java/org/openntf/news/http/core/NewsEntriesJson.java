@@ -89,12 +89,12 @@ public class NewsEntriesJson {
 	}
 
 	public String getJson() {
-		String output;
+		StringBuilder output = new StringBuilder();;
 
 		if (FORMAT_JSON.equalsIgnoreCase(_format)) {
-			output = "[";
+			output.append("[");
 		} else {
-			output = "dojo.io.script.jsonp_dojoIoScript1._jsonpCallback({'responseData': {'results': [";
+			output.append("dojo.io.script.jsonp_dojoIoScript1._jsonpCallback({'responseData': {'results': [");
 		}		
 
 		FacesContext context = FacesContext.getCurrentInstance();
@@ -137,32 +137,32 @@ public class NewsEntriesJson {
 
 				for(NewsEntry entry : newsEntries) {
 
-					output += "{" + 
-					"'" + NEWS_ENTRY_ID + "': '" + entry.getID() + "', " + 
-					"'" + NEWS_ENTRY_TYPE_DISPLAY_NAME+ "': '" + configCache.getType(entry.getTID()).getDisplayName() + "', " +
-					"'" + NEWS_ENTRY_TITLE + "': '" + encode(entry.getTitle()) + "', " + 
-					"'" + NEWS_ENTRY_PERSON_ID + "': '" + entry.getPID() + "', " +
-					"'" + NEWS_ENTRY_PERSON_DISPLAY_NAME+ "': '" + personsCache.getPerson(entry.getPID()).getDisplayName() + "', " +
-					"'" + NEWS_ENTRY_LINK + "': '" + entry.getLink() + "', " +
-					"'" + NEWS_ENTRY_IMAGE_URL + "': '" + entry.getImageURL() + "', " +
-					"'" + NEWS_ENTRY_ABSTRACT_ENCODED + "': '" + encode(entry.getAbstract()) + "', " + 
-					"'" + NEWS_ENTRY_MODERATION_DATE + "': '" + entry.getModerationDate() + "', " +
-					"'" + NEWS_ENTRY_PUBLICATION_DATE + "': '" + entry.getPublicationDate() + "', " +
-					"'" + NEWS_ENTRY_IS_SPOTLIGHT + "': " + entry.isSpotlight() + ", " +
-					"'" + NEWS_ENTRY_SPOTLIGHT_SENTENCE + "': '" + encode(entry.getSpotlightSentence()) + "', " +
-					"'" + NEWS_ENTRY_IS_TOP_STORY + "': " + entry.isTopStory() + ", " +
-					"'" + NEWS_ENTRY_TOP_STORY_CATEGORY + "': '" + entry.getTopStoryCategory() + "', " +
-					"'" + NEWS_ENTRY_TOP_STORY_POSITION + "': " + entry.getTopStoryPosition() + ", " +
-					"'" + NEWS_ENTRY_CLICKS_TOTAL + "': " + entry.getClicksTotal() + ", " +
-					"'" + NEWS_ENTRY_CLICKS_LAST_WEEK + "': " + entry.getClicksLastWeek() + ", " +
-					"'" + NEWS_ENTRY_TYPE_ID+ "': '" + entry.getTID() +
-					"'},";
+					output.append("{" + 
+							"'" + NEWS_ENTRY_ID + "': '" + entry.getID() + "', " + 
+							"'" + NEWS_ENTRY_TYPE_DISPLAY_NAME+ "': '" + configCache.getType(entry.getTID()).getDisplayName() + "', " +
+							"'" + NEWS_ENTRY_TITLE + "': '" + encode(entry.getTitle()) + "', " + 
+							"'" + NEWS_ENTRY_PERSON_ID + "': '" + entry.getPID() + "', " +
+							"'" + NEWS_ENTRY_PERSON_DISPLAY_NAME+ "': '" + personsCache.getPerson(entry.getPID()).getDisplayName() + "', " +
+							"'" + NEWS_ENTRY_LINK + "': '" + entry.getLink() + "', " +
+							"'" + NEWS_ENTRY_IMAGE_URL + "': '" + entry.getImageURL() + "', " +
+							"'" + NEWS_ENTRY_ABSTRACT_ENCODED + "': '" + encode(entry.getAbstract()) + "', " + 
+							"'" + NEWS_ENTRY_MODERATION_DATE + "': '" + entry.getModerationDate() + "', " +
+							"'" + NEWS_ENTRY_PUBLICATION_DATE + "': '" + entry.getPublicationDate() + "', " +
+							"'" + NEWS_ENTRY_IS_SPOTLIGHT + "': " + entry.isSpotlight() + ", " +
+							"'" + NEWS_ENTRY_SPOTLIGHT_SENTENCE + "': '" + encode(entry.getSpotlightSentence()) + "', " +
+							"'" + NEWS_ENTRY_IS_TOP_STORY + "': " + entry.isTopStory() + ", " +
+							"'" + NEWS_ENTRY_TOP_STORY_CATEGORY + "': '" + entry.getTopStoryCategory() + "', " +
+							"'" + NEWS_ENTRY_TOP_STORY_POSITION + "': " + entry.getTopStoryPosition() + ", " +
+							"'" + NEWS_ENTRY_CLICKS_TOTAL + "': " + entry.getClicksTotal() + ", " +
+							"'" + NEWS_ENTRY_CLICKS_LAST_WEEK + "': " + entry.getClicksLastWeek() + ", " +
+							"'" + NEWS_ENTRY_TYPE_ID+ "': '" + entry.getTID() +
+					"'},");
 				}
 			}
 			if (FORMAT_JSON.equalsIgnoreCase(_format)) {
-				output += "]";
+				output.append("]");
 			} else {
-				output += "], }, 'responseDetails': null,'responseStatus': 200})";
+				output.append("], }, 'responseDetails': null,'responseStatus': 200})");
 			}
 		} catch (Exception ne) {
 			MiscUtils.logException(ne);
@@ -174,7 +174,7 @@ public class NewsEntriesJson {
 			}
 		}
 
-		return output;
+		return output.toString();
 	}
 
 	private String encode(String toBeEncoded) {

@@ -35,7 +35,7 @@ public class MiscUtils {
 				return (Date)columnValue;
 			}
 		} catch(NotesException ne) { }
-		return new Date();
+		return null;
 	}
 	public static Double getColumnValueAsDouble(Object columnValue) {
 		try {

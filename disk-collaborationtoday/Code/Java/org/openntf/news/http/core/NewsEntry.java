@@ -260,7 +260,9 @@ public class NewsEntry implements Serializable, Cloneable {
 		private static final long serialVersionUID = 1L;
 
 		public int compare(NewsEntry o1, NewsEntry o2) {
-			return o2.getCreationDate().compareTo(o1.getCreationDate());
+			long time1 = o1.getCreationDate() == null ? 0 : o1.getCreationDate().getTime();
+			long time2 = o2.getCreationDate() == null ? 0 : o2.getCreationDate().getTime();
+			return time1 > time2 ? -1 : time1 == time2 ? 0 : 1;
 		}
 	}
 

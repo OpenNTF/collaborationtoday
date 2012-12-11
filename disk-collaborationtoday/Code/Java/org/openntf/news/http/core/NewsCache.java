@@ -167,7 +167,6 @@ public class NewsCache {
 				);
 				_newsEntries.add(newsEntry);
 				if (newsEntry.isSpotlight()) {
-					System.out.println("Adding spotlight story");
 					_spotlightNewsEntries.add(newsEntry);
 				}
 				getTypedEntriesList(newsEntry.getTID()).add(newsEntry);
