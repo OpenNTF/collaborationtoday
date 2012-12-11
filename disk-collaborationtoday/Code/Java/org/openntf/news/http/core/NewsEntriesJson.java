@@ -20,7 +20,12 @@ package org.openntf.news.http.core;
 
 import java.util.*;
 import javax.faces.context.FacesContext;
+
+import java.io.IOException;
+import java.io.StringWriter;
 import java.net.URLEncoder;
+
+import com.ibm.domino.services.util.JsonWriter;
 import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class NewsEntriesJson {
@@ -89,19 +94,27 @@ public class NewsEntriesJson {
 	}
 
 	public String getJson() {
-		StringBuilder output = new StringBuilder();;
+		StringWriter writer = new StringWriter();
+		boolean compact = true;
+		JsonWriter json = new JsonWriter(writer, compact);
 
-		if (FORMAT_JSON.equalsIgnoreCase(_format)) {
-			output.append("[");
-		} else {
-			output.append("dojo.io.script.jsonp_dojoIoScript1._jsonpCallback({'responseData': {'results': [");
-		}		
-
-		FacesContext context = FacesContext.getCurrentInstance();
-		NewsCache newsCache = (NewsCache)ExtLibUtil.resolveVariable(context, "newsCache");
-		ConfigCache configCache = (ConfigCache)ExtLibUtil.resolveVariable(context, "configCache");
-		PersonsCache personsCache = (PersonsCache)ExtLibUtil.resolveVariable(context, "personsCache");
 		try {
+			if (FORMAT_JSON.equalsIgnoreCase(_format)) {
+				json.startArray();
+			} else {
+				writer.append("dojo.io.script.jsonp_dojoIoScript1._jsonpCallback(");
+				json.startObject();
+				json.startProperty("responseData");
+				json.startObject();
+				json.startProperty("results");
+				json.startArray();
+			}		
+
+			FacesContext context = FacesContext.getCurrentInstance();
+			NewsCache newsCache = (NewsCache)ExtLibUtil.resolveVariable(context, "newsCache");
+			ConfigCache configCache = (ConfigCache)ExtLibUtil.resolveVariable(context, "configCache");
+			PersonsCache personsCache = (PersonsCache)ExtLibUtil.resolveVariable(context, "personsCache");
+
 			Collection<NewsEntry> newsEntries;
 
 			if(FILTER_ALL.equalsIgnoreCase(_filter)) {
@@ -137,32 +150,44 @@ public class NewsEntriesJson {
 
 				for(NewsEntry entry : newsEntries) {
 
-					output.append("{" + 
-							"'" + NEWS_ENTRY_ID + "': '" + entry.getID() + "', " + 
-							"'" + NEWS_ENTRY_TYPE_DISPLAY_NAME+ "': '" + configCache.getType(entry.getTID()).getDisplayName() + "', " +
-							"'" + NEWS_ENTRY_TITLE + "': '" + encode(entry.getTitle()) + "', " + 
-							"'" + NEWS_ENTRY_PERSON_ID + "': '" + entry.getPID() + "', " +
-							"'" + NEWS_ENTRY_PERSON_DISPLAY_NAME+ "': '" + personsCache.getPerson(entry.getPID()).getDisplayName() + "', " +
-							"'" + NEWS_ENTRY_LINK + "': '" + entry.getLink() + "', " +
-							"'" + NEWS_ENTRY_IMAGE_URL + "': '" + entry.getImageURL() + "', " +
-							"'" + NEWS_ENTRY_ABSTRACT_ENCODED + "': '" + encode(entry.getAbstract()) + "', " + 
-							"'" + NEWS_ENTRY_MODERATION_DATE + "': '" + entry.getModerationDate() + "', " +
-							"'" + NEWS_ENTRY_PUBLICATION_DATE + "': '" + entry.getPublicationDate() + "', " +
-							"'" + NEWS_ENTRY_IS_SPOTLIGHT + "': " + entry.isSpotlight() + ", " +
-							"'" + NEWS_ENTRY_SPOTLIGHT_SENTENCE + "': '" + encode(entry.getSpotlightSentence()) + "', " +
-							"'" + NEWS_ENTRY_IS_TOP_STORY + "': " + entry.isTopStory() + ", " +
-							"'" + NEWS_ENTRY_TOP_STORY_CATEGORY + "': '" + entry.getTopStoryCategory() + "', " +
-							"'" + NEWS_ENTRY_TOP_STORY_POSITION + "': " + entry.getTopStoryPosition() + ", " +
-							"'" + NEWS_ENTRY_CLICKS_TOTAL + "': " + entry.getClicksTotal() + ", " +
-							"'" + NEWS_ENTRY_CLICKS_LAST_WEEK + "': " + entry.getClicksLastWeek() + ", " +
-							"'" + NEWS_ENTRY_TYPE_ID+ "': '" + entry.getTID() +
-					"'},");
+					json.startObject();
+					writeProperty(json, NEWS_ENTRY_ID, entry.getID());
+					writeProperty(json, NEWS_ENTRY_TYPE_DISPLAY_NAME, configCache.getType(entry.getTID()).getDisplayName());
+					writeProperty(json, NEWS_ENTRY_TITLE, encode(entry.getTitle()));
+					writeProperty(json, NEWS_ENTRY_PERSON_ID, entry.getPID());
+					writeProperty(json, NEWS_ENTRY_PERSON_DISPLAY_NAME, personsCache.getPerson(entry.getPID()).getDisplayName());
+					writeProperty(json, NEWS_ENTRY_LINK, entry.getLink());
+					writeProperty(json, NEWS_ENTRY_IMAGE_URL, entry.getImageURL());
+					writeProperty(json, NEWS_ENTRY_ABSTRACT_ENCODED, encode(entry.getAbstract()));
+					writeProperty(json, NEWS_ENTRY_MODERATION_DATE, entry.getModerationDate());
+					writeProperty(json, NEWS_ENTRY_PUBLICATION_DATE, entry.getPublicationDate());
+					writeProperty(json, NEWS_ENTRY_IS_SPOTLIGHT, entry.isSpotlight());
+					writeProperty(json, NEWS_ENTRY_SPOTLIGHT_SENTENCE, encode(entry.getSpotlightSentence()));
+					writeProperty(json, NEWS_ENTRY_IS_TOP_STORY, entry.isTopStory());
+					writeProperty(json, NEWS_ENTRY_TOP_STORY_CATEGORY, entry.getTopStoryCategory());
+					writeProperty(json, NEWS_ENTRY_TOP_STORY_POSITION, entry.getTopStoryPosition());
+					writeProperty(json, NEWS_ENTRY_CLICKS_TOTAL, entry.getClicksTotal());
+					writeProperty(json, NEWS_ENTRY_CLICKS_LAST_WEEK, entry.getClicksLastWeek());
+					writeProperty(json, NEWS_ENTRY_TYPE_ID, entry.getTID());
+					json.endObject();
+
 				}
 			}
 			if (FORMAT_JSON.equalsIgnoreCase(_format)) {
-				output.append("]");
+				json.endArray();
 			} else {
-				output.append("], }, 'responseDetails': null,'responseStatus': 200})");
+
+				json.endArray();
+				json.endObject();
+				json.endProperty();
+				json.startProperty("responseDetails");
+				json.outNull();
+				json.endProperty();
+				json.startProperty("responseStatus");
+				json.outIntLiteral(200);
+				json.endProperty();
+				json.endObject();
+				writer.append(")");
 			}
 		} catch (Exception ne) {
 			MiscUtils.logException(ne);
@@ -174,7 +199,7 @@ public class NewsEntriesJson {
 			}
 		}
 
-		return output.toString();
+		return writer.toString();
 	}
 
 	private String encode(String toBeEncoded) {
@@ -188,5 +213,26 @@ public class NewsEntriesJson {
 			output = toBeEncoded.trim();
 		}
 		return output;
+	}
+
+	private void writeProperty(JsonWriter json, String propertyName, String value) throws IOException {
+		json.startProperty(propertyName);
+		json.outStringLiteral(value == null ? "" : value);
+		json.endProperty();
+	}
+	private void writeProperty(JsonWriter json, String propertyName, int value) throws IOException {
+		json.startProperty(propertyName);
+		json.outIntLiteral(value);
+		json.endProperty();
+	}
+	private void writeProperty(JsonWriter json, String propertyName, boolean value) throws IOException {
+		json.startProperty(propertyName);
+		json.outBooleanLiteral(value);
+		json.endProperty();
+	}
+	private void writeProperty(JsonWriter json, String propertyName, Date value) throws Exception {
+		json.startProperty(propertyName);
+		if(value == null) { json.outNull(); } else { json.outStringLiteral(value.toString()); }
+		json.endProperty();
 	}
 }
