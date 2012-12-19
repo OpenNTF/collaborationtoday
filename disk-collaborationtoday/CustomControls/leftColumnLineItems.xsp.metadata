@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2ba" sequence="4" unid="E22D3630A4A4373085257AA6004F6E69">
-<created><datetime dst="true">20121029T102736,09-04</datetime></created>
-<modified><datetime dst="true">20121029T102736,54-04</datetime></modified>
-<revised><datetime dst="true">20121029T102736,53-04</datetime></revised>
-<lastaccessed><datetime dst="true">20121029T102736,53-04</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20121029T102736,17-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
-<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="86257A780060902F" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="276" sequence="82" unid="586475E56C4B2345C1257A64002E9211">
+<created><datetime dst="true">20120824T102840,49+02</datetime></created>
+<modified><datetime>20121219T094502,00+01</datetime></modified>
+<revised><datetime>20121219T094501,99+01</datetime></revised>
+<lastaccessed><datetime>20121219T094502,00+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120914T085927,21+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></updatedby>
+<wassignedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE"><text>leftColumnLineItems.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
