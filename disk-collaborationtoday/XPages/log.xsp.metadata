@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="19a" sequence="11" unid="36D13E37E6900C5D85257AA6004F5BA9">
-<created><datetime dst="true">20121029T102648,09-04</datetime></created>
-<modified><datetime dst="true">20121103T112646,05-04</datetime></modified>
-<revised><datetime dst="true">20121103T112646,03-04</datetime></revised>
-<lastaccessed><datetime dst="true">20121103T112646,03-04</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20121029T102648,18-04</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257AD1004C558E" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="192" sequence="7" unid="9A5A03D03A6871B385257AD1004C5792">
+<created><datetime>20121211T085351,54-05</datetime></created>
+<modified><datetime>20121213T221723,96-05</datetime></modified>
+<revised><datetime>20121213T221723,94-05</datetime></revised>
+<lastaccessed><datetime>20121213T221723,94-05</datetime></lastaccessed>
+<addedtofile><datetime>20121211T085351,55-05</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$TITLE"><text>log.xsp</text></item>
 <item name="$Flags"><text>gC~4K</text></item>
-
-
-
+<item name="$Comment" sign="true"><text>Non-UI</text></item>
 
 
 <item name="$FileNames" sign="true"><text>log.xsp</text></item>
-<item name="$Comment" sign="true"><text>Non-UI</text></item>
+
 <item name="$DesignerVersion"><text>8.5</text></item>
+
+
 
 </note>

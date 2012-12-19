@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="55a" sequence="9" unid="728024237153C2DB85257ABB00619887">
-<created><datetime>20121119T124600,39-05</datetime></created>
-<modified><datetime>20121119T124930,45-05</datetime></modified>
-<revised><datetime>20121119T124930,44-05</datetime></revised>
-<lastaccessed><datetime>20121119T124930,44-05</datetime></lastaccessed>
-<addedtofile><datetime>20121119T124600,63-05</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257AD1004C558E" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="16a" sequence="7" unid="6024D40754D1171C85257AD1004C5739">
+<created><datetime>20121211T085350,65-05</datetime></created>
+<modified><datetime>20121213T221721,50-05</datetime></modified>
+<revised><datetime>20121213T221721,48-05</datetime></revised>
+<lastaccessed><datetime>20121213T221721,48-05</datetime></lastaccessed>
+<addedtofile><datetime>20121211T085350,66-05</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
@@ -13,8 +13,8 @@
 
 
 <item name="$FileNames" sign="true"><text>mypicUploadFile.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.2</text></item>
 
+<item name="$DesignerVersion"><text>8.5.2</text></item>
 
 
 

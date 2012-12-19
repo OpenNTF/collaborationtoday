@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AD1004C558E" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="34e" sequence="5" unid="75BDD0AE2F3D944285257AD1004C5C5B">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257AD1004C558E" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="34e" sequence="6" unid="75BDD0AE2F3D944285257AD1004C5C5B">
 <created><datetime>20121211T085403,79-05</datetime></created>
-<modified><datetime>20121211T103755,99-05</datetime></modified>
-<revised><datetime>20121211T103755,97-05</datetime></revised>
-<lastaccessed><datetime>20121211T103755,97-05</datetime></lastaccessed>
+<modified><datetime>20121211T103803,66-05</datetime></modified>
+<revised><datetime>20121211T103803,64-05</datetime></revised>
+<lastaccessed><datetime>20121211T103803,64-05</datetime></lastaccessed>
 <addedtofile><datetime>20121211T085403,80-05</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>org/openntf/news/http/core/MiscUtils.java</text></item>
 
-
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>org/openntf/news/http/core/MiscUtils.java</text></item></note>
+<item name="$FileNames" sign="true"><text>org/openntf/news/http/core/MiscUtils.java</text></item>
+
+</note>

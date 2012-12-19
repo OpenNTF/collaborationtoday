@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AD1004C558E" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="342" sequence="9" unid="2AE7F40B1E19C32C85257AD1004C5C3F">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257AD1004C558E" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="342" sequence="21" unid="2AE7F40B1E19C32C85257AD1004C5C3F">
 <created><datetime>20121211T085403,51-05</datetime></created>
-<modified><datetime>20121211T102009,38-05</datetime></modified>
-<revised><datetime>20121211T102009,36-05</datetime></revised>
-<lastaccessed><datetime>20121211T102009,36-05</datetime></lastaccessed>
+<modified><datetime>20121211T103606,62-05</datetime></modified>
+<revised><datetime>20121211T103606,60-05</datetime></revised>
+<lastaccessed><datetime>20121211T103606,60-05</datetime></lastaccessed>
 <addedtofile><datetime>20121211T085403,52-05</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
@@ -18,9 +18,9 @@
 
 
 
-
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>org/openntf/news/http/core/NewsEntry.java</text></item></note>
+<item name="$FileNames" sign="true"><text>org/openntf/news/http/core/NewsEntry.java</text></item>
+
+</note>

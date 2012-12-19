@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2ea" sequence="4" unid="0A80477546AB026A85257AA6004F719F">
-<created><datetime dst="true">20121029T102744,31-04</datetime></created>
-<modified><datetime dst="true">20121029T102930,47-04</datetime></modified>
-<revised><datetime dst="true">20121029T102930,46-04</datetime></revised>
-<lastaccessed><datetime dst="true">20121029T102930,46-04</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20121029T102744,39-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257AD1004C558E" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="32e" sequence="5" unid="76C5C453E21FD25885257AD1004C5C1B">
+<created><datetime>20121211T085403,15-05</datetime></created>
+<modified><datetime>20121213T221727,96-05</datetime></modified>
+<revised><datetime>20121213T221727,94-05</datetime></revised>
+<lastaccessed><datetime>20121213T221727,94-05</datetime></lastaccessed>
+<addedtofile><datetime>20121211T085403,16-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>org/openntf/news/http/core/PopularityComparator.java</text></item>
