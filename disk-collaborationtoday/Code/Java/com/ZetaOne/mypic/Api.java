@@ -465,6 +465,9 @@ public class Api {
 
 			// Don't assume that xspupload is in the data directory
 			String xspupload = ExtLibUtil.getStringProperty(ExtLibUtil.getXspContext(), "xsp.persistence.dir.xspupload");
+			if(xspupload == null) {
+				xspupload = ".";
+			}
 
 			File outputfile = new File(xspupload + File.separator + fileName);
 			ImageIO.write(dst, "png", outputfile);
@@ -491,7 +494,7 @@ public class Api {
 			rtItem.embedObject(
 					EmbeddedObject.EMBED_ATTACHMENT,
 					"",
-					xspupload + File.separator + fileName,
+					outputfile.getAbsolutePath(),
 					""
 			);
 			rtItem.compact();
