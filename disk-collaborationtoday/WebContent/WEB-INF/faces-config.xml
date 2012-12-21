@@ -38,6 +38,11 @@
 		</managed-bean-class>
     <managed-bean-scope>view</managed-bean-scope>
   </managed-bean>
+  <managed-bean>
+    <managed-bean-name>url</managed-bean-name>
+    <managed-bean-class>frostillicus.AliasManager</managed-bean-class>
+    <managed-bean-scope>application</managed-bean-scope>
+  </managed-bean>
   <render-kit>
     <renderer>
       <component-family>javax.faces.Graphic</component-family>

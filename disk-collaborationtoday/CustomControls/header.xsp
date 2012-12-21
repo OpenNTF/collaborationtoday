@@ -34,20 +34,20 @@
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li class="${view.pageName=='/home.xsp' ? 'active' : ''}">
-							<xp:link text="Home" themeId="Link.Home"/>
+							<xc:link text="Home" themeId="Link.Home"/>
 						</li>
 						<li class="${view.pageName=='/follow.xsp' ? 'active' : ''}">
-							<xp:link text="Follow" themeId="Link.Follow"/>
+							<xc:link text="Follow" themeId="Link.Follow"/>
 						</li>						
 						<li class="${view.pageName=='/contact.xsp' ? 'active' : ''}">
-							<xp:link text="Contact" themeId="Link.Contact"/>
+							<xc:link text="Contact" themeId="Link.Contact"/>
 						</li>
 						<li class="${view.pageName=='/about.xsp' ? 'active' : ''}">
-							<xp:link text="About" themeId="Link.About"/>
+							<xc:link text="About" themeId="Link.About"/>
 						</li>
 						<xp:panel loaded="${javascript:configCache.isUserModerator(@UserName())}" tagName="li"
 							styleClass="${javascript: !@IsMember(view.pageName, ['/home.xsp', '/follow.xsp', '/about.xsp', '/contact.xsp']) ? 'active' : ''}">
-							<xp:link text="Moderation" themeId="Link.Moderation"/>
+							<xc:link text="Moderation" themeId="Link.Moderation"/>
 						</xp:panel>
 					</ul>
 				</div>

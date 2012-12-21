@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257AD1004C558E" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2cee" sequence="3" unid="ACADEE3180A0B2F985257ADB00781EAD">
+<created><datetime>20121221T165201,73-05</datetime></created>
+<modified><datetime>20121221T165202,59-05</datetime></modified>
+<revised><datetime>20121221T165202,57-05</datetime></revised>
+<lastaccessed><datetime>20121221T165202,57-05</datetime></lastaccessed>
+<addedtofile><datetime>20121221T165201,73-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>frostillicus/AbstractKeyMap.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>frostillicus/AbstractKeyMap.java</text></item></note>

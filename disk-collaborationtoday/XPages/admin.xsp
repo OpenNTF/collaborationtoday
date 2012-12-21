@@ -13,6 +13,7 @@
 					personsCache.update();
 					newsCache.update();
 					configCache.update();
+					url.clear();
 					
 					return "go-home";
 				}]]></xp:this.action>
