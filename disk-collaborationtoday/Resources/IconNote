@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
  replicaid='85257AD1004C558E'>
-<noteinfo noteid='11e' unid='360496243607DDC485257AD1004C55A1' sequence='11'>
+<noteinfo noteid='11e' unid='360496243607DDC485257AD1004C55A1' sequence='24'>
 <created><datetime>20121211T085346,57-05</datetime></created>
-<modified><datetime>20121213T202314,14-05</datetime></modified>
-<revised><datetime>20121213T202314,12-05</datetime></revised>
-<lastaccessed><datetime>20121213T202314,12-05</datetime></lastaccessed>
+<modified><datetime>20121221T164032,61-05</datetime></modified>
+<revised><datetime>20121221T164032,59-05</datetime></revised>
+<lastaccessed><datetime>20121221T164032,59-05</datetime></lastaccessed>
 <addedtofile><datetime>20121211T085346,57-05</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jesse Gallagher/O=Frost</name><name>CN=Telamon/O=Frost</name></updatedby>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
@@ -28,6 +28,8 @@ AAAAUEECICABAAD/////+A4DgA==
 <item name='$DefaultXPage'><text>home.xsp</text></item>
 <item name='$TITLE'><text>Development Collaboration Today</text></item>
 <item name='$Daos'><text>1</text></item>
-<item name='$Flags'><text>J7!qN</text></item>
+<item name='$DefaultFrameset'><text>Frame</text></item>
+<item name='$Flags'><text>J7!qNFK</text></item>
+<item name='$LaunchXPageRunOnServer'><text>0</text></item>
 <item name='$FlagsNoRefresh'><text/></item></note>
 
