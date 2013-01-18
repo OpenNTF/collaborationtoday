@@ -66,8 +66,8 @@ public class FeedMonsterTasklet extends AbstractServerTaskExt {
 		logMessage("Reload finished");
 	}
 	
-	@RunEvery( every=1, unit=RunUnit.minute )
-	@HungPossibleAfter( timeInMinutes=1 )
+	@RunEvery( every=5, unit=RunUnit.minute )
+	@HungPossibleAfter( timeInMinutes=2 )
 	public void fetchNext(IProgressMonitor monitor) {
 		if(! qm.isReady()) {
 			logMessage("Queue Manager is not initialized!");
