@@ -1,17 +1,15 @@
-package org.openntf.news.shared;
+package org.openntf.news.monster.shared;
 
 public final class Constants {
+	// TODO: Strings should be arranged again...
+	// TODO: Constants should be organized...
+	
 	public static final String DATABASE_PATH_AND_NAME = "openntf/news1.nsf";
-	public static final String APPLICATION_NAME = "News";
-	public static final String TASK_ID = "org.openntf.news.readFeeds";
+	public static final String APPLICATION_NAME = "FeedMonster";
+	public static final String TASK_ID = "feedmonster";
 
 	public static final int STORY_ABSTRACT_MAXLENGTH=400;
-	
-	public static final int SO_CLIENT_ID = 636; 
-	public static final String SO_CLIENT_SECRET = "UJJvYYZ)Fdf1o7IMwOLa4Q((";
-	public static final String SO_APP_KEY = "WyYv8IMhY28eyZdIDcbZfw((";
-	
-	
+		
 	public static String EXCEPTION_NO_BLOG_DOCUMENT = "No blog document";
 	public static String EXCEPTION_NO_SESSION = "Unable to obtain Notes Session";
 	public static String EXCEPTION_BLOG_SAVE = "Blog document cannot be updated";

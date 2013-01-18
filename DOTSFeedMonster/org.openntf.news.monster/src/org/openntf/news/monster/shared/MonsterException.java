@@ -1,4 +1,4 @@
-package org.openntf.news.shared;
+package org.openntf.news.monster.shared;
 
 public class MonsterException extends Exception {
 

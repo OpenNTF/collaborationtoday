@@ -1,4 +1,4 @@
-package org.openntf.news;
+package org.openntf.news.monster.meta;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -8,13 +8,15 @@ import java.util.Map;
 import java.util.TimeZone;
 
 import lotus.domino.Database;
+import lotus.domino.DateTime; 
 import lotus.domino.Document;
 import lotus.domino.NotesException;
 import lotus.domino.Session;
 
-import org.openntf.news.shared.Constants;
-import org.openntf.news.shared.StoryReaderException;
-import org.openntf.news.shared.Utilities;
+import org.openntf.news.monster.shared.Constants;
+import org.openntf.news.monster.shared.StoryReaderException;
+import org.openntf.news.monster.shared.Utilities;
+
 
 // Story element for news items
 public class Story {
@@ -120,6 +122,8 @@ public class Story {
 	
 	public boolean saveToDatabase(Database db) throws StoryReaderException {
 		try {
+			DateTime someDate=null;
+			
 			setCreationDate(Calendar.getInstance());
 			
 			Session session=db.getParent();
@@ -138,20 +142,25 @@ public class Story {
 
 			storyDoc.replaceItemValue("NLink", getLink());
 
-			// FIXME: DateTime objects to be recycled
-			storyDoc.replaceItemValue("NCreationDate", session.createDateTime(getCreationDate()));
-			storyDoc.replaceItemValue("NPublicationDate", session.createDateTime(getDate()));
+			someDate=session.createDateTime(getCreationDate());
+			storyDoc.replaceItemValue("NCreationDate", someDate);
+			someDate.recycle();
+
+			someDate=session.createDateTime(getDate());
+			storyDoc.replaceItemValue("NPublicationDate", someDate);
+			someDate.recycle();
+			
 			storyDoc.replaceItemValue("NTitle", getTitle());
 			storyDoc.replaceItemValue("NAbstract", getAbstractContent());
 			storyDoc.replaceItemValue("NContent", getFullContent());
 
+			// Not checked, but in case additional field has Date or Calendar value, this is going to throw NotesException...
 			for (Map.Entry<String, Object> entry : additionalFields.entrySet()) {
 	        	storyDoc.replaceItemValue(entry.getKey(), entry.getValue());
 	        }
 			
 			storyDoc.save();
 			storyDoc.recycle();
-
 
 			return true;
 		} catch (NotesException e) {

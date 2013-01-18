@@ -1,11 +1,17 @@
-package org.openntf.news.shared;
+package org.openntf.news.monster.shared;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.NumberFormat;
+import java.util.Calendar;
 import java.util.Locale;
 import java.util.Random;
+
+import lotus.domino.DateTime;
+import lotus.domino.Document;
+import lotus.domino.Item;
+import lotus.domino.NotesException;
 
 public final class Utilities {
 
@@ -44,6 +50,23 @@ public final class Utilities {
 		return "Amount of used memory/free memory: " + nf.format(used_mem/1000) + "KB / " + nf.format(free_mem/1000)+" KB";
 		
 		
+	}
+
+	public static Calendar getDateField(Document doc, String fieldName) throws NotesException {
+		Item someItem=doc.getFirstItem(fieldName);
+		DateTime someDate=null;
+		Calendar result=null;
+		
+		if(null != someItem && someItem.getType()==Item.DATETIMES) {
+			someDate=someItem.getDateTimeValue();
+			result=Calendar.getInstance();
+			result.setTime(someDate.toJavaDate());
+		}
+
+		if(someItem!=null) someItem.recycle();
+		if(someDate!=null) someDate.recycle();
+		
+		return result;
 	}
 	
 }
