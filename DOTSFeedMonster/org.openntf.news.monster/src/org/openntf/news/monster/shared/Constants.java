@@ -21,7 +21,7 @@ public final class Constants {
 	public static String EXCEPTION_NEWSDB_ERROR = "News Database cannot be opened";
 	public static String EXCEPTION_NEWSDB_FEEDS = "Error in Feeds";
 	
-	public static String VIEW_BLOGS_ALL = "BlogsAll";
+	public static String VIEW_BLOGS_ALL = "(FeedDefinitions)";
 	public static String VIEW_NEWS_CHECK = "NewsByIdDate";
 	
 	public static boolean debug=false;
