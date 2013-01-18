@@ -1,0 +1,9 @@
+To setup FeedMonster, you need;
+
+1. Properly installed Domino server (R8.5.3+)
+2. Configured for DOTS - Domino OSGi Tasklet Services (http://tiny.cc/DOTS)
+3. Collaboration Today database configured on Domino Server
+4. A notes.ini parameter named "Monster_TargetDB" pointing CT database
+
+You will find two plugins inside builds folder. Both should be installed into DOTS plugins folder. For default setup, it should be "<Domino Data Folder>/domino/workspace-dots/applications/eclipse/plugins".
+
