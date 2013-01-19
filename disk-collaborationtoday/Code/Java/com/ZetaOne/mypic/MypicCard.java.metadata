@@ -1,18 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="4e2" sequence="1" unid="5AFADCE95F58B5CD85257AB6007CE1C6">
-<created><datetime>20121114T174402,62-05</datetime></created>
-<modified><datetime>20121114T174404,01-05</datetime></modified>
-<revised><datetime>20121114T174404,00-05</datetime></revised>
-<lastaccessed><datetime>20121114T174404,00-05</datetime></lastaccessed>
-<addedtofile><datetime>20121114T174404,00-05</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257AD1004C558E" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="38a" sequence="23" unid="D1910C7945297AE885257AD1004C5CD7">
+<created><datetime>20121211T085405,03-05</datetime></created>
+<modified><datetime>20130107T165303,67-05</datetime></modified>
+<revised><datetime>20130107T165303,66-05</datetime></revised>
+<lastaccessed><datetime>20130107T165303,66-05</datetime></lastaccessed>
+<addedtofile><datetime>20121211T085405,04-05</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>com/ZetaOne/mypic/MypicCard.java</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>com/ZetaOne/mypic/MypicCard.java</text></item>
-
-
-</note>
+<item name="$FileNames" sign="true"><text>com/ZetaOne/mypic/MypicCard.java</text></item></note>
