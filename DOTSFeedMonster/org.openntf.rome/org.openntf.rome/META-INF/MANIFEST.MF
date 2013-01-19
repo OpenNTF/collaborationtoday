@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ClassPath: .,
+ lib/jdom-2.0.2/jdom-2.0.2.jar,
+ lib/jdom-2.0.2/jdom-2.0.2-contrib.jar
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: OpenNTF
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Name: Xmltools Wrapper
+Bundle-SymbolicName: org.openntf.rome;singleton:=true
+Bundle-Activator: org.openntf.rome.Activator
+Export-Package: com.sun.syndication.feed,com.sun.syndication.feed.atom
+ ,com.sun.syndication.feed.impl,com.sun.syndication.feed.module,com.su
+ n.syndication.feed.module.impl,com.sun.syndication.feed.rss,com.sun.s
+ yndication.feed.synd,com.sun.syndication.feed.synd.impl,com.sun.syndi
+ cation.io,com.sun.syndication.io.impl,org.openntf.rome
+Bundle-Version: 1.0.0.201301160920
+Import-Package: org.eclipse.core.runtime,
+ org.osgi.framework
+Bundle-ManifestVersion: 2
+

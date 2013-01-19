@@ -3,9 +3,9 @@
 <plugin>
    <extension
          point="com.ibm.dots.task">
-      <task id="org.openntf.news.readFeeds" 
+      <task id="feedmonster"
       	description="" 
-      	class="org.openntf.news.monster.DOTSFeedMonster"
+      	class="org.openntf.news.monster.tasklets.FeedMonsterTasklet"
       	runOnStart="false">
 		<!--<run every="30" unit="second" />-->
       </task>

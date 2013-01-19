@@ -12,9 +12,9 @@ import java.util.Map;
 import net.htmlparser.jericho.Renderer;
 import net.htmlparser.jericho.Source;
 
-import org.openntf.news.Story;
-import org.openntf.news.shared.Constants;
-import org.openntf.news.shared.StoryReaderException;
+import org.openntf.news.monster.meta.Story;
+import org.openntf.news.monster.shared.Constants;
+import org.openntf.news.monster.shared.StoryReaderException;
 
 import com.sun.syndication.feed.synd.SyndContent;
 import com.sun.syndication.feed.synd.SyndEntry;
@@ -38,9 +38,7 @@ public class RSSReader {
 		
 		this.feedUrl=_feedUrl;
 		this.storyFields=new HashMap<String,Object>();
-		
-		// Initialize Jericho
-//		Config.LoggerProvider=LoggerProvider.DISABLED;
+
 	}
 
 	public void addStoryField(String name, Object value) {
@@ -69,17 +67,21 @@ public class RSSReader {
 			setLoaded(true);
 
 		} catch (MalformedURLException e) {
-			if(Constants.debug) e.printStackTrace();
-			throw new StoryReaderException(Constants.EXCEPTION_INVALID_URL + ": "+ e.getMessage());
+			StoryReaderException sre=new StoryReaderException(Constants.EXCEPTION_INVALID_URL + ": "+ e.getMessage());
+			sre.setStackTrace(e.getStackTrace());
+			throw sre;
 		} catch (IOException e) {
-			if(Constants.debug) e.printStackTrace();
-			throw new StoryReaderException(Constants.EXCEPTION_COMM_ERROR + ": "+ e.getMessage());
+			StoryReaderException sre=new StoryReaderException(Constants.EXCEPTION_COMM_ERROR + ": "+ e.getMessage());
+			sre.setStackTrace(e.getStackTrace());
+			throw sre;
 		} catch (IllegalArgumentException e) {
-			if(Constants.debug) e.printStackTrace();
-			throw new StoryReaderException(Constants.EXCEPTION_FEED_ERROR + ": "+ e.getMessage());
+			StoryReaderException sre=new StoryReaderException(Constants.EXCEPTION_FEED_ERROR + ": "+ e.getMessage());
+			sre.setStackTrace(e.getStackTrace());
+			throw sre;
 		} catch (FeedException e) {
-			if(Constants.debug) e.printStackTrace();
-			throw new StoryReaderException(Constants.EXCEPTION_FEED_ERROR + ": "+ e.getMessage());
+			StoryReaderException sre=new StoryReaderException(Constants.EXCEPTION_FEED_ERROR + ": "+ e.getMessage());
+			sre.setStackTrace(e.getStackTrace());
+			throw sre;
 		}			
 	}
 
