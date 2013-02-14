@@ -59,6 +59,10 @@ public class RSSReader {
 			URL url = new URL(feedUrl);
 			
 			HttpURLConnection httpSource = (HttpURLConnection)url.openConnection();
+			
+			httpSource.setConnectTimeout(Constants.HTTP_TIMEOUT);
+			httpSource.setReadTimeout(Constants.HTTP_TIMEOUT);
+			
 			SyndFeedInput input = new SyndFeedInput();
 			XmlReader reader = new XmlReader(httpSource);
 

@@ -9,7 +9,8 @@ public final class Constants {
 	public static final String TASK_ID = "feedmonster";
 
 	public static final int STORY_ABSTRACT_MAXLENGTH=400;
-		
+	public static final int HTTP_TIMEOUT=10000;
+	
 	public static String EXCEPTION_NO_BLOG_DOCUMENT = "No blog document";
 	public static String EXCEPTION_NO_SESSION = "Unable to obtain Notes Session";
 	public static String EXCEPTION_BLOG_SAVE = "Blog document cannot be updated";
