@@ -60,6 +60,8 @@ public class RSSReader {
 			
 			HttpURLConnection httpSource = (HttpURLConnection)url.openConnection();
 			
+			// TODO: should add User-agent here.
+			
 			httpSource.setConnectTimeout(Constants.HTTP_TIMEOUT);
 			httpSource.setReadTimeout(Constants.HTTP_TIMEOUT);
 			
