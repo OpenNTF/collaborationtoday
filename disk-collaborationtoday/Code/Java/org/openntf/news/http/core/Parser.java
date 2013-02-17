@@ -25,6 +25,11 @@ import java.net.*;
 import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class Parser {
+	
+	//Constants
+	static public int HTTP_TIMEOUT=30000; //milliseconds
+	static public String HTTP_USER_AGENT="CollaborationToday";
+	
 	// No need to instantiate this class
 	private Parser() { }
 
@@ -37,7 +42,14 @@ public class Parser {
 			PHPTagTypes.register();
 			PHPTagTypes.PHP_SHORT.deregister(); 
 			MasonTagTypes.register();
-			Source source = new Source(new URL(urlToIndex));
+			
+			URL targetURL=new URL(urlToIndex);
+			URLConnection conn = targetURL.openConnection();
+			conn.setConnectTimeout(HTTP_TIMEOUT);
+			conn.setReadTimeout(HTTP_TIMEOUT);
+			conn.setRequestProperty("User-Agent", HTTP_USER_AGENT);
+			
+			Source source = new Source(conn);
 			source.fullSequentialParse();
 
 			String title = getTitle(source);
@@ -64,6 +76,8 @@ public class Parser {
 			newsEntry.save();
 
 			unid = newsEntry.getUniversalID();
+		} catch(MalformedURLException exp1) {
+			System.out.println("Invalid URL on Parser: "+urlToIndex);
 		} catch(Exception err) {
 			err.printStackTrace();
 		} finally {

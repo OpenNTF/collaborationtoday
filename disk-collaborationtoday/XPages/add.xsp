@@ -43,13 +43,17 @@
 					}
 					
 					function hideBusy(){
-						var buttonId = "#{id:button1}"; 
-						var buttonElement = document.getElementById(buttonId);
-						buttonElement.style.visibility = 'hidden'; 
-						var busyElement = document.getElementById("busy");
-						busyElement.className = "busyHidden";
 						var docUnidClient =  "#{javascript:sessionScope.get("NikFileName")}"
-						window.location = "moderateEntry.xsp?action=editDocument&documentId=" + docUnidClient;
+						if(docUnidClient=="") {
+							alert("There is an error getting site information...")
+						} else {
+							var buttonId = "#{id:button1}"; 
+							var buttonElement = document.getElementById(buttonId);
+							buttonElement.style.visibility = 'hidden'; 
+							var busyElement = document.getElementById("busy");
+							busyElement.className = "busyHidden";
+							window.location = "moderateEntry.xsp?action=editDocument&documentId=" + docUnidClient;
+						}
 					}
 				]]></xp:this.value>
 			</xp:scriptBlock>
