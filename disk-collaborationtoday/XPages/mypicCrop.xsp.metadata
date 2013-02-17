@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="562" sequence="13" unid="4138076EDE3D5C8485257ABB0062F16F">
-<created><datetime>20121119T130043,35-05</datetime></created>
-<modified><datetime>20121119T132826,96-05</datetime></modified>
-<revised><datetime>20121119T132826,93-05</datetime></revised>
-<lastaccessed><datetime>20121119T132826,94-05</datetime></lastaccessed>
-<addedtofile><datetime>20121119T130043,40-05</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
-<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.3" replicaid="C2257B150047CB4E" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="17e" sequence="5" unid="70D87BB5712C02B7C2257B150047CF13">
+<created><datetime>20130217T150420,67+02</datetime></created>
+<modified><datetime>20130217T151349,45+02</datetime></modified>
+<revised><datetime>20130217T151349,44+02</datetime></revised>
+<lastaccessed><datetime>20130217T151349,44+02</datetime></lastaccessed>
+<addedtofile><datetime>20130217T150420,85+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
+<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>mypicCrop.xsp</text></item>
 <item name="$Comment" sign="true"><text>Moderators Only - mypic</text></item>
+
+
+<item name="$FileNames" sign="true"><text>mypicCrop.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.1</text></item>
 
 
 
 
-
-
-
-<item name="$FileNames" sign="true"><text>mypicCrop.xsp</text></item></note>
+</note>
