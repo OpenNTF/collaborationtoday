@@ -60,10 +60,10 @@ public class RSSReader {
 			
 			HttpURLConnection httpSource = (HttpURLConnection)url.openConnection();
 			
-			// TODO: should add User-agent here.
 			
 			httpSource.setConnectTimeout(Constants.HTTP_TIMEOUT);
 			httpSource.setReadTimeout(Constants.HTTP_TIMEOUT);
+			httpSource.addRequestProperty("User-Agent", Constants.HTTP_USERAGENT);
 			
 			SyndFeedInput input = new SyndFeedInput();
 			XmlReader reader = new XmlReader(httpSource);

@@ -9,8 +9,8 @@ public final class Constants {
 	public static final String TASK_ID = "feedmonster";
 
 	public static final int STORY_ABSTRACT_MAXLENGTH=400;
-	public static final int HTTP_TIMEOUT=10000;
-	
+	public static final int HTTP_TIMEOUT=15000;
+	public static final String HTTP_USERAGENT="CollaborationToday";	
 	public static String EXCEPTION_NO_BLOG_DOCUMENT = "No blog document";
 	public static String EXCEPTION_NO_SESSION = "Unable to obtain Notes Session";
 	public static String EXCEPTION_BLOG_SAVE = "Blog document cannot be updated";
@@ -23,7 +23,6 @@ public final class Constants {
 	public static String EXCEPTION_NEWSDB_FEEDS = "Error in Feeds";
 	
 	public static String VIEW_BLOGS_ALL = "(FeedDefinitions)";
-	public static String VIEW_NEWS_CHECK = "NewsByIdDate";
 	
 	public static boolean debug=false;
 	public static boolean memory_dump=true;

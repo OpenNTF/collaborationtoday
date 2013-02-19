@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension
-         point="com.ibm.dots.task">
+   <extension point="com.ibm.dots.task">
       <task id="feedmonster"
       	description="" 
       	class="org.openntf.news.monster.tasklets.FeedMonsterTasklet"
       	runOnStart="false">
-		<!--<run every="30" unit="second" />-->
       </task>
    </extension>
 </plugin>
