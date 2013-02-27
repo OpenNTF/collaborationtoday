@@ -66,6 +66,8 @@ public enum QueueManager {
 	
 	public void init(Session session) {
 		try {
+			feeds.clear();
+			feedQueue.clear();
 			prepareQueue(session);
 			this.ready=true;
 		} catch (MonsterException e) {
@@ -75,16 +77,46 @@ public enum QueueManager {
 	}
 
 	public void prepareQueue(Session session) throws MonsterException {
-
 		Database newsDB=getNewsDB(session);
+		HashMap<String, FeedDefinition> tempFeeds=getFeeds(newsDB);
+
+		int count=0;
+
+		String[] feedIds=feeds.keySet().toArray(new String[0]);
+	
+		for(String feedId : feedIds) {
+			if(tempFeeds.containsKey(feedId)) {
+				// We already know he feed. In case it has changed, we have to replace.
+				FeedDefinition feed = tempFeeds.get(feedId);
+				feeds.put(feedId, feed);
+			} else {
+				// It has been deleted. Remove it from feeds and queue.
+				feeds.remove(feedId);
+				feedQueue.remove(feedId);
+				count++;
+			}
+			tempFeeds.remove(feedId);
+		}
+
+		if(count>0) {
+			logger.log(String.format("%1d feeds removed from the queue", count));
+		}
+		
+		// Now we have a list of new feeds in tempFeeds.
+		feeds.putAll(tempFeeds);
+		feedQueue.addAll(0, tempFeeds.keySet());
+		
+		if(tempFeeds.size()>0) {
+			logger.log(String.format("%1d feed(s) added to queue", tempFeeds.size()));
+		}
+	}
+
+	private HashMap<String, FeedDefinition> getFeeds(Database newsDB) throws MonsterException {
 
 		View viewBlogsAll=null;
 		ViewNavigator viewNavigator=null;
-
-		int count=0;
 		
-		feeds.clear();
-		feedQueue.clear();
+		HashMap<String, FeedDefinition> tempFeeds=new HashMap<String, FeedDefinition>();
 		
 		try {
 			viewBlogsAll = newsDB.getView(Constants.VIEW_BLOGS_ALL);
@@ -93,13 +125,12 @@ public enum QueueManager {
 			ViewEntry entry = viewNavigator.getFirst();
 
 			while (entry != null) {
-				count++;
 				Document blogDocument = entry.getDocument();
 				String blogId=blogDocument.getItemValueString("BID");
 				
 				FeedDefinition feed=new FeedDefinition(blogId);
-				feeds.put(blogId, feed);
-				feedQueue.addFirst(blogId);
+
+				tempFeeds.put(blogId, feed);
 
 				feed.setLastSuccess(Utilities.getDateField(blogDocument, "BLastSuccess"));
 				feed.setLastTry(Utilities.getDateField(blogDocument, "BLastTry"));
@@ -113,8 +144,8 @@ public enum QueueManager {
 				feed.setNoteId(blogDocument.getNoteID());
 				
 				ViewEntry tmpEntry = viewNavigator.getNext();
-		        entry.recycle();
-		        blogDocument.recycle();
+
+				Utilities.recycleObjects(entry, blogDocument);
 		        entry = tmpEntry;
 		        
 			}
@@ -127,29 +158,30 @@ public enum QueueManager {
 			mexc.setStackTrace(e.getStackTrace());
 			throw mexc;
 		} finally {
-			try {
-				if(viewNavigator != null) viewNavigator.recycle();
-				if(viewBlogsAll != null) viewBlogsAll.recycle();
-			} catch(NotesException ex) {
-				logger.printStack(ex);
-				logger.error("Unable to recycle domino objects");
-			}
+			Utilities.recycleObjects(viewNavigator, viewBlogsAll);
 		}
-		
-		logger.log(String.format("%1d feeds added to queue", count));
+
+		return tempFeeds;
 	}
 
 	public void readFeedById(String id, Session session) {
+		Database newsDB=getNewsDB(session);
 		FeedDefinition feed=feeds.get(id);
 		
 		if(feed==null) {
 			logger.error("Invalid blog id ("+id+")");
 			return;
 		}
-		
-		readFeed(feed, session);
-		feedQueue.remove(id);
-		feedQueue.addLast(id);
+				
+		if(feed.isDeleted(newsDB)) {
+			logger.error("Feed ('"+id+"') has been deleted. Removing from queue...");
+			feedQueue.remove(id);
+			feeds.remove(id);
+		} else {
+			readFeed(feed, session);
+			feedQueue.remove(id);
+			feedQueue.addLast(id);
+		}
 	}
 	
 	public void readNextFeed(Session session) {
@@ -157,7 +189,8 @@ public enum QueueManager {
 		logger.log("Fetching '"+id+"'...");
 		readFeedById(id, session);
 	}
-	
+
+	// TODO: Although we make sure deletion check has been made before, secondary check is needed.
 	private boolean readFeed(FeedDefinition feed, Session session) {
 		Database newsDB=getNewsDB(session);
 
@@ -205,7 +238,6 @@ public enum QueueManager {
 				feed.setLastSuccess(Calendar.getInstance());
 			}
 
-			// TODO Better error trapping here. What if document has been deleted meanwhile?
 			feed.saveState(newsDB);
 
 			result=true;
@@ -219,7 +251,6 @@ public enum QueueManager {
 			try {
 				feed.setLastError(Calendar.getInstance());
 				feed.setLastErrorMessage(sre.getMessage());
-			// TODO Better error trapping here. What if document has been deleted meanwhile?
 				feed.saveState(newsDB);
 			} catch (NotesException e) {
 				logger.printStack(e);

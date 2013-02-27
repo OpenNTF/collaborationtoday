@@ -4,6 +4,7 @@ import lotus.domino.NotesException;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.openntf.news.monster.QueueManager;
+import org.openntf.news.monster.shared.MonsterException;
 
 import com.ibm.dots.annotation.HungPossibleAfter;
 import com.ibm.dots.annotation.Run;
@@ -34,7 +35,7 @@ public class FeedMonsterTasklet extends AbstractServerTaskExt {
 	@Run(id="list")
 	public void listQueue(IProgressMonitor monitor) {
 		if(! qm.isReady()) {
-			logMessage("Queue Manager is not initialized!");
+			logMessage("LIST: Queue Manager is not initialized!");
 			return;
 		}
 		qm.listQueue();
@@ -43,7 +44,7 @@ public class FeedMonsterTasklet extends AbstractServerTaskExt {
 	@Run(id="fetch")
 	public void fetchFeed(String[] args, IProgressMonitor monitor) {
 		if(! qm.isReady()) {
-			logMessage("Queue Manager is not initialized!");
+			logMessage("FETCH: Queue Manager is not initialized!");
 			return;
 		}
 		String blogId=args[0];
@@ -56,12 +57,16 @@ public class FeedMonsterTasklet extends AbstractServerTaskExt {
 		logMessage("Fetching '"+blogId+"' finished");
 	}
 
-	// TODO: Instead of reload, preserving queue is more important.
 	@Run(id="reload")
 	@RunEvery( every=60, unit=RunUnit.minute )
-	public void reloadQueue(IProgressMonitor monitor) {
+	public void reloadQueue(IProgressMonitor monitor) throws MonsterException {
+		if(! qm.isReady()) {
+			logMessage("RELOAD: Queue Manager is not initialized!");
+			return;
+		}
+
 		logMessage("Reload started");
-		qm.init(getSession());
+		qm.prepareQueue(getSession());
 		qm.listQueue();
 		logMessage("Reload finished");
 	}
@@ -70,7 +75,7 @@ public class FeedMonsterTasklet extends AbstractServerTaskExt {
 	@HungPossibleAfter( timeInMinutes=2 )
 	public void fetchNext(IProgressMonitor monitor) {
 		if(! qm.isReady()) {
-			logMessage("Queue Manager is not initialized!");
+			logMessage("FETCHNEXT: Queue Manager is not initialized!");
 			return;
 		}
 		qm.readNextFeed(getSession());

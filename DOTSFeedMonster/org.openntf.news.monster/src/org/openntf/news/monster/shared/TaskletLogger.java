@@ -2,6 +2,8 @@ package org.openntf.news.monster.shared;
 
 import com.ibm.dots.task.ServerConsole;
 
+// TODO: Add OpenLog functionality
+
 public class TaskletLogger extends Logger {
 
 	ServerConsole console;

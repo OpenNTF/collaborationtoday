@@ -69,4 +69,33 @@ public final class Utilities {
 		return result;
 	}
 	
+	/**
+	 * recycles a domino document instance
+	 * 
+	 * @param lotus.domino.Base 
+	 *           obj to recycle
+	 * @category Domino
+	 * @author Sven Hasselbach
+	 * @category Tools
+	 * @version 1.1
+	 */
+	public static void recycleObject(lotus.domino.Base obj) {
+		if (obj != null) {
+			try {
+				obj.recycle();
+			} catch (Exception e) {}
+		}
+	}
+
+	/**
+	 * 	 recycles multiple domino objects
+	 *		
+	 * @param objs
+	 * @author Nathan T. Freeman
+	 * 
+	 */
+	public static void recycleObjects(lotus.domino.Base... objs) {
+		for ( lotus.domino.Base obj : objs ) 
+			recycleObject(obj);
+	}
 }

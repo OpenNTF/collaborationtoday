@@ -2,6 +2,8 @@ package org.openntf.news.monster.meta;
 
 import java.util.Calendar;
 
+import org.openntf.news.monster.shared.Utilities;
+
 import lotus.domino.Database;
 import lotus.domino.DateTime;
 import lotus.domino.Document;
@@ -110,6 +112,22 @@ public class FeedDefinition {
 	public void setLastErrorMessage(String lastErrorMessage) {
 		this.lastErrorMessage = lastErrorMessage;
 	}
+
+	/**
+	 * @param db: The database object where feed definitions exists
+	 * @return true if we can't get the feed definition document. Probably deleted.  
+	 */
+	public boolean isDeleted(Database db) {
+		Document feedDoc=null;
+		try {
+			feedDoc = db.getDocumentByID(noteId);
+			return (feedDoc==null);
+		} catch (NotesException e) {
+			throw new RuntimeException("Unable to check if Feed definition is deleted!");
+		} finally {
+			Utilities.recycleObject(feedDoc);
+		}
+	}
 	
 	public boolean saveState(Database db) throws NotesException {
 		boolean result;
@@ -118,7 +136,6 @@ public class FeedDefinition {
 		DateTime someDate;
 		
 		Document feedDoc = db.getDocumentByID(noteId);
-		
 		
 		if(getLastTry()!=null) {
 			someDate=session.createDateTime(getLastTry());

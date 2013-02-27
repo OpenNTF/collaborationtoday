@@ -53,13 +53,11 @@ public class RSSReader {
 		storyFields.putAll(values);
 	}
 
-	// TODO: should add error trapping if there is no call loadFeed before getting stories.
 	public void loadFeed() throws StoryReaderException {
 		try {
 			URL url = new URL(feedUrl);
 			
 			HttpURLConnection httpSource = (HttpURLConnection)url.openConnection();
-			
 			
 			httpSource.setConnectTimeout(Constants.HTTP_TIMEOUT);
 			httpSource.setReadTimeout(Constants.HTTP_TIMEOUT);
