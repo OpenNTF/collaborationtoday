@@ -122,7 +122,9 @@ public class RSSReader {
 		}
 		
 		story.setDate(date);
-		story.setTitle(entry.getTitle());
+
+		String title=entry.getTitle();
+		story.setTitle(title.trim());
 		
 		String content=getFeedContent(entry);
 		String abstractContent=cleanHTML(content);
@@ -131,8 +133,8 @@ public class RSSReader {
 			abstractContent = abstractContent.substring(0, Constants.STORY_ABSTRACT_MAXLENGTH - 1) + "[...]";
 		}
 	
-		story.setAbstractContent(abstractContent);
-//		story.setFullContent(content); // Currently we won't have full content due to possible legal implications.
+		story.setAbstractContent(abstractContent.trim());
+//		story.setFullContent(content.trim()); // Currently we won't have full content due to possible legal implications.
 		
 		return story;		
 	}
