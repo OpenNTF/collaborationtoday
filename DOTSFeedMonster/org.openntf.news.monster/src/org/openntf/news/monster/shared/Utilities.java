@@ -88,10 +88,9 @@ public final class Utilities {
 	}
 
 	/**
-	 * 	 recycles multiple domino objects
+	 * 	 recycles multiple domino objects. Inspired by Nathan T. Freeman
 	 *		
 	 * @param objs
-	 * @author Nathan T. Freeman
 	 * 
 	 */
 	public static void recycleObjects(lotus.domino.Base... objs) {
