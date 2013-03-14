@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.openntf.news.monster.feature"
+      label="Feature"
+      version="1.0.0.qualifier"
+      provider-name="OpenNTF">
+
+   <description url="http://www.example.com/description">
+      FeedMonster is a DOTS Tasklet developed for CollaborationToday Project.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      (c) Copyright IBM Corporation 2012, 2013
+  (c) Copyright PHL Consult 2012, 2013
+  (c) Copyright Developi Information Systems 2012, 2013
+  (c) Copyright Elguji Software Inc 2012, 2013
+  (c) Copyright Jesse Gallagher 2012, 2013
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      Licensed under the Apache License, version 2.0
+   </license>
+
+   <url>
+      <discovery label="Collaboration today" url="http://collaborationtoday.info"/>
+   </url>
+
+   <plugin
+         id="org.openntf.news.monster"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openntf.rome"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

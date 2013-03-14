@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="FeedMonster for Collaboration Today by OpenNTF" url="http://collaborationtoday.info">
+      FeedMonster is a DOTS Tasklet developed for CollaborationToday Project.
+   </description>
+   <feature url="features/org.openntf.news.monster.feature_1.0.0.201303140756.jar" id="org.openntf.news.monster.feature" version="1.0.0.201303140756"/>
+</site>
