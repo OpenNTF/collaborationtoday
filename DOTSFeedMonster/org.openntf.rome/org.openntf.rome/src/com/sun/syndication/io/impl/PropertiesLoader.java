@@ -31,7 +31,8 @@ import org.openntf.rome.Activator;
  */
 public class PropertiesLoader {
 
-    private static final String MASTER_PLUGIN_FILE = "com/sun/syndication/rome.properties";
+//    private static final String MASTER_PLUGIN_FILE = "com/sun/syndication/rome.properties";
+	private static final String MASTER_PLUGIN_FILE = "META-INF/rome.properties";
     private static final String EXTRA_PLUGIN_FILE = "rome.properties";
 
 
