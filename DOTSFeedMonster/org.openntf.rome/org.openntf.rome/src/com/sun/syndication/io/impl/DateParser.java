@@ -16,9 +16,11 @@
  */
 package com.sun.syndication.io.impl;
 
+import java.lang.reflect.Array;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.text.ParsePosition;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.TimeZone;
 import java.util.Locale;
