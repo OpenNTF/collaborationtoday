@@ -18,3 +18,14 @@ In addition to visiting the Collaboration Today web site via web browsers, smart
 
 
 Collaboration Today was created by Bruce Elgort, Per Henrik Lausten, Serdar Basegmez, Frank van der Linden and Niklas Heidloff in the summer of 2012.
+
+
+
+
+
+OpenNTF:
+
+This project is an OpenNTF project, and is available under the Apache License V2.0.   
+All other aspects of the project, including contributions, defect reports, discussions, 
+feature requests and reviews are subject to the OpenNTF Terms of Use - available at 
+http://openntf.org/Internal/home.nsf/dx/Terms_of_Use. 
