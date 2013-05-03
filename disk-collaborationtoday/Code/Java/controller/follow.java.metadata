@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257B60005F94A2" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4f2" sequence="5" unid="397168B071EA8BC385257B600064A28B">
+<created><datetime dst="true">20130503T141912,11-04</datetime></created>
+<modified><datetime dst="true">20130503T142038,09-04</datetime></modified>
+<revised><datetime dst="true">20130503T142038,07-04</datetime></revised>
+<lastaccessed><datetime dst="true">20130503T142038,07-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130503T141912,14-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>controller/follow.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>controller/follow.java</text></item></note>

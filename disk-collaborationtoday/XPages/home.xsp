@@ -35,33 +35,9 @@
 					author="#{entryA.PID}"
 					typeId="#{entryA.TID}"
 					imageURL="#{entryA.imageURL}" link="#{entryA.link}" newsAbstract="#{entryA.abstract}"
-					nID="#{entryA.ID}" personDisplayName="#{pageController.entryPerson.displayName}a"
+					nID="#{entryA.ID}" personDisplayName="#{pageController.entryPerson.displayName}"
 					publicationDate="#{entryA.publicationDate}" publicationDateString="#{entryA.prettyTime}"
-					title="#{entryA.title}" category="#{pageController.entryCategoryName}b" type="#{pageController.entryTypeName}c"/>
-<!--				<xc:newsEntry id="lasdfekj"-->
-<!--					author="#{entryAB.PID}"-->
-<!--					typeId="#{entryAB.TID}"-->
-<!--					imageURL="#{entryAB.imageURL}" link="#{entryAB.link}" newsAbstract="#{entryAB.abstract}"-->
-<!--					nID="#{entryAB.ID}" personDisplayName="#{javascript:personsCache.getPerson(entryAB.getPID()).getDisplayName()}"-->
-<!--					publicationDate="#{entryAB.publicationDate}" publicationDateString="#{entryAB.prettyTime}"-->
-<!--					title="#{entryAB.title}">-->
-<!--					<xc:this.category><![CDATA[#{javascript:-->
-<!--						try {-->
-<!--							configCache.getCategory(configCache.getType(entryAB.getTID()).getCategoryId()).getDisplayName()-->
-<!--						} catch(e) {-->
-<!--						} finally {-->
-<!--							"";-->
-<!--						}-->
-<!--					}]]></xc:this.category>-->
-<!--					<xc:this.type><![CDATA[#{javascript:-->
-<!--						try {-->
-<!--							configCache.getType(entryAB.getTID()).getDisplayName()-->
-<!--						} catch(e) {-->
-<!--						} finally {-->
-<!--							"";-->
-<!--						}-->
-<!--					}]]></xc:this.type>-->
-<!--				</xc:newsEntry>-->
+					title="#{entryA.title}" category="#{pageController.entryCategoryName}" type="#{pageController.entryTypeName}"/>
 			</xp:repeat>
 		</xp:panel>
 
