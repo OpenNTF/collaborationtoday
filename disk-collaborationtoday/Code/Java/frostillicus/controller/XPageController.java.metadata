@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257B60005F94A2" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4e6" sequence="1" unid="B9B229E574CD8FA585257B600060D20B">
+<created><datetime dst="true">20130503T133732,27-04</datetime></created>
+<modified><datetime dst="true">20130503T133733,34-04</datetime></modified>
+<revised><datetime dst="true">20130503T133733,33-04</datetime></revised>
+<lastaccessed><datetime dst="true">20130503T133733,33-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130503T133733,33-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>frostillicus/controller/XPageController.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>frostillicus/controller/XPageController.java</text></item>
+
+
+</note>

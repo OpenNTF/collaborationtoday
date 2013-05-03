@@ -223,4 +223,6 @@ public class NewsEntry {
 		return p.format(this.getPublicationDate());
 	}
 
+
+	// TODO Add getPerson()? That'd cross the models a bit, but it sure would be convenient
 }

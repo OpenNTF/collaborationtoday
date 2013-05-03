@@ -1,6 +1,7 @@
 package org.openntf.news.http.core;
 
 import java.util.Date;
+import java.util.Map;
 import lotus.domino.*;
 import com.ibm.xsp.extlib.social.SocialServicesFactory;
 import javax.faces.context.FacesContext;
@@ -47,6 +48,24 @@ public class MiscUtils {
 			}
 		} catch(NotesException ne) { }
 		return 0d;
+	}
+
+	public static ConfigCache getConfigCache() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		return (ConfigCache)context.getApplication().getVariableResolver().resolveVariable(context, "configCache");
+	}
+	public static NewsCache getNewsCache() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		return (NewsCache)context.getApplication().getVariableResolver().resolveVariable(context, "newsCache");
+	}
+	public static PersonsCache getPersonsCache() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		return (PersonsCache)context.getApplication().getVariableResolver().resolveVariable(context, "personsCache");
+	}
+	@SuppressWarnings("unchecked")
+	public static Map<String, String> getParam() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		return (Map<String, String>)context.getApplication().getVariableResolver().resolveVariable(context, "param");
 	}
 
 

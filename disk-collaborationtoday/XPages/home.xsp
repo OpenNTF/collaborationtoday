@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" createForm="false">
-	
-	<xp:this.pageTitle><![CDATA[${javascript:
-		if (!param.filter) {
-			return "Top Stories | Collaboration Today";
-		} else if (param.filter == "all") {
-			return "Recent | Collaboration Today";
-		} else if (param.filter == "popular") {
-			return "Popular | Collaboration Today";
-		} else if (param.filter != "all" && param.filter != "popular")  {
-			return configCache.getCategory(configCache.getType(param.filter).getCategoryId()).getDisplayName() + " - " + configCache.getType(param.filter).getDisplayName() + " | Collaboration Today";
-		}
-	}]]></xp:this.pageTitle>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" createForm="false"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}"
+	pageTitle="${pageController.pageTitle}">
 	
 	<xc:layout>
 		<xp:this.facets>
@@ -23,70 +13,55 @@
 
 			<xc:pageHeader value="Recent" loaded="${param.filter == 'all'}"/>
 
-			<xc:pageHeader value="${javascript:configCache.getType(param.filter).getDisplayName()}" loaded="${param.filter != 'all'}"/>
+			<xc:pageHeader value="${pageController.currentType.displayName}" loaded="${param.filter != 'all'}"/>
 
-			<xp:repeat id="r1" var="entryA" rows="30" removeRepeat="true">
-				<xp:this.value><![CDATA[${javascript:
-					param.filter == 'all' ? newsCache.getEntries() : newsCache.getEntriesByType(param.filter)
-				}]]></xp:this.value>
+			<xp:repeat id="r1" var="entryA" rows="30" removeRepeat="true" value="${pageController.entries}">
 				
 				<xc:newsEntry id="lkewrej"
 					author="#{entryA.PID}"
 					typeId="#{entryA.TID}"
 					imageURL="#{entryA.imageURL}" link="#{entryA.link}" newsAbstract="#{entryA.abstract}"
-					nID="#{entryA.ID}" personDisplayName="#{javascript:personsCache.getPerson(entryA.getPID()).getDisplayName()}"
+					nID="#{entryA.ID}" personDisplayName="#{pageController.entryPerson.displayName}"
 					publicationDate="#{entryA.publicationDate}" publicationDateString="#{entryA.prettyTime}"
-					title="#{entryA.title}">
-					<xc:this.category><![CDATA[#{javascript:
-						// try/catch added to catch cases where an entry is for a category/type that no longer exists
-						try {
-							configCache.getCategory(configCache.getType(entryA.getTID()).getCategoryId()).getDisplayName()
-						} catch(e) {
-						} finally {
-							"";
-						}
-					}]]></xc:this.category>
-					<xc:this.type><![CDATA[#{javascript:
-						// try/catch added to catch cases where an entry is for a category/type that no longer exists
-						try {
-							configCache.getType(entryA.getTID()).getDisplayName()
-						} catch(e) {
-						} finally {
-							"";
-						}
-					}]]></xc:this.type>
-				</xc:newsEntry>
+					title="#{entryA.title}" category="#{pageController.entryCategoryName}" type="#{pageController.entryTypeName}"/>
 			</xp:repeat>
 		</xp:panel>
 
 		<xp:panel readonly="true" loaded="${param.filter == 'popular'}">
 			<xc:pageHeader value="Popular"/>
 			
-			<xp:repeat id="r2" var="entryAB" rows="30" value="${newsCache.entriesByPopularity}" removeRepeat="true">
+			<xp:repeat id="r2" var="entryA" rows="30" value="${newsCache.entriesByPopularity}" removeRepeat="true">
 				<xc:newsEntry id="lasdfekj"
-					author="#{entryAB.PID}"
-					typeId="#{entryAB.TID}"
-					imageURL="#{entryAB.imageURL}" link="#{entryAB.link}" newsAbstract="#{entryAB.abstract}"
-					nID="#{entryAB.ID}" personDisplayName="#{javascript:personsCache.getPerson(entryAB.getPID()).getDisplayName()}"
-					publicationDate="#{entryAB.publicationDate}" publicationDateString="#{entryAB.prettyTime}"
-					title="#{entryAB.title}">
-					<xc:this.category><![CDATA[#{javascript:
-						try {
-							configCache.getCategory(configCache.getType(entryAB.getTID()).getCategoryId()).getDisplayName()
-						} catch(e) {
-						} finally {
-							"";
-						}
-					}]]></xc:this.category>
-					<xc:this.type><![CDATA[#{javascript:
-						try {
-							configCache.getType(entryAB.getTID()).getDisplayName()
-						} catch(e) {
-						} finally {
-							"";
-						}
-					}]]></xc:this.type>
-				</xc:newsEntry>
+					author="#{entryA.PID}"
+					typeId="#{entryA.TID}"
+					imageURL="#{entryA.imageURL}" link="#{entryA.link}" newsAbstract="#{entryA.abstract}"
+					nID="#{entryA.ID}" personDisplayName="#{pageController.entryPerson.displayName}a"
+					publicationDate="#{entryA.publicationDate}" publicationDateString="#{entryA.prettyTime}"
+					title="#{entryA.title}" category="#{pageController.entryCategoryName}b" type="#{pageController.entryTypeName}c"/>
+<!--				<xc:newsEntry id="lasdfekj"-->
+<!--					author="#{entryAB.PID}"-->
+<!--					typeId="#{entryAB.TID}"-->
+<!--					imageURL="#{entryAB.imageURL}" link="#{entryAB.link}" newsAbstract="#{entryAB.abstract}"-->
+<!--					nID="#{entryAB.ID}" personDisplayName="#{javascript:personsCache.getPerson(entryAB.getPID()).getDisplayName()}"-->
+<!--					publicationDate="#{entryAB.publicationDate}" publicationDateString="#{entryAB.prettyTime}"-->
+<!--					title="#{entryAB.title}">-->
+<!--					<xc:this.category><![CDATA[#{javascript:-->
+<!--						try {-->
+<!--							configCache.getCategory(configCache.getType(entryAB.getTID()).getCategoryId()).getDisplayName()-->
+<!--						} catch(e) {-->
+<!--						} finally {-->
+<!--							"";-->
+<!--						}-->
+<!--					}]]></xc:this.category>-->
+<!--					<xc:this.type><![CDATA[#{javascript:-->
+<!--						try {-->
+<!--							configCache.getType(entryAB.getTID()).getDisplayName()-->
+<!--						} catch(e) {-->
+<!--						} finally {-->
+<!--							"";-->
+<!--						}-->
+<!--					}]]></xc:this.type>-->
+<!--				</xc:newsEntry>-->
 			</xp:repeat>
 		</xp:panel>
 
