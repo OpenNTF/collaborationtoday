@@ -9,19 +9,18 @@
 		
 		<xp:panel>
 			<xp:this.data>
-				<xp:dominoView var="view1" viewName="NewsAll" categoryFilter="queued"></xp:dominoView>
+				<xp:dominoView var="view1" viewName="NewsAll" categoryFilter="queued"/>
 			</xp:this.data>
 			
 			<br />
 			<xc:ccPager pagerFor="repeat1"/>
 			<br />
 			<xp:repeat id="repeat1" var="entry" rows="50" value="#{view1}">
-				<xc:moderationNewsEntry creationDate="#{javascript:entry.getColumnValue('NCreationDate')}"
-					link="#{javascript:entry.getColumnValue('NLink')}" nID="#{javascript:entry.getColumnValue('NID')}"
-					personDisplayName="#{javascript:personsCache.getPerson(entry.getColumnValue('PID')).getDisplayName()}"
-					publicationDate="#{javascript:entry.getColumnValue('NPublicationDate')}" title="#{javascript:entry.getColumnValue('NTitle')}"
-					state="#{javascript:entry.getColumnValue('NState')}">
-				</xc:moderationNewsEntry>
+				<xc:moderationNewsEntry creationDate="#{entry.NCreationDate}"
+					link="#{entry.NLink}" nID="#{entry.NID}"
+					personDisplayName="#{pageController.entryPerson.displayName}"
+					publicationDate="#{entry.NPublicationDate}" title="#{entry.NTitle}"
+					state="#{entry.NState}"/>
 			</xp:repeat>
 		</xp:panel>
 	</xc:moderationLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}"
 	pageTitle="Moderated - Top Stories | Collaboration Today">
 	
 	<xc:moderationLayout pageHeader="News Entries - Approved / Moderated - Top Stories">
@@ -7,7 +8,7 @@
 			<xc:moderationLeftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
 		
-		<xp:panel loaded="${javascript:configCache.isUserTopStoriesModerator(@UserName())}">
+		<xp:panel loaded="${pageController.currentUserTopStoriesMod}">
 			<br />
 			<xp:text tagName="h4" styleClass="" value="Top"/>
 			<br />
@@ -15,14 +16,13 @@
 				<xc:moderationNewsEntry id="ndifm"
 					link="#{entryMTT.link}"
 					nID="#{entryMTT.ID}"
-					personDisplayName="#{javascript:personsCache.getPerson(entryMTT.getPID()).getDisplayName()}"
+					personDisplayName="#{pageController.topStoryPerson.displayName}"
 					publicationDate="#{entryMTT.prettyTime}"
 					title="#{entryMTT.title}"
 					state="#{entryMTT.state}"
 					clicksTotal="#{entryMTT.clicksTotal}"
 					clicksLastWeek="#{entryMTT.clicksLastWeek}"
-					showRemoveTopStoryButton="yes">
-				</xc:moderationNewsEntry>
+					showRemoveTopStoryButton="true"/>
 			</xp:repeat>
 		</xp:panel>
 
@@ -30,18 +30,17 @@
 			<br />
 			<xp:text tagName="h4" styleClass="" value="#{category.displayName}"/>
 			<br />
-			<xp:repeat id="r2epeadfat3" var="entryMTC" rows="10" value="#{javascript:newsCache.getTopStories(category.getID())}">
+			<xp:repeat id="r2epeadfat3" var="entryMTC" rows="10" value="#{pageController.categoryTopStories}">
 				<xc:moderationNewsEntry id="ndiflkjm"
 					link="#{entryMTC.link}"
 					nID="#{entryMTC.ID}"
-					personDisplayName="#{javascript:personsCache.getPerson(entryMTC.getPID()).getDisplayName()}"
+					personDisplayName="#{pageController.categoryStoryPerson.displayName}"
 					publicationDate="#{entryMTC.prettyTime}"
 					title="#{entryMTC.title}"
 					state="#{entryMTC.state}"
 					clicksTotal="#{entryMTC.clicksTotal}"
 					clicksLastWeek="#{entryMTC.clicksLastWeek}"
-					showRemoveTopStoryButton="yes">
-				</xc:moderationNewsEntry>
+					showRemoveTopStoryButton="true"/>
 			</xp:repeat>
 		</xp:repeat>
 	</xc:moderationLayout>

@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AA6004F5595" version="8.5" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="186" sequence="18" unid="08A1D82E94A727F685257AA6004F5ACA">
-<created><datetime dst="true">20121029T102645,86-04</datetime></created>
-<modified><datetime dst="true">20121030T153313,32-04</datetime></modified>
-<revised><datetime dst="true">20121030T153313,30-04</datetime></revised>
-<lastaccessed><datetime dst="true">20121030T153313,30-04</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20121029T102645,93-04</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257B60005F94A2" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="18e" sequence="8" unid="A9BB178480B460FD85257B60005F9A32">
+<created><datetime dst="true">20130503T132413,94-04</datetime></created>
+<modified><datetime dst="true">20130503T153255,31-04</datetime></modified>
+<revised><datetime dst="true">20130503T153255,29-04</datetime></revised>
+<lastaccessed><datetime dst="true">20130503T153255,29-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130503T132413,99-04</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
 <wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>modTopStories.xsp</text></item>
-
 <item name="$Comment" sign="true"><text>Moderators Only</text></item>
 <item name="$DesignerVersion"><text>8.5.2</text></item>
+
 
 
 

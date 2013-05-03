@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:zonsf="http://www.zetaone.com/xsp-core"
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:zonsf="http://www.zetaone.com/xsp-core"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}"
 	pageTitle="Author | Collaboration Today">
 	
 	<xp:this.beforeRenderResponse><![CDATA[#{javascript:

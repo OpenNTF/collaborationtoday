@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" pageTitle="Moderation | Collaboration Today"
-	xmlns:xc="http://www.ibm.com/xsp/custom" dojoParseOnLoad="true">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom" 
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}"
+	pageTitle="Moderation | Collaboration Today" dojoParseOnLoad="true">
+	
 	<xp:this.resources>
 		<xp:styleSheet href="/.ibmxspres/dojoroot/dojox/image/resources/Lightbox.css"></xp:styleSheet>
 		<xp:styleSheet href="/.ibmxspres/dojoroot/dijit/themes/claro/claro.css"></xp:styleSheet>

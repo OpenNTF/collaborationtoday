@@ -21,8 +21,6 @@
 		<xp:script src="/xpNewsFeedGenerator.jss" clientSide="false"/>
 	</xp:this.resources>
 	<xp:this.afterRenderResponse><![CDATA[#{javascript:
-			facesContext.getExternalContext().getResponse().sendError(500,"Internal Server Error");
-			return;
 		try {
 			var generator = new FeedGenerator();
 			generator.getFeed();

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Stay Connected | Collaboration Today">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}"
+	pageTitle="Stay Connected | Collaboration Today">
+	
 	<xc:layout>
 		<xp:this.facets>
-			<xc:rightColumn xp:key="rightColumn"></xc:rightColumn>
-			<xc:leftColumn xp:key="leftColumn"></xc:leftColumn>
+			<xc:rightColumn xp:key="rightColumn"/>
+			<xc:leftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
 
 		<div class="well">
@@ -49,22 +52,6 @@
 			<xp:link text="Spotlight" value="/feed.xsp?filter=spotlight"/>
 			<br></br>
 			<br></br>
-
-			<xp:text escape="false">
-				<xp:this.value><![CDATA[#{javascript:
-					var output = "";
-					var types:java.util.ArrayList;
-					types = configCache.getTypes();
-					if (types != null) {
-						var it = types.iterator();
-					    for (; it.hasNext();) {
-						   	var type = it.next();
-						   	output = output + "<span class='label label-warning'>RSS</span>&#160;<a href='./feed.xsp?filter=" + type.getID() + "'>" + configCache.getCategory(type.getCategoryId()).getDisplayName() + ' - ' + type.getDisplayName() +"</a><br></br>";
-						}
-					}
-					output
-				}]]></xp:this.value>
-			</xp:text>
 			
 			<xp:repeat value="#{configCache.types}" var="type" removeRepeat="true">
 				<span class="label label-warning">RSS</span>&#160;<xp:link value="/feed.xsp?filter=#{type.ID}" text="#{pageController.typeCategoryName} - #{type.displayName}"/>

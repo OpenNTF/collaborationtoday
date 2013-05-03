@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}"
 	pageTitle="Moderated - Spotlight | Collaboration Today">
 	
 	<xc:moderationLayout pageHeader="News Entries - Approved / Moderated - Spotlight">
@@ -7,20 +8,19 @@
 			<xc:moderationLeftColumn xp:key="leftColumn"/>
 		</xp:this.facets>
 		
-		<xp:panel loaded="${javascript:configCache.isUserSpotlightModerator(@UserName())}">
+		<xp:panel loaded="${pageController.currentUserSpotlightMod}">
 			
 			<xp:repeat id="repeat5" var="entry" rows="50" value="${newsCache.spotlightEntries}">
 				<xc:moderationNewsEntry
 					link="#{entry.link}"
 					nID="#{entry.ID}"
-					personDisplayName="#{javascript:personsCache.getPerson(entry.getPID()).getDisplayName()}"
+					personDisplayName="#{pageController.entryPerson.displayName}"
 					publicationDate="#{entry.prettyTime}"
 					title="#{entry.title}"
 					state="#{entry.state}"
 					clicksTotal="#{entry.clicksTotal}"
 					clicksLastWeek="#{entry.clicksLastWeek}"
-					showRemoveSpotlightButton="yes">
-				</xc:moderationNewsEntry>
+					showRemoveSpotlightButton="true"/>
 			</xp:repeat>
 		</xp:panel>
 	</xc:moderationLayout>

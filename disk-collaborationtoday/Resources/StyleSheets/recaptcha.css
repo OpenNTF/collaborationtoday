@@ -1,0 +1,7 @@
+#recaptcha_response_field {
+	left: 35px !important; 
+	width: 130px !important;
+}
+#rc_enter_image, #rc_enter_audio {
+	left: 36px !important;
+}

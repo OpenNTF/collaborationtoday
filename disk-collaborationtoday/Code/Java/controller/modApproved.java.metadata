@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257B60005F94A2" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="532" sequence="5" unid="2FAA6DDC88D97A0B85257B60006DC641">
+<created><datetime dst="true">20130503T155901,77-04</datetime></created>
+<modified><datetime dst="true">20130503T155907,57-04</datetime></modified>
+<revised><datetime dst="true">20130503T155907,56-04</datetime></revised>
+<lastaccessed><datetime dst="true">20130503T155907,56-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130503T155901,82-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+
+<item name="$TITLE"><text>controller/modApproved.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>controller/modApproved.java</text></item></note>

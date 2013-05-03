@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="About | Collaboration Today">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}"
+	pageTitle="About | Collaboration Today">
 
 	<xc:layout>
 		<xp:this.facets>
@@ -57,23 +59,17 @@
 			</p>
 			<p>Each category has different content&#160;moderators. Below is a list of the current moderators.</p>
 			<xp:repeat rows="30" value="${configCache.categories}" indexVar="index2" var="category">
-				<xp:panel>
+				<div>
 					<span class="label">
 						<xp:text value="#{category.displayName}"/>
 					</span>
 					&#160;
 					<br />
 					<br />
-				</xp:panel>
-				<xp:repeat rows="30" value="#{javascript:configCache.getTypesForCategory(category.getID())}" indexVar="index" var="entry">
+				</div>
+				<xp:repeat rows="30" value="#{pageController.categoryTypes}" indexVar="index" var="entry">
 					<xp:panel>
-						<xp:text value="#{entry.displayName}: "/>
-						<xp:text>
-							<xp:this.value><![CDATA[#{javascript:
-								var moderators = entry.getModerators();
-								moderators == null ? "" : @Implode(moderators, ", ")
-							}]]></xp:this.value>
-						</xp:text>
+						<xp:text value="#{entry.displayName}: #{pageController.entryModeratorsText}"/>
 						<br />
 					</xp:panel>
 				</xp:repeat>
