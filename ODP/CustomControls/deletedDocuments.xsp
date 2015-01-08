@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<h4>Deleted documents</h4>
+
+	<xp:viewPanel rows="30" id="viewPanel1" viewStyle="width:100%"
+		pageName="/moderateEntry.xsp">
+		<xp:this.facets>
+			<xp:pager partialRefresh="true" xp:key="headerPager"
+				id="pager1" layout="Previous Separator Group Separator Next">
+			</xp:pager>
+		</xp:this.facets>
+		<xp:this.data>
+			<xp:dominoView var="view1" viewName="DeletedDocuments"></xp:dominoView>
+		</xp:this.data>
+		<xp:viewColumn columnName="$1" id="viewColumn1"
+			style="width:200px">
+			<xp:this.converter>
+				<xp:convertDateTime type="both"></xp:convertDateTime>
+			</xp:this.converter>
+			<xp:viewColumnHeader value="When" id="viewColumnHeader1"
+				style="text-align:left">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="NTitle" id="viewColumn2"
+			displayAs="link">
+			<xp:viewColumnHeader value="Title" id="viewColumnHeader2"
+				style="text-align:left">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+	</xp:viewPanel>
+</xp:view>

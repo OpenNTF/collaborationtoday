@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	pageTitle="Moderated | Collaboration Today">
+
+	<xc:moderationLayout pageHeader="News Entries - Approved / Moderated - All">
+		<xp:this.facets>
+			<xc:moderationLeftColumn xp:key="leftColumn"/>
+		</xp:this.facets>
+		
+		<xp:panel>
+			<xp:this.data>
+				<xp:dominoView var="view6" viewName="NewsAll" categoryFilter="approved"/>
+			</xp:this.data>
+			
+			<xc:ccPager pagerFor="repeat6"></xc:ccPager>
+			<br />
+			<xp:repeat id="repeat6" var="entry" rows="50" value="#{view6}">
+				<xc:moderationNewsEntry
+					creationDate="#{javascript:entry.getColumnValue('NCreationDate')}"
+					link="#{javascript:entry.getColumnValue('NLink')}"
+					nID="#{javascript:entry.getColumnValue('NID')}"
+					personDisplayName="#{javascript:personsCache.getPerson(entry.getColumnValue('PID')).getDisplayName()}"
+					publicationDate="#{javascript:entry.getColumnValue('NPublicationDate')}"
+					title="#{javascript:entry.getColumnValue('NTitle')}"
+					state="#{javascript:entry.getColumnValue('NState')}">
+					<xc:this.addedBy><![CDATA[#{javascript:var name = entry.getDocument().getItemValue("$UpdatedBy");
+return @Name("[CN]", @Subset(name,1));}]]></xc:this.addedBy>
+				</xc:moderationNewsEntry>
+			</xp:repeat>
+		</xp:panel>
+	</xc:moderationLayout>
+</xp:view>

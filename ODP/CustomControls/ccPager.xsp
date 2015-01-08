@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:this.resources>
+		<xp:styleSheet href="/pager.css"/>
+	</xp:this.resources>
+	
+	<xp:pager id="pager3" for="#{javascript:compositeData.pagerFor}" styleClass="paginationwrapper">
+		<xp:this.rendered><![CDATA[#{javascript:
+			getComponent(compositeData.pagerFor).getRowCount() > 0
+		}]]></xp:this.rendered>
+		<xp:pagerControl id="pagerControl1" type="Previous"
+			styleClass="icon-chevron-left" value="" image="/transparent.gif">
+		</xp:pagerControl>
+		<xp:pagerControl id="pagerControl2" type="Group"
+			styleClass="viewpager" currentStyleClass="viewpagercurrent">
+		</xp:pagerControl>
+		<xp:pagerControl id="pagerControl3" type="Next"
+			styleClass="icon-chevron-right" value="" image="/transparent.gif">
+		</xp:pagerControl>
+	</xp:pager>
+</xp:view>

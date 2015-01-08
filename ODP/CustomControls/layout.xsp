@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:text escape="false">
+		<xp:this.value><![CDATA[#{javascript:
+			var output = "";
+			var types:java.util.ArrayList;
+			types = configCache.getTypes();
+			if (types != null) {
+				var it = types.iterator();
+			    for (; it.hasNext();) {
+				   	var type = it.next();
+				   	output = output + "<link title='" + configCache.getCategory(type.getCategoryId()).getDisplayName() + ' - ' + type.getDisplayName() + "' type='application/atom+xml' rel='alternate' href='./feed.xsp?filter=" + type.getID() + "'>";
+				}
+			}
+			output
+		}]]></xp:this.value>
+	</xp:text>
+	
+	<!-- Fix for IE8 -->
+	<xp:text escape="false" id="computedField1" rendered="#{javascript:context.getUserAgent().isIE(0,8)}">
+		<xp:this.value><![CDATA[#{javascript:"<style type='text/css'>body {padding-top: 60px; padding-bottom: 40px; }</style>"}]]></xp:this.value>
+	</xp:text>
+	
+	<xp:this.resources>
+		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp" type="application/rss+xml" title="Top Stories" rel="alternate"/>
+		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=all" type="application/rss+xml" title="Recent" rel="alternate"/>
+		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=popular" type="application/rss+xml" title="Popular" rel="alternate"/>
+		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=spotlight" type="application/rss+xml" title="Spotlight" rel="alternate"/>
+		<xp:metaData name="description" content="Collaboration Today - News about IBM Collaboration Solutions"></xp:metaData>
+		
+		<!-- Facebook Open Graph image: used to proide an icon for Facebook shares -->
+		<xp:headTag tagName="meta" rendered="true" loaded="true">
+			<xp:this.attributes>
+				<xp:parameter name="property" value="og:image"/>
+				<xp:parameter name="content" value="http://collaborationtoday.info/collaborationtoday_icon.png"/>
+			</xp:this.attributes>
+		</xp:headTag>
+	</xp:this.resources>
+	
+	<script type="text/javascript">
+		function logClick (url) {
+			url = encodeURI(url);
+			var httpRequest = new XMLHttpRequest();
+			httpRequest.open("GET", url, true );
+			httpRequest.timeout = 1;
+			httpRequest.send(null);
+		}
+	</script>
+
+	<xc:header showCategories="true"/>
+	
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span2 hidden-iphone hidden-tablet">
+				<xp:callback facetName="leftColumn" disableTheme="true"/>
+			</div>
+			<div id="mainContent" class="span7">
+				<xp:callback disableTheme="true"/>
+			</div>
+			<div id="rightColumn" class="span3 hidden-phone">
+				<xp:callback facetName="rightColumn" disableTheme="true"/>
+			</div>
+		</div>
+		<xc:footer></xc:footer>
+	</div>
+	<xp:text escape="false" id="computedField2">
+		<xp:this.value><![CDATA[#{javascript:"<script type='text/javascript'>" + 
+configCache.getAnalyticsJS()
++"</script>"}]]></xp:this.value>
+	</xp:text>
+
+</xp:view>

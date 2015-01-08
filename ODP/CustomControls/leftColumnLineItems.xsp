@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+<!-- 
+	<li class="${javascript:view.pageName=='/home.xsp' &amp;&amp; param.filter == null ? 'active' : ''}">
+		<xp:link text="Top Stories" value="/home.xsp"></xp:link>
+	</li>
+ -->	
+	<li class="${javascript:
+	
+	if (param.filter == null) 'active';
+	else {
+	param.filter == 'all' ? 'active' : ''
+	}}">
+		<xp:link text="Recent" value="/home.xsp?filter=all"></xp:link>
+	</li>
+	<!-- 
+	<li class="${javascript:param.filter == 'popular' ? 'active' : ''}">
+		<xp:link text="Popular" value="/home.xsp?filter=popular"></xp:link>
+	</li>
+  -->
+	<xp:repeat rows="30" value="${configCache.categories}" indexVar="index2" var="category">
+		<xp:panel rendered="#{compositeData.showHeaders == 'yes'}" tagName="li" styleClass="nav-header">
+			<xp:text value="#{category.displayName}"/>
+		</xp:panel>
+		
+		<xp:repeat rows="30" value="#{javascript:configCache.getTypesForCategory(category.getID())}" indexVar="index" var="entry">
+			<li class="#{javascript:param.filter == entry.getID() ? 'active' : ''}">
+				<xp:link value="/home.xsp?filter=#{entry.ID}">
+					<xp:this.text><![CDATA[#{javascript:
+						(compositeData.showHeaders != "yes" ? category.getDisplayName() + " - " : "") + entry.getDisplayName()
+					}]]></xp:this.text>
+				</xp:link>
+			</li>
+		</xp:repeat>
+	</xp:repeat>
+
+</xp:view>

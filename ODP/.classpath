@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+  <classpathentry kind="src" path="Local"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+  <classpathentry kind="lib" path="WebContent/WEB-INF/lib/jericho-html-3.1.jar"/>
+  <classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpclient-4.2.1.jar"/>
+  <classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpcore-4.2.1.jar"/>
+  <classpathentry kind="lib" path="WebContent/WEB-INF/lib/nekohtml.jar"/>
+  <classpathentry kind="lib" path="WebContent/WEB-INF/lib/prettytime-1.0.8.Final.jar"/>
+  <classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
+</classpath>

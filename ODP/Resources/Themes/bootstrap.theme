@@ -1,0 +1,112 @@
+
+	<!--
+		The default theme contents use theme inheritance. Application themes
+		can extend an existing global theme using the extends attribute.
+		Existing themes include the following options: 1. webstandard 2. oneui
+		3. notes
+	-->
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
+
+	<resources>
+		<styleSheet type="text/css" href="bootstrap-2.0.4.combined.min.css" />
+		<styleSheet type="text/css" href="custom.css" />
+		<script src="jquery-1.7.1.min.js" clientSide="true" type="text/javascript" />
+		<script src="bootstrap-2.0.4.min.js" clientSide="true"
+			type="text/javascript" />
+		<metaData name="viewport"
+			content="width=device-width, initial-scale=1,  maximum-scale=1" />
+
+		<linkResource href="collaborationtoday_icon.png" rel="apple-touch-icon" />
+
+		<!-- myPic elements -->
+		<styleSheet type="text/css" href="/jquery.Jcrop.css" />
+		<styleSheet type="text/css" href="/mypic.css" />
+		<script src="/jquery.Jcrop.js" clientSide="true" type="text/javascript" />
+		<script src="/cropTool.js" clientSide="true" type="text/javascript" />
+		<script src="/mypic.js" clientSide="true" type="text/javascript" />
+	</resources>
+
+	<control override="false">
+		<name>ViewRoot</name>
+		<property>
+			<name>pageTitle</name>
+			<value>Collaboration Today - News about IBM Collaboration Solutions</value>
+		</property>
+	</control>
+	<!--
+		We now have a redirect from /favicon.ico to our favicon so no need for
+		this <control override="false"> <name>ViewRoot</name> <property>
+		<name>pageIcon</name> <value>favicon.ico</value> </property>
+		</control>
+	-->
+
+
+	<!--
+		Let's try setting up some link definitions here, in case they change
+		-jpg
+	-->
+	<control>
+		<name>Link.Home</name>
+		<property>
+			<name>value</name>
+			<value>/home.xsp</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Follow</name>
+		<property>
+			<name>value</name>
+			<value>/follow.xsp</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Contact</name>
+		<property>
+			<name>value</name>
+			<value>/contact.xsp</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.About</name>
+		<property>
+			<name>value</name>
+			<value>/about.xsp</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Moderation</name>
+		<property>
+			<name>value</name>
+			<value>/add.xsp</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Lotus</name>
+		<property>
+			<name>value</name>
+			<value>http://www-01.ibm.com/software/lotus/</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Stories.Recent</name>
+		<property>
+			<name>value</name>
+			<value>/home.xsp?filter=all</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Stories.Popular</name>
+		<property>
+			<name>value</name>
+			<value>/home.xsp?filter=popular</value>
+		</property>
+	</control>
+	<control>
+		<name>Link.Logout</name>
+		<property>
+			<name>value</name>
+			<value>/.ibmxspres/domino/names.nsf?Logout&amp;RedirectTo=/</value>
+		</property>
+	</control>
+</theme>

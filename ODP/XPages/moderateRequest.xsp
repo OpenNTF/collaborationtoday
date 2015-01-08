@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom"
+	pageTitle="Moderate Request | Collaboration Today">
+			
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="Request"></xp:dominoDocument>
+	</xp:this.data>
+	<xc:moderationLayout pageHeader="Moderate Request">
+		<xp:this.facets>
+			<xc:moderationLeftColumn xp:key="leftColumn"/>
+		</xp:this.facets>
+		
+		<xp:table>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="EMail (*)" id="rEMail_Label1" for="rEMail1"></xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText value="#{document1.REMail}" style="width:400px" id="rEMail1" required="true" readonly="true">
+						<xp:this.validators>
+							<xp:validateRequired message="Please enter an email address."></xp:validateRequired>
+							<xp:validateLength message="Please enter an email address." minimum="5" maximum="50"></xp:validateLength>
+						</xp:this.validators>
+					</xp:inputText>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Subject (*)" id="rSubject_Label1" for="rSubject1"></xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputText value="#{document1.RSubject}" style="width:400px" id="rSubject1" required="true" readonly="true">
+						<xp:this.validators>
+							<xp:validateRequired message="Please enter a subject."></xp:validateRequired>
+							<xp:validateLength message="Please enter a subject." minimum="5" maximum="150"></xp:validateLength>
+						</xp:this.validators>
+					</xp:inputText>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Category" id="rCategory_Label1" for="rCategory1"></xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:comboBox value="#{document1.RCategory}" style="width:400px" id="rCategory1" readonly="true">
+						<xp:selectItem itemLabel="Other" itemValue="other"></xp:selectItem>
+						<xp:selectItem itemLabel="Profile Registration or Change" itemValue="profile"></xp:selectItem>
+						<xp:selectItem itemLabel="Blog Registration of Change" itemValue="blog"></xp:selectItem>
+						<xp:selectItem itemLabel="Feedback" itemValue="feedback"></xp:selectItem>
+					</xp:comboBox>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Body" id="rBody_Label1" for="rBody1"></xp:label>
+				</xp:td>
+				<xp:td>
+					<xp:inputTextarea value="#{document1.RBody}" style="width:400px;height:200px" id="rBody1" readonly="true"></xp:inputTextarea>
+				</xp:td>
+			</xp:tr>
+		</xp:table>
+		<br></br>
+		<br></br>
+		<xp:button value="Close" id="button1" styleClass="btn">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+				<xp:this.action>
+					<xp:actionGroup>
+						<xp:actionGroup>
+							<xp:executeScript><xp:this.script><![CDATA[#{javascript:
+								document1.replaceItemValue('RState', 'closed');
+								document1.save()
+								return "xsp-success"
+							}]]></xp:this.script></xp:executeScript>
+						</xp:actionGroup>
+					</xp:actionGroup>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>&#160;
+		<xp:button value="Delete" id="button2" styleClass="btn">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+				<xp:this.action>
+					<xp:actionGroup>
+						<xp:deleteDocument name="/requestsOpen.xsp" message="Sure to delete?" var="document1"></xp:deleteDocument>
+					</xp:actionGroup>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>&#160;
+		<xp:button value="Cancel" id="button8" styleClass="btn">
+			<xp:eventHandler event="onclick" submit="false">
+				<xp:this.script><![CDATA[window.history.back()]]></xp:this.script>
+			</xp:eventHandler>
+		</xp:button>
+	</xc:moderationLayout>
+	
+	<xp:this.navigationRules>
+		<xp:navigationRule outcome="xsp-success" viewId="requestsOpen.xsp"/>
+	</xp:this.navigationRules>
+</xp:view>

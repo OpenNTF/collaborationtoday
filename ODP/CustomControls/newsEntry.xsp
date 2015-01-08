@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.dataContexts>
+		<xp:dataContext var="authorPictureURL" value="#{javascript:personsCache.getPerson(compositeData.author).getPictureURL()}"/>
+	</xp:this.dataContexts>
+
+	<div class="row-fluid newsentry">
+		<div class="span12">
+			<div class="newsEntryImageDiv">
+				<xp:image styleClass="newsEntryImage" url="#{authorPictureURL}"></xp:image>
+			</div>
+			<!--<xp:div styleClass="expandNews" id="expandDiv">
+				<xp:this.rendered><![CDATA[#{javascript:if (compositeData.imageURL == null) {
+	false;
+}
+else {
+	if (compositeData.imageURL == "") {
+		false;
+	}
+	else {
+		true;
+	}
+}}]]></xp:this.rendered>
+				<xp:link id="link1">
+					<i class="icon-chevron-down"></i>
+					<xp:eventHandler event="onclick" submit="false">
+						<xp:this.script>
+							<xp:scriptGroup>
+								<xe:dojofxWipeIn node="newsAbstractExpanded">
+								</xe:dojofxWipeIn>
+								<xp:executeClientScript>
+									<xp:this.script><![CDATA[dojo.byId("#{id:expandDiv}").style.display = "none";
+	dojo.byId("#{id:collapseDiv}").style.display = "block";]]></xp:this.script>
+								</xp:executeClientScript>
+							</xp:scriptGroup>
+						</xp:this.script>
+					</xp:eventHandler>
+				</xp:link>
+			</xp:div>
+			
+			--><!-- Removed because we don't support exandable news
+			<xp:div styleClass="collapseNews" id="collapseDiv">
+				<xp:link id="link2">
+					<i class="icon-chevron-up"></i>
+					<xp:eventHandler event="onclick" submit="false">
+						<xp:this.script>
+							<xp:scriptGroup>
+								<xe:dojofxWipeOut node="newsAbstractExpanded"></xe:dojofxWipeOut>
+								<xp:executeClientScript>
+									<xp:this.script><![CDATA[dojo.removeAttr(dojo.byId("#{id:expandDiv}"), "style");
+dojo.byId("#{id:collapseDiv}").style.display = "none";]]></xp:this.script>
+								</xp:executeClientScript>
+							</xp:scriptGroup>
+						</xp:this.script>
+					</xp:eventHandler>
+				</xp:link>
+			</xp:div>
+			-->
+			<div class="newsEntryDiv">
+				<h3>
+					<xp:link value="#{javascript:compositeData.link}" text="#{javascript:compositeData.title}"
+						target="_blank" id="link6">
+						<!-- 
+						<xp:eventHandler event="onclick" submit="false">
+							<xp:this.script><![CDATA[
+	var baseUrl = "#{javascript:var baseUrl = context.getUrl().toString();baseUrl = baseUrl.substring(0, baseUrl.indexOf('.nsf')+4);baseUrl }";
+	var url = baseUrl + "/log.xsp?" + "nid=" + "#{javascript:compositeData.nID}";						
+	logClick(url);		
+	]]></xp:this.script>
+						</xp:eventHandler>
+						 -->
+					</xp:link>
+				</h3>
+				<p>
+					<small>
+						<xp:text>
+							<xp:this.value><![CDATA[#{javascript:"By "}]]></xp:this.value>
+						</xp:text>
+						<xp:link escape="true"
+							text="#{javascript:compositeData.personDisplayName}"
+							id="link1">
+						<xp:this.value><![CDATA[#{javascript:var qs = context.getUrl().getQueryString();
+if(qs.equals("")){
+	return context.getUrl().getPath()+"?pid="+compositeData.personID
+} else {
+	return context.getUrl().getPath()+qs+"&pid="+compositeData.personID
+}}]]></xp:this.value></xp:link>
+						<xp:text value=" | "></xp:text>
+					</small>
+					<small>
+						<!--<xp:text value="#{javascript:compositeData.publicationDate}">
+							<xp:this.converter>
+								<xp:convertDateTime type="date">
+								</xp:convertDateTime>
+							</xp:this.converter>
+						</xp:text>
+						-->
+						<xp:text value="#{javascript:compositeData.publicationDateString}"></xp:text>
+					</small>
+					<small>
+						<xp:text>
+							<xp:this.value><![CDATA[#{javascript:" | " + compositeData.category + " - " + compositeData.type}]]></xp:this.value>
+						</xp:text>
+					</small>
+					<small>
+						<xp:text>
+							<xp:this.value><![CDATA[#{javascript:" | Added by " + @ProperCase(compositeData.moderator);}]]></xp:this.value>
+						</xp:text>
+					</small>
+					
+					
+					<xp:link style="margin-left:8px;" escape="true" text="" id="link4" target="_blank">
+						<xp:this.value><![CDATA[#{javascript:	
+					 	var toBeEncoded = compositeData.title + " " + configCache.getType(compositeData.typeId).getHashTags();					
+						"http://twitter.com/share?url=" + compositeData.link + "&text=" + compositeData.personDisplayName + ": " + java.net.URLEncoder.encode(toBeEncoded, "UTF-8")}]]></xp:this.value>
+						<img class="socialshare" align="top" src="twitter_16.png" />
+					</xp:link>
+					<xp:link style="margin-left:8px;" escape="true" id="link3" target="_blank">
+						<xp:this.value><![CDATA[#{javascript:"https://www.facebook.com/sharer/sharer.php?u=" + compositeData.link}]]></xp:this.value>
+						<img class="socialshare" align="top" src="facebook_16.png" />
+					</xp:link>
+					<xp:link style="margin-left:8px;" escape="true" text="" id="link5" target="_blank">
+						<xp:this.value><![CDATA[#{javascript:"https://plus.google.com/share?url=" + compositeData.link}]]></xp:this.value>
+						<img class="socialshare" align="top" src="gplus_16.png" />
+					</xp:link>
+					<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
+						<xp:link style="margin-left:10px" value="#{javascript:'/'+database.getFilePath()+'/moderateEntry.xsp?nid=' + compositeData.nID}">
+							<xp:image id="image1"
+								url="/bootstrapedit.png" styleClass="socialshare">
+							</xp:image>
+							<!-- <i class="icon-edit socialshare"></i>-->
+						</xp:link>
+					</xp:panel>
+					
+				</p>
+	<!--			<div class="row-fluid">-->
+	<!--				<div class="span11">-->
+						<xp:text value="#{javascript:compositeData.newsAbstract}" id="newsAbstract" styleClass="newsAbstract" tagName="div"></xp:text>
+						<!-- Removed because we don't support expandable news
+						<xp:table>
+							<xp:tr>
+								<xp:td>
+									<xp:text value="#{javascript:compositeData.newsAbstract}"
+										id="newsAbstract" styleClass="newsAbstract" tagName="div"></xp:text>
+								</xp:td>
+								<xp:td>
+									<xp:link value="#{javascript:compositeData.imageURL}"
+										target="_blank" styleClass="newsAbstractExpanded" id="newsAbstractExpanded"
+										style="display: none">
+										<xp:image url="#{javascript:compositeData.imageURL}"
+											style="margin:0px 0 0 0;max-width:80px;max-height:80px;"></xp:image>
+									</xp:link>
+								</xp:td>
+							</xp:tr>
+						</xp:table>
+					-->
+	<!--				</div>-->
+	<!--			</div>-->
+			</div>
+		</div>
+	</div>
+</xp:view>

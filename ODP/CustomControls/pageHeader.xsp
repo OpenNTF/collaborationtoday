@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div class="page-header">
+		<h1>
+			<small><xp:text disableTheme="true" value="#{compositeData.value}"/></small>
+		</h1>
+	</div>
+</xp:view>

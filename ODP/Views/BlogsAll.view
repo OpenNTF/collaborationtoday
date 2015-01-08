@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.2'
+ replicaid='C1257CA900351E4C'>
+<noteinfo noteid='182' unid='6C7E26882671259DC1257A410027E0AB' sequence='31'>
+<created><datetime dst='true'>20120720T091534,19+02</datetime></created>
+<modified><datetime>20140328T171810,74+01</datetime></modified>
+<revised><datetime>20140328T114736,55+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20141003T020112,87+02</datetime></lastaccessed>
+<addedtofile><datetime>20140328T171810,74+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
+>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>BlogsAll</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+VAAFACYAIQAEAAMABQAJAAQAQklEQkZlZWQkQ29uZmxpY3QkUkVGAAQABAAAABwABQAEAEZvcm0B
+AAQAQmxvZwoCBAAEAAMABwAMAAUACTNTNFMA
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+EAABAABEAGYAAAADAEJJRA==
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQACAAIACAAAAFZDAQADAAMAAAAAANUAAQAACgAAAAAAAAAAAAICAAAAVkMAAAUABQAAAAAAeAEB
+AAAKAAAAAAAAAAAAAgIAAABCSURCSURCRmVlZEJGZWVkJgABAAAAAQEACQEAAAoBAQ4KAAABAK0r
+AQABAAEAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAA
+AAAAV0MBAQAJAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA//8AAAAAAAAAAAAAAAAAAEIAAAAAAAEA
+////AAUA////AAEAAAAAAAAAAAAAAAAAAQD///8AAQD///8AAAABAAAAAAABAAAAAAABAAAAAAAA
+AAgAAAAAAAEA
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$SelQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAAif8QAAAAAAABAAQAQmxvZw==
+</rawitemdata></item>
+<item name='$Flags'><text>Yw</text></item></note>
+

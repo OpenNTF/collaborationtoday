@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:navigationRules/>	
+
+	<!-- Fix for IE8 -->
+	<xp:text escape="false" id="computedField1" rendered="#{javascript:context.getUserAgent().isIE(0,8)}">
+		<xp:this.value><![CDATA[#{javascript:"<style type='text/css'>body {padding-top: 60px; padding-bottom: 40px; }</style>"}]]></xp:this.value>
+	</xp:text>
+
+	<xc:header showCategories="false"/>
+	
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span2">
+				<xp:callback facetName="leftColumn" id="callback1"/>
+			</div>
+			<div id="mainContent" class="span7">
+				<xc:moderatorCheck/>
+			
+				<xp:div loaded="${javascript:configCache.isUserModerator(@UserName())}">
+					<xc:pageHeader value="#{compositeData.pageHeader}" rendered="#{compositeData.pageHeader != null}"/>
+					
+					<xp:callback id="callback2" />
+				</xp:div>
+			</div>
+		</div>
+		<xc:footer/>
+	</div>
+</xp:view>

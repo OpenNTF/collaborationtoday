@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<hr />
+	<footer>
+		<p>
+			<a href="http://www.openntf.org">Hosted by OpenNTF</a>
+			<xp:label value=" | "/>
+			<a href="http://openntf.org/legal/terms">Terms of use</a>
+			<xp:label value=" | "/>
+			<a href="http://openntf.org/legal/privacypolicy">Privacy Policy</a>
+			<xp:label value=" | "/>
+			<a href="http://openntf.org/Internal/home.nsf/dx/Contact_OpenNTF">Contact OpenNTF</a>
+			<xp:label value=" | "/>
+			<a href="http://openntf.org/Internal/home.nsf/dx/Follow_OpenNTF">Follow OpenNTF</a>
+		</p>
+	</footer>
+</xp:view>

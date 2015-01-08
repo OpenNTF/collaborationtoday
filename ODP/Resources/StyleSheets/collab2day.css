@@ -1,0 +1,29 @@
+.innerDiv {
+	overflow-y:hidden;
+	margin-top:5px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:5px;
+}
+
+.outerDiv {
+	overflow-y:hidden;
+}
+
+.newsEntries {
+}
+
+.newsEntry {
+	margin-bottom:10px;
+}
+
+.newsEntry a, .newsEntry a:visited {
+    color: #105CB6;
+    font: 0.75em Arial,Helvetica,sans-serif;
+    text-decoration: none;
+}
+
+.author {
+	margin-top:1px;
+	font: 0.75em Arial,Helvetica,sans-serif;
+}

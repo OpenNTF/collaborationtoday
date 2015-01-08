@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	pageTitle="Closed Requests | Collaboration Today">
+	
+	<xp:this.resources>
+		<xp:styleSheet href="/view.css"/>
+	</xp:this.resources>
+	
+	<xc:moderationLayout pageHeader="Closed Requests">
+		<xp:this.facets>
+			<xc:moderationLeftColumn xp:key="leftColumn"/>
+		</xp:this.facets>
+		
+		<xc:ccPager pagerFor="viewPanel2"></xc:ccPager>
+		<xp:viewPanel rows="30" id="viewPanel2" pageName="/moderateRequest.xsp" viewStyleClass="viewPanel"
+			dataTableStyleClass="dataTableViewPanel">
+
+			<xp:this.data>
+				<xp:dominoView var="view1" viewName="RequestsAll" categoryFilter="closed"></xp:dominoView>
+			</xp:this.data>
+			<xp:viewColumn columnName="RCreationDate" id="viewColumn4" styleClass="columnView25">
+				<xp:viewColumnHeader value="Creation Date" id="viewColumnHeader4"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="REMail" id="viewColumn6" styleClass="columnView25">
+				<xp:viewColumnHeader value="E-Mail" id="viewColumnHeader6"></xp:viewColumnHeader>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="RSubject" id="viewColumn5" displayAs="link">
+				<xp:viewColumnHeader value="Subject" id="viewColumnHeader5"></xp:viewColumnHeader>
+			</xp:viewColumn>
+		</xp:viewPanel>
+	</xc:moderationLayout>
+</xp:view>

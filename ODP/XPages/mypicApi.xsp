@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	rendered="#{javascript:return !(context.getUrl().hasParameter('method'))}"
+	pageIcon="favicon.ico"
+	pageTitle="mypic"
+	xmlns:zo="http://www.zetaone.com/xsp-core">
+
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:
+		var api = new com.ZetaOne.mypic.Api()
+		api.initializeApi()
+	}]]></xp:this.beforeRenderResponse>
+
+	<xc:layout>
+		<xp:div
+			disableTheme="true"
+			styleClass="minBox">
+
+			<div
+				style="margin:20px;">
+				<h1>
+					How do I use the mypic API?
+				</h1>
+
+				<p>
+					The mypic api is accessed by sending a name-value pair (NVP) URL request to the mypic api page. The url for this installation is &#160;
+					<xp:text
+						value="#{javascript:context.getUrl().toString();}" />
+					<br />
+					<br />
+					To call a method from the API, you first append the &amp;method=&lt;API-METHOD&gt; parameter to the url,
+                    followed by the parameters for the specified API call. 
+                    (ex-&#160;
+					<xp:text
+						value="#{javascript:context.getUrl().toString();}" />
+					?method=getmypic)
+					<xp:table
+						border="1"
+						style="font-size:11px;"
+						styleClass="apiTable">
+						<xp:tr>
+							<xp:td
+								style="background-color:#EFEFEF;width:125px;font-weight:bold;border-bottom:1px solid #CCC;">
+								Method
+							</xp:td>
+							<xp:td
+								style="background-color:#EFEFEF;width:125px;font-weight:bold;border-bottom:1px solid #CCC;">
+								Parameter
+							</xp:td>
+							<xp:td
+								style="background-color:#EFEFEF;width:75px;font-weight:bold;border-bottom:1px solid #CCC;">
+								Type
+							</xp:td>
+							<xp:td
+								style="background-color:#EFEFEF;width:75px;font-weight:bold;border-bottom:1px solid #CCC;">
+								Required
+							</xp:td>
+							<xp:td
+								style="background-color:#EFEFEF;font-weight:bold;border-bottom:1px solid #CCC;">
+								Description
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td
+								colspan="5"
+								style="border-bottom:1px solid #CCC;height:25px;vertical-align:bottom;font-size:14px;">
+								<strong>
+									getmypic
+								</strong>
+								: Returns the specified users mypic image in the size and format specified
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td></xp:td>
+							<xp:td>id</xp:td>
+							<xp:td>
+								MD5 Hash
+							</xp:td>
+							<xp:td>Yes</xp:td>
+							<xp:td>
+								The MD5 hash of the user's canonical name (ie CN=John Doe/OU=Sales/O=ZetaOne) whose mypic you
+								wish returned. (ex - &amp;id=F89E5DB342547F820E1F9D31DC7CCEFD)
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td></xp:td>
+							<xp:td>size</xp:td>
+							<xp:td>Integer</xp:td>
+							<xp:td>No</xp:td>
+							<xp:td>
+								Instructs the API to generate the mypic at the specified size.
+								Default is 50x50 pixels. (ex - &amp;size=128)
+								<br />
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td></xp:td>
+							<xp:td>format</xp:td>
+							<xp:td>Keyword</xp:td>
+							<xp:td>No</xp:td>
+							<xp:td>
+								[JPG|GIF|PNG] - Instructs the API to generate the mypic in the specified format. Default format is PNG. (ex - &amp;format=PNG)
+								<br />
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td
+								colspan="5">
+								<strong>
+									example
+								</strong>
+								<br />
+								<code>
+									<xp:text
+										value="#{javascript:context.getUrl().toString();}" />
+									?method=getmypic&amp;id=
+									<xp:text
+										value="#{javascript:UNIDEncoder.encode(session.createName(@UserName()).getCanonical());}" />
+									&amp;size=75&amp;format=GIF
+								</code>
+							</xp:td>
+						</xp:tr>
+					</xp:table>
+				</p>
+
+				<h3
+					style="margin-top:40px;">
+					Generating the MD5 Hash of a User's Canonical Name
+				</h3>
+				<p>
+					This applicaiton includes Java Bean that can be used to generate the MD5 hash of the user's canonical name. To use,&#160;
+					<a
+						href="${javascript:'/' + database.getFilePath() + '/UNIDEncoder.jar'}">
+						download the source jar
+						file
+					</a>
+					&#160;. To install into your application, create a folder named lib in your application's WebContent folder, and import
+					the jar into that folder. After the jar is imported, right the jar and select Build Path > Add to Build Path. (Note: The jar
+					also includes the soure code for the class, and you can import the full source into your applications Java source
+					folder instead of just importing the jar if you desire.)
+				</p>
+
+				<p>
+					To use the above Java class as a managed bean named UNIDEncoder, add the following content to
+					the WebContent/WEB-INF/faces-config.xml file in your applcation.
+					<br />
+					<code>
+						<pre><![CDATA[
+<managed-bean>
+	<managed-bean-name>UNIDEncoder</managed-bean-name>
+	<managed-bean-class>com.ZetaOne.mypic.UNIDEncoder</managed-bean-class>
+	<managed-bean-scope>none</managed-bean-scope>
+</managed-bean>]]></pre>
+					</code>
+					Then to use the bean to encode the user's name, using SSJS, call
+					<br />
+					<br />
+					<code>
+						<pre><![CDATA[
+UNIDEncoder.encode(session.createName(@UserName()).getCanonical());
+							]]></pre>
+					</code>
+				</p>
+
+				<h3
+					style="margin-top:40px;">
+					Displaying a mypic Profile Card
+				</h3>
+				<p>
+					The mypic pop-up profile card is can be accessed by either using the mypic Profile Card Component, or by&#160;making a client side call to the mypic javascript API. <a
+						target="_blank"
+						href="${javascript:'/' + database.getFilePath() + '/mypic.js'}">
+						Download the javascript API
+					</a>
+					&#160; and include in your page. Then, in the client side action where you want to display the pop-up profile card, call&#160;
+					<code>
+						mypic.showProfileCard(userId, ownerControl, serviceUrl);
+					</code>
+					&#160; to pop up the card, where&#160;
+					<code>userId</code>
+					&#160;is the MD5 Hash of the user's canonical name, and&#160;
+					<code>ownerControl</code>
+					&#160;is the item in the page that the pop-up should point to.
+				</p>
+				<p>
+					Sample Pop-up Profile card
+					<br />
+					<xp:image
+						url="/samplePopupProfileCard.png"
+						id="image1">
+					</xp:image>
+				</p>
+				<p>
+					How to code a Pop-up Profile card
+					<br />
+					<xp:image
+						url="/samplePopupProfileCode.png"
+						id="image2">
+					</xp:image>
+				</p>
+
+				<h3
+					style="margin-top:40px;">
+					Using the XPages Custom Controls
+				</h3>
+				<p>
+					For convience, an XPage extension controls are provided that can be inserted into an NSF to provide a control simple interface to adding a
+					mypic, profile card, or login control to a page. To use the component, <a
+						target="_blank"
+						href="${javascript:'/' + database.getFilePath() + '/mypicImage.jar'}">
+						download the jar
+					</a>
+					&#160;containing the control and place it into your NSF's java build path. Then,&#160;
+					<a
+						target="_blank"
+						href="${javascript:'/' + database.getFilePath() + '/MypicImage.xsp-config'}">
+						download the MypicImage.xsp-config
+					</a>
+					&#160;file and place into your NSF's WebContent/WEB-INF folder to enable the control in the designer pallette.
+				</p>
+				<p>
+					To use the control, drag and drop the mypic Image onto the XPage, and set the appropriate properties for displaying the image, such
+					as the image size, format, user id, etc. The image is fully stylable, and can respond to events just like any other image.
+				</p>
+				<p>
+					Using the mypicImage control in an XPage.
+					<br />
+					<xp:image
+						url="/mypicXPagesControl.png"
+						id="image3">
+					</xp:image>
+				</p>
+
+			</div>
+		</xp:div>
+	</xc:layout>
+
+</xp:view>

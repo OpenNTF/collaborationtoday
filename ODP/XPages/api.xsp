@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:
+  
+		var externalContext = facesContext.getExternalContext();
+		var writer = facesContext.getResponseWriter();
+		var response = externalContext.getResponse();
+		
+		response.setContentType("application/json"); 
+		
+		newsEntriesAsJson.setCount(param.count);
+		newsEntriesAsJson.setFilter(param.filter);
+		newsEntriesAsJson.setFormat(param.format);
+		
+		writer.write(newsEntriesAsJson.getJson()); 
+		 
+		writer.endDocument();
+	}]]></xp:this.afterRenderResponse>
+</xp:view>

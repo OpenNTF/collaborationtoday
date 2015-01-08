@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+<<
+Copyright 2011 Marco Dreher
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License
+>>
+-->
+
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+<xp:div id="recaptchaCC">
+	<xp:this.rendered><![CDATA[#{javascript:return viewScope.recaptchaReturnCode!="true"}]]></xp:this.rendered>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Little changes of Recaptcha styling
+-->
+		<style type="text/css">
+			#recaptcha_instructions_error{font-weight:normal}
+		</style>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Theming OneUI 
+-->
+		<style type="text/css">
+			#recaptcha_widget	{position:relative;}
+			#recaptcha_bg_image	{z-index:10;border:1px solid #bbb;border-radius:3px}
+			#recaptcha_image	{z-index:11;position:absolute;left:7px;top:7px}
+			#rc_incorrect		{z-index:12;color:red;font-weight:normal;left: 28px;position: absolute;top: 73px;}
+			#rc_reload			{z-index:12;position:absolute;top:72px;left:187px;width:23px;height:15px}
+			#rc_reload a, 
+			#rc_audio a, 
+			#rc_image a, 
+			#rc_help a			{display:block;width:100%;height:100%}
+			#rc_audio			{z-index:12;position:absolute;top:87px;left:187px;width:23px;height:15px}
+			#rc_image			{z-index:12;position:absolute;top:87px;left:187px;width:23px;height:17px}
+			#rc_help			{z-index:12;position:absolute;top:104px;left:187px;width:23px;height:15px}
+			#rc_enter_image,
+			#rc_enter_audio		{z-index:12;left: 28px;position: absolute;top: 73px;}
+			#recaptcha_response_field{z-index:12;left: 28px;position: absolute;top: 92px;}
+		</style>		
+		<div id="recaptcha_widget" style="display:none;">
+			<!-- http://www.motobit.com/util/base64-decoder-encoder.asp -->
+			<img alt="" id="recaptcha_bg_image" src="data:image/gif;base64,R0lGODlhOgF9AOd/ADCBzjGCzj6AvjKDzjiCyDSDzjWFzz2EyDyFyjiGzzqHz06Oy0+Oy1GPy1OQ
+zFSRzI2PkY2Qko6Rk4+SlGya1Gec0JSWmHCc0XKc0HqbxHCd1X+duZianHWg2HOi0nqk2p2gooCk
+0ICk036l1oOm036o3Yaq1oOs36WoqYes24qt2I6t1oiw2Imw2Iiw4oqx2JGw15Kw1Yqy2ZSx1o20
+5aayvbCztay5w6K726S8252+3q29zbm9wLq9v6rB37/Dxb/DxrLG4K3J5MPGyMPHysfKzMHN18jM
+z8LO2MvO0L7Q5r/R5sHR583Q0c3Q0s7R1MLT59DS1MPU6NDT1dHU1tLU1tLV2MbY69TW2MfZ69ba
+3dfa3Nnc3tLd7Nrd39ve4NTf7dvf4dbg7t3g4t7h497h5Nbk8d/j5tbl8eDl6OHm6uDm7eHn6+Ln
+6eLp6+Lp7uHp8+Lq7+Lr7uLr7+Lr8OLr8e3v8uny+ury+u7y+e/z+e/0+vD1+/H1+/7+/v//////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////yH+IUNyZWF0ZWQgYnkgTWFy
+Y28gRHJlaGVyIHdpdGggR0lNUAAh+QQBCgCAACwAAAAAOgF9AAAI/gDrCBxIsKDBgwgTKlzIsKHD
+hxAjSpxIsaLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXLlzBjktyxoabNmzhz6tzJs6fPn0CD
+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
+LNiCLviCMBiDMjiDNOgtAQEAOw==" />
+
+		    <div id="recaptcha_image"></div>
+		    <div id="rc_incorrect" class="recaptcha_only_if_incorrect_sol">
+		   		Incorrect. Please try again:
+		    </div>
+			<div id="rc_reload">
+				<a href="javascript:Recaptcha.reload();" title="Reload"></a>
+			</div>
+			<div id="rc_audio" class="recaptcha_only_if_image">
+				<a href="javascript:Recaptcha.switch_type('audio');" title="Audio"></a>
+			</div>
+			<div id="rc_image" class="recaptcha_only_if_audio">
+				<a href="javascript:Recaptcha.switch_type('image');" title="Image"></a>
+			</div>		
+			<div id="rc_help" style="">
+				<a href="javascript:Recaptcha.showhelp();" title="Help"></a>
+			</div>
+		   	<span id="rc_enter_image" class="recaptcha_only_if_image recaptcha_only_if_no_incorrect_sol" >
+		   		Enter the words above:
+		    </span>
+		    <span id="rc_enter_audio" class="recaptcha_only_if_audio recaptcha_only_if_no_incorrect_sol" >
+		    	Enter the numbers you hear:
+		    </span>
+		    <input id="recaptcha_response_field" type="text" name="recaptcha_response_field"/>
+		 </div>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Setting the Recaptcha options
+-->		
+		<xp:scriptBlock id="recaptchaConfig">
+			<xp:this.value><![CDATA[
+			var RecaptchaOptions = { 
+									custom_theme_widget: 'recaptcha_widget',
+									#{javascript:	if(compositeData.behavior && compositeData.behavior.userInterface && compositeData.behavior.userInterface.tabIndex!=""){return "tabIndex:'"+compositeData.behavior.userInterface.tabIndex+"',"}}
+									theme:		'#{javascript:if(compositeData.recaptchaWidget && compositeData.recaptchaWidget.theme!=""){return (compositeData.recaptchaWidget.theme=="oneui")?"custom":compositeData.recaptchaWidget.theme}else{return "white"}}',
+									lang:		'#{javascript:if(compositeData.recaptchaWidget && compositeData.recaptchaWidget.lang!=""){return compositeData.recaptchaWidget.lang}else{return "de"}}',
+									};
+			]]></xp:this.value>
+		</xp:scriptBlock>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+This script loads the Recaptcha widget.
+Applying SSL and public key to the URL.
+-->
+		<xp:scriptBlock id="recaptchaMain">
+			<xp:this.src><![CDATA[#{javascript:var protocol = (compositeData.recaptchaWidget && compositeData.recaptchaWidget.useHttps=="true") ? "https" : "http";
+var key = (compositeData.recaptchaWidget && compositeData.recaptchaWidget.publicKey) ? compositeData.recaptchaWidget.publicKey : "";
+var errmsg = (viewScope.recaptchaReturnMessage)? "&error="+viewScope.recaptchaReturnMessage : "";
+var src = protocol + "://www.google.com/recaptcha/api/challenge?k="+key+errmsg;
+return src;}]]></xp:this.src>
+		</xp:scriptBlock>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+If the property compositeData.behavior.userInterface.focusOnLoad
+is set to TRUE, set focus to the solution field
+-->
+		<xp:scriptBlock id="recaptchaFocusOnLoad">
+			<xp:this.loaded><![CDATA[${javascript:var focus = false;
+if(compositeData.behavior && compositeData.behavior.userInterface){
+	focus = compositeData.behavior.userInterface.focusOnLoad;
+	if(focus==true) focus = true;
+	}
+return focus;
+}]]>
+			</xp:this.loaded>
+			<xp:this.value><![CDATA[Recaptcha.focus_response_field();
+var fld = document.getElementById("recaptcha_response_field");
+if(fld)fld.focus();]]></xp:this.value>
+		</xp:scriptBlock>
+
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+This is a hidden field with a validation expression.
+The expression submits the solution entered by the user to the Recaptcha API (HTTP POST Request with private key)
+-->
+		<xp:inputText id="dummyField" readonly="false" required="true"
+			defaultValue="someTextToForceValidation" style="width:1px;height:1px;display:none;font-size:1px;border-color:rgb(255,255,255);border-style:solid;border-width:thin;color:rgb(255,255,255)">
+			<xp:this.validators>
+				<xp:validateExpression>
+					<xp:this.message><![CDATA[#{javascript:var txt_default = "Invalid captcha solution";
+if(compositeData.behavior && compositeData.behavior.errorHandling){
+	var txt = compositeData.behavior.errorHandling.errorMessageTxt; 
+	return (txt=="") ? txt_default : txt;
+}else{
+	return txt_default;
+}}]]></xp:this.message>
+					<xp:this.expression><![CDATA[#{javascript:/*No submission to the API required, if no captcha has been entered*/
+var res = facesContext.getExternalContext().getRequestParameterValuesMap().get("recaptcha_response_field");
+if(res=="")return false;
+
+/**
+ *	If property behavior.errorHandling.validateOnlyOnce is set to true
+ *	don't vaidate again
+*/
+if(viewScope.recaptchaReturnCode=="true"){
+	if(!(compositeData.behavior && compositeData.behavior.errorHandling && behavior.errorHandling.validateOnlyOnce=="false") )
+		return true;
+}
+
+/*concatenate url*/
+var pvkey = "";
+var chl = facesContext.getExternalContext().getRequestParameterValuesMap().get("recaptcha_challenge_field");
+if(!compositeData.recaptchaWidget || compositeData.recaptchaWidget.privateKey==""){
+	return false;
+}else{
+	pvkey = compositeData.recaptchaWidget.privateKey;
+}
+var ip = facesContext.getExternalContext().getRequest().getRemoteAddr();
+var urlParameters:java.lang.String = new java.lang.String("privatekey="+pvkey+"&remoteip="+ip+"&challenge="+chl+"&response="+res);
+
+/**
+ * Create http post request
+ * @see http://download.oracle.com/javase/1.4.2/docs/api/java/net/HttpURLConnection.html
+ * @see http://www.xyzws.com/Javafaq/how-to-use-httpurlconnection-post-data-to-web-server/139
+*/
+try{
+	var connection:java.net.HttpURLConnection;
+	var url:java.net.URL = new java.net.URL("http://www.google.com/recaptcha/api/verify"); 
+	connection = url.openConnection();
+	connection.setRequestMethod("POST");
+	connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+	connection.setRequestProperty("Content-Length", "" + java.lang.Integer.toString(urlParameters.getBytes().length));
+	connection.setRequestProperty("Content-Language", "en-US");  
+	connection.setUseCaches (false);
+	connection.setDoInput(true);
+	connection.setDoOutput(true);
+	
+	//Send request
+	var wr:java.io.DataOutputStream = new java.io.DataOutputStream(connection.getOutputStream ());
+	wr.writeBytes(urlParameters);
+	wr.flush();
+	wr.close();
+	
+	//Get response	
+	var istr:java.io.InputStream = connection.getInputStream();
+	var rd:java.io.BufferedReader = new java.io.BufferedReader(new java.io.InputStreamReader(istr));
+	
+	//Analyse response
+	var returnCode = rd.readLine();
+	if(returnCode=="true"){
+		var returnMessage = "";	
+	}else{
+		var returnMessage = rd.readLine();
+	}
+	rd.close();
+	
+}catch(e){
+	var retVal = true;
+	if(compositeData.recaptchaWidget){
+		retVal = compositeData.recaptchaWidget.returnValIfServiceUnavailable;
+	}
+	if(retVal){
+		viewScope.put("recaptchaReturnCode","true");
+		viewScope.put("recaptchaReturnMessage",e);
+	}else{
+		viewScope.put("recaptchaReturnCode","false");
+		viewScope.put("recaptchaReturnMessage",e);
+	} 
+	return retVal;
+}
+
+//Save respone in viewScope to add message to recaptcha widget
+viewScope.put("recaptchaReturnCode",returnCode);
+viewScope.put("recaptchaReturnMessage",returnMessage);
+
+//Is entered solution correct?
+return returnCode=="true";}]]></xp:this.expression>
+				</xp:validateExpression>
+			</xp:this.validators>
+		</xp:inputText>
+		
+		
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+This div is for display in Domino Designer only  
+-->
+	<xp:div
+		style="margin:0 10px;width:250px;text-align:center;font-family:Arial;font-size:10pt;color:rgb(160,160,160);padding:1em 0;border-style:dotted;border-width:1px;background-color:rgb(233,233,233);font-weight:bold;font-style:italic;border-color:rgb(200,200,200)"
+		rendered="false" loaded="false">
+		RECAPTCHA control
+	</xp:div>
+
+</xp:div><!-- end:recaptchaCC -->
+</xp:view>

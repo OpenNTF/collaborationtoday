@@ -1,0 +1,149 @@
+.shadowBox {
+	background-image:url(shadowBox.png);
+	background-repeat:no-repeat;
+	padding-top:10px;
+}
+.minBox {
+	min-height:400px;
+}
+.mypicSelector {
+	border:1px solid #CCC;
+	height:89px;
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjpyZ2JhKDI1NSwyNTUsMjU1LDEpOyIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOnJnYmEoMjM5LDIzOSwyMzksMSk7IiAvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjZ3JhZGllbnQpIiBoZWlnaHQ9IjEwMCUiIHdpZHRoPSIxMDAlIiAvPjwvc3ZnPg==);
+	background: -o-linear-gradient(top, rgba(255,255,255,1), rgba(239,239,239,1));
+	background: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(239,239,239,1));
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,1)), color-stop(1, rgba(239,239,239,1)));
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FFFFFFFF,EndColorStr=#FFEFEFEF);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FFFFFFFF,EndColorStr=#FFEFEFEF)";
+}
+.innerframe {
+	margin:5px;
+}
+.mypicImage {
+	width:77px;
+	height:77px;
+	border:1px solid #CCC;
+	background-color:#FFF;
+	margin-right:15px;
+	float:left;
+	position:relative;
+}
+.mypicImage img {
+	margin-left:1px;
+	margin-top:1px;	
+}
+.mypicImage.selected {
+	border:1px solid #0099FF;	
+}
+.mypicUserblock {
+	float:left;
+	margin-top:10px;
+	font-size:12px;
+	color:#666;
+}
+.mypicUsername {
+	font-weight:bold;
+	font-size:18px;
+}
+.mypicCollection {
+	margin-top:20px;
+}
+.mypicCollection .mypicImage:hover {
+	cursor:pointer;
+	cursor:hand;
+	border:1px solid #0099FF;
+}
+.imageSourceSelector {
+	border:1px solid #CCC;
+	height:50px;
+	width:250px;
+	margin:auto;
+	margin-bottom:2px;
+	line-height:48px;
+	padding-left:20px;
+	margin-top:0;
+	cursor:pointer;
+	cursor:hand;
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjpyZ2JhKDI1NSwyNTUsMjU1LDEpOyIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOnJnYmEoMjM5LDIzOSwyMzksMSk7IiAvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjZ3JhZGllbnQpIiBoZWlnaHQ9IjEwMCUiIHdpZHRoPSIxMDAlIiAvPjwvc3ZnPg==);
+	background: -o-linear-gradient(top, rgba(255,255,255,1), rgba(239,239,239,1));
+	background: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(239,239,239,1));
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,1)), color-stop(1, rgba(239,239,239,1)));
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FFFFFFFF,EndColorStr=#FFEFEFEF);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FFFFFFFF,EndColorStr=#FFEFEFEF)";
+}
+.imageSourceSelector:hover {
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjpyZ2JhKDI1NSwyNTUsMjU1LDEpOyIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOnJnYmEoMjI4LDI0NCwyNTUsMSk7IiAvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjZ3JhZGllbnQpIiBoZWlnaHQ9IjEwMCUiIHdpZHRoPSIxMDAlIiAvPjwvc3ZnPg==);
+	background: -o-linear-gradient(top, rgba(255,255,255,1), rgba(228,244,255,1));
+	background: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(228,244,255,1));
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,1)), color-stop(1, rgba(228,244,255,1)));
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FFFFFFFF,EndColorStr=#FFE4F4FF);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FFFFFFFF,EndColorStr=#FFE4F4FF)";
+}
+.mypicCropperLeft {
+	float:left;
+}
+.mypicCropperRight {
+	float:left;
+	margin-left:25px;
+}
+.mypicCropperRight p {
+	margin:0px;
+}
+#smallPreviewWindow,
+#midPreviewWindow,
+#largePreviewWindow,
+#xLargePreviewWindow {
+	position:relative;
+	overflow:hidden;
+	margin-bottom:20px;
+	margin-left:10px;
+}
+#smallPreviewWindow {width:25px;height:25px;}
+#midPreviewWindow {width:50px;height:50px;}
+#largePreviewWindow {width:75px;height:75px;}
+#xLargePreviewWindow {width:128px;height:128px;}
+.mypicSmallPreview,
+.mypicMidPreview,
+.mypicLargePreview,
+.mypicXLargePreview {
+	position:absolute;
+}
+.mypicLoginContainer {
+	float:right;	
+}
+#loginPanel {
+	width:700px;
+	height:400px;
+	margin:auto;
+	margin-top:40px;
+	background-image:url(loginMypic.png);
+	background-position:20px 20px;
+	background-repeat:no-repeat;
+	position:relative;
+}
+.deleteMypic {
+	display:none;
+	position:absolute;
+	top:-10px;
+	right:-10px;
+}
+.mypicImage:hover .deleteMypic {
+	display:block;
+}
+.mypicCollection .mypicImage {
+	margin-right:10px;
+	margin-bottom:10px;
+}
+.mypicUrl {
+	color:#999;
+	font-size:10px;
+	display:block;
+}
+.serviceSelectors input[type="radio"] {
+	margin-right:20px;
+}
+
+/* Override the "max-width: 100%" bit for normal images for the crop tool */
+.jcrop-holder img {
+	max-width: none;
+}

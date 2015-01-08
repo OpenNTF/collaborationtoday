@@ -1,0 +1,84 @@
+<faces-config>
+	<faces-config-extension>
+		<namespace-uri>http://www.zetaone.com/xsp-core</namespace-uri>
+		<default-prefix>zonsf</default-prefix>
+	</faces-config-extension>
+	<component>
+		<description>Generates an Link that displays a user's mypic profile card</description>
+		<display-name>mypic Profile Card</display-name>
+		<component-type>com.ZetaOne.mypic.MypicCard</component-type>
+		<component-class>com.ZetaOne.mypic.MypicCard</component-class>
+		<component-extension>
+			<component-family>javax.faces.Link</component-family>
+			<base-component-type>com.ibm.xsp.OutputLink</base-component-type>
+			<tag-name>mypiccard</tag-name>
+			<designer-extension>
+				<in-palette>true</in-palette>
+				<category>mypic</category>
+				<visible>true</visible>
+			</designer-extension>
+		</component-extension>
+        <property>
+            <display-name>ID</display-name>
+            <property-name>id</property-name>
+            <property-class>java.lang.String</property-class>
+            <property-extension>
+                <designer-extension>
+                    <category>mypic</category>
+                </designer-extension>
+            </property-extension>
+        </property>        
+		<property>
+			<description>
+				The subject user's canonical user name. Specify either the user's canonical name here or
+				the subject's API key in the UserId property. UserId property will take preference over
+				UserName			
+			</description>
+			<display-name>User Name</display-name>
+			<property-name>UserName</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+		<property>
+			<description>
+				The subject user's canonical user name. Specify either the user's canonical name here or
+				the subject's API key in the UserId property. UserId property will take preference over
+				UserName			
+			</description>
+			<display-name>User ID</display-name>
+			<property-name>UserId</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+		<property>
+			<description>The URL for the API service, including the api.xsp</description>
+			<display-name>Service URL</display-name>
+			<property-name>ServiceUrl</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property>
+		<property>
+			<description>Text of the view card link</description>
+			<display-name>Text</display-name>
+			<property-name>Text</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>mypic</category>
+				</designer-extension>
+			</property-extension>
+		</property> 
+	</component>
+</faces-config>

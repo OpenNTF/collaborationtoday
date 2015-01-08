@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.2'
+ replicaid='C1257CA900351E4C'>
+<noteinfo noteid='19a' unid='CE1D71F37BF16E18C1257A460031B06D' sequence='31'>
+<created><datetime dst='true'>20120725T110244,29+02</datetime></created>
+<modified><datetime>20140328T171810,99+01</datetime></modified>
+<revised><datetime>20140328T114736,65+01</datetime></revised>
+<lastaccessed><datetime>20150103T020143,45+01</datetime></lastaccessed>
+<addedtofile><datetime>20140328T171810,99+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
+>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>NewsAllByID</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+iAAFAFoAVgAJAAMACQAJAAYABQADABAACQAEAE5JRE5JbWFnZVVSTE5BYnN0cmFjdE5UaXRsZU5M
+aW5rUElETlB1YmxpY2F0aW9uRGF0ZSRDb25mbGljdCRSRUYEAAQAAAAcAAUABABGb3JtAQAEAE5l
+d3MKAgQABAADAAcADAAFAAkzUzRTAA==
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+EAABAABEAGYAAAADAE5JRA==
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQAHAAcACAAAAFZDAQADAAMAAAAAAFAAAQAACgAAAAAAAAAAAAICAAAAVkMAAAkACQAAAAAAUAAB
+AAAKAAAAAAAAAAAAAgIAAABWQwAACQAJAAAAAABQAAEAAAoAAAAAAAAAAAACAgAAAFZDAAAGAAYA
+AAAAAFAAAQAACgAAAAAAAAAAAAICAAAAVkMAAAUABQAAAAAAUAABAAAKAAAAAAAAAAAAAgIAAABW
+QwAAAwADAAAAAABQAAEAAAoAAAAAAAAAAAACAgAAAFZDAAAQABAAAAAAAFAAAQAACgAAAAAAAAAA
+AAICAAAATklETklETkltYWdlVVJMTkltYWdlVVJMTkFic3RyYWN0TkFic3RyYWN0TlRpdGxlTlRp
+dGxlTkxpbmtOTGlua1BJRFBJRE5QdWJsaWNhdGlvbkRhdGVOUHVibGljYXRpb25EYXRlJgABAAAA
+AQEACQEAAAoBAQ4KAAABAK0rAQABAAEAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAD//wAAAAAAAAAAAAAAAAAAV0MBAQAJAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA//8AAAAA
+AAAAAAAAAAAAAFdDAQEACQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAP//AAAAAAAAAAAAAAAAAABX
+QwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAD//wAAAAAAAAAAAAAAAAAAV0MBAQAJAAAAAAAA
+AAAAAAAAAAAAAAAABAAAAAAA//8AAAAAAAAAAAAAAAAAAFdDAQEACQAAAAAAAAAAAAAAAAAAAAAA
+AAQAAAAAAP//AAAAAAAAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAD//wAA
+AAAAAAAAAAAAAAAAQgAAAAAAAQD///8ABQD///8AAQAAAAAAAAAAAAAAAAABAP///wABAP///wAA
+AAEAAAAAAAEAAAAAAAEAAAAAAAAACAAAAAAAAQA=
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$SelQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAAif8QAAAAAAABAAQATmV3cw==
+</rawitemdata></item>
+<item name='$Flags'><text>Yw</text></item></note>
+

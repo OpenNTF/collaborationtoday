@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:zonsf="http://www.zetaone.com/xsp-core"
+	pageTitle="Author | Collaboration Today">
+	
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:
+		try {
+			var profileDoc = database.getDocumentByUNID(param.documentId)
+			var api = new com.ZetaOne.mypic.Api(profileDoc.getItemValueString("PDisplayName"))
+			profileDoc.recycle()
+			var result = api.checkForUpload(getClientId('fileUpload1'))
+			if(result == "xsp-success") {
+				facesContext.getExternalContext().redirect("mypicCrop.xsp?documentId=" + param.documentId)
+			}
+		} catch (e) {
+			print("api error: " + e.toString());
+		}
+	}]]></xp:this.beforeRenderResponse>
+	
+	<xc:moderationLayout>
+		<xp:this.facets>
+			<xc:moderationLeftColumn xp:key="leftColumn"/>
+		</xp:this.facets>
+
+		<xp:text tagName="h1" styleClass="" value="Select a file from your computer"/>
+
+		<xp:text tagName="p" styleClass=""
+			value="You can upload any size picture from your computer. mypic will automatically resize the image. You will be able to crop the image in the next step."/>
+
+		<p>
+			<xp:fileUpload id="fileUpload1" value="#{requestScope.imageSource}" />
+		</p>
+
+		<p>
+			<xp:link styleClass="lotusBtn" value="/author.xsp" text="Cancel">
+				<xp:this.parameters>
+					<xp:parameter name="documentId" value="${param.documentId}"/>
+				</xp:this.parameters>
+			</xp:link>
+<!--			<xp:button id="cancelBtn" value="Cancel" dojoType="dijit.form.Button">-->
+<!--				<xp:eventHandler-->
+<!--					event="onclick"-->
+<!--					submit="false">-->
+<!--					<xp:this.script><![CDATA[-->
+<!--						window.location.href = 'home.xsp';-->
+<!--					]]></xp:this.script>-->
+<!--				</xp:eventHandler>-->
+<!--			</xp:button>-->
+
+			<xp:button id="nextBtn" value="Next">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete" />
+			</xp:button>
+
+		</p>
+	</xc:moderationLayout>
+</xp:view>

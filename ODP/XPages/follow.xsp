@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Stay Connected | Collaboration Today">
+	<xc:layout>
+		<xp:this.facets>
+			<xc:rightColumn xp:key="rightColumn"></xc:rightColumn>
+			<xc:leftColumn xp:key="leftColumn"></xc:leftColumn>
+		</xp:this.facets>
+
+		<div class="well">
+			<h1>
+				<small>Stay Connected with Collaboration Today</small>
+			</h1>
+			
+			<h2>
+				<small>Twitter</small>
+			</h2>
+			<xp:link text="@collab2day">
+				<xp:this.value><![CDATA[#{javascript:"https://twitter.com/collab2day"}]]></xp:this.value>
+			</xp:link>
+			<xp:br></xp:br>
+			<xp:br></xp:br>
+
+
+
+
+			<h2>
+				<small>Feeds</small>
+			</h2>
+			<p>
+				We provide several feeds that you can subscribe to. Use your browser's "Subscribe to this Page" (or similar feature) to see a list of
+				available feeds.
+			</p>
+
+			<span class="label label-warning">RSS</span>
+			&#160;
+			<xp:link text="Recent">
+				<xp:this.value><![CDATA[#{javascript:"feed.xsp?filter=all"}]]></xp:this.value>
+			</xp:link>
+			<br></br>
+			<br></br>
+			<span class="label label-warning">RSS</span>
+			&#160;
+			<xp:link text="Popular">
+				<xp:this.value><![CDATA[#{javascript:"feed.xsp?filter=popular"}]]></xp:this.value>
+			</xp:link>
+			<!-- 
+			<br></br>
+			<br></br>
+			<span class="label label-warning">RSS</span>
+			&#160;
+			<xp:link text="Editor's Picks">
+				<xp:this.value><![CDATA[#{javascript:"feed.xsp"}]]></xp:this.value>
+			</xp:link>
+			<br></br>
+			<br></br>
+			<span class="label label-warning">RSS</span>
+			&#160;
+			<xp:link text="Spotlight">
+				<xp:this.value><![CDATA[#{javascript:"feed.xsp?filter=spotlight"}]]></xp:this.value>
+			</xp:link>
+			 -->
+			<br></br>
+			<br></br>
+
+			<xp:text escape="false">
+				<xp:this.value><![CDATA[#{javascript:
+					var output = "";
+					var types:java.util.ArrayList;
+					types = configCache.getTypes();
+					if (types != null) {
+						var it = types.iterator();
+					    for (; it.hasNext();) {
+						   	var type = it.next();
+						   	output = output + "<span class='label label-warning'>RSS</span>&#160;<a href='./feed.xsp?filter=" + type.getID() + "'>" + configCache.getCategory(type.getCategoryId()).getDisplayName() + ' - ' + type.getDisplayName() +"</a><br></br>";
+						}
+					}
+					output
+				}]]></xp:this.value>
+			</xp:text>
+			<br></br>
+			<h2>
+				<small>Widget</small>
+			</h2>
+
+			<p>
+				Embed this&#160;
+				<xp:link text="widget">
+					<xp:this.value><![CDATA[#{javascript:"TestWidget.html"}]]></xp:this.value>
+				</xp:link>
+				&#160;in your web page to display news entries. Open the page source of the widget to see how to embed it.
+			</p>
+			<br></br>
+			<h2>
+				<small>APIs</small>
+			</h2>
+			<p>There is a REST API available to access news entries.</p>
+			<p>
+				<span class="label">Base URL</span>
+				&#160;http://collaborationtoday.info/ct.nsf/api.xsp
+			</p>
+			<p>
+				<span class="label">URL parameter 'filter'</span>
+				&#160;'all', 'popular', 'top', 'spotlight' and category names like 'xpages', 'cnxdev', 'social', etc.
+			</p>
+			<p>
+				<span class="label">URL parameter 'format'</span>
+				&#160;'json', 'jsonp'
+			</p>
+			<p>
+				<span class="label">URL parameter 'count'</span>
+				&#160;maximal amount of entries
+			</p>
+			<p>
+				Take a look at the source of this&#160;
+				<xp:link text="sample">
+					<xp:this.value><![CDATA[#{javascript:"TestJSONP.html"}]]></xp:this.value>
+				</xp:link>
+				&#160;page to see how to use the JSONP API from a client in another domain and use Firebug to see the returned JSON.
+			</p>
+		</div>
+	</xc:layout>
+</xp:view>
+
