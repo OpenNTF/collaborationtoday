@@ -57,14 +57,13 @@ public class Parser {
 			PHPTagTypes.register();
 			PHPTagTypes.PHP_SHORT.deregister();
 			MasonTagTypes.register();
-			
+
 			URL targetURL = new URL(urlToIndex);
 			URLConnection conn = targetURL.openConnection();
 
 			conn.setConnectTimeout(HTTP_TIMEOUT);
 			conn.setReadTimeout(HTTP_TIMEOUT);
 			conn.setRequestProperty("User-Agent", HTTP_USER_AGENT);
-			
 
 			Source source = new Source(conn);
 			source.fullSequentialParse();
@@ -85,7 +84,7 @@ public class Parser {
 			newsEntry.appendItemValue("NLink", urlToIndex);
 			newsEntry.appendItemValue("PID", "unknown");
 			newsEntry.appendItemValue("NTitle", title);
-			newsEntry.appendItemValue("NAbstract", description + "\n\n\n" + source.getTextExtractor().setIncludeAttributes(true).toString());
+			newsEntry.appendItemValue("NAbstract", description + "\n\n\n" + source.getTextExtractor().setIncludeAttributes(true).toString().substring(0, 1000));
 			newsEntry.appendItemValue("NAbstract", "");
 			Date date = new Date();
 			newsEntry.appendItemValue("NCreationDate", session.createDateTime(date));
