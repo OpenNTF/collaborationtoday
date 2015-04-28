@@ -14,6 +14,10 @@
 		<content-type>application/x-javascript</content-type>
 		<href>bower_components/bootstrap/dist/js/bootstrap.min.js</href>
 	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>custom.css</href>
+	</resource>
 	<resources>
 		<metaData
 			name="viewport"
@@ -30,7 +34,8 @@
 			<value>Collaboration Today - News about IBM Collaboration Solutions</value>
 		</property>
 	</control>
-	<control override="true">
+	<control
+		override="true">
 		<name>ViewRoot</name>
 		<property>
 			<name>pageIcon</name>
