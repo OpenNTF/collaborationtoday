@@ -30,11 +30,10 @@
 			<value>Collaboration Today - News about IBM Collaboration Solutions</value>
 		</property>
 	</control>
-	<control>
+	<control override="true">
 		<name>ViewRoot</name>
 		<property>
-			<name>pageIcon
-		</name>
+			<name>pageIcon</name>
 			<value>favicon.ico</value>
 		</property>
 	</control>

@@ -57,7 +57,31 @@
 	</nav>
 
 	<div
-		class="container-fluid">
-
+		class="container-fluid"
+		style="margin-top:60px">
+		<div
+			class="row">
+			<div
+				class="col-lg-2">
+				<xp:callback
+					facetName="leftColumn"
+					id="leftColumn">
+				</xp:callback>
+			</div>
+			<div
+				class="col-lg-7">
+				<xp:callback
+					facetName="middleColumn"
+					id="middleColumn">
+				</xp:callback>
+			</div>
+			<div
+				class="col-lg-3">
+				<xp:callback
+					facetName="rightColumn"
+					id="rightColumn">
+				</xp:callback>
+			</div>
+		</div>
 	</div>
 </xp:view>

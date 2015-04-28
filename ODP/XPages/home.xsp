@@ -22,57 +22,52 @@
 				xp:key="rightColumn" />
 			<xc:leftColumn
 				xp:key="leftColumn" />
-		</xp:this.facets>
-		<!--
-			<xp:panel readonly="true" loaded="${param.filter != null and
-			param.filter != 'popular'}">
-		-->
+			<xp:div
+				xp:key="middleColumn">
+				<xp:panel
 
-
-
-		<xp:panel
-			readonly="true"
-			loaded="${	param.filter != 'popular'}">
-			<xc:pageHeader
-				loaded="${param.filter == 'all'}">
-				<xc:this.value><![CDATA[#{javascript:context.getUrlParameter("pid").equals("") ? "Recent" : "Recent by "+personsCache.getPerson(context.getUrlParameter("pid")).getDisplayName();}]]></xc:this.value>
-			</xc:pageHeader>
-			<xc:pageHeader
-				loaded="${param.filter == null}">
-				<xc:this.value><![CDATA[#{javascript:context.getUrlParameter("pid").equals("") ? "Recent" : "Recent by "+personsCache.getPerson(context.getUrlParameter("pid")).getDisplayName();}]]></xc:this.value>
-			</xc:pageHeader>
-			<xc:pageHeader
-				loaded="${param.filter != null and param.filter != 'all'}"
-				cat="#{javascript:param.filter}">
-				<xc:this.value><![CDATA[#{javascript:var t = configCache.getType(param.filter).getDisplayName();
+					readonly="true"
+					loaded="${	param.filter != 'popular'}">
+					<xc:pageHeader
+						loaded="${param.filter == 'all'}">
+						<xc:this.value><![CDATA[#{javascript:context.getUrlParameter("pid").equals("") ? "Recent" : "Recent by "+personsCache.getPerson(context.getUrlParameter("pid")).getDisplayName();}]]></xc:this.value>
+					</xc:pageHeader>
+					<xc:pageHeader
+						loaded="${param.filter == null}">
+						<xc:this.value><![CDATA[#{javascript:context.getUrlParameter("pid").equals("") ? "Recent" : "Recent by "+personsCache.getPerson(context.getUrlParameter("pid")).getDisplayName();}]]></xc:this.value>
+					</xc:pageHeader>
+					<xc:pageHeader
+						loaded="${param.filter != null and param.filter != 'all'}"
+						cat="#{javascript:param.filter}">
+						<xc:this.value><![CDATA[#{javascript:var t = configCache.getType(param.filter).getDisplayName();
 var person = context.getUrlParameter("pid").equals("") ? "" : " by "+personsCache.getPerson(context.getUrlParameter("pid")).getDisplayName();
 return t+person}]]></xc:this.value>
-			</xc:pageHeader>
+					</xc:pageHeader>
 
-			<xp:repeat
-				id="r1"
-				var="entryA"
-				rows="30"
-				removeRepeat="true">
-				<xp:this.value><![CDATA[${javascript:if (context.getUrlParameter("filter") == null || context.getUrlParameter("filter").equals("")) return newsCache.getEntries(param.pid);
+					<xp:repeat
+						id="r1"
+						var="entryA"
+						rows="30"
+						removeRepeat="true">
+						<xp:this.value><![CDATA[${javascript:if (context.getUrlParameter("filter") == null || context.getUrlParameter("filter").equals("")) return newsCache.getEntries(param.pid);
 param.filter == 'all' ? newsCache.getEntries(param.pid) : newsCache.getEntriesByType(param.filter, param.pid)
 				}]]></xp:this.value>
 
-				<xc:newsEntry
-					id="lkewrej"
-					author="#{entryA.PID}"
-					typeId="#{entryA.TID}"
-					imageURL="#{entryA.imageURL}"
-					link="#{entryA.link}"
-					newsAbstract="#{entryA.abstract}"
-					nID="#{entryA.ID}"
-					personDisplayName="#{javascript:personsCache.getPerson(entryA.getPID()).getDisplayName()}"
-					publicationDate="#{entryA.publicationDate}"
-					publicationDateString="#{entryA.prettyTime}"
-					title="#{entryA.title}"
-					moderator="#{entryA.moderator}"
-					personID="#{javascript:personsCache.getPerson(entryA.getPID()).getPID()}">
-					<xc:this.category><![CDATA[#{javascript:
+						<xc:newsEntry
+							id="lkewrej"
+							author="#{entryA.PID}"
+							typeId="#{entryA.TID}"
+							imageURL="#{entryA.imageURL}"
+							link="#{entryA.link}"
+							newsAbstract="#{entryA.abstract}"
+							nID="#{entryA.ID}"
+							personDisplayName="#{javascript:personsCache.getPerson(entryA.getPID()).getDisplayName()}"
+							publicationDate="#{entryA.publicationDate}"
+							publicationDateString="#{entryA.prettyTime}"
+							title="#{entryA.title}"
+							moderator="#{entryA.moderator}"
+							personID="#{javascript:personsCache.getPerson(entryA.getPID()).getPID()}">
+							<xc:this.category><![CDATA[#{javascript:
 						// try/catch added to catch cases where an entry is for a category/type that no longer exists
 						
 						try {
@@ -87,7 +82,7 @@ param.filter == 'all' ? newsCache.getEntries(param.pid) : newsCache.getEntriesBy
 						
 						}
 					}]]></xc:this.category>
-					<xc:this.type><![CDATA[#{javascript:
+							<xc:this.type><![CDATA[#{javascript:
 						// try/catch added to catch cases where an entry is for a category/type that no longer exists
 						try {
 							//configCache.getType(entryA.getTID()).getDisplayName()
@@ -100,35 +95,36 @@ param.filter == 'all' ? newsCache.getEntries(param.pid) : newsCache.getEntriesBy
 							
 						} catch(e) {
 						}}]]></xc:this.type>
-				</xc:newsEntry>
-			</xp:repeat>
-		</xp:panel>
+						</xc:newsEntry>
+					</xp:repeat>
+				</xp:panel>
 
-		<xp:panel
-			readonly="true"
-			loaded="${param.filter == 'popular'}">
-			<xc:pageHeader
-				value="Popular" />
+				<xp:panel
 
-			<xp:repeat
-				id="r2"
-				var="entryAB"
-				rows="30"
-				value="${newsCache.entriesByPopularity}"
-				removeRepeat="true">
-				<xc:newsEntry
-					id="lasdfekj"
-					author="#{entryAB.PID}"
-					typeId="#{entryAB.TID}"
-					imageURL="#{entryAB.imageURL}"
-					link="#{entryAB.link}"
-					newsAbstract="#{entryAB.abstract}"
-					nID="#{entryAB.ID}"
-					personDisplayName="#{javascript:personsCache.getPerson(entryAB.getPID()).getDisplayName()}"
-					publicationDate="#{entryAB.publicationDate}"
-					publicationDateString="#{entryAB.prettyTime}"
-					title="#{entryAB.title}">
-					<xc:this.category><![CDATA[#{javascript:
+					readonly="true"
+					loaded="${param.filter == 'popular'}">
+					<xc:pageHeader
+						value="Popular" />
+
+					<xp:repeat
+						id="r2"
+						var="entryAB"
+						rows="30"
+						value="${newsCache.entriesByPopularity}"
+						removeRepeat="true">
+						<xc:newsEntry
+							id="lasdfekj"
+							author="#{entryAB.PID}"
+							typeId="#{entryAB.TID}"
+							imageURL="#{entryAB.imageURL}"
+							link="#{entryAB.link}"
+							newsAbstract="#{entryAB.abstract}"
+							nID="#{entryAB.ID}"
+							personDisplayName="#{javascript:personsCache.getPerson(entryAB.getPID()).getDisplayName()}"
+							publicationDate="#{entryAB.publicationDate}"
+							publicationDateString="#{entryAB.prettyTime}"
+							title="#{entryAB.title}">
+							<xc:this.category><![CDATA[#{javascript:
 						try {
 							configCache.getCategory(configCache.getType(entryAB.getTID()).getCategoryId()).getDisplayName()
 						} catch(e) {
@@ -136,7 +132,7 @@ param.filter == 'all' ? newsCache.getEntries(param.pid) : newsCache.getEntriesBy
 							"";
 						}
 					}]]></xc:this.category>
-					<xc:this.type><![CDATA[#{javascript:
+							<xc:this.type><![CDATA[#{javascript:
 						try {
 							configCache.getType(entryAB.getTID()).getDisplayName()
 						} catch(e) {
@@ -144,12 +140,11 @@ param.filter == 'all' ? newsCache.getEntries(param.pid) : newsCache.getEntriesBy
 							"";
 						}
 					}]]></xc:this.type>
-				</xc:newsEntry>
-			</xp:repeat>
-		</xp:panel>
-		<!-- 
-		<xc:topStories/>
-		
-		 -->
+						</xc:newsEntry>
+					</xp:repeat>
+				</xp:panel>
+			</xp:div>
+		</xp:this.facets>
+
 	</xc:ccLayoutBS3>
 </xp:view>
