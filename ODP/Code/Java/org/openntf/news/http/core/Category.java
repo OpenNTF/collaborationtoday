@@ -1,5 +1,7 @@
 package org.openntf.news.http.core;
 
+import java.io.Serializable;
+
 /*
  * © Copyright IBM, 2012
  * 
@@ -18,8 +20,12 @@ package org.openntf.news.http.core;
  * Author: Niklas Heidloff - niklas_heidloff@de.ibm.com
  */
 
-public class Category {
+public class Category implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9198710789794456083L;
 	private final String _iD;
 	private final String _description;
 	private final String _displayName;

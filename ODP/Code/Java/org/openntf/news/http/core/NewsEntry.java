@@ -18,12 +18,17 @@ package org.openntf.news.http.core;
  * Author: Niklas Heidloff - niklas_heidloff@de.ibm.com
  */
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class NewsEntry {
+public class NewsEntry implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4213550369929326574L;
 	private final String _iD;
 	private final String _tID;
 	private final String _title;
