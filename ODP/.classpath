@@ -8,17 +8,6 @@
     </attributes>
   </classpathentry>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/httpcomponents-client-4.4.1/lib/commons-codec-1.9.jar"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/httpcomponents-client-4.4.1/lib/commons-logging-1.2.jar"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/httpcomponents-client-4.4.1/lib/fluent-hc-4.4.1.jar"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/httpcomponents-client-4.4.1/lib/httpclient-4.4.1.jar"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/httpcomponents-client-4.4.1/lib/httpclient-cache-4.4.1.jar"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/httpcomponents-client-4.4.1/lib/httpclient-win-4.4.1.jar"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/httpcomponents-client-4.4.1/lib/httpcore-4.4.1.jar"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/httpcomponents-client-4.4.1/lib/httpmime-4.4.1.jar"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/httpcomponents-client-4.4.1/lib/jna-4.1.0.jar"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/httpcomponents-client-4.4.1/lib/jna-platform-4.1.0.jar"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/jericho-html-3.3/dist/jericho-html-3.3.jar"/>
-  <classpathentry kind="lib" path="C:/Users/obusse/Downloads/nekohtml-1.9.13.jar"/>
+  <classpathentry kind="lib" path="WebContent/WEB-INF/lib"/>
   <classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
