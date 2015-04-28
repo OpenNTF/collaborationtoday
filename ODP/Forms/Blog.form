@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.2'
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.3'
  replicaid='C1257CA900351E4C'>
-<noteinfo noteid='2c6' unid='71131FD158D05218C2257B150047D055' sequence='39'>
+<noteinfo noteid='2de' unid='71131FD158D05218C2257B150047D055' sequence='43'>
 <created><datetime>20130217T150423,89+02</datetime></created>
-<modified><datetime>20140328T171812,95+01</datetime></modified>
-<revised><datetime>20140328T114738,29+01</datetime></revised>
-<lastaccessed><datetime>20140328T171812,95+01</datetime></lastaccessed>
-<addedtofile><datetime>20140328T171812,95+01</datetime></addedtofile></noteinfo>
+<modified><datetime dst='true'>20150428T180604,01+02</datetime></modified>
+<revised><datetime dst='true'>20150417T230041,24+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20150428T180604,00+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20150417T225754,13+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Oliver Busse/O=ulcbs</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$HTMLCode' sign='true'>
 <rawitemdata type='1'>

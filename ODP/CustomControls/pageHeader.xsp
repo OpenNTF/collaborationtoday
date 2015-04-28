@@ -3,6 +3,14 @@
 	<div class="page-header">
 		<h1>
 			<small><xp:text disableTheme="true" value="#{compositeData.value}"/></small>
+			<xp:image
+				url="/champion_24x24.png"
+				id="image1">
+				<xp:this.rendered><![CDATA[#{javascript:try{
+	compositeData.cat.equals("champions")
+} catch(e){
+}}]]></xp:this.rendered>
+			</xp:image>
 		</h1>
 	</div>
 </xp:view>

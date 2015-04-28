@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="34a" sequence="10" unid="AC94866F658A5810C2257B150047CFEF">
+<created><datetime>20130217T150422,87+02</datetime></created>
+<modified><datetime dst="true">20150428T180604,85+02</datetime></modified>
+<revised><datetime dst="true">20150417T230041,78+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150428T180604,84+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150417T225754,69+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$TITLE"><text>facebook.png</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20110531T174700,17-04</datetime></item>
+<item name="$ImageNames" sign="true"><text>facebook.png</text></item>
+<item name="$Comment" sign="true"><text>For mypic</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

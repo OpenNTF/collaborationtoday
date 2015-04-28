@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="35a" sequence="75" unid="D1D46DBE46B9C061C2257B150047D00D">
+<created><datetime>20130217T150423,17+02</datetime></created>
+<modified><datetime dst="true">20150428T180606,65+02</datetime></modified>
+<revised><datetime dst="true">20150417T230041,86+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150428T180606,64+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150417T225754,77+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$MimeType"><text>text/html</text></item>
+<item name="$Flags"><text>345Cg&gt;Q</text></item>
+<item name="$MimeCharSet"><text>UTF-8</text></item>
+<item name="$TITLE" sign="true"><text>TestJSONP.html</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>TestJSONP.html</text></item></note>

@@ -17,5 +17,9 @@
       <property-name>value</property-name>
       <property-class>string</property-class>
     </property>
+    <property>
+      <property-name>cat</property-name>
+      <property-class>string</property-class>
+    </property>
   </composite-component>
 </faces-config>

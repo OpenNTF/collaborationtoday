@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="25a" sequence="5" unid="6022A21FBBF3EAEEC1257CA6002A5BEF">
+<created><datetime>20140325T084240,47+01</datetime></created>
+<modified><datetime dst="true">20150428T180604,75+02</datetime></modified>
+<revised><datetime dst="true">20150417T230040,58+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150428T180604,74+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150417T225753,47+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$TITLE"><text>CurationPolicies140325.pdf</text></item>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+
+<item name="$FileModDT" sign="true"><datetime>20140325T084003,81+01</datetime></item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>CurationPolicies140325.pdf</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>

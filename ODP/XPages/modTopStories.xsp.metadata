@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2a6" sequence="61" unid="8C19B9F586C78F81C2257B150047CF1D">
+<created><datetime>20130217T150420,77+02</datetime></created>
+<modified><datetime dst="true">20150428T180605,55+02</datetime></modified>
+<revised><datetime dst="true">20150417T230040,94+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150428T180605,54+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150417T225753,85+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$TITLE" sign="true"><text>modTopStories.xsp</text></item>
+<item name="$Comment" sign="true"><text>Moderators Only</text></item>
+
+
+<item name="$FileNames" sign="true"><text>modTopStories.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.2</text></item>
+
+
+
+
+</note>

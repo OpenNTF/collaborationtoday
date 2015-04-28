@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="37a" sequence="31" unid="E061DDF3331CCD91C2257B150047CFDE">
+<created><datetime>20130217T150422,70+02</datetime></created>
+<modified><datetime dst="true">20150428T180606,63+02</datetime></modified>
+<revised><datetime dst="true">20150417T230042,02+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150428T180606,62+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150417T225754,93+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$TITLE"><text>spotlightPlaceholder.png</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20120827T093338,63+02</datetime></item>
+<item name="$ImageNames" sign="true"><text>spotlightPlaceholder.png</text></item>
+<item name="$EditFilePath"><text>C:\Users\IBM_AD~1\AppData\Local\Temp\notes3A9A13\~spotlightPlaceholder.png</text></item>
+<item name="$Flags"><text>34CiQ$</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

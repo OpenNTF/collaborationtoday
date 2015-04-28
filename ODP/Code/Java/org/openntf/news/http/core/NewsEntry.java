@@ -18,9 +18,9 @@ package org.openntf.news.http.core;
  * Author: Niklas Heidloff - niklas_heidloff@de.ibm.com
  */
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.ocpsoft.pretty.time.PrettyTime;
 
 public class NewsEntry {
 
@@ -217,8 +217,8 @@ public class NewsEntry {
 
 	/* Added by Per Henrik Lausten */
 	public String getPrettyTime() {
-		PrettyTime p = new PrettyTime();
-		return p.format(this.getPublicationDate());
+		SimpleDateFormat formatter = new SimpleDateFormat();
+		return formatter.format(this.getPublicationDate());
 	}
 
 }

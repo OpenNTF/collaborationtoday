@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="382" sequence="658" unid="CC065A62C2C2EAFFC2257B150047D0FC">
+<created><datetime>20130217T150425,56+02</datetime></created>
+<modified><datetime dst="true">20150428T180603,93+02</datetime></modified>
+<revised><datetime dst="true">20150417T230042,06+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150428T180603,92+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150417T225754,97+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>biz/webgate/domino/mywebgate/api/MicroPublisherSessionFacade.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>biz/webgate/domino/mywebgate/api/MicroPublisherSessionFacade.java</text></item>
+
+
+</note>

@@ -6,8 +6,8 @@
 
 	<div class="row-fluid newsentry">
 		<div class="span12">
-			<div class="newsEntryImageDiv">
-				<xp:image styleClass="newsEntryImage" url="#{authorPictureURL}"></xp:image>
+			<div class="newsEntryImageDiv newEntryImageContainer">
+				<div class="newsEntryImage" style="background-image:url(#{authorPictureURL});"></div>
 			</div>
 			<!--<xp:div styleClass="expandNews" id="expandDiv">
 				<xp:this.rendered><![CDATA[#{javascript:if (compositeData.imageURL == null) {

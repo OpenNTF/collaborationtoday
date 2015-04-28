@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.2'
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.3'
  replicaid='C1257CA900351E4C'>
-<noteinfo noteid='172' unid='53A7FDC42C53E576C1257A7C004E7267' sequence='22'>
+<noteinfo noteid='176' unid='53A7FDC42C53E576C1257A7C004E7267' sequence='26'>
 <created><datetime dst='true'>20120917T161650,95+02</datetime></created>
-<modified><datetime>20140328T171810,33+01</datetime></modified>
-<revised><datetime>20140328T114737,07+01</datetime></revised>
-<lastaccessed><datetime>20141202T020127,58+01</datetime></lastaccessed>
-<addedtofile><datetime>20140328T171810,33+01</datetime></addedtofile></noteinfo>
+<modified><datetime dst='true'>20150428T180605,81+02</datetime></modified>
+<revised><datetime dst='true'>20150417T230039,35+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20150428T180605,80+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20150417T225752,31+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Oliver Busse/O=ulcbs</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>NewsAllByLink</text></item>
 <item name='$Index' sign='true'><text/></item>

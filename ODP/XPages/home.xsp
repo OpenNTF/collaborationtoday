@@ -32,7 +32,8 @@
 				<xc:this.value><![CDATA[#{javascript:context.getUrlParameter("pid").equals("") ? "Recent" : "Recent by "+personsCache.getPerson(context.getUrlParameter("pid")).getDisplayName();}]]></xc:this.value>
 			</xc:pageHeader>
 			<xc:pageHeader
-				loaded="${param.filter != null and param.filter != 'all'}">
+				loaded="${param.filter != null and param.filter != 'all'}"
+				cat="#{javascript:param.filter}">
 				<xc:this.value><![CDATA[#{javascript:var t = configCache.getType(param.filter).getDisplayName();
 var person = context.getUrlParameter("pid").equals("") ? "" : " by "+personsCache.getPerson(context.getUrlParameter("pid")).getDisplayName();
 return t+person}]]></xc:this.value>

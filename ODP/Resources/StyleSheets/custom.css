@@ -1,25 +1,27 @@
-@media (min-width: 980px) {
+@media ( min-width : 980px) {
 	body {
 		padding-top: 60px;
 		padding-bottom: 40px;
 	}
 }
 
-table.contact td {padding:10px;}
+table.contact td {
+	padding: 10px;
+}
 
 .navbar .brand {
-	color:#FFFFFF;	
+	color: #FFFFFF;
 }
 
-.nav-list > li.latest > a {
+.nav-list>li.latest>a {
 	padding: 0px 15px;
-	padding-left:42px;
-	margin-bottom:6px;
-	min-height:45px;
+	padding-left: 42px;
+	margin-bottom: 6px;
+	min-height: 45px;
 }
 
-.nav-list > li.latest > a:hover {
-	background-color:transparent;
+.nav-list>li.latest>a:hover {
+	background-color: transparent;
 }
 
 .sidebar-nav {
@@ -28,15 +30,15 @@ table.contact td {padding:10px;}
 }
 
 .well .newsEntryImage {
-	height:40px;
-	width:40px;
-	float:left;
-	clear:left;
-	vertical-align:text-top;	
+	height: 40px;
+	width: 40px;
+	float: left;
+	clear: left;
+	vertical-align: text-top;
 }
 
 .well li {
-	padding-bottom: 12px;	
+	padding-bottom: 12px;
 }
 
 .sidebarEntryMeta {
@@ -44,6 +46,7 @@ table.contact td {padding:10px;}
 	line-height: 12px;
 	padding-top: 2px;
 }
+
 .sidebarEntryMeta small {
 	font-size: 11px;
 	color: #999;
@@ -56,21 +59,24 @@ table.contact td {padding:10px;}
 	padding-bottom: 5px;
 }
 
-.newsAbstract {
-	/* margin:-30px 0 20px 80px; */
+.newsAbstract { /* margin:-30px 0 20px 80px; */
+	
 }
+
 .newsAbstractExpanded {
-    /* display: none; << hidden with style set directly on the control */
+	/* display: none; << hidden with style set directly on the control */
+	
 }
+
 .socialshare {
-    display: none;
-    margin:-2px 0 0 0;
+	display: none;
+	margin: -2px 0 0 0;
 }
 
 .social {
-	display:inline;
-	border:1px solid #000;
-	margin:0 0 0 10px;	
+	display: inline;
+	border: 1px solid #000;
+	margin: 0 0 0 10px;
 }
 
 .newsentry {
@@ -78,27 +84,468 @@ table.contact td {padding:10px;}
 }
 
 .newsentry:hover .socialshare {
-    display: inline-block;
+	display: inline-block;
 }
 
 .page-header {
-	margin:0px 0 8px 0;	
-	background-color:#fafafa;
+	margin: 0px 0 8px 0;
+	background-color: #fafafa;
 	padding: 10px 0 10px 4px;
-	border:none;
-	border-bottom:1px solid #ccc;
+	border: none;
+	border-bottom: 1px solid #ccc;
 }
 
 .newsEntryImageDiv {
 	width: 80px;
-	float: left;	
+	float: left;
 }
+
+.newEntryImageContainer {
+	margin: 0px 0 0 0;
+	width: 64px;
+	height: 64px;
+}
+
 .newsEntryImageDiv .newsEntryImage {
-	margin:0px 0 0 0;
-	width:64px;
-	height:64px;
+	margin: 0px 0 0 0;
+	width: 64px;
+	height: 64px;
 }
-.newsEntryImage {box-shadow: 2px 2px 2px #888;}
+
+.newsEntryImage {
+	box-shadow: 2px 2px 2px #888;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.newsEntryDiv
+{
+margin-left
+:
+80px;
+}
+.newsEntryDiv
+ 
+h3
+{
+line-height
+:
+20px;
+}
+.newsEntryDiv
+ 
+p
+{
+margin
+:
+4px
+0
+4px;
+}
+h1
+ 
+small
+{
+color
+:
+#444444;
+}
+.expandNews
+{
+display
+:
+none;
+float
+:
+right;
+}
+.collapseNews
+{
+display
+:
+none;
+float
+:
+right;
+}
+.newsentry
+:hover
+ 
+.expandNews
+{
+display
+:
+inline-block;
+}
+.navbar-inner
+{
+min-height
+:
+40px;
+padding-right
+:
+20px;
+padding-left
+:
+20px;
+background-color
+:
+#222222;
+background-image
+:
+-moz-linear-gradient(
+top
+,
+#474747
+,
+#111111
+,
+transparent
+)
+;
+background-image
+:
+-ms-linear-gradient(
+top
+,
+#474747
+,
+#111111
+,
+transparent
+)
+;
+background-image
+:
+-webkit-gradient(
+linear
+,
+0
+0
+,
+0
+100%
+,
+from(
+#474747
+)
+,
+to(
+#111111
+)
+);
+background-image
+:
+-webkit-linear-gradient(
+top
+,
+#474747
+,
+#111111
+,
+transparent
+)
+;
+background-image
+:
+-o-linear-gradient(
+top
+,
+#474747
+,
+#111111
+,
+transparent
+)
+;
+background-image
+:
+linear-gradient(
+top
+,
+#474747
+,
+#111111
+,
+transparent
+);
+background-repeat
+:
+repeat-x;
+-webkit-border-radius
+:
+4px;
+-moz-border-radius
+:
+4px;
+border-radius
+:
+4px;
+filter
+:
+progid
+:
+ 
+dximagetransform.microsoft.gradient
+(
+ 
+startColorstr
+=
+
+		
+'#474747'
+,
+endColorstr
+=
+ 
+'#111111'
+,
+GradientType
+=
+ 
+0
+);
+-webkit-box-shadow
+:
+0
+1px
+3px
+rgba(
+0
+,
+0
+,
+0
+,
+0.25
+)
+,
+inset
+0
+-1px
+0
+rgba(
+0
+,
+0
+,
+0
+,
+0.1
+);
+-moz-box-shadow
+:
+0
+1px
+3px
+rgba(
+0
+,
+0
+,
+0
+,
+0.25
+)
+,
+inset
+0
+-1px
+0
+rgba(
+0
+,
+0
+,
+0
+,
+0.1
+);
+box-shadow
+:
+0
+1px
+3px
+rgba(
+0
+,
+0
+,
+0
+,
+0.25
+)
+,
+inset
+0
+-1px
+0
+rgba(
+0
+,
+0
+,
+0
+,
+0.1
+);
+border-bottom
+:
+4px
+solid
+#107BBB;
+}
+.nav
+ 
+.nav-header
+{
+color
+:
+#444444;
+}
+a
+{
+color
+:
+#1970B0;
+}
+a
+:hover
+{
+color
+:
+#05386B;
+}
+body
+{
+color
+:
+#222222;
+}
+.thumbnail
+{
+background-color
+:
+#FAFAFA;
+}
+.thumbnail
+ 
+.caption
+{
+height
+:
+60px;
+overflow
+:
+hidden;
+padding
+:
+6px
+3px
+3px
+3px;
+}
+.thumbnail
+ 
+h5
+{
+line-height
+:
+15px;
+}
+.thumbnail
+ 
+p
+{
+margin
+:
+5px
+0
+9px;
+}
+/* Dropdown navigation */
+.nav
+{
+margin-bottom
+:
+5px;
+}
+@media ( max-width : 979px) {
+	/* Less margin when the categories dropdown was part of the content area 
+	.navbar-fixed-top {
+		margin-bottom: 5px;
+	}
+	*/
+}
+
+.nav-list
+>
+.active
+>
+a
+,
+.nav-list
+>
+.active
+>
+a
+:hover
+{
+color
+:
+#fff;
+text-shadow
+:
+0
+-1px
+0
+rgba(
+0
+,
+0
+,
+0
+,
+0.2
+);
+background-color
+:
+#107BBB;
+}
+/*
+  The below media queries are for handling custom responsive changes
+*/ /* Landscape phones and down */
+@media ( max-width : 480px) {
+	...
+}
+
+/* Landscape phone to portrait tablet */
+@media ( max-width : 767px) {
+	.row-fluid .span2 {
+		min-height: 0px; /* reduze height of left menu when hidden */
+	}
+}
+
+@media ( max-width : 979px) {
+}
+
+/* Portrait tablet to landscape and desktop */
+@media ( min-width : 768px) and (max-width: 979px) {
+	.row-fluid .span7 { /* expand main content to span9 width */
+		width: 74.30939226%;
+		margin-left: 0;
+	}
+}
+
+@media ( max-width : 979px) and (min-width: 768px) {
+}
+
+/* Large desktop */
+@media ( min-width : 1200px) {
+	...
+}
 
 .newsEntryDiv {
 	margin-left: 80px;
@@ -120,54 +567,66 @@ h1 small {
 	display: none;
 	float: right;
 }
+
 .collapseNews {
 	display: none;
 	float: right;
 }
+
 .newsentry:hover .expandNews {
-    display: inline-block;
+	display: inline-block;
 }
 
 .navbar-inner {
-  min-height: 40px;
-  padding-right: 20px;
-  padding-left: 20px;
-  background-color: #222222;
-  background-image: -moz-linear-gradient(top, #474747, #111111,transparent);
-  background-image: -ms-linear-gradient(top, #474747, #111111,transparent);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#474747), to(#111111));
-  background-image: -webkit-linear-gradient(top, #474747, #111111,transparent);
-  background-image: -o-linear-gradient(top, #474747, #111111,transparent);
-  background-image: linear-gradient(top, #474747, #111111,transparent);
-  background-repeat: repeat-x;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#474747', endColorstr='#111111', GradientType=0);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  border-bottom:4px solid #107BBB;      
+	min-height: 40px;
+	padding-right: 20px;
+	padding-left: 20px;
+	background-color: #222222;
+	background-image: -moz-linear-gradient(top, #474747, #111111, transparent)
+		;
+	background-image: -ms-linear-gradient(top, #474747, #111111, transparent)
+		;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#474747),
+		to(#111111) );
+	background-image: -webkit-linear-gradient(top, #474747, #111111, transparent)
+		;
+	background-image: -o-linear-gradient(top, #474747, #111111, transparent)
+		;
+	background-image: linear-gradient(top, #474747, #111111, transparent);
+	background-repeat: repeat-x;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	filter: progid :   dximagetransform.microsoft.gradient (   startColorstr
+		= 
+		 '#474747', endColorstr =   '#111111', GradientType =   0 );
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0
+		rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0
+		rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0
+		rgba(0, 0, 0, 0.1);
+	border-bottom: 4px solid #107BBB;
 }
 
 .nav .nav-header {
-	color:#444444;	
+	color: #444444;
 }
 
 a {
-	color:#1970B0;	
+	color: #1970B0;
 }
 
 a:hover {
-  color: #05386B;
+	color: #05386B;
 }
 
 body {
-	color:#222222;	
+	color: #222222;
 }
 
 .thumbnail {
-	background-color:#FAFAFA;	
+	background-color: #FAFAFA;
 }
 
 .thumbnail .caption {
@@ -175,9 +634,11 @@ body {
 	overflow: hidden;
 	padding: 6px 3px 3px 3px;
 }
+
 .thumbnail h5 {
 	line-height: 15px;
 }
+
 .thumbnail p {
 	margin: 5px 0 9px;
 }
@@ -186,46 +647,96 @@ body {
 .nav {
 	margin-bottom: 5px;
 }
-@media (max-width: 979px) {
+
+@media
+(
+max-width
+:
+979px)
+{
 	/* Less margin when the categories dropdown was part of the content area 
 	.navbar-fixed-top {
 		margin-bottom: 5px;
 	}
 	*/
 }
-
-.nav-list > .active > a, .nav-list > .active > a:hover {
-color: #fff;
-text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
-background-color: #107BBB;
+.nav-list>.active>a,.nav-list>.active>a:hover {
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+	background-color: #107BBB;
 }
-
 /*
   The below media queries are for handling custom responsive changes
-*/
-
-/* Landscape phones and down */
-@media (max-width: 480px) { ... }
-
+*/ /* Landscape phones and down */
+@media
+(
+max-width
+:
+480px)
+{
+...
+}
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-	.row-fluid .span2 {
-		min-height: 0px; /* reduze height of left menu when hidden */
-	}
+@media
+(
+max-width
+:
+767px)
+{
+.row-fluid
+ 
+.span2
+{
+min-height
+:
+0px; /* reduze height of left menu when hidden */
 }
-
-@media (max-width: 979px) { }
-
+}
+@media
+(
+max-width
+:
+979px)
+{
+}
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-	.row-fluid .span7 { /* expand main content to span9 width */
-		width: 74.30939226%;
-		margin-left: 0;
-	}
+@media
+(
+min-width
+:
+768px)
+and
+(max-width:
+979px)
+{
+.row-fluid
+ 
+.span7
+{ /* expand main content to span9 width */
+width
+:
+74.30939226%;
+margin-left
+:
+0;
 }
-
-@media (max-width: 979px) and (min-width: 768px) {
 }
-
+@media
+(
+max-width
+:
+979px)
+and
+(min-width:
+768px)
+{
+}
 /* Large desktop */
-@media (min-width: 1200px) { ... }
+@media
+(
+min-width
+:
+1200px)
+{
+...
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="3b6" sequence="14" unid="F4E38A7AF230F185C2257B150047CF15">
+<created><datetime>20130217T150420,69+02</datetime></created>
+<modified><datetime dst="true">20150428T180605,61+02</datetime></modified>
+<revised><datetime dst="true">20150417T230042,32+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150428T180605,60+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150417T225755,25+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$TITLE" sign="true"><text>mypicApi.xsp</text></item>
+<item name="$Comment" sign="true"><text>Non-UI - mypic</text></item>
+
+
+<item name="$FileNames" sign="true"><text>mypicApi.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+
+
+</note>
