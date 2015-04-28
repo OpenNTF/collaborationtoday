@@ -14,12 +14,28 @@
 		<content-type>application/x-javascript</content-type>
 		<href>bower_components/bootstrap/dist/js/bootstrap.min.js</href>
 	</resource>
+	<resources>
+		<metaData
+			name="viewport"
+			content="width=device-width, initial-scale=1,  maximum-scale=1" />
+		<linkResource
+			href="collaborationtoday_icon.png"
+			rel="apple-touch-icon" />
+	</resources>
 	<control
 		override="false">
 		<name>ViewRoot</name>
 		<property>
 			<name>pageTitle</name>
 			<value>Collaboration Today - News about IBM Collaboration Solutions</value>
+		</property>
+	</control>
+	<control>
+		<name>ViewRoot</name>
+		<property>
+			<name>pageIcon
+		</name>
+			<value>favicon.ico</value>
 		</property>
 	</control>
 	<control>
