@@ -77,6 +77,7 @@ table.contact td {
 }
 
 .newsentry {
+	display: table-cell;
 	padding-bottom: 20px;
 }
 
@@ -98,15 +99,15 @@ table.contact td {
 }
 
 .newEntryImageContainer {
-	margin: 0px 0 0 0;
-	width: 64px;
-	height: 64px;
+	margin: 0px 20px 0 0;
+	width: 120px;
+	height: 120px;
 }
 
 .newsEntryImageDiv .newsEntryImage {
 	margin: 0px 0 0 0;
-	width: 64px;
-	height: 64px;
+	width: 120px;
+	height: 120px;
 }
 
 .newsEntryImage {
@@ -133,7 +134,9 @@ p {
 	margin: 4px 0 4px;
 }
 
-h1
+h1 {
+	margin-top:0;
+	}
  
 small {
 	color: #444444;
