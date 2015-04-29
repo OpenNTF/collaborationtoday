@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Stay Connected | Collaboration Today">
-	<xc:layout>
+	<xc:ccLayoutBS3>
 		<xp:this.facets>
 			<xc:rightColumn xp:key="rightColumn"></xc:rightColumn>
 			<xc:leftColumn xp:key="leftColumn"></xc:leftColumn>
@@ -118,6 +118,6 @@
 				&#160;page to see how to use the JSONP API from a client in another domain and use Firebug to see the returned JSON.
 			</p>
 		</div>
-	</xc:layout>
+	</xc:ccLayoutBS3>
 </xp:view>
 

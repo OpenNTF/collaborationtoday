@@ -9,7 +9,7 @@
 		96px !important; */ } #rc_audio { /* left: 246px !important; */ /* top: 118px !important; */ } #rc_help { /* left: 246px !important; */ /* top: 138px
 		!important; */ } #recaptcha_image { /* left: 12px !important; */ /* top: 10px !important; */ }
 	</style>
-	<xc:layout>
+	<xc:ccLayoutBS3>
 		<xp:this.facets>
 			<xc:rightColumn xp:key="rightColumn"></xc:rightColumn>
 			<xc:leftColumn xp:key="leftColumn"></xc:leftColumn>
@@ -131,5 +131,5 @@
 			</xp:table>
 
 		</div>
-	</xc:layout>
+	</xc:ccLayoutBS3>
 </xp:view>
