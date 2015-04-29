@@ -3,7 +3,7 @@
 	
 	<div class="well sidebar-nav">
 		<ul class="nav nav-list">
-			<li class="nav-header"><xp:label >
+			<li class=""><xp:label >
 			<xp:this.value><![CDATA[#{javascript:
 			if (param.filter == null) return "Featured";//return "Popular";
 			else {

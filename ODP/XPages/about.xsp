@@ -1,80 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="About | Collaboration Today">
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	pageTitle="About | Collaboration Today">
 
 	<xc:ccLayoutBS3>
 		<xp:this.facets>
-			<xc:rightColumn xp:key="rightColumn"/>
-			<xc:leftColumn xp:key="leftColumn"/>
-		</xp:this.facets>
-		
-		<div class="well">
-			<h1>
-				<small>About Collaboration Today</small>
-			</h1>
-			<h2>
-				<small>Content</small>
-			</h2>
-			<p>
-				Collaboration Today is a news aggregator for&#160;
-				<xp:link text="IBM Collaboration Solutions" themeId="Link.Lotus"/>
-				&#160;professionals covering news about various IBM products like IBM Connections, IBM Domino, IBM WebSphere Portal etc. and cross
-				product topics like mobile, cloud and analytics.
+			<xc:rightColumn
+				xp:key="rightColumn" />
+			<xc:leftColumn
+				xp:key="leftColumn" />
+
+
+			<xp:div
+				xp:key="middleColumn"
+				styleClass="well">
+				<h1>
+					<small>About Collaboration Today</small>
+				</h1>
+				<h2>
+					<small>Content</small>
+				</h2>
+				<p>
+					Collaboration Today is a news aggregator for&#160;
+					<xp:link
+						text="IBM Collaboration Solutions"
+						themeId="Link.Lotus" />
+					&#160;professionals covering news about various IBM products like
+					IBM Connections, IBM Domino, IBM WebSphere Portal etc. and cross
+					product topics like mobile, cloud and analytics.
+				</p>
+				<h2>
+					<small>Usage</small>
+				</h2>
+				<p>
+					The content is categorized making it easier for readers to find
+					the
+					information they are looking for. Executives and decision makers
+					can&#160;find news in the business category, developers in the app
+					dev category, administrators in the infrastructure category and
+					end-users in the user experience category. Events, podcasts and
+					videos can be found in the community section.
 			</p>
-			<h2>
-				<small>Usage</small>
-			</h2>
-			<p>
-				The content is categorized making it easier for readers to find the information they are looking for. Executives and decision makers
-				can&#160;find news in the business category, developers in the app dev category, administrators in the infrastructure category and
-				end-users in the user experience category. Events, podcasts and videos can be found in the community section.
-			</p>
-			
-			<p>
-				In addition to visiting the Collaboration Today web site via web&#160;browsers, smartphones and tablets, you can also&#160;
-				<xp:link text="follow" themeId="Link.Follow"/>
-				&#160;news&#160;updates via feeds or on&#160;Twitter. Application developers can embed news entries using our REST API.
-			</p>
-			<h2>
-				<small>Curation</small>
-			</h2>
-			<p>
-				Collaboration Today is owned by&#160;
-				<xp:link text="OpenNTF Inc." value="http://openntf.org/Internal/home.nsf/dx/About_openNTF"/>
-				, a group of 31 member companies who are leveraging IBM Collaboration Solutions technologies, and hosted by&#160;
-				<xp:link text="Prominic.NET" value="http://prominic.net/"/>
-				. Curators add content to the site, categorize it and can mark to show up on the home page. If you are interested in becoming a
-				content&#160;curator, please&#160;
-				<xp:link text="contact" themeId="Link.Contact"/>
-				&#160;us.
-			</p>
-			<p>Each category has different content&#160;curators. Below is a list of the current curators.</p>
-			<xp:repeat rows="30" value="${configCache.categories}" indexVar="index2" var="category">
-				<xp:panel>
-					<span class="label">
-						<xp:text value="#{category.displayName}"/>
+
+				<p>
+					In addition to visiting the Collaboration Today web site via
+					web&#160;browsers, smartphones and tablets, you can also&#160;
+					<xp:link
+						text="follow"
+						themeId="Link.Follow" />
+					&#160;news&#160;updates via feeds or on&#160;Twitter. Application
+					developers can embed news entries using our REST API.
+				</p>
+				<h2>
+					<small>Curation</small>
+				</h2>
+				<p>
+					Collaboration Today is owned by&#160;
+					<xp:link
+						text="OpenNTF Inc."
+						value="http://openntf.org/Internal/home.nsf/dx/About_openNTF" />
+					, a group of 31 member companies who are leveraging IBM
+					Collaboration Solutions technologies, and hosted by&#160;
+					<xp:link
+						text="Prominic.NET"
+						value="http://prominic.net/" />
+					. Curators add content to the site, categorize it and can mark to
+					show up on the home page. If you are interested in becoming a
+					content&#160;curator, please&#160;
+					<xp:link
+						text="contact"
+						themeId="Link.Contact" />
+					&#160;us.
+				</p>
+				<p>Each category has different content&#160;curators. Below is a
+					list of the current curators.</p>
+				<xp:repeat
+					rows="30"
+					value="${configCache.categories}"
+					indexVar="index2"
+					var="category">
+
+					<span
+						class="label">
+						<xp:text
+							disableTheme="true"
+							value="#{category.displayName}" />
 					</span>
-					&#160;
-					<br />
-					<br />
-				</xp:panel>
-				<xp:repeat rows="30" value="#{javascript:configCache.getTypesForCategory(category.getID())}" indexVar="index" var="entry">
-					<xp:panel>
-						<xp:text value="#{entry.displayName}: "/>
-						<xp:text>
-							<xp:this.value><![CDATA[#{javascript:
+
+					<xp:repeat
+						rows="30"
+						value="#{javascript:configCache.getTypesForCategory(category.getID())}"
+						indexVar="index"
+						var="entry">
+						<xp:panel>
+							<xp:text
+								value="#{entry.displayName}: " />
+							<xp:text
+								disableTheme="true">
+								<xp:this.value><![CDATA[#{javascript:
 								var moderators = entry.getModerators();
 								moderators == null ? "" : @Implode(moderators, ", ")
 							}]]></xp:this.value>
-						</xp:text>
-						<br />
-					</xp:panel>
+							</xp:text>
+							<br />
+						</xp:panel>
+					</xp:repeat>
+
 				</xp:repeat>
-				<br></br>
-			</xp:repeat>
-			<p>
-				Collaboration Today was created by Bruce Elgort, Per Henrik Lausten, Serdar Basegmez, Frank van der Linden and Niklas Heidloff in the
-				summer of 2012.
+				<p>
+					Collaboration Today was created by Bruce Elgort, Per Henrik
+					Lausten, Serdar
+					Basegmez, Frank van der Linden and Niklas Heidloff
+					in the
+					summer of 2012.
 			</p>
-		</div>
+				<p>Redesigned in spring 2015 by Oliver Busse</p>
+			</xp:div>
+		</xp:this.facets>
 	</xc:ccLayoutBS3>
 </xp:view>

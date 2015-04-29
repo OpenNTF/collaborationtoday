@@ -1,135 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Contact | Collaboration Today">
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	pageTitle="Contact | Collaboration Today">
 	<xp:this.data>
-		<xp:dominoDocument var="document1" formName="Request"></xp:dominoDocument>
+		<xp:dominoDocument
+			var="document1"
+			formName="Request"></xp:dominoDocument>
 	</xp:this.data>
 	<style>
-		#recaptcha_bg_image { /*width: 410px !important;*/ } #recaptcha_response_field { left: 35px !important; /* top: 118px !important; */ width: 130px
-		!important; } #rc_enter_image, #rc_enter_audio { left: 36px !important; /* top: 94px !important; */ } #rc_reload { /* left: 246px !important; */ /* top:
-		96px !important; */ } #rc_audio { /* left: 246px !important; */ /* top: 118px !important; */ } #rc_help { /* left: 246px !important; */ /* top: 138px
-		!important; */ } #recaptcha_image { /* left: 12px !important; */ /* top: 10px !important; */ }
+		#recaptcha_bg_image { /*width: 410px !important;*/ }
+		#recaptcha_response_field { left: 35px !important; /* top: 118px
+		!important; */ width: 130px
+		!important; } #rc_enter_image,
+		#rc_enter_audio { left: 36px !important; /* top: 94px !important; */ }
+		#rc_reload { /* left: 246px !important; */ /* top:
+		96px !important; */
+		} #rc_audio { /* left: 246px !important; */ /* top: 118px !important;
+		*/ } #rc_help { /* left: 246px !important; */ /* top: 138px
+		!important; */ } #recaptcha_image { /* left: 12px !important; */ /*
+		top: 10px !important; */ }
 	</style>
 	<xc:ccLayoutBS3>
 		<xp:this.facets>
-			<xc:rightColumn xp:key="rightColumn"></xc:rightColumn>
-			<xc:leftColumn xp:key="leftColumn"></xc:leftColumn>
-		</xp:this.facets>
-		
-		<div class="well">
-			<h1>
-				<small>Contact Collaboration Today</small> 
-			</h1>
-			<xp:br></xp:br>
-			<xp:table styleClass="contact" style="width:100%">
-				<xp:tr>
-					<xp:td>
-						<xp:label value="EMail *" id="rEMail_Label1" for="rEMail1"></xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:inputText value="#{document1.REMail}" style="width:99%" id="rEMail1" required="true">
-							<xp:this.validators>
-								<xp:validateRequired message="Please enter an email address."></xp:validateRequired>
-								<xp:validateLength message="Please enter an email address." minimum="5" maximum="50"></xp:validateLength>
-							</xp:this.validators>
-						</xp:inputText>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
-						<xp:label value="Subject *" id="rSubject_Label1" for="rSubject1"></xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:inputText value="#{document1.RSubject}" style="width:99%" id="rSubject1" required="true">
-							<xp:this.validators>
-								<xp:validateRequired message="Please enter a subject."></xp:validateRequired>
-								<xp:validateLength message="Please enter a subject." minimum="5" maximum="150"></xp:validateLength>
-							</xp:this.validators>
-						</xp:inputText>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
-						<xp:label value="Category" id="rCategory_Label1" for="rCategory1"></xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:comboBox value="#{document1.RCategory}" style="width:99%" id="rCategory1">
-							<xp:selectItem itemLabel="Suggest Article" itemValue="article"></xp:selectItem>
-							<xp:selectItem itemLabel="Change Profile Avatar" itemValue="profile"></xp:selectItem>
-							<xp:selectItem itemLabel="Feedback" itemValue="feedback"></xp:selectItem>
-							<xp:selectItem itemLabel="Other" itemValue="other"></xp:selectItem>
-						</xp:comboBox>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
-						<xp:label value="Comment" id="rBody_Label1" for="rBody1"></xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:inputTextarea value="#{document1.RBody}" style="width:99%;height:200px" id="rBody1"></xp:inputTextarea>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td></xp:td>
-					<xp:td>
-						<xc:recaptcha_cc>
-							<xc:this.behavior>
-								<xc:behavior>
-									<xc:this.errorHandling>
-										<xc:errorHandling validateOnlyOnce="true" errorMessageTxt="You've entered an incorrect captcha solution">
-										</xc:errorHandling>
-									</xc:this.errorHandling>
-									<xc:this.userInterface>
-										<xc:userInterface focusOnLoad="true"></xc:userInterface>
-									</xc:this.userInterface>
-								</xc:behavior>
-							</xc:this.behavior>
-							<xc:this.recaptchaWidget>
-								<xc:recaptchaWidget useHttps="false" lang="en" returnValIfServiceUnavailable="true"
-									publicKey="#{javascript:configCache.getCaptchaPublicKey()}" privateKey="#{javascript:configCache.getCaptchaPrivateKey()}" theme="oneui">
-								</xc:recaptchaWidget>
-							</xc:this.recaptchaWidget>
-						</xc:recaptcha_cc>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>&#160;</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td></xp:td>
-					<xp:td>
-						<xp:button value="Submit" id="button1" styleClass="btn">
-							<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-								<xp:this.action>
-									<xp:actionGroup>
+			<xc:rightColumn
+				xp:key="rightColumn"></xc:rightColumn>
+			<xc:leftColumn
+				xp:key="leftColumn"></xc:leftColumn>
+
+
+			<xp:div
+				xp:key="middleColumn"
+				styleClass="well">
+				<h1>
+					<small>Contact Collaboration Today</small>
+				</h1>
+				<xp:br></xp:br>
+				<xp:table
+					styleClass="contact"
+					style="width:100%">
+					<xp:tr>
+						<xp:td>
+							<xp:label
+								value="EMail *"
+								id="rEMail_Label1"
+								for="rEMail1"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText
+								value="#{document1.REMail}"
+								style="width:99%"
+								id="rEMail1"
+								required="true">
+								<xp:this.validators>
+									<xp:validateRequired
+										message="Please enter an email address."></xp:validateRequired>
+									<xp:validateLength
+										message="Please enter an email address."
+										minimum="5"
+										maximum="50"></xp:validateLength>
+								</xp:this.validators>
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label
+								value="Subject *"
+								id="rSubject_Label1"
+								for="rSubject1"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText
+								value="#{document1.RSubject}"
+								style="width:99%"
+								id="rSubject1"
+								required="true">
+								<xp:this.validators>
+									<xp:validateRequired
+										message="Please enter a subject."></xp:validateRequired>
+									<xp:validateLength
+										message="Please enter a subject."
+										minimum="5"
+										maximum="150"></xp:validateLength>
+								</xp:this.validators>
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label
+								value="Category"
+								id="rCategory_Label1"
+								for="rCategory1"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:comboBox
+								value="#{document1.RCategory}"
+								style="width:99%"
+								id="rCategory1">
+								<xp:selectItem
+									itemLabel="Suggest Article"
+									itemValue="article"></xp:selectItem>
+								<xp:selectItem
+									itemLabel="Change Profile Avatar"
+									itemValue="profile"></xp:selectItem>
+								<xp:selectItem
+									itemLabel="Feedback"
+									itemValue="feedback"></xp:selectItem>
+								<xp:selectItem
+									itemLabel="Other"
+									itemValue="other"></xp:selectItem>
+							</xp:comboBox>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label
+								value="Comment"
+								id="rBody_Label1"
+								for="rBody1"></xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputTextarea
+								value="#{document1.RBody}"
+								style="width:99%;height:200px"
+								id="rBody1"></xp:inputTextarea>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td></xp:td>
+						<xp:td>
+							<xc:recaptcha_cc>
+								<xc:this.behavior>
+									<xc:behavior>
+										<xc:this.errorHandling>
+											<xc:errorHandling
+												validateOnlyOnce="true"
+												errorMessageTxt="You've entered an incorrect captcha solution">
+											</xc:errorHandling>
+										</xc:this.errorHandling>
+										<xc:this.userInterface>
+											<xc:userInterface
+												focusOnLoad="true"></xc:userInterface>
+										</xc:this.userInterface>
+									</xc:behavior>
+								</xc:this.behavior>
+								<xc:this.recaptchaWidget>
+									<xc:recaptchaWidget
+										useHttps="false"
+										lang="en"
+										returnValIfServiceUnavailable="true"
+										publicKey="#{javascript:configCache.getCaptchaPublicKey()}"
+										privateKey="#{javascript:configCache.getCaptchaPrivateKey()}"
+										theme="oneui">
+									</xc:recaptchaWidget>
+								</xc:this.recaptchaWidget>
+							</xc:recaptcha_cc>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>&#160;</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td></xp:td>
+						<xp:td>
+							<xp:button
+								value="Submit"
+								id="button1"
+								styleClass="btn">
+								<xp:eventHandler
+									event="onclick"
+									submit="true"
+									refreshMode="complete">
+									<xp:this.action>
 										<xp:actionGroup>
-											<xp:executeScript>
-												<xp:this.script><![CDATA[#{javascript:
+											<xp:actionGroup>
+												<xp:executeScript>
+													<xp:this.script><![CDATA[#{javascript:
 													var date = new java.util.Date();
 													document1.replaceItemValue('RCreationDate', date);
 													document1.replaceItemValue('RState', 'open');										
 												}]]></xp:this.script>
-											</xp:executeScript>
-											<xp:openPage target="editDocument">
-												<xp:this.name><![CDATA[#{javascript:"home.xsp"}]]></xp:this.name>
-											</xp:openPage>
-											<xp:saveDocument var="document1"></xp:saveDocument>
+												</xp:executeScript>
+												<xp:openPage
+													target="editDocument">
+													<xp:this.name><![CDATA[#{javascript:"home.xsp"}]]></xp:this.name>
+												</xp:openPage>
+												<xp:saveDocument
+													var="document1"></xp:saveDocument>
+											</xp:actionGroup>
 										</xp:actionGroup>
-									</xp:actionGroup>
-								</xp:this.action>
-							</xp:eventHandler>
-						</xp:button>
-
-						<!--<xp:button value="Cancel" id="button8" styleClass="btn">
-							<xp:eventHandler event="onclick" submit="false">
-							<xp:this.script><![CDATA[window.history.back()]]></xp:this.script>
-							</xp:eventHandler>
+									</xp:this.action>
+								</xp:eventHandler>
 							</xp:button>
-							
-						-->
-					</xp:td>
-				</xp:tr>
-			</xp:table>
 
-		</div>
+							<!--
+								<xp:button value="Cancel" id="button8" styleClass="btn">
+								<xp:eventHandler event="onclick" submit="false">
+								<xp:this.script><![CDATA[window.history.back()]]></xp:this.script>
+								</xp:eventHandler> </xp:button>
+							-->
+						</xp:td>
+					</xp:tr>
+				</xp:table>
+
+			</xp:div>
+		</xp:this.facets>
 	</xc:ccLayoutBS3>
 </xp:view>
