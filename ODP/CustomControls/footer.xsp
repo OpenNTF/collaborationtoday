@@ -3,15 +3,15 @@
 	<hr />
 	<footer>
 		<p>
-			<a href="http://www.openntf.org">Hosted by OpenNTF</a>
+			<a href="http://www.openntf.org" target="_blank">Hosted by OpenNTF</a>
 			<xp:label value=" | "/>
 			<a href="http://openntf.org/legal/terms">Terms of use</a>
 			<xp:label value=" | "/>
 			<a href="http://openntf.org/legal/privacypolicy">Privacy Policy</a>
 			<xp:label value=" | "/>
-			<a href="http://openntf.org/Internal/home.nsf/dx/Contact_OpenNTF">Contact OpenNTF</a>
+			<a href="http://www.openntf.org/main.nsf/page.xsp?name=Get_Involved">Contact OpenNTF</a>
 			<xp:label value=" | "/>
-			<a href="http://openntf.org/Internal/home.nsf/dx/Follow_OpenNTF">Follow OpenNTF</a>
+			<a href="http://www.openntf.org/main.nsf/blogsAll.xsp">Follow OpenNTF</a>
 		</p>
 	</footer>
 </xp:view>
