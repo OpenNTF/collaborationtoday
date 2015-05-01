@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	createForm="false"
+	style="background-color: #eee">
+	<div
+		class="container">
+		<div
+			class="row"
+			style="padding-top: 190px;">
+			<div
+				class="col-md-6 col-md-offset-3">
+				<div
+					class="panel panel-info">
+					<div
+						class="panel-heading">
+						<h3
+							class="panel-title">
+							<xp:text
+								disableTheme="true">
+								<xp:this.value><![CDATA[#{javascript:"Sign in to "+@DbTitle()}]]></xp:this.value>
+							</xp:text>
+						</h3>
+					</div>
+					<div
+						class="panel-body">
+						<form
+							accept-charset="UTF-8"
+							role="form"
+							method="post"
+							action="/names.nsf?login">
+							<div
+								class="row">
+								<div
+									class="col-lg-3">
+									<xp:image
+										url="/openntf_iconlogo.jpg"
+										style="width:100%"
+										id="image1">
+									</xp:image>
+								</div>
+								<div
+									class="col-lg-9">
+									<div
+										class="form-group">
+										<input
+											class="form-control"
+											placeholder="Username"
+											name="username"
+											type="text" />
+									</div>
+									<div
+										class="form-group">
+										<input
+											class="form-control"
+											placeholder="Password"
+											name="password"
+											type="password"
+											value="" />
+									</div>
+									<input
+										type="hidden"
+										name="redirectto"
+										value="#{javascript:'/'+database.getFilePath().replace('\\', '/');}" />
+								</div>
+							</div>
+							<div
+								class="row">
+								<div
+									class="col-lg-6">
+									<input
+										class="btn btn-primary btn-block"
+										type="submit"
+										value="Login me in" />
+								</div>
+								<div
+									class="col-lg-6">
+									<xp:link
+										styleClass="btn btn-warning btn-block"
+										value="/home.xsp"
+										text="Cancel">
+									</xp:link>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</xp:view>

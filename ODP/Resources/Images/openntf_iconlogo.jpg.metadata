@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="aea2" sequence="1" unid="D704820680815E21C1257E380062EB3E">
+<created><datetime dst="true">20150501T200027,50+02</datetime></created>
+<modified><datetime dst="true">20150501T200027,54+02</datetime></modified>
+<revised><datetime dst="true">20150501T200027,53+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150501T200027,53+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150501T200027,53+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$TITLE"><text>openntf_iconlogo.jpg</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+
+<item name="$MimeType" sign="true"><text>image/jpeg</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20150501T200014,00+02</datetime></item>
+<item name="$ImageNames" sign="true"><text>openntf_iconlogo.jpg</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>

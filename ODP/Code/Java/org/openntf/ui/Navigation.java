@@ -42,11 +42,22 @@ public class Navigation implements Serializable {
 
 	private void initFooter() {
 		footer = new ArrayList<Page>();
-		footer.add(new Page("Hosted by OpenNTF", "", "http://www.openntf.org",true));
+		footer.add(new Page("Hosted by OpenNTF", "", "http://www.openntf.org", true));
 		footer.add(new Page("Terms of use", "", "http://openntf.org/legal/terms"));
 		footer.add(new Page("Privacy Policy", "", "http://openntf.org/legal/privacypolicy"));
 		footer.add(new Page("Contact OpenNTF", "", "http://www.openntf.org/main.nsf/page.xsp?name=Get_Involved"));
 		footer.add(new Page("Follow OpenNTF", "", "http://www.openntf.org/main.nsf/blogsAll.xsp"));
+		try {
+			if (ExtLibUtil.getCurrentSession().getEffectiveUserName().equals("Anonymous")) {
+				footer.add(new Page("Login", "", "login.xsp"));
+			} else {
+				// render if logged in
+				footer.add(new Page("Logout", "", "/" + ExtLibUtil.getCurrentDatabase().getFilePath() + "?logout&redirectto=" + "/" + ExtLibUtil.getCurrentDatabase().getFilePath()));
+			}
+		} catch (NotesException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	public List<Page> getNavigation() {
