@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view
 	xmlns:xp="http://www.ibm.com/xsp/core">
-	<p
-		class="pull-right visible-xs">
-		<button
-			type="button"
-			class="btn btn-primary"
-			data-toggle="offcanvas">Categories...</button>
-	</p>
 	<div
-		class="_page-header">
+		class="page-header">
+		<p
+			class="pull-right visible-xs">
+			<button
+				type="button"
+				class="btn btn-primary"
+				data-toggle="offcanvas">Categories...</button>
+		</p>
 
 		<h3>
 

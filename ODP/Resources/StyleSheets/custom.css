@@ -3,7 +3,7 @@ body {
 	padding-bottom: 40px;
 }
 
-.h1, .h2, .h3, h1, h2, h3 {
+h1, h2, h3 {
   margin-top: 0px;
   margin-bottom: 20px;
 }
@@ -82,7 +82,7 @@ table.contact td {
 }
 
 .newsentry {
-	display: table-cell;
+	display: block;
 	padding-bottom: 30px;
 }
 
@@ -93,7 +93,7 @@ table.contact td {
 .page-header {
 	margin: 0px 0 8px 0;
 	background-color: #fafafa;
-	padding: 0 10px 0 10px;
+	padding: 10px 10px 0 10px;
 	border: none;
 	border-bottom: 1px solid #ccc;
 }
@@ -301,7 +301,7 @@ p {
 }
 
 .newsEntryDiv h3 {
-	line-height: 20px;
+	line-height: 30px;
 	margin-top: 0px;
 }
 

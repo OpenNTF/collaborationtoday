@@ -57,11 +57,9 @@
 					}
 				]]></xp:this.value>
 			</xp:scriptBlock>
-			<br />
-			<br />
-			<xp:inputText id="inputText1" style="width:720px;"/>
-			<br />
-			<br />
+			<div class="form-group">
+			<xp:inputText id="inputText1" styleClass="form-control"/>
+			</div>
 			<br />
 			<div id="busy" class="busyHidden"></div>
 			<xp:button value="Capture and Edit" id="button1" styleClass="btn">

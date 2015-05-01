@@ -35,7 +35,7 @@
 		<xp:button
 			value="Update"
 			id="button5"
-			styleClass="btn">
+			styleClass="btn btn-info">
 			<xp:this.rendered><![CDATA[#{javascript:!document11.isNewNote()}]]></xp:this.rendered>
 			<xp:eventHandler
 				event="onclick"
@@ -60,7 +60,7 @@
 		<xp:button
 			value="Create"
 			id="button1"
-			styleClass="btn">
+			styleClass="btn btn-primary">
 			<xp:this.rendered><![CDATA[#{javascript:document11.isNewNote()}]]></xp:this.rendered>
 			<xp:eventHandler
 				event="onclick"
@@ -100,7 +100,7 @@
 		<xp:button
 			value="Cancel"
 			id="button8"
-			styleClass="btn">
+			styleClass="btn btn-warning">
 			<xp:eventHandler
 				event="onclick"
 				submit="false">
@@ -109,123 +109,119 @@
 		</xp:button>
 		<br></br>
 		<br></br>
-		<br></br>
-		<xp:table
+		<xp:div
 			id="userInfoTable">
-			<tr>
-				<td>
-					<xp:label
-						value="Display Name (*)"
-						id="pDisplayName_Label1"
-						for="pDisplayName1"></xp:label>
-				</td>
-				<td>
-					<xp:inputText
-						value="#{document11.PDisplayName}"
-						id="pDisplayName1"
-						style="width:500px"
-						required="true">
-						<xp:this.validators>
-							<xp:validateRequired
-								message="Define display name"></xp:validateRequired>
-							<xp:validateLength
-								minimum="3"
-								maximum="40"
-								message="Define display name (5 - 40 chars)"></xp:validateLength>
-						</xp:this.validators>
-					</xp:inputText>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<xp:label
-						value="IBM Champion"
-						id="label1"
-						for="pDisplayName1"></xp:label>
-				</td>
-				<td>
+			<div
+				class="form-group">
+				<xp:label
+					value="Display Name (*)"
+					id="pDisplayName_Label1"
+					for="pDisplayName1"></xp:label>
+				<xp:inputText
+					value="#{document11.PDisplayName}"
+					id="pDisplayName1"
+					style="width:500px"
+					required="true"
+					styleClass="form-control">
+					<xp:this.validators>
+						<xp:validateRequired
+							message="Define display name"></xp:validateRequired>
+						<xp:validateLength
+							minimum="3"
+							maximum="40"
+							message="Define display name (5 - 40 chars)"></xp:validateLength>
+					</xp:this.validators>
+				</xp:inputText>
+			</div>
+			<div
+				class="for-group">
+				<xp:label
+					value="IBM Champion"
+					id="label1"
+					for="pDisplayName1"></xp:label>
+				<div
+					class="checkbox">
 					<xp:checkBox
 						text="yes"
 						id="checkBox1"
 						value="#{document11.PChampion}"
 						checkedValue="1">
 					</xp:checkBox>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<xp:label
-						value="E-Mail"
-						id="pEMail_Label1"
-						for="pEMail1"></xp:label>
-				</td>
-				<td>
-					<xp:inputText
-						value="#{document11.PEMail}"
-						style="width:500px"
-						id="pEMail1"></xp:inputText>
-				</td>
-			</tr>
+				</div>
+			</div>
+			<div
+				class="form-group">
+				<xp:label
+					value="E-Mail"
+					id="pEMail_Label1"
+					for="pEMail1"></xp:label>
+				<xp:inputText
+					value="#{document11.PEMail}"
+					style="width:500px"
+					id="pEMail1"
+					styleClass="form-control"></xp:inputText>
+			</div>
 			<xp:panel
 				rendered="#{javascript:configCache.isUserAvatarModerator(@UserName())}">
-				<tr>
-					<td>
-						<xp:label
-							value="Picture Type"
-							id="pPictureType_Label1"
-							for="pPictureType1"></xp:label>
-					</td>
-					<td>
-						<xp:comboBox
-							value="#{document11.PPictureType}"
-							style="width:500px"
-							id="pPictureType1">
-							<xp:eventHandler
-								event="onchange"
-								submit="true"
-								disableValidators="true"
-								refreshMode="partial"
-								refreshId="userInfoTable"
-								execMode="partial"
-								execId="userInfoTable" />
+				<div
+					class="form-group">
+					<xp:label
+						value="Picture Type"
+						id="pPictureType_Label1"
+						for="pPictureType1"></xp:label>
+					<xp:comboBox
+						value="#{document11.PPictureType}"
+						style="width:500px"
+						id="pPictureType1"
+						styleClass="form-control">
+						<xp:eventHandler
+							event="onchange"
+							submit="true"
+							disableValidators="true"
+							refreshMode="partial"
+							refreshId="userInfoTable"
+							execMode="partial"
+							execId="userInfoTable" />
 
-							<xp:selectItem
-								itemLabel="No Picture"
-								itemValue="nopicture" />
-							<xp:selectItem
-								itemLabel="Multiple Authors"
-								itemValue="multiple" />
-							<xp:selectItem
-								itemLabel="Gravatar"
-								itemValue="gravatar" />
-							<xp:selectItem
-								itemLabel="URL"
-								itemValue="url" />
-							<xp:selectItem
-								itemLabel="mypic"
-								itemValue="mypic" />
-						</xp:comboBox>
-					</td>
-				</tr>
-				<xp:tr
+						<xp:selectItem
+							itemLabel="No Picture"
+							itemValue="nopicture" />
+						<xp:selectItem
+							itemLabel="Multiple Authors"
+							itemValue="multiple" />
+						<xp:selectItem
+							itemLabel="Gravatar"
+							itemValue="gravatar" />
+						<xp:selectItem
+							itemLabel="URL"
+							itemValue="url" />
+						<xp:selectItem
+							itemLabel="mypic"
+							itemValue="mypic" />
+					</xp:comboBox>
+				</div>
+				<xp:div
 					rendered="#{document11.PPictureType != 'mypic'}">
-					<td>
+					<div
+						class="form-group">
 						<xp:label
 							value="Picture URL"
 							id="pPictureURL_Label1"
 							for="pPictureURL1"></xp:label>
-					</td>
-					<td>
+
 						<xp:inputText
 							value="#{document11.PPictureURL}"
 							id="pPictureURL1"
-							style="width:500px"></xp:inputText>
-					</td>
-				</xp:tr>
-				<xp:tr
+							style="width:500px"
+							styleClass="form-control"></xp:inputText>
+					</div>
+				</xp:div>
+				<xp:div
 					rendered="#{document11.PPictureType == 'mypic'}">
-					<td>myPic</td>
-					<td>
+					<div
+						class="form-group">
+						<label>myPic</label>
+
 						<xp:repeat
 							value="#{document11.myPicNames}"
 							var="name"
@@ -307,79 +303,73 @@
 								</xp:this.parameters>
 							</xp:link>
 						</xp:panel>
-					</td>
-				</xp:tr>
+					</div>
+				</xp:div>
 			</xp:panel>
-			<tr>
-				<td>
-					<xp:label
-						value="Twitter"
-						id="pTwitter_Label1"
-						for="pTwitter1"></xp:label>
-				</td>
-				<td>
-					<xp:inputText
-						value="#{document11.PTwitter}"
-						style="width:500px"
-						id="pTwitter1"></xp:inputText>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<xp:label
-						value="StackOverflow"
-						id="pStackOverflow_Label1"
-						for="pStackOverflow1"></xp:label>
-				</td>
-				<td>
-					<xp:inputText
-						style="width:500px"
-						value="#{document11.PStackOverflow}"
-						id="pStackOverflow1"></xp:inputText>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<xp:label
-						value="LinkedIn"
-						id="pLinkedIn_Label1"
-						for="pLinkedIn1"></xp:label>
-				</td>
-				<td>
-					<xp:inputText
-						value="#{document11.PLinkedIn}"
-						style="width:500px"
-						id="pLinkedIn1"></xp:inputText>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<xp:label
-						value="OpenNTF"
-						id="pOpenNTF_Label1"
-						for="pOpenNTF1"></xp:label>
-				</td>
-				<td>
-					<xp:inputText
-						value="#{document11.POpenNTF}"
-						style="width:500px"
-						id="pOpenNTF1"></xp:inputText>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<xp:label
-						value="Lotus Registration"
-						id="pLotusRegistration_Label1"
-						for="pLotusRegistration1"></xp:label>
-				</td>
-				<td>
-					<xp:inputText
-						style="width:500px"
-						value="#{document11.PLotusRegistration}"
-						id="pLotusRegistration1"></xp:inputText>
-				</td>
-			</tr>
-		</xp:table>
+			<div
+				class="form-group">
+				<xp:label
+					value="Twitter"
+					id="pTwitter_Label1" />
+
+				<xp:inputText
+					value="#{document11.PTwitter}"
+					style="width:500px"
+					id="pTwitter1"
+					styleClass="form-control"></xp:inputText>
+			</div>
+			<div
+				class="form-group">
+				<xp:label
+					value="StackOverflow"
+					id="pStackOverflow_Label1"
+					for="pStackOverflow1"></xp:label>
+
+				<xp:inputText
+					style="width:500px"
+					value="#{document11.PStackOverflow}"
+					id="pStackOverflow1"
+					styleClass="form-control"></xp:inputText>
+			</div>
+			<div
+				class="form-group">
+				<xp:label
+					value="LinkedIn"
+					id="pLinkedIn_Label1"
+					for="pLinkedIn1"></xp:label>
+
+				<xp:inputText
+					value="#{document11.PLinkedIn}"
+					style="width:500px"
+					id="pLinkedIn1"
+					styleClass="form-control"></xp:inputText>
+			</div>
+			<div
+				class="form-group">
+				<xp:label
+					value="OpenNTF"
+					id="pOpenNTF_Label1"
+					for="pOpenNTF1"></xp:label>
+
+				<xp:inputText
+					value="#{document11.POpenNTF}"
+					style="width:500px"
+					id="pOpenNTF1"
+					styleClass="form-control"></xp:inputText>
+			</div>
+			<div
+				class="form-group">
+				<xp:label
+					value="Lotus Registration"
+					id="pLotusRegistration_Label1"
+					for="pLotusRegistration1"></xp:label>
+
+				<xp:inputText
+					style="width:500px"
+					value="#{document11.PLotusRegistration}"
+					id="pLotusRegistration1"
+					styleClass="form-control"></xp:inputText>
+			</div>
+		</xp:div>
 	</xc:moderationLayout>
 </xp:view>

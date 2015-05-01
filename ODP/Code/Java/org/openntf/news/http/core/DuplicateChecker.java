@@ -1,5 +1,6 @@
 package org.openntf.news.http.core;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import lotus.domino.Database;
@@ -9,11 +10,15 @@ import lotus.domino.Document;
 
 import com.ibm.xsp.extlib.util.ExtLibUtil;
 
-public class DuplicateChecker {
+public class DuplicateChecker implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5618803426295631620L;
 	List<DuplicateEntry> duplicatesList = new ArrayList<DuplicateEntry>();
 
 	public DuplicateChecker() {
-
+		//
 	}
 
 	public List<DuplicateEntry> checkDuplicates(String sNID, String sNTitle, String sNLink, Boolean bDoFuzzySearch) {

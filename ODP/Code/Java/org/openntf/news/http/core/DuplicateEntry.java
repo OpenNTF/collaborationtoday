@@ -1,13 +1,19 @@
 package org.openntf.news.http.core;
 
-public class DuplicateEntry {
+import java.io.Serializable;
 
+public class DuplicateEntry implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6196240891950391124L;
 	private String Nid;
 	private String NTitle;
 	private String NLink;
 	
 	public DuplicateEntry(){
-		
+		//
 	}
 
 	public String getNid() {
