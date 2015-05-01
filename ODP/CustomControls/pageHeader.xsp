@@ -2,21 +2,21 @@
 <xp:view
 	xmlns:xp="http://www.ibm.com/xsp/core">
 	<p
-		class="visible-xs">
+		class="pull-right visible-xs">
 		<button
 			type="button"
 			class="btn btn-primary"
 			data-toggle="offcanvas">Categories...</button>
 	</p>
 	<div
-		class="page-header">
+		class="_page-header">
 
-		<h1>
-			<small>
-				<xp:text
-					disableTheme="true"
-					value="#{compositeData.value}" />
-			</small>
+		<h3>
+
+			<xp:text
+				disableTheme="true"
+				value="#{compositeData.value}" />
+
 			&#160;
 			<xp:image
 				url="/champion_24x24.png"
@@ -27,7 +27,7 @@
 }}]]></xp:this.rendered>
 			</xp:image>
 
-		</h1>
+		</h3>
 
 	</div>
 </xp:view>

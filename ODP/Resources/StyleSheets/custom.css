@@ -3,6 +3,11 @@ body {
 	padding-bottom: 40px;
 }
 
+.h1, .h2, .h3, h1, h2, h3 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
 table.contact td {
 	padding: 10px;
 }
@@ -78,7 +83,7 @@ table.contact td {
 
 .newsentry {
 	display: table-cell;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 }
 
 .newsentry:hover .socialshare {
@@ -100,14 +105,14 @@ table.contact td {
 
 .newEntryImageContainer {
 	margin: 0px 20px 0 0;
-	width: 120px;
-	height: 120px;
+	width: 100px;
+	height: 100px;
 }
 
 .newsEntryImageDiv .newsEntryImage {
 	margin: 0px 0 0 0;
-	width: 120px;
-	height: 120px;
+	width: 100px;
+	height: 100px;
 }
 
 .newsEntryImage {
@@ -120,9 +125,8 @@ table.contact td {
 
 .newsEntryDiv {
 	margin-left: 80px;
+	display: table-cell;
 }
-
-.newsEntryDiv
  
 h3 {
 	line-height: 20px;
@@ -152,9 +156,6 @@ small {
 	float: right;
 }
 
-.newsentry
-:hover
- 
 .expandNews {
 	display: inline-block;
 }
@@ -244,9 +245,7 @@ p {
 }
 
 /* Dropdown navigation */
-.nav {
-	margin-bottom: 5px;
-}
+
 
 @media ( max-width : 979px) {
 	/* Less margin when the categories dropdown was part of the content area 
@@ -303,6 +302,7 @@ p {
 
 .newsEntryDiv h3 {
 	line-height: 20px;
+	margin-top: 0px;
 }
 
 .newsEntryDiv p {
@@ -399,10 +399,6 @@ body {
 	margin: 5px 0 9px;
 }
 
-/* Dropdown navigation */
-.nav {
-	margin-bottom: 5px;
-}
 
 @media ( max-width : 979px) {
 	/* Less margin when the categories dropdown was part of the content area 

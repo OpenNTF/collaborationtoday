@@ -65,14 +65,7 @@ if(url.indexOf(".xsp")==-1){
 	<div
 		class="container">
 		<div
-			class="row row-offcanvas row-offcanvas-left">
-			<div
-				class="col-lg-3 sidebar-offcanvas">
-				<xp:callback
-					facetName="leftColumn"
-					id="leftColumn">
-				</xp:callback>
-			</div>
+			class="row row-offcanvas row-offcanvas-right">
 			<div
 				class="col-lg-9">
 				<xp:callback
@@ -80,7 +73,13 @@ if(url.indexOf(".xsp")==-1){
 					id="middleColumn">
 				</xp:callback>
 			</div>
-
+			<div
+				class="col-lg-3 sidebar-offcanvas">
+				<xp:callback
+					facetName="leftColumn"
+					id="leftColumn">
+				</xp:callback>
+			</div>
 		</div>
 	</div>
 </xp:view>

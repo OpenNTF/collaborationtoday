@@ -25,7 +25,6 @@
 			<xp:div
 				xp:key="middleColumn">
 				<xp:panel
-
 					readonly="true"
 					loaded="${	param.filter != 'popular'}">
 					<xc:pageHeader
