@@ -12,7 +12,7 @@ if(url.indexOf(".xsp")==-1){
 		class="navbar navbar-inverse navbar-fixed-top"
 		role="navigation">
 		<div
-			class="container-fluid">
+			class="container">
 			<div
 				class="navbar-header">
 				<button
@@ -48,7 +48,8 @@ if(url.indexOf(".xsp")==-1){
 					<xp:repeat
 						value="#{javascript:nav.navigation}"
 						var="nav">
-						<xp:panel tagName="li">
+						<xp:panel
+							tagName="li">
 							<xp:this.styleClass><![CDATA[#{javascript:view.getPageName().indexOf(nav.getUrl()) != -1 ? "active" : ""}]]></xp:this.styleClass>
 							<xp:link
 								text="#{javascript:nav.getLabel()}"
@@ -62,30 +63,24 @@ if(url.indexOf(".xsp")==-1){
 	</nav>
 
 	<div
-		class="container-fluid">
+		class="container">
 		<div
-			class="row">
+			class="row row-offcanvas row-offcanvas-left">
 			<div
-				class="col-lg-2">
+				class="col-lg-3 sidebar-offcanvas">
 				<xp:callback
 					facetName="leftColumn"
 					id="leftColumn">
 				</xp:callback>
 			</div>
 			<div
-				class="col-lg-7">
+				class="col-lg-9">
 				<xp:callback
 					facetName="middleColumn"
 					id="middleColumn">
 				</xp:callback>
 			</div>
-			<div
-				class="col-lg-3">
-				<xp:callback
-					facetName="rightColumn"
-					id="rightColumn">
-				</xp:callback>
-			</div>
+
 		</div>
 	</div>
 </xp:view>

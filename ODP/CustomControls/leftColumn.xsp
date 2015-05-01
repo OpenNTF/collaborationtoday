@@ -2,8 +2,8 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 
 	<div class="sidebar-nav">
-		<ul class="nav nav-list hidden-phone hidden-tablet">
-			<xc:leftColumnLineItems showHeaders="yes"/>
-		</ul>
+		<div class="list-group hidden-phone hidden-tablet">
+			<xc:leftColumnLineItemsGroup />
+		</div>
 	</div>
 </xp:view>

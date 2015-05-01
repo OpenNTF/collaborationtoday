@@ -15,6 +15,14 @@
 		<href>bower_components/bootstrap/dist/js/bootstrap.min.js</href>
 	</resource>
 	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>bower_components/offcanvas.js</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>bower_components/offcanvas.css</href>
+	</resource>
+	<resource>
 		<content-type>text/css</content-type>
 		<href>custom.css</href>
 	</resource>
