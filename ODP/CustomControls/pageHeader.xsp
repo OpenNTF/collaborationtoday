@@ -7,7 +7,7 @@
 			class="pull-right visible-xs">
 			<button
 				type="button"
-				class="btn btn-primary"
+				class="btn btn-xs btn-primary"
 				data-toggle="offcanvas">Categories...</button>
 		</p>
 
