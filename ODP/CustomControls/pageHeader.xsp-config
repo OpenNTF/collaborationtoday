@@ -21,5 +21,12 @@
       <property-name>cat</property-name>
       <property-class>string</property-class>
     </property>
+    <property>
+      <property-name>buttonText</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
   </composite-component>
 </faces-config>

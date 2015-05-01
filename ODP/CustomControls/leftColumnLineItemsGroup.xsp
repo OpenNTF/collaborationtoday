@@ -2,42 +2,44 @@
 <xp:view
 	xmlns:xp="http://www.ibm.com/xsp/core">
 
-
-	<xp:link
-		text="Recent"
-		value="/home.xsp?filter=all">
-		<xp:this.styleClass><![CDATA[#{javascript:var active= (param.filter == null) ? 'active' : param.filter.equals("all") ? 'active' : '';
+	<div
+		class="categories-list">
+		<xp:link
+			text="Recent"
+			value="/home.xsp?filter=all">
+			<xp:this.styleClass><![CDATA[#{javascript:var active= (param.filter == null) ? 'active' : param.filter.equals("all") ? 'active' : '';
 return "list-group-item "+active;}]]></xp:this.styleClass>
-	</xp:link>
-
-	<xp:repeat
-		rows="30"
-		value="${configCache.categories}"
-		indexVar="index2"
-		var="category">
-		<xp:panel
-			rendered="#{compositeData.showHeaders == 'yes'}"
-			tagName="a"
-			styleClass="nav-header">
-			<xp:text
-				value="#{category.displayName}" />
-		</xp:panel>
+		</xp:link>
 
 		<xp:repeat
 			rows="30"
-			value="#{javascript:configCache.getTypesForCategory(category.getID())}"
-			indexVar="index"
-			var="entry">
-			<xp:link
-				value="/home.xsp?filter=#{entry.ID}">
-				<xp:this.text><![CDATA[#{javascript:
+			value="${configCache.categories}"
+			indexVar="index2"
+			var="category">
+			<xp:panel
+				rendered="#{compositeData.showHeaders == 'yes'}"
+				tagName="a"
+				styleClass="nav-header">
+				<xp:link
+					styleClass="list-group-item disabled entrycat"
+					text="#{category.displayName}" />
+			</xp:panel>
+
+			<xp:repeat
+				rows="30"
+				value="#{javascript:configCache.getTypesForCategory(category.getID())}"
+				indexVar="index"
+				var="entry">
+				<xp:link
+					value="/home.xsp?filter=#{entry.ID}">
+					<xp:this.text><![CDATA[#{javascript:
 						(compositeData.showHeaders != "yes" ? category.getDisplayName() + " - " : "") + entry.getDisplayName()
 					}]]></xp:this.text>
-				<xp:this.styleClass><![CDATA[#{javascript:var active= (param.filter == entry.getID()) ? 'active' : '';
+					<xp:this.styleClass><![CDATA[#{javascript:var active= (param.filter == entry.getID()) ? 'active' : '';
 return "list-group-item "+active;}]]></xp:this.styleClass>
-			</xp:link>
+				</xp:link>
 
+			</xp:repeat>
 		</xp:repeat>
-	</xp:repeat>
-
+	</div>
 </xp:view>

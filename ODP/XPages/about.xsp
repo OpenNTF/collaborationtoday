@@ -94,8 +94,12 @@
 						indexVar="index"
 						var="entry">
 						<xp:panel>
-							<xp:text
-								value="#{entry.displayName}: " />
+							<h3>
+								<small>
+									<xp:text
+										value="#{entry.displayName}: " />
+								</small>
+							</h3>
 							<xp:text
 								disableTheme="true">
 								<xp:this.value><![CDATA[#{javascript:
@@ -103,6 +107,7 @@
 								moderators == null ? "" : @Implode(moderators, ", ")
 							}]]></xp:this.value>
 							</xp:text>
+							<br />
 							<br />
 						</xp:panel>
 					</xp:repeat>

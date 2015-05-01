@@ -107,23 +107,23 @@
 				<p>There is a REST API available to access news entries.</p>
 				<p>
 					<span
-						class="label">Base URL</span>
+						class="label label-primary">Base URL</span>
 					&#160;http://collaborationtoday.info/ct.nsf/api.xsp
 				</p>
 				<p>
 					<span
-						class="label">URL parameter 'filter'</span>
+						class="label label-primary">URL parameter 'filter'</span>
 					&#160;'all', 'popular', 'top', 'spotlight' and category names like
 					'xpages', 'cnxdev', 'social', etc.
 				</p>
 				<p>
 					<span
-						class="label">URL parameter 'format'</span>
+						class="label label-primary">URL parameter 'format'</span>
 					&#160;'json', 'jsonp'
 				</p>
 				<p>
 					<span
-						class="label">URL parameter 'count'</span>
+						class="label label-primary">URL parameter 'count'</span>
 					&#160;maximal amount of entries
 				</p>
 				<p>

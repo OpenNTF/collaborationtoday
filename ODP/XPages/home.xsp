@@ -28,14 +28,17 @@
 					readonly="true"
 					loaded="${	param.filter != 'popular'}">
 					<xc:pageHeader
+						buttonText="Categories..."
 						loaded="${param.filter == 'all'}">
 						<xc:this.value><![CDATA[#{javascript:context.getUrlParameter("pid").equals("") ? "Recent" : "Recent by "+personsCache.getPerson(context.getUrlParameter("pid")).getDisplayName();}]]></xc:this.value>
 					</xc:pageHeader>
 					<xc:pageHeader
+						buttonText="Categories..."
 						loaded="${param.filter == null}">
 						<xc:this.value><![CDATA[#{javascript:context.getUrlParameter("pid").equals("") ? "Recent" : "Recent by "+personsCache.getPerson(context.getUrlParameter("pid")).getDisplayName();}]]></xc:this.value>
 					</xc:pageHeader>
 					<xc:pageHeader
+						buttonText="Categories..."
 						loaded="${param.filter != null and param.filter != 'all'}"
 						cat="#{javascript:param.filter}">
 						<xc:this.value><![CDATA[#{javascript:var t = configCache.getType(param.filter).getDisplayName();
@@ -103,7 +106,7 @@ param.filter == 'all' ? newsCache.getEntries(param.pid) : newsCache.getEntriesBy
 					readonly="true"
 					loaded="${param.filter == 'popular'}">
 					<xc:pageHeader
-						value="Popular" />
+						value="Popular" buttonText="Categories..." />
 
 					<xp:repeat
 						id="r2"

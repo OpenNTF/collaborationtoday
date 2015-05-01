@@ -7,11 +7,20 @@ public class Page implements Serializable {
 	private String label;
 	private String url;
 	private String icon;
+	private boolean newWindow;
 
 	public Page(String label, String icon, String url) {
 		this.label = label;
 		this.icon = icon;
 		this.url = url;
+		newWindow = false;
+	}
+	
+	public Page(String label, String icon, String url, boolean newWindow) {
+		this.label = label;
+		this.icon = icon;
+		this.url = url;
+		this.newWindow = newWindow;
 	}
 
 	public String getLabel() {
@@ -24,6 +33,10 @@ public class Page implements Serializable {
 
 	public String getIcon() {
 		return icon;
+	}
+
+	public boolean isNewWindow() {
+		return newWindow;
 	}
 	
 	

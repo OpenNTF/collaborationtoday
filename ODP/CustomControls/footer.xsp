@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
-	<hr />
-	<footer>
-		<p>
-			<a href="http://www.openntf.org" target="_blank">Hosted by OpenNTF</a>
-			<xp:label value=" | "/>
-			<a href="http://openntf.org/legal/terms">Terms of use</a>
-			<xp:label value=" | "/>
-			<a href="http://openntf.org/legal/privacypolicy">Privacy Policy</a>
-			<xp:label value=" | "/>
-			<a href="http://www.openntf.org/main.nsf/page.xsp?name=Get_Involved">Contact OpenNTF</a>
-			<xp:label value=" | "/>
-			<a href="http://www.openntf.org/main.nsf/blogsAll.xsp">Follow OpenNTF</a>
-		</p>
-	</footer>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core">
+	<nav
+		class="navbar navbar-default navbar-fixed-bottom footer"
+		role="navigation">
+		<div
+			class="container">
+			<div
+				class="navbar-header">
+				<button
+					type="button"
+					class="navbar-toggle"
+					data-toggle="collapse"
+					data-target="#navbar-bottom">
+					<span
+						class="sr-only">Toggle navigation</span>
+					<span
+						class="icon-bar"></span>
+					<span
+						class="icon-bar"></span>
+					<span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<div
+				class="collapse navbar-collapse" id="navbar-bottom">
+				<ul
+					class="nav navbar-nav navbar-right">
+					<xp:repeat
+						value="#{javascript:nav.footer}"
+						var="nav">
+						<xp:panel
+							tagName="li">
+							<xp:this.styleClass><![CDATA[#{javascript:view.getPageName().indexOf(nav.getUrl()) != -1 ? "active" : ""}]]></xp:this.styleClass>
+							<xp:link
+								text="#{javascript:nav.getLabel()}"
+								value="#{javascript:nav.getUrl()}">
+								<xp:this.target><![CDATA[#{javascript:nav.isNewWindow() ? "_blank" : ""}]]></xp:this.target>
+							</xp:link>
+						</xp:panel>
+					</xp:repeat>
+				</ul>
+			</div><!--.nav-collapse -->
+		</div>
+	</nav>
 </xp:view>

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" createForm="false">
-	
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	createForm="false">
+
 	<xp:this.pageTitle><![CDATA[${javascript:
 		if (!param.filter) {
 			return "Top Stories | Collaboration Today";
@@ -12,40 +15,72 @@
 			return configCache.getCategory(configCache.getType(param.filter).getCategoryId()).getDisplayName() + " - " + configCache.getType(param.filter).getDisplayName() + " | Collaboration Today";
 		}
 	}]]></xp:this.pageTitle>
-	
+
 	<xc:layout>
 		<xp:this.facets>
-			<xc:rightColumn xp:key="rightColumn"/>
-			<xc:leftColumn xp:key="leftColumn"/>
+			<xc:rightColumn
+				xp:key="rightColumn" />
+			<xc:leftColumn
+				xp:key="leftColumn" />
 		</xp:this.facets>
-		<!-- 
-		<xp:panel readonly="true" loaded="${param.filter != null and param.filter != 'popular'}">
-		 -->
-		 
-		 <div id="surveyMonkeyInfo" style="width:100%;font-size:10px;color:#666;">
-		 	<div>
-		 		<iframe id="sm_e_s" src="https://de.surveymonkey.com/jsEmbed.aspx?sm=PrOfsJRIWoy1I1WK2_2fhY9w_3d_3d" width="100%" height="350" style="border:0px;padding-bottom:4px;" frameborder="0" allowtransparency="true" ></iframe>
-		 	</div>
-		 </div>
-		 <br></br>
-		 
-<xp:panel readonly="true" loaded="${	param.filter != 'popular'}">
-			<xc:pageHeader value="Recent" loaded="${param.filter == 'all'}"/>
-			<xc:pageHeader value="Recent" loaded="${param.filter == null}"/>
-			<xc:pageHeader value="${javascript:configCache.getType(param.filter).getDisplayName()}" loaded="${param.filter != null and param.filter != 'all'}"/>
+		<!--
+			<xp:panel readonly="true" loaded="${param.filter != null and
+			param.filter != 'popular'}">
+		-->
 
-			<xp:repeat id="r1" var="entryA" rows="30" removeRepeat="true">
+		<div
+			id="surveyMonkeyInfo"
+			style="width:100%;font-size:10px;color:#666;">
+			<div>
+				<iframe
+					id="sm_e_s"
+					src="https://de.surveymonkey.com/jsEmbed.aspx?sm=PrOfsJRIWoy1I1WK2_2fhY9w_3d_3d"
+					width="100%"
+					height="350"
+					style="border:0px;padding-bottom:4px;"
+					frameborder="0"
+					allowtransparency="true"></iframe>
+			</div>
+		</div>
+		<br></br>
+
+		<xp:panel
+			readonly="true"
+			loaded="${	param.filter != 'popular'}">
+			<xc:pageHeader
+				value="Recent"
+				loaded="${param.filter == 'all'}"
+				buttonText="Categories..." />
+			<xc:pageHeader
+				value="Recent"
+				loaded="${param.filter == null}"
+				buttonText="Categories..." />
+			<xc:pageHeader
+				value="${javascript:configCache.getType(param.filter).getDisplayName()}"
+				loaded="${param.filter != null and param.filter != 'all'}"
+				buttonText="Categories..." />
+
+			<xp:repeat
+				id="r1"
+				var="entryA"
+				rows="30"
+				removeRepeat="true">
 				<xp:this.value><![CDATA[${javascript:
 					if (param.filter == null) return newsCache.getEntries();
 					param.filter == 'all' ? newsCache.getEntries() : newsCache.getEntriesByType(param.filter)
 				}]]></xp:this.value>
-				
-				<xc:newsEntry id="lkewrej"
+
+				<xc:newsEntry
+					id="lkewrej"
 					author="#{entryA.PID}"
 					typeId="#{entryA.TID}"
-					imageURL="#{entryA.imageURL}" link="#{entryA.link}" newsAbstract="#{entryA.abstract}"
-					nID="#{entryA.ID}" personDisplayName="#{javascript:personsCache.getPerson(entryA.getPID()).getDisplayName()}"
-					publicationDate="#{entryA.publicationDate}" publicationDateString="#{entryA.prettyTime}"
+					imageURL="#{entryA.imageURL}"
+					link="#{entryA.link}"
+					newsAbstract="#{entryA.abstract}"
+					nID="#{entryA.ID}"
+					personDisplayName="#{javascript:personsCache.getPerson(entryA.getPID()).getDisplayName()}"
+					publicationDate="#{entryA.publicationDate}"
+					publicationDateString="#{entryA.prettyTime}"
 					title="#{entryA.title}">
 					<xc:this.category><![CDATA[#{javascript:
 						// try/catch added to catch cases where an entry is for a category/type that no longer exists
@@ -69,16 +104,29 @@
 			</xp:repeat>
 		</xp:panel>
 
-		<xp:panel readonly="true" loaded="${param.filter == 'popular'}">
-			<xc:pageHeader value="Popular"/>
-			
-			<xp:repeat id="r2" var="entryAB" rows="30" value="${newsCache.entriesByPopularity}" removeRepeat="true">
-				<xc:newsEntry id="lasdfekj"
+		<xp:panel
+			readonly="true"
+			loaded="${param.filter == 'popular'}">
+			<xc:pageHeader
+				value="Popular" buttonText="Categories..."/>
+
+			<xp:repeat
+				id="r2"
+				var="entryAB"
+				rows="30"
+				value="${newsCache.entriesByPopularity}"
+				removeRepeat="true">
+				<xc:newsEntry
+					id="lasdfekj"
 					author="#{entryAB.PID}"
 					typeId="#{entryAB.TID}"
-					imageURL="#{entryAB.imageURL}" link="#{entryAB.link}" newsAbstract="#{entryAB.abstract}"
-					nID="#{entryAB.ID}" personDisplayName="#{javascript:personsCache.getPerson(entryAB.getPID()).getDisplayName()}"
-					publicationDate="#{entryAB.publicationDate}" publicationDateString="#{entryAB.prettyTime}"
+					imageURL="#{entryAB.imageURL}"
+					link="#{entryAB.link}"
+					newsAbstract="#{entryAB.abstract}"
+					nID="#{entryAB.ID}"
+					personDisplayName="#{javascript:personsCache.getPerson(entryAB.getPID()).getDisplayName()}"
+					publicationDate="#{entryAB.publicationDate}"
+					publicationDateString="#{entryAB.prettyTime}"
 					title="#{entryAB.title}">
 					<xc:this.category><![CDATA[#{javascript:
 						try {
@@ -99,7 +147,7 @@
 				</xc:newsEntry>
 			</xp:repeat>
 		</xp:panel>
-<!-- 
+		<!-- 
 		<xc:topStories/>
 		
 		 -->

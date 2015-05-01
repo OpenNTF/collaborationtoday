@@ -5,10 +5,17 @@
 		class="page-header">
 		<p
 			class="pull-right visible-xs">
-			<button
+			<xp:button
 				type="button"
-				class="btn btn-xs btn-primary"
-				data-toggle="offcanvas">Categories...</button>
+				styleClass="btn btn-xs btn-primary"
+				value="#{javascript:compositeData.buttonText}">
+				<xp:this.attrs>
+					<xp:attr
+						name="data-toggle"
+						value="offcanvas">
+					</xp:attr>
+				</xp:this.attrs>
+			</xp:button>
 		</p>
 
 		<h3>
