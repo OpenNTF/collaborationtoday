@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.3'
  replicaid='C1257CA900351E4C'>
-<noteinfo noteid='1aa' unid='ADB6F3A655D320B3C1257A4C0062C17F' sequence='36'>
+<noteinfo noteid='1aa' unid='ADB6F3A655D320B3C1257A4C0062C17F' sequence='42'>
 <created><datetime dst='true'>20120731T195840,63+02</datetime></created>
-<modified><datetime dst='true'>20150428T180606,35+02</datetime></modified>
-<revised><datetime dst='true'>20150417T230039,61+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150428T180606,34+02</datetime></lastaccessed>
+<modified><datetime dst='true'>20150509T164118,40+02</datetime></modified>
+<revised><datetime dst='true'>20150509T164118,39+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20150509T164118,39+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20150417T225752,59+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>RequestsAll</text></item>
