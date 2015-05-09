@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<div
+		class="pull-right visible-xs-block visible-sm-block visible-md-block hidden-lg" style="margin-top:-10px">
+		<div
+			class="dropdown">
+			<button
+				class="btn btn-primary dropdown-toggle"
+				type="button"
+				id="dropdownMenu1"
+				data-toggle="dropdown">
+				<xp:text
+					value="#{javascript:compositeData.buttonText}" />
+				<span
+					class="caret"></span>
+			</button>
+			<ul
+				class="dropdown-menu dropdown-menu-right"
+				role="menu"
+				aria-labelledby="dropdownMenu1">
+				<xc:categoriesDropdownList
+					showHeaders="yes"></xc:categoriesDropdownList>
+			</ul>
+		</div>
+	</div>
+</xp:view>

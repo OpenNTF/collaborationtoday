@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view
-	xmlns:xp="http://www.ibm.com/xsp/core">
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
 	<div
 		class="page-header">
-		<p
-			class="pull-right visible-xs">
-			<xp:button
-				type="button"
-				styleClass="btn btn-xs btn-primary"
-				value="#{javascript:compositeData.buttonText}">
-				<xp:this.attrs>
-					<xp:attr
-						name="data-toggle"
-						value="offcanvas">
-					</xp:attr>
-				</xp:this.attrs>
-			</xp:button>
-		</p>
-
+		<xc:categoriesDropdown
+			buttonText="#{javascript:compositeData.buttonText}">
+		</xc:categoriesDropdown>
 		<h3>
 
 			<xp:text

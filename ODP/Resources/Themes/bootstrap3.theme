@@ -1,5 +1,5 @@
 <theme
-	extends="bootstrapv3.2.0"
+	extends=""
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
 	<!--
@@ -11,23 +11,15 @@
 		<content-type>text/css</content-type>
 		<href>bower_components/bootstrap/cerulean_bootstrap.css</href>
 	</resource>
-	<!-- 
+	
 	<resource>
 		<content-type>application/x-javascript</content-type>
 		<href>bower_components/jquery/dist/jquery.min.js</href>
 	</resource>
-	 -->
+	
 	<resource>
 		<content-type>application/x-javascript</content-type>
 		<href>bower_components/bootstrap/dist/js/bootstrap.min.js</href>
-	</resource>
-	<resource>
-		<content-type>application/x-javascript</content-type>
-		<href>bower_components/offcanvas.js</href>
-	</resource>
-	<resource>
-		<content-type>text/css</content-type>
-		<href>bower_components/offcanvas.css</href>
 	</resource>
 	<resource>
 		<content-type>text/css</content-type>

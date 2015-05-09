@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:panel
+		tagName="li"
+		role="presentation">
+		<xp:link
+			text="Recent"
+			value="/home.xsp?filter=all"
+			role="menuitem">
+		</xp:link>
+		<xp:this.styleClass><![CDATA[#{javascript:var active= (param.filter == null) ? 'disabled' : param.filter.equals("all") ? 'disabled' : '';
+return active;}]]></xp:this.styleClass>
+	</xp:panel>
+	<xp:repeat
+		rows="30"
+		value="${configCache.categories}"
+		indexVar="index2"
+		var="category">
+		<xp:panel
+			tagName="li"
+			styleClass="divider"
+			rendered="#{compositeData.showHeaders == 'yes'}">
+		</xp:panel>
+		<xp:panel
+			rendered="#{compositeData.showHeaders == 'yes'}"
+			tagName="li"
+			role="presentation"
+			styleClass="dropdown-header">
+			<xp:text
+				value="#{category.displayName}" />
+		</xp:panel>
+
+		<xp:repeat
+			rows="30"
+			value="#{javascript:configCache.getTypesForCategory(category.getID())}"
+			indexVar="index"
+			var="entry">
+			<xp:panel
+				tagName="li"
+				role="presentation">
+				<xp:this.styleClass><![CDATA[#{javascript:var active= (param.filter == entry.getID()) ? 'disabled' : '';
+return active;}]]></xp:this.styleClass>
+				<xp:link
+					value="/home.xsp?filter=#{entry.ID}"
+					role="menuitem">
+					<xp:this.text><![CDATA[#{javascript:
+						(compositeData.showHeaders != "yes" ? category.getDisplayName() + " - " : "") + entry.getDisplayName()
+					}]]></xp:this.text>
+				</xp:link>
+			</xp:panel>
+		</xp:repeat>
+	</xp:repeat>
+</xp:view>

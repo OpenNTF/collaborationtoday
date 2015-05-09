@@ -474,10 +474,7 @@ history.value = history.value + elem.value + "\n\n";]]></xp:this.script>
 							<xp:this.value><![CDATA[#{javascript:configCache.getTypesForCurrentUserCombobox()}]]></xp:this.value>
 						</xp:selectItems>
 					</xp:listBox>
-					<bx:select2PickerCombo
-						for="comboBox2"
-						id="select2PickerCombo1">
-					</bx:select2PickerCombo>
+					
 					<xp:message
 						id="message1"
 						for="comboBox2"

@@ -11,6 +11,7 @@ if(url.indexOf(".xsp")==-1){
 }}]]></xp:this.beforePageLoad>
 	<nav
 		class="navbar navbar-inverse navbar-fixed-top"
+		id="js-bootstrap-offcanvas"
 		role="navigation">
 		<div
 			class="container">
@@ -43,7 +44,8 @@ if(url.indexOf(".xsp")==-1){
 			</div>
 
 			<div
-				class="collapse navbar-collapse" id="navbar-top">
+				class="collapse navbar-collapse"
+				id="navbar-top">
 				<ul
 					class="nav navbar-nav">
 					<xp:repeat
