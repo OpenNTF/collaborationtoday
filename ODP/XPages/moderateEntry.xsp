@@ -176,7 +176,7 @@ else {
 		</xp:button>
 		&#160;
 		<xp:button value="Delete finally" id="button2" styleClass="btn">
-			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete" disableValidators="true">
 				<xp:this.action>
 					<xp:actionGroup>
 						<xp:deleteDocument name="/mod.xsp"
