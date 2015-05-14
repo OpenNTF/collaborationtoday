@@ -21,8 +21,22 @@ package org.openntf.news.http.core;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.Date;
+import java.util.Map;
 import java.util.Random;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLHandshakeException;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import lotus.domino.Database;
 import lotus.domino.Document;
@@ -50,6 +64,8 @@ public class Parser {
 
 	static public String getOutput(final String urlToIndex) {
 
+		Map<String, Object> viewScope=ExtLibUtil.getViewScope();
+		
 		String unid = "";
 		Document newsEntry = null;
 		try {
@@ -61,11 +77,25 @@ public class Parser {
 			URL targetURL = new URL(urlToIndex);
 			URLConnection conn = targetURL.openConnection();
 
+			if(viewScope.containsKey("SSLError")) {
+				// It means we have experienced handshake error just before this.
+				forceTrustSSL((HttpsURLConnection) conn);
+				viewScope.remove("SSLError");
+			}
+			
 			conn.setConnectTimeout(HTTP_TIMEOUT);
 			conn.setReadTimeout(HTTP_TIMEOUT);
 			conn.setRequestProperty("User-Agent", HTTP_USER_AGENT);
 
-			Source source = new Source(conn);
+			Source source;
+			
+			try {
+				source = new Source(conn);
+			} catch (SSLHandshakeException e) {
+				viewScope.put("SSLError", "1");
+				return "";
+			}
+			
 			source.fullSequentialParse();
 
 			String title = getTitle(source);
@@ -84,7 +114,14 @@ public class Parser {
 			newsEntry.appendItemValue("NLink", urlToIndex);
 			newsEntry.appendItemValue("PID", "unknown");
 			newsEntry.appendItemValue("NTitle", title);
-			newsEntry.appendItemValue("NAbstract", description + "\n\n\n" + source.getTextExtractor().setIncludeAttributes(true).toString().substring(0, 1000));
+			
+			String newsAbstract = description + "\n\n\n" + source.getTextExtractor().setIncludeAttributes(true).toString();
+			
+			if(newsAbstract.length()>1000) {
+				newsAbstract = newsAbstract.substring(0, 1000);
+			}
+			
+			newsEntry.appendItemValue("NAbstract", newsAbstract);
 			newsEntry.appendItemValue("NAbstract", "");
 			Date date = new Date();
 			newsEntry.appendItemValue("NCreationDate", session.createDateTime(date));
@@ -130,4 +167,47 @@ public class Parser {
 		}
 		return null;
 	}
+
+	/**
+	 * This method forces any HTTPS connection to skip the CA validation.
+	 * 
+	 * In CT-like system, it's not a big security problem but THIS MUST NOT BE USED IN PRODUCTION!
+	 * 
+	 * ...never... ever... please :) 
+	 * 
+	 * @param con
+	 */
+	private static void forceTrustSSL(HttpsURLConnection con) {
+		try {
+			SSLContext sslContext;
+			sslContext = SSLContext.getInstance("TLS");
+			sslContext.init(null, polyannaTrustManager, new SecureRandom());
+			
+			con.setSSLSocketFactory(sslContext.getSocketFactory());
+			con.setHostnameVerifier(polyannaVerifier);			
+			
+		} catch (NoSuchAlgorithmException e) {
+			// No way!
+		} catch (KeyManagementException e) {
+			// Failed to trust... Nothing to do...
+		}
+		
+	}
+	
+	private static final TrustManager[] polyannaTrustManager = new TrustManager[] {
+		new X509TrustManager() {
+			public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {}
+			public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {}
+			public X509Certificate[] getAcceptedIssuers() {
+				return null;
+			}
+		}
+	};
+	
+	private static final HostnameVerifier polyannaVerifier = new HostnameVerifier() {
+		public boolean verify(String arg0, SSLSession arg1) {
+			return true; // All people are decent and they won't try to deceive us!
+		}
+	};
+	
 }

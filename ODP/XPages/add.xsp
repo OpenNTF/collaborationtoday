@@ -43,6 +43,7 @@
 					}
 					
 					function hideBusy(){
+						if("#{viewScope.SSLError}"=="1") return; // In case of SSL error, no need to set an error.
 						var docUnidClient =  "#{javascript:sessionScope.get("NikFileName")}"
 						if(docUnidClient=="") {
 							alert("There is an error getting site information...")
@@ -62,7 +63,10 @@
 			</div>
 			<br />
 			<div id="busy" class="busyHidden"></div>
-			<xp:button value="Capture and Edit" id="button1" styleClass="btn">
+			<xp:button 
+				id="button1" 
+				value="#{empty viewScope.SSLError ? 'Capture and Edit' : 'Unknown SSL Certificate. Really Trust this Site?'}" 
+				styleClass="btn #{empty viewScope.SSLError?'':'btn-danger'}">
 				<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="nikcontent">
 					<xp:this.action><![CDATA[#{javascript:
 						var url = getComponent('inputText1').getValue();
