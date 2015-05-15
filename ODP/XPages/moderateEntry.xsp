@@ -235,7 +235,8 @@ else {
 			<xp:eventHandler
 				event="onclick"
 				submit="true"
-				refreshMode="complete">
+				refreshMode="complete"
+				disableValidators="true">
 				<xp:this.action>
 					<xp:actionGroup>
 						<xp:deleteDocument
@@ -474,7 +475,7 @@ history.value = history.value + elem.value + "\n\n";]]></xp:this.script>
 							<xp:this.value><![CDATA[#{javascript:configCache.getTypesForCurrentUserCombobox()}]]></xp:this.value>
 						</xp:selectItems>
 					</xp:listBox>
-					
+
 					<xp:message
 						id="message1"
 						for="comboBox2"
