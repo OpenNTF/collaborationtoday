@@ -8,8 +8,13 @@
 		id="js-bootstrap-offcanvas">
 		<div
 			class="list-group hidden-phone hidden-tablet">
-			<xc:leftColumnLineItemsGroup
-				showHeaders="yes" />
+			<ul
+				class="dropdown-menu dropdown-menu-right"
+				role="menu"
+				style="display:block">
+				<xc:categoriesDropdownList
+					showHeaders="yes"></xc:categoriesDropdownList>
+			</ul>
 		</div>
 	</div>
 </xp:view>
