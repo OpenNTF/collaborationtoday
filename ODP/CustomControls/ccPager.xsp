@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view
-	xmlns:xp="http://www.ibm.com/xsp/core">
-	<xp:pager
-		id="pager3"
-		for="#{javascript:compositeData.pagerFor}"
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:pager id="pager3" for="#{javascript:compositeData.pagerFor}"
 		styleClass="paginationwrapper"
-		layout="SeparatorPage Status FirstArrow Separator PreviousArrow Separator SeparatorPage Group Separator NextArrow Separator LastArrow">
+		layout="SeparatorPage Status FirstArrow Separator PreviousArrow Separator NextArrow Separator LastArrow">
 		<xp:this.rendered><![CDATA[#{javascript:
 			getComponent(compositeData.pagerFor).getRowCount() > 0
 		}]]></xp:this.rendered>

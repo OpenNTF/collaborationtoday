@@ -17,10 +17,12 @@ public class Navigation implements Serializable {
 	private static final long serialVersionUID = -4983110583704441736L;
 	private List<Page> navigation;
 	private List<Page> footer;
+	private List<Page> mod;
 
 	public Navigation() {
 		initNav();
 		initFooter();
+		initMod();
 	}
 
 	private void initNav() {
@@ -60,12 +62,31 @@ public class Navigation implements Serializable {
 
 	}
 
+	private void initMod() {
+		mod = new ArrayList<Page>();
+		mod.add(new Page("Add URL", "", "add.xsp"));
+		mod.add(new Page("Queued", "", "mod.xsp"));
+		mod.add(new Page("Top Stories", "", "modTopStories.xsp"));
+		mod.add(new Page("Spotlight", "", "modSpotlight.xsp"));
+		mod.add(new Page("Popular", "", "modPopular.xsp"));
+		mod.add(new Page("Approved", "", "modApproved.xsp"));
+		mod.add(new Page("Authors", "", "authors.xsp"));
+		mod.add(new Page("Open Requests", "", "requestsOpen.xsp"));
+		mod.add(new Page("Closed Requests", "", "requestsClosed.xsp"));
+		mod.add(new Page("Admin", "", "admin.xsp"));
+		mod.add(new Page("Policies", "", "CurationPolicies140325.pdf"));
+	}
+
 	public List<Page> getNavigation() {
 		return navigation;
 	}
 
 	public List<Page> getFooter() {
 		return footer;
+	}
+
+	public List<Page> getMod() {
+		return mod;
 	}
 
 }

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view
-	xmlns:xe="http://www.ibm.com/xsp/coreex"
-	xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom"
-	xmlns:zonsf="http://www.zetaone.com/xsp-core"
+<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:zonsf="http://www.zetaone.com/xsp-core"
 	pageTitle="Author | Collaboration Today">
 	<xp:this.data>
-		<xp:dominoDocument
-			var="document11"
-			formName="Person"
+		<xp:dominoDocument var="document11" formName="Person"
 			action="editDocument">
 			<xp:this.querySaveDocument><![CDATA[#{javascript:
 				if (!document11.isNewNote()) { true; }
@@ -25,46 +20,30 @@
 	</xp:this.data>
 	<style>.lotusTitleBar h2.lotusEllipsis { width: 380px; }
 		.xspPagerRight { color: #848484; float: left;}</style>
-	<xc:moderationLayout
-		pageHeader="Author">
+	<xc:moderationLayout pageHeader="Author">
 		<xp:this.facets>
-			<xc:moderationLeftColumn
-				xp:key="leftColumn" />
+			<xc:moderationLeftColumn xp:key="leftColumn" />
 		</xp:this.facets>
 
-		<xp:button
-			value="Update"
-			id="button5"
-			styleClass="btn btn-info">
+		<xp:button value="Update" id="button5" styleClass="btn btn-info">
 			<xp:this.rendered><![CDATA[#{javascript:!document11.isNewNote()}]]></xp:this.rendered>
-			<xp:eventHandler
-				event="onclick"
-				submit="true"
+			<xp:eventHandler event="onclick" submit="true"
 				refreshMode="complete">
 				<xp:this.action>
 					<xp:actionGroup>
 						<xp:actionGroup>
-							<xp:saveDocument
-								var="document11"></xp:saveDocument>
-							<xp:executeScript
-								script="#{javascript:personsCache.update();}"></xp:executeScript>
-							<xp:openPage
-								target="openDocument"
-								name="/authors.xsp"></xp:openPage>
+							<xp:saveDocument var="document11"></xp:saveDocument>
+							<xp:executeScript script="#{javascript:personsCache.update();}"></xp:executeScript>
+							<xp:openPage target="openDocument" name="/authors.xsp"></xp:openPage>
 						</xp:actionGroup>
 					</xp:actionGroup>
 				</xp:this.action>
 			</xp:eventHandler>
 		</xp:button>
 		&#160;
-		<xp:button
-			value="Create"
-			id="button1"
-			styleClass="btn btn-primary">
+		<xp:button value="Create" id="button1" styleClass="btn btn-primary">
 			<xp:this.rendered><![CDATA[#{javascript:document11.isNewNote()}]]></xp:this.rendered>
-			<xp:eventHandler
-				event="onclick"
-				submit="true"
+			<xp:eventHandler event="onclick" submit="true"
 				refreshMode="complete">
 				<xp:this.action>
 					<xp:actionGroup>
@@ -81,12 +60,9 @@
 							}]]></xp:this.script>
 						</xp:executeScript>
 
-						<xp:saveDocument
-							var="document11"></xp:saveDocument>
-						<xp:executeScript
-							script="#{javascript:personsCache.update();}"></xp:executeScript>
-						<xp:openPage
-							target="editDocument">
+						<xp:saveDocument var="document11"></xp:saveDocument>
+						<xp:executeScript script="#{javascript:personsCache.update();}"></xp:executeScript>
+						<xp:openPage target="editDocument">
 							<xp:this.name><![CDATA[#{javascript:
 								newsId ? "moderateEntry.xsp" :"authors.xsp"
 							}]]></xp:this.name>
@@ -97,147 +73,78 @@
 			</xp:eventHandler>
 		</xp:button>
 		&#160;
-		<xp:button
-			value="Cancel"
-			id="button8"
-			styleClass="btn btn-warning">
-			<xp:eventHandler
-				event="onclick"
-				submit="false">
+		<xp:button value="Cancel" id="button8" styleClass="btn btn-warning">
+			<xp:eventHandler event="onclick" submit="false">
 				<xp:this.script><![CDATA[window.history.back()]]></xp:this.script>
 			</xp:eventHandler>
 		</xp:button>
 		<br></br>
 		<br></br>
-		<xp:div
-			id="userInfoTable">
-			<div
-				class="form-group">
-				<xp:label
-					value="Display Name (*)"
-					id="pDisplayName_Label1"
+		<xp:div id="userInfoTable">
+			<div class="form-group">
+				<xp:label value="Display Name (*)" id="pDisplayName_Label1"
 					for="pDisplayName1"></xp:label>
-				<xp:inputText
-					value="#{document11.PDisplayName}"
-					id="pDisplayName1"
-					style="width:500px"
-					required="true"
-					styleClass="form-control">
+				<xp:inputText value="#{document11.PDisplayName}" id="pDisplayName1"
+					required="true" styleClass="form-control">
 					<xp:this.validators>
-						<xp:validateRequired
-							message="Define display name"></xp:validateRequired>
-						<xp:validateLength
-							minimum="3"
-							maximum="40"
+						<xp:validateRequired message="Define display name"></xp:validateRequired>
+						<xp:validateLength minimum="3" maximum="40"
 							message="Define display name (5 - 40 chars)"></xp:validateLength>
 					</xp:this.validators>
 				</xp:inputText>
 			</div>
-			<div
-				class="for-group">
-				<xp:label
-					value="IBM Champion"
-					id="label1"
-					for="pDisplayName1"></xp:label>
-				<div
-					class="checkbox">
-					<xp:checkBox
-						text="yes"
-						id="checkBox1"
-						value="#{document11.PChampion}"
+			<div class="for-group">
+				<xp:label value="IBM Champion" id="label1" for="pDisplayName1"></xp:label>
+				<div class="checkbox">
+					<xp:checkBox text="yes" id="checkBox1" value="#{document11.PChampion}"
 						checkedValue="1">
 					</xp:checkBox>
 				</div>
 			</div>
-			<div
-				class="form-group">
-				<xp:label
-					value="E-Mail"
-					id="pEMail_Label1"
-					for="pEMail1"></xp:label>
-				<xp:inputText
-					value="#{document11.PEMail}"
-					style="width:500px"
-					id="pEMail1"
+			<div class="form-group">
+				<xp:label value="E-Mail" id="pEMail_Label1" for="pEMail1"></xp:label>
+				<xp:inputText value="#{document11.PEMail}" id="pEMail1"
 					styleClass="form-control"></xp:inputText>
 			</div>
 			<xp:panel
 				rendered="#{javascript:configCache.isUserAvatarModerator(@UserName())}">
-				<div
-					class="form-group">
-					<xp:label
-						value="Picture Type"
-						id="pPictureType_Label1"
+				<div class="form-group">
+					<xp:label value="Picture Type" id="pPictureType_Label1"
 						for="pPictureType1"></xp:label>
-					<xp:comboBox
-						value="#{document11.PPictureType}"
-						style="width:500px"
-						id="pPictureType1"
+					<xp:comboBox value="#{document11.PPictureType}" id="pPictureType1"
 						styleClass="form-control">
-						<xp:eventHandler
-							event="onchange"
-							submit="true"
-							disableValidators="true"
-							refreshMode="partial"
-							refreshId="userInfoTable"
-							execMode="partial"
-							execId="userInfoTable" />
+						<xp:eventHandler event="onchange" submit="true"
+							disableValidators="true" refreshMode="partial" refreshId="userInfoTable"
+							execMode="partial" execId="userInfoTable" />
 
-						<xp:selectItem
-							itemLabel="No Picture"
-							itemValue="nopicture" />
-						<xp:selectItem
-							itemLabel="Multiple Authors"
+						<xp:selectItem itemLabel="No Picture" itemValue="nopicture" />
+						<xp:selectItem itemLabel="Multiple Authors"
 							itemValue="multiple" />
-						<xp:selectItem
-							itemLabel="Gravatar"
-							itemValue="gravatar" />
-						<xp:selectItem
-							itemLabel="URL"
-							itemValue="url" />
-						<xp:selectItem
-							itemLabel="mypic"
-							itemValue="mypic" />
+						<xp:selectItem itemLabel="Gravatar" itemValue="gravatar" />
+						<xp:selectItem itemLabel="URL" itemValue="url" />
+						<xp:selectItem itemLabel="mypic" itemValue="mypic" />
 					</xp:comboBox>
 				</div>
-				<xp:div
-					rendered="#{document11.PPictureType != 'mypic'}">
-					<div
-						class="form-group">
-						<xp:label
-							value="Picture URL"
-							id="pPictureURL_Label1"
+				<xp:div rendered="#{document11.PPictureType != 'mypic'}">
+					<div class="form-group">
+						<xp:label value="Picture URL" id="pPictureURL_Label1"
 							for="pPictureURL1"></xp:label>
 
-						<xp:inputText
-							value="#{document11.PPictureURL}"
-							id="pPictureURL1"
-							style="width:500px"
+						<xp:inputText value="#{document11.PPictureURL}" id="pPictureURL1"
 							styleClass="form-control"></xp:inputText>
 					</div>
 				</xp:div>
-				<xp:div
-					rendered="#{document11.PPictureType == 'mypic'}">
-					<div
-						class="form-group">
+				<xp:div rendered="#{document11.PPictureType == 'mypic'}">
+					<div class="form-group">
 						<label>myPic</label>
 
-						<xp:repeat
-							value="#{document11.myPicNames}"
-							var="name"
-							rows="1000"
-							id="mypicList">
+						<xp:repeat value="#{document11.myPicNames}" var="name"
+							rows="1000" id="mypicList">
 							<div
 								class="#{javascript:name == document11.getValue('currentMypic') ? ' selected' : ''} mypicImage">
-								<xp:image
-									url="/delete.png"
-									id="delete"
-									styleClass="deleteMypic">
-									<xp:eventHandler
-										event="onclick"
-										submit="true"
-										refreshMode="partial"
-										refreshId="mypicList">
+								<xp:image url="/delete.png" id="delete" styleClass="deleteMypic">
+									<xp:eventHandler event="onclick" submit="true"
+										refreshMode="partial" refreshId="mypicList">
 										<xp:this.script><![CDATA[
 											return XSP.confirm('Are you sure you want to permanently delete this mypic?')
 										]]></xp:this.script>
@@ -275,30 +182,20 @@
 								-->
 							</div>
 						</xp:repeat>
-						<xp:panel
-							tagName="p"
-							rendered="#{javascript:!document11.isNewNote()}"
+						<xp:panel tagName="p" rendered="#{javascript:!document11.isNewNote()}"
 							style="clear: left">
-							<xp:text
-								tagName="b"
-								value="Replace:" />
+							<xp:text tagName="b" value="Replace:" />
 							<br />
-							<xp:link
-								text="Image File"
-								value="/mypicUploadFile.xsp">
+							<xp:link text="Image File" value="/mypicUploadFile.xsp">
 								<xp:this.parameters>
-									<xp:parameter
-										name="documentId"
+									<xp:parameter name="documentId"
 										value="#{javascript:document11.getDocument().getUniversalID()}" />
 								</xp:this.parameters>
 							</xp:link>
 							<br />
-							<xp:link
-								text="Internet Profile"
-								value="/mypicUploadInternet.xsp">
+							<xp:link text="Internet Profile" value="/mypicUploadInternet.xsp">
 								<xp:this.parameters>
-									<xp:parameter
-										name="documentId"
+									<xp:parameter name="documentId"
 										value="#{javascript:document11.getDocument().getUniversalID()}" />
 								</xp:this.parameters>
 							</xp:link>
@@ -306,69 +203,37 @@
 					</div>
 				</xp:div>
 			</xp:panel>
-			<div
-				class="form-group">
-				<xp:label
-					value="Twitter"
-					id="pTwitter_Label1" />
+			<div class="form-group">
+				<xp:label value="Twitter" id="pTwitter_Label1" />
 
-				<xp:inputText
-					value="#{document11.PTwitter}"
-					style="width:500px"
-					id="pTwitter1"
+				<xp:inputText value="#{document11.PTwitter}" id="pTwitter1"
 					styleClass="form-control"></xp:inputText>
 			</div>
-			<div
-				class="form-group">
-				<xp:label
-					value="StackOverflow"
-					id="pStackOverflow_Label1"
+			<div class="form-group">
+				<xp:label value="StackOverflow" id="pStackOverflow_Label1"
 					for="pStackOverflow1"></xp:label>
 
-				<xp:inputText
-					style="width:500px"
-					value="#{document11.PStackOverflow}"
-					id="pStackOverflow1"
+				<xp:inputText value="#{document11.PStackOverflow}" id="pStackOverflow1"
 					styleClass="form-control"></xp:inputText>
 			</div>
-			<div
-				class="form-group">
-				<xp:label
-					value="LinkedIn"
-					id="pLinkedIn_Label1"
-					for="pLinkedIn1"></xp:label>
+			<div class="form-group">
+				<xp:label value="LinkedIn" id="pLinkedIn_Label1" for="pLinkedIn1"></xp:label>
 
-				<xp:inputText
-					value="#{document11.PLinkedIn}"
-					style="width:500px"
-					id="pLinkedIn1"
-					styleClass="form-control"></xp:inputText>
+				<xp:inputText value="#{document11.PLinkedIn}" style="width:500px"
+					id="pLinkedIn1" styleClass="form-control"></xp:inputText>
 			</div>
-			<div
-				class="form-group">
-				<xp:label
-					value="OpenNTF"
-					id="pOpenNTF_Label1"
-					for="pOpenNTF1"></xp:label>
+			<div class="form-group">
+				<xp:label value="OpenNTF" id="pOpenNTF_Label1" for="pOpenNTF1"></xp:label>
 
-				<xp:inputText
-					value="#{document11.POpenNTF}"
-					style="width:500px"
-					id="pOpenNTF1"
+				<xp:inputText value="#{document11.POpenNTF}" id="pOpenNTF1"
 					styleClass="form-control"></xp:inputText>
 			</div>
-			<div
-				class="form-group">
-				<xp:label
-					value="Lotus Registration"
-					id="pLotusRegistration_Label1"
+			<div class="form-group">
+				<xp:label value="Lotus Registration" id="pLotusRegistration_Label1"
 					for="pLotusRegistration1"></xp:label>
 
-				<xp:inputText
-					style="width:500px"
-					value="#{document11.PLotusRegistration}"
-					id="pLotusRegistration1"
-					styleClass="form-control"></xp:inputText>
+				<xp:inputText value="#{document11.PLotusRegistration}"
+					id="pLotusRegistration1" styleClass="form-control"></xp:inputText>
 			</div>
 		</xp:div>
 	</xc:moderationLayout>

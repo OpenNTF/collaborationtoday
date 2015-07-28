@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
-	pageTitle="Moderated - Popular | Collaboration Today">
-	
+<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Moderated - Popular | Collaboration Today">
+
 	<xc:moderationLayout pageHeader="News Entries - Approved / Moderated - Popular">
 		<xp:this.facets>
-			<xc:moderationLeftColumn xp:key="leftColumn"/>
+			<xc:moderationLeftColumn xp:key="leftColumn" />
 		</xp:this.facets>
-		
+
 		<xc:ccPager pagerFor="repeat7"></xc:ccPager>
 		<br />
-		<xp:repeat id="repeat7" var="entry" rows="50" value="${newsCache.entriesByPopularity}">
-			<xc:moderationNewsEntry link="#{entry.link}" nID="#{entry.ID}"
-				personDisplayName="#{javascript:personsCache.getPerson(entry.getPID()).getDisplayName()}" publicationDate="#{entry.prettyTime}"
-				title="#{entry.title}" state="#{entry.state}" clicksTotal="#{entry.clicksTotal}"
-				clicksLastWeek="#{entry.clicksLastWeek}">
-			</xc:moderationNewsEntry>
-		</xp:repeat>
+		<xp:table styleClass="table table-condensed table-striped table-hover">
+			<colgroup>
+				<col style="width:100px" />
+				<col style="width:100px" />
+				<col style="width:90%" />
+			</colgroup>
+			<xp:repeat id="repeat7" var="entry" rows="50"
+				value="${newsCache.entriesByPopularity}">
+				<xc:moderationNewsEntry link="#{entry.link}"
+					nID="#{entry.ID}"
+					personDisplayName="#{javascript:personsCache.getPerson(entry.getPID()).getDisplayName()}"
+					publicationDate="#{entry.prettyTime}" title="#{entry.title}" state="#{entry.state}"
+					clicksTotal="#{entry.clicksTotal}" clicksLastWeek="#{entry.clicksLastWeek}">
+				</xc:moderationNewsEntry>
+			</xp:repeat>
+		</xp:table>
 	</xc:moderationLayout>
 </xp:view>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>pageHeaderMod</component-type>
+    <composite-name>pageHeaderMod</composite-name>
+    <composite-file>/pageHeaderMod.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>value</property-name>
+      <property-class>string</property-class>
+    </property>
+    <property>
+      <property-name>cat</property-name>
+      <property-class>string</property-class>
+    </property>
+    <property>
+      <property-name>buttonText</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
+  </composite-component>
+</faces-config>

@@ -1,47 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view
-	xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xe="http://www.ibm.com/xsp/coreex"
-	pageTitle="Moderation | Collaboration Today"
-	xmlns:xc="http://www.ibm.com/xsp/custom"
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	pageTitle="Moderation | Collaboration Today" xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:bx="http://www.openntf.org/xsp/bootstrap">
 	<xp:this.resources>
-		<!--
-			<xp:styleSheet
-			href="/.ibmxspres/dojoroot/dojox/image/resources/Lightbox.css">
-			</xp:styleSheet> <xp:styleSheet
-			href="/.ibmxspres/dojoroot/dijit/themes/claro/claro.css">
-			</xp:styleSheet>
-		-->
-		<!--
-			Oliver Busse: this causes JS errors, too :-( <xp:dojoModule
-			name="dojox.image.Lightbox"></xp:dojoModule>
-		-->
-		<xp:script
-			src="/biz.webgate.mywebgate.micropublisher.js"
+		<xp:script src="/biz.webgate.mywebgate.micropublisher.js"
 			clientSide="true">
 		</xp:script>
-
-		<!--
-			Oliver Busse: Select2 implementation w/o resource aggregation as this
-			breaks the jquery stuff
-		-->
-		<!--
-			<xp:headTag tagName="script"> <xp:this.attributes> <xp:parameter
-			name="type" value="text/javascript" /> <xp:parameter name="src"
-			value="/#{javascript:database.getFilePath()}/jquery-1.7.1.min.js" />
-			</xp:this.attributes> </xp:headTag> <xp:headTag tagName="script">
-			<xp:this.attributes> <xp:parameter name="type"
-			value="text/javascript" /> <xp:parameter name="src"
-			value="/#{javascript:database.getFilePath()}/select2-2.1.0/select2.min.js"
-			/> </xp:this.attributes> </xp:headTag> <xp:headTag tagName="link">
-			<xp:this.attributes> <xp:parameter name="rel" value="stylesheet" />
-			<xp:parameter name="type" value="text/css" /> <xp:parameter
-			name="href"
-			value="/#{javascript:database.getFilePath()}/select2-2.1.0/select2.css"
-			/> </xp:this.attributes> </xp:headTag>
-		-->
-
 	</xp:this.resources>
 
 	<style>
@@ -68,11 +32,8 @@
 
 	</style>
 	<xp:this.data>
-		<xp:dominoDocument
-			var="document1"
-			formName="News"
-			action="editDocument"
-			concurrencyMode="fail">
+		<xp:dominoDocument var="document1" formName="News"
+			action="editDocument" concurrencyMode="fail">
 			<xp:this.documentId><![CDATA[${javascript:
 				var result = "";
 				if (param.nid) {
@@ -95,56 +56,36 @@ currentDocument.setValue("TID", getComponent("comboBox2").getValue())}]]></xp:th
 		</xp:dominoDocument>
 	</xp:this.data>
 
-	<input
-		type="hidden"
-		name="hiddenLink"
-		id="hiddenLink"
+	<input type="hidden" name="hiddenLink" id="hiddenLink"
 		value="#{javascript:document1.getItemValueString('NLink')}" />
 
-	<xc:moderationLayout
-		pageHeader="News Entry">
+	<xc:moderationLayout pageHeader="News Entry">
 		<xp:this.facets>
-			<xc:moderationLeftColumn
-				xp:key="leftColumn" />
+			<xc:moderationLeftColumn xp:key="leftColumn" />
 		</xp:this.facets>
 
-		<xp:button
-			value="Approve"
-			id="button1"
-			styleClass="btn btn-success">
+		<xp:button value="Approve" id="button1" styleClass="btn btn-success">
 			<xp:this.rendered><![CDATA[#{javascript:document1.getItemValueString("NState") != "approved" && (param.documentId != null || param.nid!=null)}]]></xp:this.rendered>
-			<xp:eventHandler
-				event="onclick"
-				submit="true"
+			<xp:eventHandler event="onclick" submit="true"
 				refreshMode="complete">
 				<xp:this.action>
 
 					<xp:actionGroup>
 						<xp:actionGroup>
 							<xp:actionGroup>
-								<xp:modifyField
-									name="NState"
-									value="approved"
+								<xp:modifyField name="NState" value="approved"
 									var="document1">
 								</xp:modifyField>
-								<xp:modifyField
-									name="NModerationDate"
-									value="#{javascript:new java.util.Date()}"
+								<xp:modifyField name="NModerationDate"
+									value="#{javascript:new java.util.Date()}" var="document1">
+								</xp:modifyField>
+								<xp:modifyField name="NModerator" value="#{javascript:@UserName()}"
 									var="document1">
 								</xp:modifyField>
-								<xp:modifyField
-									name="NModerator"
-									value="#{javascript:@UserName()}"
-									var="document1">
+								<xp:modifyField name="NLastModified"
+									value="#{javascript:new java.util.Date()}" var="document1">
 								</xp:modifyField>
-								<xp:modifyField
-									name="NLastModified"
-									value="#{javascript:new java.util.Date()}"
-									var="document1">
-								</xp:modifyField>
-								<xp:modifyField
-									name="NLastEditor"
-									value="#{javascript:@UserName()}"
+								<xp:modifyField name="NLastEditor" value="#{javascript:@UserName()}"
 									var="document1">
 								</xp:modifyField>
 
@@ -175,11 +116,9 @@ else {
 							}]]></xp:this.script>
 								</xp:executeScript>
 								<xp:saveDocument></xp:saveDocument>
-								<xp:executeScript
-									script="#{javascript:newsCache.update()}">
+								<xp:executeScript script="#{javascript:newsCache.update()}">
 								</xp:executeScript>
-								<xp:openPage
-									name="/mod.xsp"></xp:openPage>
+								<xp:openPage name="/mod.xsp"></xp:openPage>
 							</xp:actionGroup>
 						</xp:actionGroup>
 
@@ -189,60 +128,38 @@ else {
 			</xp:eventHandler>
 		</xp:button>
 
-		<xp:button
-			value="Save"
-			id="button5"
-			styleClass="btn btn-primary">
+		<xp:button value="Save" id="button5" styleClass="btn btn-primary">
 			<xp:this.rendered><![CDATA[#{javascript:document1.getItemValueString("NState") == "approved"}]]></xp:this.rendered>
-			<xp:eventHandler
-				event="onclick"
-				submit="true"
+			<xp:eventHandler event="onclick" submit="true"
 				refreshMode="complete">
 				<xp:this.action>
 					<xp:actionGroup>
-						<xp:modifyField
-							name="NState"
-							value="approved"
-							var="document1">
+						<xp:modifyField name="NState" value="approved" var="document1">
 						</xp:modifyField>
-						<xp:modifyField
-							name="NLastModified"
-							value="#{javascript:new java.util.Date()}"
-							var="document1">
+						<xp:modifyField name="NLastModified"
+							value="#{javascript:new java.util.Date()}" var="document1">
 						</xp:modifyField>
-						<xp:modifyField
-							name="NLastEditor"
-							value="#{javascript:@UserName()}"
+						<xp:modifyField name="NLastEditor" value="#{javascript:@UserName()}"
 							var="document1">
 						</xp:modifyField>
 						<xp:saveDocument></xp:saveDocument>
-						<xp:executeScript
-							script="#{javascript:newsCache.update()}">
+						<xp:executeScript script="#{javascript:newsCache.update()}">
 						</xp:executeScript>
 
-						<xp:openPage
-							name="$$PreviousPage">
+						<xp:openPage name="$$PreviousPage">
 						</xp:openPage>
 					</xp:actionGroup>
 				</xp:this.action>
 			</xp:eventHandler>
 		</xp:button>
 		&#160;
-		<xp:button
-			value="Delete finally"
-			id="button2"
-			styleClass="btn btn-danger">
-			<xp:eventHandler
-				event="onclick"
-				submit="true"
-				refreshMode="complete"
-				disableValidators="true">
+		<xp:button value="Delete finally" id="button2" styleClass="btn btn-danger">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete" disableValidators="true">
 				<xp:this.action>
 					<xp:actionGroup>
-						<xp:deleteDocument
-							name="/mod.xsp"
-							message="Are you sure you want to delete the entry?"
-							var="document1">
+						<xp:deleteDocument name="/mod.xsp"
+							message="Are you sure you want to delete the entry?" var="document1">
 						</xp:deleteDocument>
 
 						<xp:executeScript>
@@ -254,14 +171,9 @@ return "go-mod";}]]></xp:this.script>
 			</xp:eventHandler>
 		</xp:button>
 		&#160;
-		<xp:button
-			value="Undelete"
-			id="button3"
-			styleClass="btn btn-info">
+		<xp:button value="Undelete" id="button3" styleClass="btn btn-info">
 			<xp:this.rendered><![CDATA[#{javascript:return currentDocument.getItemValueString("Form").equals("deleted")}]]></xp:this.rendered>
-			<xp:eventHandler
-				event="onclick"
-				submit="true"
+			<xp:eventHandler event="onclick" submit="true"
 				refreshMode="complete">
 				<xp:this.action>
 					<xp:actionGroup>
@@ -281,16 +193,10 @@ return "go-mod";}]]></xp:this.script>
 			</xp:eventHandler>
 		</xp:button>
 		&#160;
-		<xp:button
-			value="Cancel"
-			id="button10"
-			styleClass="btn">
+		<xp:button value="Cancel" id="button10" styleClass="btn">
 
-			<xp:eventHandler
-				event="onclick"
-				submit="true"
-				refreshMode="complete"
-				disableValidators="true">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete" disableValidators="true">
 				<xp:this.action><![CDATA[#{javascript:return "go-mod";}]]></xp:this.action>
 			</xp:eventHandler>
 		</xp:button>
@@ -303,610 +209,338 @@ return "go-mod";}]]></xp:this.script>
 }}]]></xc:this.rendered>
 		</xc:duplicateCheck>
 		<br />
-		<xp:table
-			styleClass="mainform table"
-			style="display:inline">
-			<colgroup>
-				<col
-					style="width:150px" />
-				<col />
-			</colgroup>
-			<xp:tr>
-				<xp:td>
-					<xp:label
-						value="Publication Date"
-						id="nPublicationDate_Label1"
-						for="nPublicationDate1">
-					</xp:label>
-				</xp:td>
-				<xp:td>
-					<xp:inputText
-						value="#{document1.NPublicationDate}"
-						id="nPublicationDate1"
-						defaultValue="#{javascript:new java.util.Date()}">
-						<xp:eventHandler
-							event="onchange"
-							submit="false">
-							<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
+		<div class="form-group">
+			<xp:label value="Publication Date" id="nPublicationDate_Label1"
+				for="nPublicationDate1">
+			</xp:label>
+			<xp:inputText value="#{document1.NPublicationDate}" id="nPublicationDate1"
+				defaultValue="#{javascript:new java.util.Date()}" styleClass="form-control">
+				<xp:eventHandler event="onchange" submit="false">
+					<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
 history.value = history.value + "#{javascript:@UserName()}" + " " + new Date() + "\n" +"Publication Date: ";
 var elem = document.getElementById('#{id:nPublicationDate1}');
 history.value = history.value + elem.value + "\n\n";]]></xp:this.script>
-						</xp:eventHandler>
-						<xp:this.converter>
-							<xp:convertDateTime
-								type="both"></xp:convertDateTime>
-						</xp:this.converter>
-					</xp:inputText>
-				</xp:td>
-			</xp:tr>
-			<xp:tr>
-				<xp:td>
-					<xp:label
-						value="Title"
-						id="nTitle_Label1"
-						for="nTitle1">
-					</xp:label>
-				</xp:td>
-				<xp:td>
-					<xp:inputText
-						value="#{document1.NTitle}"
-						id="nTitle1"
-						required="true">
-						<xp:this.validators>
-							<xp:validateRequired
-								message="Define title">
-							</xp:validateRequired>
-							<xp:validateLength
-								minimum="5"
-								maximum="150"
-								message="Define title (5 - 150 chars)">
-							</xp:validateLength>
-						</xp:this.validators>
-						<xp:eventHandler
-							event="onchange"
-							submit="false">
-							<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
+				</xp:eventHandler>
+				<xp:this.converter>
+					<xp:convertDateTime type="both"></xp:convertDateTime>
+				</xp:this.converter>
+			</xp:inputText>
+		</div>
+		<div class="form-group">
+			<xp:label value="Title" id="nTitle_Label1" for="nTitle1">
+			</xp:label>
+			<xp:inputText value="#{document1.NTitle}" id="nTitle1"
+				required="true" styleClass="form-control">
+				<xp:this.validators>
+					<xp:validateRequired message="Define title">
+					</xp:validateRequired>
+					<xp:validateLength minimum="5" maximum="150"
+						message="Define title (5 - 150 chars)">
+					</xp:validateLength>
+				</xp:this.validators>
+				<xp:eventHandler event="onchange" submit="false">
+					<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
 history.value = history.value + "#{javascript:@UserName()}" + " " + new Date() + "\n" +"Title: ";
 var elem = document.getElementById('#{id:nTitle1}');
 history.value = history.value + elem.value + "\n\n";]]></xp:this.script>
-						</xp:eventHandler>
-					</xp:inputText>
-				</xp:td>
-			</xp:tr>
-			<xp:tr>
-				<xp:td>
-					<xp:label
-						value="Link"
-						id="nLink_Label1"
-						for="nLink1">
-					</xp:label>
-				</xp:td>
-				<xp:td>
-					<xp:link
-						text="#{javascript:document1.getItemValueString('NLink')}"
-						value="#{javascript:document1.getItemValueString('NLink')}"
-						rendered="#{javascript:param.documentId != null || param.nid != null}"
-						target="_blank">
-					</xp:link>
-					<xp:inputText
-						id="inputText6">
-						<xp:this.rendered><![CDATA[#{javascript:param.documentId == null && param.nid==null}]]></xp:this.rendered>
-					</xp:inputText>
-				</xp:td>
-			</xp:tr>
-			<xp:tr>
-				<xp:td>
-					<xp:label
-						value="Author"
-						id="pID_Label1"
-						for="pID1">
-					</xp:label>
-				</xp:td>
-				<xp:td>
-					<xp:comboBox
-						id="comboBox6"
-						value="#{document1.PID}">
-						<xp:eventHandler
-							event="onchange"
-							submit="false">
-							<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
+				</xp:eventHandler>
+			</xp:inputText>
+		</div>
+		<div class="form-group">
+			<xp:label value="Link" id="nLink_Label1" for="nLink1">
+			</xp:label>
+			<xp:link text="#{javascript:document1.getItemValueString('NLink')}"
+				value="#{javascript:document1.getItemValueString('NLink')}"
+				rendered="#{javascript:param.documentId != null || param.nid != null}"
+				target="_blank" styleClass="form-control">
+			</xp:link>
+			<xp:inputText id="inputText6">
+				<xp:this.rendered><![CDATA[#{javascript:param.documentId == null && param.nid==null}]]></xp:this.rendered>
+			</xp:inputText>
+		</div>
+		<div class="form-group">
+			<xp:label value="Author" id="pID_Label1" for="pID1">
+			</xp:label>
+			<xp:comboBox id="comboBox6" value="#{document1.PID}"
+				styleClass="form-control">
+				<xp:eventHandler event="onchange" submit="false">
+					<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
 history.value = history.value + "#{javascript:@UserName()}" + " " + new Date() + "\n" +"Author: ";
 var elem = document.getElementById('#{id:comboBox6}');
 history.value = history.value + elem.value + "\n\n";]]></xp:this.script>
-						</xp:eventHandler>
-						<xp:selectItems>
-							<xp:this.value><![CDATA[#{javascript:personsCache.update();personsCache.getPersonsForCombobox()
+				</xp:eventHandler>
+				<xp:selectItems>
+					<xp:this.value><![CDATA[#{javascript:personsCache.update();personsCache.getPersonsForCombobox()
     }]]></xp:this.value>
-						</xp:selectItems>
-					</xp:comboBox>
-					&#160;
-					<div
-						class="form-group">
-						<xp:inputText
-							id="newAuthorName">
-							<xp:this.rendered><![CDATA[#{javascript:document1.getItemValueString("NState") != "approved"}]]></xp:this.rendered>
-						</xp:inputText>
-						<xp:button
-							id="button8"
-							styleClass="btn"
-							value="Add new author">
-							<xp:eventHandler
-								event="onclick"
-								submit="true"
-								refreshMode="complete"
-								disableValidators="true">
-								<xp:this.action>
-									<xp:actionGroup>
-										<xp:executeScript
-											script="#{javascript:sessionScope.nid = document1.getDocument().getUniversalID()}">
-										</xp:executeScript>
-										<xp:saveDocument
-											var="document1">
-										</xp:saveDocument>
-										<xp:openPage
-											name="/author.xsp"
-											target="newDocument">
-										</xp:openPage>
-									</xp:actionGroup>
-								</xp:this.action>
-							</xp:eventHandler>
-						</xp:button>
-					</div>
-				</xp:td>
-			</xp:tr>
-			<xp:tr>
-				<xp:td>
-					<xp:label
-						value="Type"
-						id="label2"
-						for="comboBox2">
-					</xp:label>
-				</xp:td>
-				<xp:td>
-					<xp:listBox
-						id="comboBox2"
-						multiple="true"
-						styleClass="tidSelect">
-						<xp:this.value><![CDATA[${javascript:currentDocument.getDocument(true).getItemValue("TID")}]]></xp:this.value>
-						<xp:this.validators>
-							<xp:validateRequired></xp:validateRequired>
-						</xp:this.validators>
-						<xp:selectItems>
-							<xp:this.value><![CDATA[#{javascript:configCache.getTypesForCurrentUserCombobox()}]]></xp:this.value>
-						</xp:selectItems>
-					</xp:listBox>
+				</xp:selectItems>
+			</xp:comboBox>
+		</div>
 
-					<xp:message
-						id="message1"
-						for="comboBox2"
-						styleClass="alert alert-danger">
-					</xp:message>
-				</xp:td>
-			</xp:tr>
-			<xp:tr>
-				<xp:td>
-					<xp:label
-						value="Abstract"
-						id="nAbstract_Label1"
-						for="nAbstract1">
-					</xp:label>
-					<xp:br></xp:br>
-					Be sure to only
-					include the first
-					few sentences
-					of the story in
-					the
-					Abstract.
-				</xp:td>
-				<xp:td>
-					<xp:inputTextarea
-						value="#{document1.NAbstract}"
-						id="nAbstract1"
-						style="height:300px">
-						<xp:eventHandler
-							event="onchange"
-							submit="false">
-							<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
+		<div class="form-group">
+			<xp:inputText id="newAuthorName">
+				<xp:this.rendered><![CDATA[#{javascript:document1.getItemValueString("NState") != "approved"}]]></xp:this.rendered>
+			</xp:inputText>
+			<xp:button id="button8" styleClass="btn" value="Add new author">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete" disableValidators="true">
+					<xp:this.action>
+						<xp:actionGroup>
+							<xp:executeScript
+								script="#{javascript:sessionScope.nid = document1.getDocument().getUniversalID()}">
+							</xp:executeScript>
+							<xp:saveDocument var="document1">
+							</xp:saveDocument>
+							<xp:openPage name="/author.xsp" target="newDocument">
+							</xp:openPage>
+						</xp:actionGroup>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+		</div>
+
+		<div class="form-group">
+			<xp:label value="Type" id="label2" for="comboBox2">
+			</xp:label>
+			<xp:listBox id="comboBox2" multiple="true"
+				styleClass="tidSelect form-control select2">
+				<xp:this.value><![CDATA[${javascript:currentDocument.getDocument(true).getItemValue("TID")}]]></xp:this.value>
+				<xp:this.validators>
+					<xp:validateRequired></xp:validateRequired>
+				</xp:this.validators>
+				<xp:selectItems>
+					<xp:this.value><![CDATA[#{javascript:configCache.getTypesForCurrentUserCombobox()}]]></xp:this.value>
+				</xp:selectItems>
+			</xp:listBox>
+
+			<xp:message id="message1" for="comboBox2" styleClass="alert alert-danger">
+			</xp:message>
+		</div>
+
+		<div class="form-group">
+			<xp:label value="Abstract" id="nAbstract_Label1" for="nAbstract1">
+			</xp:label>
+			<xp:br></xp:br>
+			Be sure to only
+			include the first
+			few sentences
+			of the story in
+			the
+			Abstract.
+			<xp:inputTextarea value="#{document1.NAbstract}" id="nAbstract1"
+				styleClass="form-control" style="height:300px">
+				<xp:eventHandler event="onchange" submit="false">
+					<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
 history.value = history.value + "#{javascript:@UserName()}" + " " + new Date() + "\n" +"Abstract changed" + "\n\n";
 ]]></xp:this.script>
-						</xp:eventHandler>
-					</xp:inputTextarea>
-				</xp:td>
-			</xp:tr>
-			<xp:panel
-				rendered="#{javascript:configCache.isUserTopStoriesModerator(@UserName())}">
-				<xp:tr>
-					<xp:td>
-						<xp:label
-							value="Top Story"
-							id="label4"
-							for="nAbstract1">
-						</xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:comboBox
-							id="comboBox3"
-							value="#{document1.NTopStory}">
-							<xp:eventHandler
-								event="onchange"
-								submit="false">
-								<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
+				</xp:eventHandler>
+			</xp:inputTextarea>
+		</div>
+		<xp:panel
+			rendered="#{javascript:configCache.isUserTopStoriesModerator(@UserName())}">
+			<div class="form-group">
+				<xp:label value="Top Story" id="label4" for="nAbstract1">
+				</xp:label>
+				<xp:comboBox id="comboBox3" value="#{document1.NTopStory}"
+					styleClass="form-control">
+					<xp:eventHandler event="onchange" submit="false">
+						<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
 history.value = history.value + "#{javascript:@UserName()}" + " " + new Date() + "\n" +"Top Story: ";
 var elem = document.getElementById('#{id:comboBox3}');
 history.value = history.value + elem.value + "\n\n";]]></xp:this.script>
-							</xp:eventHandler>
-							<xp:selectItem
-								itemLabel="No"
-								itemValue="no">
-							</xp:selectItem>
-							<xp:selectItem
-								itemLabel="Yes"
-								itemValue="yes">
-							</xp:selectItem>
-						</xp:comboBox>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
-						<xp:label
-							value="Top Story Category"
-							id="label5"
-							for="nAbstract1">
-						</xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:comboBox
-							id="comboBox4"
-							value="#{document1.NTopStoryCategoryOrTop}">
-							<xp:eventHandler
-								event="onchange"
-								submit="false">
-								<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
+					</xp:eventHandler>
+					<xp:selectItem itemLabel="No" itemValue="no">
+					</xp:selectItem>
+					<xp:selectItem itemLabel="Yes" itemValue="yes">
+					</xp:selectItem>
+				</xp:comboBox>
+			</div>
+			<div class="form-group">
+				<xp:label value="Top Story Category" id="label5" for="nAbstract1">
+				</xp:label>
+				<xp:comboBox id="comboBox4" value="#{document1.NTopStoryCategoryOrTop}"
+					styleClass="form-control">
+					<xp:eventHandler event="onchange" submit="false">
+						<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
 history.value = history.value + "#{javascript:@UserName()}" + " " + new Date() + "\n" +"Top Story Category: ";
 var elem = document.getElementById('#{id:comboBox4}');
 history.value = history.value + elem.value + "\n\n";]]></xp:this.script>
-							</xp:eventHandler>
-							<xp:selectItems>
-								<xp:this.value><![CDATA[#{javascript:configCache.getCategoriesCombobox()
+					</xp:eventHandler>
+					<xp:selectItems>
+						<xp:this.value><![CDATA[#{javascript:configCache.getCategoriesCombobox()
     }]]></xp:this.value>
-							</xp:selectItems>
-						</xp:comboBox>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
-						<xp:label
-							value="Top Story Position"
-							id="label6"
-							for="nAbstract1">
-						</xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:comboBox
-							id="comboBox5"
-							value="#{document1.NTopStoryPosition}">
-							<xp:eventHandler
-								event="onchange"
-								submit="false">
-								<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
+					</xp:selectItems>
+				</xp:comboBox>
+			</div>
+			<div class="form-group">
+				<xp:label value="Top Story Position" id="label6" for="nAbstract1">
+				</xp:label>
+				<xp:comboBox id="comboBox5" value="#{document1.NTopStoryPosition}"
+					styleClass="form-control">
+					<xp:eventHandler event="onchange" submit="false">
+						<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
 history.value = history.value + "#{javascript:@UserName()}" + " " + new Date() + "\n" +"Top Story Position: ";
 var elem = document.getElementById('#{id:comboBox5}');
 history.value = history.value + elem.value + "\n\n";]]></xp:this.script>
-							</xp:eventHandler>
-							<xp:selectItem
-								itemLabel="1"
-								itemValue="1">
-							</xp:selectItem>
-							<xp:selectItem
-								itemLabel="2"
-								itemValue="2">
-							</xp:selectItem>
-							<xp:selectItem
-								itemLabel="3"
-								itemValue="3">
-							</xp:selectItem>
-							<xp:selectItem
-								itemLabel="4"
-								itemValue="4">
-							</xp:selectItem>
-						</xp:comboBox>
-					</xp:td>
-				</xp:tr>
-			</xp:panel>
+					</xp:eventHandler>
+					<xp:selectItem itemLabel="1" itemValue="1">
+					</xp:selectItem>
+					<xp:selectItem itemLabel="2" itemValue="2">
+					</xp:selectItem>
+					<xp:selectItem itemLabel="3" itemValue="3">
+					</xp:selectItem>
+					<xp:selectItem itemLabel="4" itemValue="4">
+					</xp:selectItem>
+				</xp:comboBox>
+			</div>
+		</xp:panel>
 
-			<xp:panel
-				rendered="#{javascript:configCache.isUserSpotlightModerator(@UserName())}">
-				<xp:tr>
-					<xp:td>
-						<xp:label
-							value="Spotlight"
-							id="label3"
-							for="nAbstract1">
-						</xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:comboBox
-							id="comboBox1"
-							value="#{document1.NSpotlight}">
-							<xp:eventHandler
-								event="onchange"
-								submit="false">
-								<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
+		<xp:panel
+			rendered="#{javascript:configCache.isUserSpotlightModerator(@UserName())}">
+			<div class="form-group">
+				<xp:label value="Spotlight" id="label3" for="nAbstract1">
+				</xp:label>
+				<xp:comboBox id="comboBox1" value="#{document1.NSpotlight}"
+					styleClass="form-control">
+					<xp:eventHandler event="onchange" submit="false">
+						<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
 history.value = history.value + "#{javascript:@UserName()}" + " " + new Date() + "\n" +"Spotlight: ";
 var elem = document.getElementById('#{id:comboBox1}');
 history.value = history.value + elem.value + "\n\n";]]></xp:this.script>
-							</xp:eventHandler>
-							<xp:selectItem
-								itemLabel="No"
-								itemValue="no">
-							</xp:selectItem>
-							<xp:selectItem
-								itemLabel="Yes"
-								itemValue="yes">
-							</xp:selectItem>
-						</xp:comboBox>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
-						<xp:label
-							value="Spotlight Picture"
-							id="label9"
-							for="nAbstract1">
-						</xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:fileUpload
-							id="fileUpload1"
-							value="#{document1.NSpotlightPicture}">
-						</xp:fileUpload>
-						<xp:label
-							value="First one is used if more than one.">
-						</xp:label>
-						<xp:fileDownload
-							rows="30"
-							id="fileDownload1"
-							displayLastModified="false"
-							value="#{document1.NSpotlightPicture}"
-							allowDelete="true"
-							hideWhen="true"
-							displayCreated="false"
-							displayType="false">
-						</xp:fileDownload>
-					</xp:td>
-				</xp:tr>
-				<!--
-					<xp:tr> <xp:td> <xp:label value="Spotlight Sentence" id="label8"
-					for="nAbstract1"> </xp:label> </xp:td> <xp:td> <xp:inputText
-					value="#{document1.NSpotlightSentence}" id="inputText3"
-					style="width:500px"> </xp:inputText> </xp:td> </xp:tr>
-				-->
-				<xp:tr>
-					<xp:td>
-						<xp:label
-							value="Spotlight Position"
-							id="label10"
-							for="comboBox7">
-						</xp:label>
-					</xp:td>
-					<xp:td>
-						<xp:comboBox
-							id="comboBox7"
-							value="#{document1.NSpotlightPosition}">
-							<xp:eventHandler
-								event="onchange"
-								submit="false">
-								<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
+					</xp:eventHandler>
+					<xp:selectItem itemLabel="No" itemValue="no">
+					</xp:selectItem>
+					<xp:selectItem itemLabel="Yes" itemValue="yes">
+					</xp:selectItem>
+				</xp:comboBox>
+			</div>
+			<div class="form-group">
+				<xp:label value="Spotlight Picture" id="label9" for="nAbstract1">
+				</xp:label>
+				<xp:fileUpload id="fileUpload1" value="#{document1.NSpotlightPicture}"
+					styleClass="form-control">
+				</xp:fileUpload>
+				<xp:label value="First one is used if more than one.">
+				</xp:label>
+				<xp:fileDownload rows="30" id="fileDownload1"
+					displayLastModified="false" value="#{document1.NSpotlightPicture}"
+					styleClass="form-control" allowDelete="true" hideWhen="true"
+					displayCreated="false" displayType="false">
+				</xp:fileDownload>
+			</div>
+			<div class="form-group">
+				<xp:label value="Spotlight Position" id="label10" for="comboBox7">
+				</xp:label>
+				<xp:comboBox id="comboBox7" value="#{document1.NSpotlightPosition}"
+					styleClass="form-control">
+					<xp:eventHandler event="onchange" submit="false">
+						<xp:this.script><![CDATA[var history = document.getElementById('#{id:history}');
 history.value = history.value + "#{javascript:@UserName()}" + " " + new Date() + "\n" +"Spotlight Position: ";
 var elem = document.getElementById('#{id:comboBox7}');
 history.value = history.value + elem.value + "\n\n";]]></xp:this.script>
-							</xp:eventHandler>
-							<xp:selectItem
-								itemLabel="1"
-								itemValue="1">
-							</xp:selectItem>
-							<xp:selectItem
-								itemLabel="2"
-								itemValue="2">
-							</xp:selectItem>
-							<xp:selectItem
-								itemLabel="3"
-								itemValue="3">
-							</xp:selectItem>
-							<xp:selectItem
-								itemLabel="4"
-								itemValue="4">
-							</xp:selectItem>
-						</xp:comboBox>
-					</xp:td>
-				</xp:tr>
-				<xp:panel>
-					<xp:this.rendered><![CDATA[#{javascript:document1.getItemValueString("NState") == "approved"}]]></xp:this.rendered>
-					<xp:tr>
-
-						<xp:td>
-							<xp:label
-								value="Moderation Date"
-								id="label7"
-								for="nPublicationDate1">
-							</xp:label>
-						</xp:td>
-						<xp:td>
-							<xp:inputText
-								value="#{document1.NModerationDate}"
-								id="inputText2"
-								readonly="true">
-								<xp:dateTimeHelper
-									id="dateTimeHelper3">
-								</xp:dateTimeHelper>
-								<xp:this.converter>
-									<xp:convertDateTime
-										type="both"></xp:convertDateTime>
-								</xp:this.converter>
-							</xp:inputText>
-						</xp:td>
-					</xp:tr>
-					<xp:tr>
-						<xp:td>
-							<xp:label
-								value="Moderator"
-								id="label1">
-							</xp:label>
-						</xp:td>
-						<xp:td>
-							<xp:inputText
-								value="#{document1.NModerator}"
-								id="inputText1"
-								readonly="true">
-							</xp:inputText>
-						</xp:td>
-					</xp:tr>
-					<xp:tr>
-						<xp:td>
-							<xp:label
-								value="Last Modified Date"
-								id="label8"
-								for="nPublicationDate1">
-							</xp:label>
-						</xp:td>
-						<xp:td>
-							<xp:inputText
-								value="#{document1.NLastModified}"
-								id="inputText3"
-								readonly="true">
-								<xp:dateTimeHelper
-									id="dateTimeHelper1">
-								</xp:dateTimeHelper>
-								<xp:this.converter>
-									<xp:convertDateTime
-										type="both"></xp:convertDateTime>
-								</xp:this.converter>
-							</xp:inputText>
-						</xp:td>
-					</xp:tr>
-					<xp:tr>
-						<xp:td>
-							<xp:label
-								value="Last Editor"
-								id="label11">
-							</xp:label>
-						</xp:td>
-						<xp:td>
-							<xp:inputText
-								value="#{document1.NLastEditor}"
-								id="inputText4"
-								readonly="true">
-							</xp:inputText>
-						</xp:td>
-					</xp:tr>
-					<xp:tr>
-						<xp:td>
-							<xp:label
-								value="History"
-								id="label12">
-							</xp:label>
-						</xp:td>
-						<xp:td>
-							<xp:inputText
-								value="#{document1.NHistory}"
-								id="inputText5"
-								readonly="true">
-							</xp:inputText>
-						</xp:td>
-					</xp:tr>
-				</xp:panel>
+					</xp:eventHandler>
+					<xp:selectItem itemLabel="1" itemValue="1">
+					</xp:selectItem>
+					<xp:selectItem itemLabel="2" itemValue="2">
+					</xp:selectItem>
+					<xp:selectItem itemLabel="3" itemValue="3">
+					</xp:selectItem>
+					<xp:selectItem itemLabel="4" itemValue="4">
+					</xp:selectItem>
+				</xp:comboBox>
+			</div>
+			<xp:panel>
+				<xp:this.rendered><![CDATA[#{javascript:document1.getItemValueString("NState") == "approved"}]]></xp:this.rendered>
+				<div class="form-group">
+					<xp:label value="Moderation Date" id="label7" for="inputText123">
+					</xp:label>
+					<br />
+					<xp:inputText value="#{document1.NModerationDate}" id="inputText123"
+						styleClass="form-control" readonly="true">
+						<xp:dateTimeHelper id="dateTimeHelper3">
+						</xp:dateTimeHelper>
+						<xp:this.converter>
+							<xp:convertDateTime type="both"></xp:convertDateTime>
+						</xp:this.converter>
+					</xp:inputText>
+				</div>
+				<div class="form-group">
+					<xp:label value="Moderator" id="label1" for="inputText1">
+					</xp:label>
+					<br />
+					<xp:inputText value="#{document1.NModerator}" id="inputText1"
+						styleClass="form-control" readonly="true">
+					</xp:inputText>
+				</div>
+				<div class="form-group">
+					<xp:label value="Last Modified Date" id="label8" for="inputText3">
+					</xp:label>
+					<br />
+					<xp:inputText value="#{document1.NLastModified}" id="inputText3"
+						styleClass="form-control" readonly="true">
+						<xp:dateTimeHelper id="dateTimeHelper1">
+						</xp:dateTimeHelper>
+						<xp:this.converter>
+							<xp:convertDateTime type="both"></xp:convertDateTime>
+						</xp:this.converter>
+					</xp:inputText>
+				</div>
+				<div class="form-group">
+					<xp:label value="Last Editor" id="label11" for="inputText4">
+					</xp:label>
+					<br />
+					<xp:inputText value="#{document1.NLastEditor}" id="inputText4"
+						styleClass="form-control" readonly="true">
+					</xp:inputText>
+				</div>
+				<div class="form-group">
+					<xp:label value="History" id="label12" for="inputText5">
+					</xp:label>
+					<br />
+					<xp:inputText value="#{document1.NHistory}" id="inputText5"
+						styleClass="form-control" readonly="true">
+					</xp:inputText>
+				</div>
 			</xp:panel>
-			<!--
-				<xp:tr> <xp:td> <xp:label value="Image URL" id="label1"
-				for="nAbstract1"> </xp:label> </xp:td> <xp:td> <xp:inputText
-				value="#{document1.NImageURL}" id="inputText1" style="width:500px">
-				</xp:inputText> <xp:button value="Select" id="button9">
-				<xp:eventHandler event="onclick" submit="false">
-				<xp:this.script><![CDATA[ var buttonId = "#{id:button9}"; var
-				buttonElement = document.getElementById(buttonId);
-				buttonElement.style.visibility = 'hidden';
-				mpURLCheck(true);]]></xp:this.script> </xp:eventHandler>
-				</xp:button> </xp:td> </xp:tr>
-			-->
-		</xp:table>
+		</xp:panel>
 
-		<div
-			id="newsfeedContainer"></div>
-		<div
-			id="shareBox"
-			style="display: none;">
-			<div
-				id="shareBoxWrapper">
-				<span
-					id="bubblePointer"
-					style="display: none;">
+		<div id="newsfeedContainer"></div>
+		<div id="shareBox" style="display: none;">
+			<div id="shareBoxWrapper">
+				<span id="bubblePointer" style="display: none;">
 				</span>
-				<div
-					id="shareBoxContents">
-					<div
-						id="shareBoxForm">
-						<div
-							class="lotusTable">
-							<div
-								class="lotusForm2">
-								<div
-									class="lotusFormBody">
-									<div
-										id="shareTextArea"></div>
-									<div
-										class="lotusFormField lotusMeta last"
-										id="shareStatusAttachActions">
+				<div id="shareBoxContents">
+					<div id="shareBoxForm">
+						<div class="lotusTable">
+							<div class="lotusForm2">
+								<div class="lotusFormBody">
+									<div id="shareTextArea"></div>
+									<div class="lotusFormField lotusMeta last" id="shareStatusAttachActions">
 									</div>
-									<div
-										style="display: none;width:300px;"
-										id="shareAttachLink">
-										<input
-											type="hidden"
-											id="shareURL"
-											value=""
-											style="width: 573px;">
+									<div style="display: none;width:300px;" id="shareAttachLink">
+										<input type="hidden" id="shareURL" value="" style="width: 573px;">
 										</input>
 										<br></br>
-										<div
-											id="shareURLwait">
+										<div id="shareURLwait">
 											Parsing link..
 										</div>
-										<div
-											id="shareURLmeta"
-											style="display: none;">
-											<div
-												id="shareURLThumb"
-												style="display: none;">
-												<div
-													id="mpLinkThumbPreview">
+										<div id="shareURLmeta" style="display: none;">
+											<div id="shareURLThumb" style="display: none;">
+												<div id="mpLinkThumbPreview">
 												</div>
-												<div
-													id="mpLinkThumbCount">
+												<div id="mpLinkThumbCount">
 												</div>
-												<xp:button
-													value="Previous"
-													id="button7">
-													<xp:eventHandler
-														event="onclick"
-														submit="false">
+												<xp:button value="Previous" id="button7">
+													<xp:eventHandler event="onclick" submit="false">
 														<xp:this.script><![CDATA[mpLinkThumbScroll(0);]]></xp:this.script>
 													</xp:eventHandler>
 												</xp:button>
-												<xp:button
-													value="Next"
-													id="button6">
-													<xp:eventHandler
-														event="onclick"
-														submit="false">
+												<xp:button value="Next" id="button6">
+													<xp:eventHandler event="onclick" submit="false">
 														<xp:this.script><![CDATA[mpLinkThumbScroll(1);]]></xp:this.script>
 													</xp:eventHandler>
 												</xp:button>
-												<xp:button
-													value="Use Image"
-													id="button4">
-													<xp:eventHandler
-														event="onclick"
-														submit="false">
+												<xp:button value="Use Image" id="button4">
+													<xp:eventHandler event="onclick" submit="false">
 														<xp:this.script><![CDATA[var adf = mpObj;					
 var ida=getCurrentThumbUrl();
 document.getElementById("#{id:inputText1}").value = ida;]]></xp:this.script>
@@ -914,8 +548,7 @@ document.getElementById("#{id:inputText1}").value = ida;]]></xp:this.script>
 												</xp:button>
 											</div>
 										</div>
-										<div
-											style="clear: both;" />
+										<div style="clear: both;" />
 									</div>
 								</div>
 							</div>
@@ -924,13 +557,9 @@ document.getElementById("#{id:inputText1}").value = ida;]]></xp:this.script>
 				</div>
 			</div>
 		</div>
-		<div
-			id="blockscreen"
-			style="opacity:0.2; display: none;">
+		<div id="blockscreen" style="opacity:0.2; display: none;">
 		</div>
-		<xp:eventHandler
-			event="onClientLoad"
-			submit="false">
+		<xp:eventHandler event="onClientLoad" submit="false">
 			<xp:this.script><![CDATA[
 var mpObj = new micropublisher('@self', 'newsfeedContainer'); 
 mpObj.show('Status');
@@ -949,25 +578,12 @@ pElement2.domNode.style.width = '20px';
 ]]></xp:this.script>
 		</xp:eventHandler>
 	</xc:moderationLayout>
-	<xp:inputHidden
-		id="history"
-		value="#{document1.NHistory}">
+	<xp:inputHidden id="history" value="#{document1.NHistory}">
 	</xp:inputHidden>
-	<!--
-		<xp:scriptBlock id="scriptBlock1" type="text/javascript">
+
+	<xp:scriptBlock id="scriptBlock1" type="text/javascript">
 		<xp:this.value><![CDATA[$(document).ready(function(){
-		$(".tidSelect").select2({ }); });]]></xp:this.value> </xp:scriptBlock>
-	-->
-	<xp:scriptBlock
-		id="scriptBlock1"
-		type="text/javascript"
-		rendered="false">
-		<xp:this.value><![CDATA[$.when(
-   $("select[class*='select2']" ).select2({
-    allowClear: true
-  })
-).done(function(){
-     $('.mainform').show();
-});]]></xp:this.value>
+		$(".tidSelect").select2({ }); });]]></xp:this.value>
 	</xp:scriptBlock>
+
 </xp:view>

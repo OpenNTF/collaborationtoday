@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<ul class="nav nav-tabs" role="menu">
+		<xp:repeat rows="30" value="#{javascript:nav.getMod()}"
+			indexVar="index" var="mod">
+			<xp:panel tagName="li" role="presentation">
+				<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf(mod.getUrl())!=-1 ? "active" : ""}]]></xp:this.styleClass>
+				<xp:link role="menuitem"
+					text="#{javascript:mod.getLabel();}"
+					value="#{javascript:mod.getUrl()}">
+				</xp:link>
+			</xp:panel>
+		</xp:repeat>
+	</ul>
+	<br/>
+</xp:view>

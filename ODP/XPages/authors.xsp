@@ -1,110 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view
-	xmlns:xe="http://www.ibm.com/xsp/coreex"
-	xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom"
-	pageTitle="Authors | Collaboration Today">
+<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Authors | Collaboration Today">
 	<xp:this.resources>
-		<xp:styleSheet
-			href="/view.css" />
+		<xp:styleSheet href="/view.css" />
 	</xp:this.resources>
 
-	<xc:moderationLayout
-		pageHeader="Authors">
+	<xc:moderationLayout pageHeader="Authors">
 		<xp:this.facets>
-			<xc:moderationLeftColumn
-				xp:key="leftColumn" />
+			<xc:moderationLeftColumn xp:key="leftColumn" />
 		</xp:this.facets>
 
-		<xp:button
-			value="New"
-			id="button5"
-			styleClass="btn">
-			<xp:eventHandler
-				event="onclick"
-				submit="true"
-				refreshMode="complete"
-				action="new-author" />
+		<xp:button value="New" id="button5" styleClass="btn">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete" action="new-author" />
 		</xp:button>
 		<br />
 		<br />
-		<div
-			class="form-group">
-			<xp:label
-				value="Starts with..."
-				id="label1"
-				for="viewfilter"></xp:label>
-			<xp:inputText
-				styleClass="form-control"
-				id="viewfilter"
-				value="#{viewScope.viewfilter}"
-				autocomplete="off">
-				<xp:eventHandler
-					event="onclick"
-					submit="true"
-					refreshMode="partial"
-					refreshId="viewPanel1">
+		<div class="form-group">
+			<xp:label value="Starts with..." id="label1" for="viewfilter"></xp:label>
+			<xp:inputText styleClass="form-control" id="viewfilter"
+				value="#{viewScope.viewfilter}" autocomplete="off">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="partial" refreshId="viewPanel1">
 				</xp:eventHandler>
 			</xp:inputText>
 		</div>
-		<xp:div
-			id="view">
-			<xc:ccPager
-				pagerFor="viewPanel1"></xc:ccPager>
+		<xp:div id="view">
+			<xc:ccPager pagerFor="viewPanel1"></xc:ccPager>
 
-			<xp:viewPanel
-				rows="30"
-				id="viewPanel1"
-				pageName="/author.xsp"
-				viewStyleClass="viewPanel"
-				dataTableStyleClass="dataTableViewPanel"
+			<xp:viewPanel rows="30" id="viewPanel1" pageName="/author.xsp"
+				viewStyleClass="viewPanel" dataTableStyleClass="table table-condensed table-striped table-hover"
 				var="person">
 
 				<xp:this.data>
-					<xp:dominoView
-						var="view1"
-						viewName="PersonsAll"
-						sortColumn="PDisplayName"
-						keysExactMatch="false">
+					<xp:dominoView var="view1" viewName="PersonsAll"
+						sortColumn="PDisplayName" keysExactMatch="false">
 						<xp:this.keys><![CDATA[#{javascript:viewScope.get("viewfilter")}]]></xp:this.keys>
 					</xp:dominoView>
 				</xp:this.data>
-				<xp:viewColumn
-					columnName="PDisplayName"
-					id="viewColumn2"
-					displayAs="link"
-					styleClass="columnView25">
-					<xp:viewColumnHeader
-						value="Display Name"
-						id="viewColumnHeader2"
+				<xp:viewColumn columnName="PDisplayName" id="viewColumn2"
+					displayAs="link" styleClass="columnView25">
+					<xp:viewColumnHeader value="Display Name" id="viewColumnHeader2"
 						sortable="true">
 					</xp:viewColumnHeader>
 				</xp:viewColumn>
-				<xp:viewColumn
-					columnName="PEMail"
-					id="viewColumn4"
+				<xp:viewColumn columnName="PEMail" id="viewColumn4"
 					styleClass="columnView25">
-					<xp:viewColumnHeader
-						value="E-Mail"
-						id="viewColumnHeader4">
+					<xp:viewColumnHeader value="E-Mail" id="viewColumnHeader4">
 					</xp:viewColumnHeader>
 				</xp:viewColumn>
-				<xp:viewColumn
-					id="viewColumn3"
-					columnName="PChampion"
+				<xp:viewColumn id="viewColumn3" columnName="PChampion"
 					displayAs="hidden">
 					<xp:this.iconSrc><![CDATA[#{javascript:person.getDocument().getItemValueString("PChampion").equals("1") ? "/champion_24x24.png" : ""}]]></xp:this.iconSrc>
-					<xp:viewColumnHeader
-						value="IBM Champion"
-						id="viewColumnHeader3">
+					<xp:viewColumnHeader value="IBM Champion" id="viewColumnHeader3">
 					</xp:viewColumnHeader>
 				</xp:viewColumn>
-				<xp:viewColumn
-					columnName="PID"
-					id="viewColumn1">
-					<xp:viewColumnHeader
-						value="ID"
-						id="viewColumnHeader1">
+				<xp:viewColumn columnName="PID" id="viewColumn1">
+					<xp:viewColumnHeader value="ID" id="viewColumnHeader1">
 					</xp:viewColumnHeader>
 				</xp:viewColumn>
 			</xp:viewPanel>

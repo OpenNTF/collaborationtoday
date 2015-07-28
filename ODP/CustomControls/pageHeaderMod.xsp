@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<div
+		class="page-header">
+		<h3>
+
+			<xp:text
+				disableTheme="true"
+				value="#{compositeData.value}" />
+
+			&#160;
+			<xp:image
+				url="/champion_24x24.png"
+				id="image1">
+				<xp:this.rendered><![CDATA[#{javascript:try{
+	compositeData.cat.equals("champions")
+} catch(e){
+}}]]></xp:this.rendered>
+			</xp:image>
+
+		</h3>
+
+	</div>
+</xp:view>

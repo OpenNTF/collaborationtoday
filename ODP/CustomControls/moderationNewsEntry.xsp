@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view
-	xmlns:xp="http://www.ibm.com/xsp/core">
-	<xp:table
-		styleClass="table">
-		<colgroup>
-			<col />
-			<col />
-			<col />
-			<col
-				style="width:100%" />
-		</colgroup>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	
 		<xp:tr>
 			<xp:td>
-				<xp:button
-					value="Edit"
-					id="button1"
-					styleClass="btn btn-primary">
-					<xp:eventHandler
-						event="onclick"
-						submit="true"
+				<xp:button value="Edit" id="button1" styleClass="btn btn-primary">
+					<xp:eventHandler event="onclick" submit="true"
 						refreshMode="complete">
 						<xp:this.action><![CDATA[#{javascript:var exCon = facesContext.getExternalContext();
 				var writer = facesContext.getResponseWriter();
@@ -30,18 +16,12 @@ response.sendRedirect(output);}]]></xp:this.action>
 			</xp:td>
 
 			<xp:td>
-				<xp:button
-					value="Delete"
-					id="buttonDel"
-					styleClass="btn btn-danger">
-					<xp:eventHandler
-						event="onclick"
-						submit="true"
+				<xp:button value="Delete" id="buttonDel" styleClass="btn btn-danger">
+					<xp:eventHandler event="onclick" submit="true"
 						refreshMode="complete">
 						<xp:this.action>
 							<xp:actionGroup>
-								<xp:confirm
-									message="Are you sure to delete the entry?">
+								<xp:confirm message="Are you sure to delete the entry?">
 								</xp:confirm>
 
 
@@ -78,13 +58,8 @@ response.sendRedirect(output);}]]></xp:this.action>
 				<xp:this.rendered><![CDATA[#{javascript:if (compositeData.showRemoveTopStoryButton == null) return false;
 if (!compositeData.showRemoveTopStoryButton.equalsIgnoreCase("yes")) return false;
 return true;}]]></xp:this.rendered>
-				<xp:button
-					value="Remove"
-					id="button2"
-					styleClass="btn btn-warning">
-					<xp:eventHandler
-						event="onclick"
-						submit="true"
+				<xp:button value="Remove" id="button2" styleClass="btn btn-warning">
+					<xp:eventHandler event="onclick" submit="true"
 						refreshMode="complete">
 						<xp:this.action>
 							<xp:actionGroup>
@@ -116,13 +91,8 @@ return true;}]]></xp:this.rendered>
 				<xp:this.rendered><![CDATA[#{javascript:if (compositeData.showRemoveSpotlightButton == null) return false;
 if (!compositeData.showRemoveSpotlightButton.equalsIgnoreCase("yes")) return false;
 return true;}]]></xp:this.rendered>
-				<xp:button
-					value="Remove"
-					id="button3"
-					styleClass="btn btn-warning">
-					<xp:eventHandler
-						event="onclick"
-						submit="true"
+				<xp:button value="Remove" id="button3" styleClass="btn btn-warning">
+					<xp:eventHandler event="onclick" submit="true"
 						refreshMode="complete">
 						<xp:this.action>
 							<xp:actionGroup>
@@ -170,57 +140,39 @@ return true;}]]></xp:this.rendered>
 				} } else { }}]]></xp:this.action> </xp:eventHandler></xp:button>
 				</xp:td> </xp:repeat>
 			-->
-			<xp:td
-				style="padding-left:5.0px">
-				<xp:link
-					value="#{javascript:compositeData.link}"
-					target="_blank"
+			<xp:td style="padding-left:5.0px">
+				<xp:link value="#{javascript:compositeData.link}" target="_blank"
 					text="#{javascript:compositeData.title}">
 				</xp:link>
 				<br></br>
-				<xp:label
-					value="#{javascript:compositeData.personDisplayName}">
+				<xp:label value="#{javascript:compositeData.personDisplayName}">
 				</xp:label>
-				<xp:label
-					value=" - Published: ">
+				<xp:label value=" - Published: ">
 				</xp:label>
-				<xp:label
-					value="#{javascript:compositeData.publicationDate}">
+				<xp:label value="#{javascript:compositeData.publicationDate}">
 				</xp:label>
 				<xp:panel>
 					<xp:this.rendered><![CDATA[#{javascript:if (compositeData.creationDate == null) {
 	return false;
 } else {return true;}}]]></xp:this.rendered>
-					<xp:label
-						value=" - Created: ">
+					<xp:label value=" - Created: ">
 					</xp:label>
-					<xp:label
-						value="#{javascript:compositeData.creationDate}">
+					<xp:label value="#{javascript:compositeData.creationDate}">
 					</xp:label>
-					<xp:label
-						id="label1"
-						value=" - added by: "></xp:label>
-					<xp:label
-						value="#{javascript:compositeData.addedBy}"
-						id="label2"></xp:label>
+					<xp:label id="label1" value=" - added by: "></xp:label>
+					<xp:label value="#{javascript:compositeData.addedBy}" id="label2"></xp:label>
 				</xp:panel>
 				<xp:panel>
 					<xp:this.rendered><![CDATA[#{javascript:if (compositeData.clicksTotal == null) {
 	return false;
 } else {return true;}}]]></xp:this.rendered>
-					<xp:label
-						value=" - Clicks: "></xp:label>
-					<xp:label
-						value="#{javascript:compositeData.clicksTotal}">
+					<xp:label value=" - Clicks: "></xp:label>
+					<xp:label value="#{javascript:compositeData.clicksTotal}">
 					</xp:label>
-					<xp:label
-						value=" - Last Week Clicks: "></xp:label>
-					<xp:label
-						value="#{javascript:compositeData.clicksLastWeek}">
+					<xp:label value=" - Last Week Clicks: "></xp:label>
+					<xp:label value="#{javascript:compositeData.clicksLastWeek}">
 					</xp:label>
 				</xp:panel>
 			</xp:td>
 		</xp:tr>
-	</xp:table>
-	<xp:br></xp:br>
 </xp:view>

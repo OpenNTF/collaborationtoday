@@ -1,83 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
 
-	<xc:navigationRules/>	
+	<xc:navigationRules />
 
 	<!-- Fix for IE8 -->
-	<xp:text escape="false" id="computedField1" rendered="#{javascript:context.getUserAgent().isIE(0,8)}">
+	<xp:text escape="false" id="computedField1"
+		rendered="#{javascript:context.getUserAgent().isIE(0,8)}">
 		<xp:this.value><![CDATA[#{javascript:"<style type='text/css'>body {padding-top: 60px; padding-bottom: 40px; }</style>"}]]></xp:this.value>
 	</xp:text>
 
-	
-	
-	<!-- 
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span2">
-				<xp:callback facetName="leftColumn" id="callback1"/>
-			</div>
-			<div id="mainContent" class="span7">
-				<xc:moderatorCheck/>
-			
-				<xp:div loaded="${javascript:configCache.isUserModerator(@UserName())}">
-					<xc:pageHeader value="#{compositeData.pageHeader}" rendered="#{compositeData.pageHeader != null}"/>
-					
-					<xp:callback id="callback2" />
-				</xp:div>
-			</div>
-		</div>
-		<xc:footer/>
-	</div>
-	
-	 -->
-	
-	
-	<nav
-		class="navbar navbar-inverse navbar-fixed-top"
-		role="navigation">
-		<div
-			class="container">
-			<div
-				class="navbar-header">
-				<button
-					type="button"
-					class="navbar-toggle"
-					data-toggle="collapse"
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#nav-collapse">
-					<span
-						class="sr-only">Toggle navigation</span>
-					<span
-						class="icon-bar"></span>
-					<span
-						class="icon-bar"></span>
-					<span
-						class="icon-bar"></span>
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
-				<xp:link
-					styleClass="navbar-brand"
-					themeId="Link.Home"
+				<xp:link styleClass="navbar-brand" themeId="Link.Home"
 					text="Collaboration Today">
-					<xp:image
-						url="/favicon.png"
-						id="image1"
+					<xp:image url="/favicon.png" id="image1"
 						style="float:left;margin:-6px 10px 0 0">
 					</xp:image>
 				</xp:link>
 			</div>
 
-			<div
-				class="collapse navbar-collapse" id="nav-collapse">
-				<ul
-					class="nav navbar-nav">
-					<xp:repeat
-						value="#{javascript:nav.navigation}"
-						var="nav">
-						<xp:panel
-							tagName="li">
+			<div class="collapse navbar-collapse" id="nav-collapse">
+				<ul class="nav navbar-nav">
+					<xp:repeat value="#{javascript:nav.navigation}" var="nav">
+						<xp:panel tagName="li">
 							<xp:this.styleClass><![CDATA[#{javascript:view.getPageName().indexOf(nav.getUrl()) != -1 ? "active" : ""}]]></xp:this.styleClass>
-							<xp:link
-								text="#{javascript:nav.getLabel()}"
-								value="#{javascript:nav.getUrl()}">
+							<xp:link text="#{javascript:nav.getLabel()}" value="#{javascript:nav.getUrl()}">
 							</xp:link>
 						</xp:panel>
 					</xp:repeat>
@@ -86,31 +43,26 @@
 		</div>
 	</nav>
 
-	
-	<div
-		class="container">
-		<div
-			class="row row-offcanvas row-offcanvas-right">
-			<div
-				class="col-lg-9">
-				<xc:moderatorCheck/>
-			
+
+	<div class="container">
+	<xc:modDropdownList></xc:modDropdownList>
+	<div class="row">
+			<div class="col-lg-12">
+				<xc:moderatorCheck />
 				<xp:div loaded="${javascript:configCache.isUserModerator(@UserName())}">
-					<xc:pageHeader value="#{compositeData.pageHeader}" rendered="#{compositeData.pageHeader != null}"
-					buttonText="Options..."
-					/>
-					
+					<xc:pageHeaderMod value="#{compositeData.pageHeader}"
+						rendered="#{compositeData.pageHeader != null}" buttonText="Options..." />
+
 					<xp:callback id="callback3" />
 				</xp:div>
 			</div>
-			<div
-				class="col-lg-3 sidebar-offcanvas">
-				<xp:callback
-					facetName="leftColumn"
-					id="leftColumn">
+			<!--
+			<div class="col-lg-3">
+				<xp:callback facetName="leftColumn" id="leftColumn">
 				</xp:callback>
 			</div>
+			-->
 		</div>
-		<xc:footer/>
+		<xc:footer />
 	</div>
 </xp:view>

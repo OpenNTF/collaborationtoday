@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="25e" sequence="27" unid="9AE299FF1AA9869EC1257C58004C2855">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2fe" sequence="52" unid="9AE299FF1AA9869EC1257C58004C2855">
 <created><datetime>20140106T145150,61+01</datetime></created>
-<modified><datetime dst="true">20150428T180605,07+02</datetime></modified>
-<revised><datetime dst="true">20150417T230040,60+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150428T180605,06+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150417T225753,49+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<modified><datetime dst="true">20150729T005718,38+02</datetime></modified>
+<revised><datetime dst="true">20150519T181519,04+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150729T005718,38+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150727T184858,47+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>home2.xsp</text></item>
 
+
+<item name="$FileNames" sign="true"><text>home2.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.1</text></item>
 
 
 
-
-<item name="$FileNames" sign="true"><text>home2.xsp</text></item>
 
 </note>

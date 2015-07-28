@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="ae9a" sequence="33" unid="A90C7CE74284F80DC1257E38006240A0">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="846" sequence="50" unid="A90C7CE74284F80DC1257E38006240A0">
 <created><datetime dst="true">20150501T195310,72+02</datetime></created>
-<modified><datetime dst="true">20150501T200511,75+02</datetime></modified>
-<revised><datetime dst="true">20150501T200511,74+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150501T200511,74+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150501T195310,72+02</datetime></addedtofile></noteinfo>
+<modified><datetime dst="true">20150729T005718,82+02</datetime></modified>
+<revised><datetime dst="true">20150519T181518,80+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150729T005718,82+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150727T184915,24+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name="$TITLE"><text>login.xsp</text></item>
 <item name="$Flags"><text>gC~4K</text></item>
 
 
-
+<item name="$FileNames" sign="true"><text>login.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5</text></item>
 
 
-<item name="$FileNames" sign="true"><text>login.xsp</text></item>
+
 
 </note>

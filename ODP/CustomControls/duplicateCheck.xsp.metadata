@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="3de" sequence="85" unid="FB6FCBE794496F4DC2257B150047D08D">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="44a" sequence="104" unid="FB6FCBE794496F4DC2257B150047D08D">
 <created><datetime>20130217T150424,45+02</datetime></created>
-<modified><datetime dst="true">20150428T180604,83+02</datetime></modified>
-<revised><datetime dst="true">20150417T230042,52+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150428T180604,82+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150417T225755,49+02</datetime></addedtofile></noteinfo>
+<modified><datetime dst="true">20150729T005718,12+02</datetime></modified>
+<revised><datetime dst="true">20150729T000616,99+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150729T005718,12+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150727T184900,67+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
@@ -13,10 +13,10 @@
 
 
 
+
+
+
 <item name="$FileNames" sign="true"><text>duplicateCheck.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.1</text></item>
-
-
-
+<item name="$DesignerVersion"><text>8.5</text></item>
 
 </note>

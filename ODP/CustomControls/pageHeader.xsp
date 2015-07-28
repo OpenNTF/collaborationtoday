@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view
-	xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom">
-	<div
-		class="page-header">
-		<xc:categoriesDropdown
-			buttonText="#{javascript:compositeData.buttonText}">
-		</xc:categoriesDropdown>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<div class="page-header">
+		<xc:categoriesDropdown buttonText="Categories"></xc:categoriesDropdown>
 		<h3>
 
-			<xp:text
-				disableTheme="true"
-				value="#{compositeData.value}" />
+			<xp:text disableTheme="true" value="#{compositeData.value}" />
 
 			&#160;
-			<xp:image
-				url="/champion_24x24.png"
-				id="image1">
+			<xp:image url="/champion_24x24.png" id="image1">
 				<xp:this.rendered><![CDATA[#{javascript:try{
 	compositeData.cat.equals("champions")
 } catch(e){

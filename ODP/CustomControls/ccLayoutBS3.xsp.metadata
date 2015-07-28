@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="783e" sequence="65" unid="F21097916B3100C3C1257E35007AB1ED">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="6c2" sequence="219" unid="F21097916B3100C3C1257E35007AB1ED">
 <created><datetime dst="true">20150429T002009,41+02</datetime></created>
-<modified><datetime dst="true">20150429T223811,94+02</datetime></modified>
-<revised><datetime dst="true">20150429T223811,93+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150429T223811,93+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150429T002009,41+02</datetime></addedtofile></noteinfo>
+<modified><datetime dst="true">20150729T005717,42+02</datetime></modified>
+<revised><datetime dst="true">20150523T231159,12+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150729T005717,42+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150727T184904,71+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
@@ -13,9 +13,9 @@
 
 
 
-
 <item name="$FileNames" sign="true"><text>ccLayoutBS3.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
+
 
 
 

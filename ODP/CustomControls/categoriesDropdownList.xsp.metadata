@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="af26" sequence="44" unid="B63306B6FA742086C1257E400057D74A">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="856" sequence="68" unid="B63306B6FA742086C1257E400057D74A">
 <created><datetime dst="true">20150509T175927,46+02</datetime></created>
-<modified><datetime dst="true">20150509T183217,46+02</datetime></modified>
-<revised><datetime dst="true">20150509T183217,45+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150509T183217,45+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150509T175927,46+02</datetime></addedtofile></noteinfo>
+<modified><datetime dst="true">20150729T005717,36+02</datetime></modified>
+<revised><datetime dst="true">20150519T181519,60+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150729T005717,36+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150727T184915,48+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
-
-
 <item name="$TITLE" sign="true"><text>categoriesDropdownList.xsp</text></item>
+
 
 
 
 <item name="$FileNames" sign="true"><text>categoriesDropdownList.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
+
 
 
 
