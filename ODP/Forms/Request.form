@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.3'
- replicaid='C1257CA900351E4C'>
-<noteinfo noteid='306' unid='7421968E49F57929C2257B150047D03F' sequence='34'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
+ replicaid='C1257E9200665352'>
+<noteinfo noteid='1dd2' unid='7421968E49F57929C2257B150047D03F' sequence='6'>
 <created><datetime>20130217T150423,67+02</datetime></created>
-<modified><datetime dst='true'>20150428T180606,33+02</datetime></modified>
+<modified><datetime dst='true'>20150730T210020,81+02</datetime></modified>
 <revised><datetime dst='true'>20150417T230041,44+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150428T180606,32+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150417T225754,33+02</datetime></addedtofile></noteinfo>
+<lastaccessed><datetime dst='true'>20150730T210020,81+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20150730T205125,02+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
 >CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>

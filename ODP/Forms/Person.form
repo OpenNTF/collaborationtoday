@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.3'
- replicaid='C1257CA900351E4C'>
-<noteinfo noteid='1d2' unid='25D5A72DE722776DC2257B150047D042' sequence='45'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
+ replicaid='C1257E9200665352'>
+<noteinfo noteid='1dc6' unid='25D5A72DE722776DC2257B150047D042' sequence='6'>
 <created><datetime>20130217T150423,70+02</datetime></created>
-<modified><datetime dst='true'>20150428T180606,27+02</datetime></modified>
+<modified><datetime dst='true'>20150730T210020,77+02</datetime></modified>
 <revised><datetime dst='true'>20150427T234930,31+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150428T180606,26+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150417T225752,79+02</datetime></addedtofile></noteinfo>
+<lastaccessed><datetime dst='true'>20150730T210020,77+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20150730T205124,88+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>

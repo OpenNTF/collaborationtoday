@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.3'
- replicaid='C1257CA900351E4C'>
-<noteinfo noteid='15e' unid='A46D2491535D57F6C1257AD9003012CB' sequence='10'>
-<created><datetime>20121219T094505,39+01</datetime></created>
-<modified><datetime dst='true'>20150428T180604,67+02</datetime></modified>
-<revised><datetime dst='true'>20150417T230039,23+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150428T180604,66+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150417T225752,15+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name
->CN=NotesOSS2/O=NotesOSS</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
+ replicaid='C1257E9200665352'>
+<noteinfo noteid='41a' unid='1F4C3BF74EF4AD54C1257E92006659ED' sequence='4'>
+<created><datetime dst='true'>20150730T203756,93+02</datetime></created>
+<modified><datetime dst='true'>20150730T205829,27+02</datetime></modified>
+<revised><datetime dst='true'>20150730T205829,26+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20150730T205829,27+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20150730T203756,95+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name='$TITLE' sign='true'><text>Copy Documents From Main DB</text></item>
 <item name='$AssistType' sign='true'><number>65413</number></item>
@@ -34,7 +33,7 @@ gQYAAAAA
 <item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
 <item name='$AssistRunInfo' summary='true'>
 <rawitemdata type='3'>
-BgAAAgAACABiBQAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAtAAAAAAAAAAAAAAAAAAAABAAAAAA
+BgAAAgAACACmHgAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAtAAAAAAAAAAAAAAAAAAAABAAAAAA
 AAAARjNjAKZ6JYUAAAAANqhiAKZ6JYWVVU8ApnolhQAAAAAAAAAAAAAAAAAAAAAAAAAAU3RhcnRl
 ZCBydW5uaW5nIGFnZW50ICdDb3B5IERvY3VtZW50cyBGcm9tIE1haW4gREInIG9uIDEwLzI5LzIw
 MTIgMDE6NTc6MzggUE0NClJhbiBMb3R1c1NjcmlwdCBjb2RlDQpEb25lIHJ1bm5pbmcgYWdlbnQg
