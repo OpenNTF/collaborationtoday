@@ -1,6 +1,4 @@
-<theme
-	extends=""
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<theme extends="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
 	<!--
 		<resource> <content-type>text/css</content-type>
@@ -11,38 +9,43 @@
 		<content-type>text/css</content-type>
 		<href>bower_components/bootstrap/cerulean_bootstrap.css</href>
 	</resource>
-	
+
 	<resource>
 		<content-type>application/x-javascript</content-type>
 		<href>bower_components/jquery/dist/jquery.min.js</href>
 	</resource>
-	
+
 	<resource>
 		<content-type>application/x-javascript</content-type>
 		<href>bower_components/bootstrap/dist/js/bootstrap.min.js</href>
 	</resource>
+
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>select2-2.1.0/select2.min.js</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>select2-2.1.0/select2.css</href>
+	</resource>
+
 	<resource>
 		<content-type>text/css</content-type>
 		<href>custom.css</href>
 	</resource>
 	<resources>
-		<metaData
-			name="viewport"
+		<metaData name="viewport"
 			content="width=device-width, initial-scale=1,  maximum-scale=1" />
-		<linkResource
-			href="collaborationtoday_icon.png"
-			rel="apple-touch-icon" />
+		<linkResource href="collaborationtoday_icon.png" rel="apple-touch-icon" />
 	</resources>
-	<control
-		override="false">
+	<control override="false">
 		<name>ViewRoot</name>
 		<property>
 			<name>pageTitle</name>
 			<value>Collaboration Today - News about IBM Collaboration Solutions</value>
 		</property>
 	</control>
-	<control
-		override="true">
+	<control override="true">
 		<name>ViewRoot</name>
 		<property>
 			<name>pageIcon</name>
