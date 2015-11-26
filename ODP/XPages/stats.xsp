@@ -3,12 +3,11 @@
 	xmlns:xp="http://www.ibm.com/xsp/core"
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 
+	<xp:this.pageTitle><![CDATA[#{javascript:"Statistics | Collaboration Today"}]]></xp:this.pageTitle>
 	<xc:ccLayoutBS3>
 		<xp:this.facets>
-			<xc:leftColumn
-				xp:key="leftColumn"></xc:leftColumn>
-			<xp:div
-				xp:key="middleColumn">
+			<xc:leftColumn xp:key="leftColumn"></xc:leftColumn>
+			<xp:div xp:key="middleColumn">
 				<div>
 					<ul
 						class="nav nav-tabs"
@@ -20,36 +19,35 @@
 								href="#users"
 								aria-controls="users"
 								role="tab"
-								data-toggle="tab">Top Blogger</a>
+								data-toggle="tab">
+								Top Blogger
+							</a>
 						</li>
-						<!-- 
-						<li
+							<li
 							role="presentation">
 							<a
-								href="#curators"
-								aria-controls="curators"
-								role="tab"
-								data-toggle="tab">Top Curators</a>
-						</li>
-						 -->
+							href="#curators"
+							aria-controls="curators"
+							role="tab"
+							data-toggle="tab">Top Curators</a>
+							</li>
 					</ul>
-					<div
-						class="tab-content">
+					<div class="tab-content">
 						<div
 							role="tabpanel"
 							class="tab-pane active"
 							id="users">
 							<br />
-							<div
-								class="row">
+							<div class="row">
 								<xp:repeat
 									value="#{javascript:stats.authors}"
 									rows="10"
 									var="author">
-									<div
-										class="col-sm-6">
+									<div class="col-sm-6">
 										<xc:ccAuthor
-											person="#{author}"></xc:ccAuthor>
+											person="#{author}"
+											link="true">
+										</xc:ccAuthor>
 									</div>
 								</xp:repeat>
 							</div>
@@ -59,10 +57,19 @@
 							class="tab-pane"
 							id="curators">
 							<br />
-							<xp:repeat
-								value="#{javascript:stats.curators}"
-								rows="10">
-							</xp:repeat>
+							<div class="row">
+								<xp:repeat
+									value="#{javascript:stats.curators}"
+									rows="10"
+									var="curator">
+									<div class="col-sm-6">
+										<xc:ccAuthor
+											person="#{curator}"
+											link="false">
+										</xc:ccAuthor>
+									</div>
+								</xp:repeat>
+							</div>
 						</div>
 					</div>
 				</div>

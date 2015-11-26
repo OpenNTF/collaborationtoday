@@ -10,27 +10,66 @@
 		</xp:dataContext>
 	</xp:this.dataContexts>
 
-	<xp:link>
-		<xp:this.value><![CDATA[#{javascript:"home.xsp?pid="+author.getPID()}]]></xp:this.value>
+	<xp:panel
+		rendered="#{javascript:compositeData.link}">
+		<xp:link>
+			<xp:this.value><![CDATA[#{javascript:"home.xsp?pid="+author.getPID()}]]></xp:this.value>
+			<div
+				class="well">
+				<div
+					class="row">
+					<div
+						class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+						<div
+							class="newsEntryImage"
+							style="background-image:url(#{javascript:author.getPictureURL()}); width:80px; height:80px">
+						</div>
+					</div>
+					<div
+						class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+						<h3>
+							<xp:text
+								value="#{javascript:author.getDisplayName()}">
+							</xp:text>
+							&#160;
+							<xp:image
+								url="/champion_24x24.png"
+								rendered="#{javascript:author.isChampion()}">
+							</xp:image>
+						</h3>
+					</div>
+				</div>
+			</div>
+		</xp:link>
+	</xp:panel>
+	<xp:panel
+		rendered="#{javascript:!compositeData.link}">
 		<div
 			class="well">
 			<div
 				class="row">
 				<div
-					class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 					<div
 						class="newsEntryImage"
-						style="background-image:url(#{javascript:author.getPictureURL()}); width:80px; height:80px"></div>
+						style="background-image:url(#{javascript:author.getPictureURL()}); width:80px; height:80px">
+					</div>
 				</div>
 				<div
-					class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 					<h3>
 						<xp:text
-							value="#{javascript:author.getDisplayName()}"></xp:text>
+							value="#{javascript:author.getDisplayName()}">
+						</xp:text>
+						&#160;
+						<xp:image
+							url="/champion_24x24.png"
+							rendered="#{javascript:author.isChampion()}">
+						</xp:image>
 					</h3>
 
 				</div>
 			</div>
 		</div>
-	</xp:link>
+	</xp:panel>
 </xp:view>

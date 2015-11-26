@@ -21,6 +21,11 @@ package org.openntf.news.http.core;
 import java.io.Serializable;
 import java.security.MessageDigest;
 
+import lotus.domino.Document;
+import lotus.domino.NotesException;
+
+import com.ibm.xsp.extlib.util.ExtLibUtil;
+
 public class Person implements Serializable, Comparable<Person> {
 	private static final long serialVersionUID = 1L;
 	private String _pID;
@@ -132,5 +137,16 @@ public class Person implements Serializable, Comparable<Person> {
 		} else {
 			return 0;
 		}
+	}
+	
+	public boolean isChampion(){
+		boolean result = false;
+		try {
+			Document doc = ExtLibUtil.getCurrentDatabase().getDocumentByUNID(documentId);
+			result = doc.getItemValueString("PChampion").equals("1");
+		} catch (NotesException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }
