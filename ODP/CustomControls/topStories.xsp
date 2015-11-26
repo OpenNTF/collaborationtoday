@@ -33,13 +33,18 @@ return true;}]]></xp:this.rendered>
 			</div>
 			<xp:repeat id="r1" var="entryT" rows="4"
 				value="#{javascript:newsCache.getTopTopStories();}" >
-				<xc:newsEntry id = "lkj"
+				<xc:newsEntry
+					id="lkj"
 					author="#{entryT.PID}"
-					imageURL="#{javascript:entryT.getImageURL()}" link="#{javascript:entryT.getLink()}"
-					newsAbstract="#{javascript:entryT.getAbstract()}" nID="#{javascript:entryT.getID()}"
+					imageURL="#{javascript:entryT.getImageURL()}"
+					link="#{javascript:entryT.getLink()}"
+					newsAbstract="#{javascript:entryT.getAbstract()}"
+					nID="#{javascript:entryT.getID()}"
 					personDisplayName="#{javascript:personsCache.getPerson(entryT.getPID()).getDisplayName()}"
 					typeId="#{javascript:entryT.getTID()}"
-					publicationDate="#{javascript:entryT.getPublicationDate()}" publicationDateString="#{javascript:entryT.getPrettyTime()}" title="#{javascript:entryT.getTitle()}">
+					publicationDate="#{javascript:entryT.getPublicationDate()}"
+					publicationDateString="#{javascript:entryT.getPrettyTime()}"
+					title="#{javascript:entryT.getTitle()}">
 					<xc:this.category><![CDATA[#{javascript:
 							try {
 								configCache.getCategory(configCache.getType(entryT.getTID()).getCategoryId()).getDisplayName()
@@ -47,7 +52,7 @@ return true;}]]></xp:this.rendered>
 							} finally {
 								"";
 							}}]]></xc:this.category>
-							<xc:this.type><![CDATA[#{javascript:
+					<xc:this.type><![CDATA[#{javascript:
 							try {
 								configCache.getType(entryT.getTID()).getDisplayName()
 							} catch(e) {

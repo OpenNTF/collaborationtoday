@@ -26,6 +26,11 @@
 					target="_blank"
 					id="link6">
 				</xp:link>
+				&#160;
+				<xp:image
+					url="/champion_24x24.png"
+					rendered="#{javascript:org.openntf.news.http.core.Helper.isChampion(compositeData.personID)}">
+				</xp:image>
 			</h3>
 			<div
 				class="row">
