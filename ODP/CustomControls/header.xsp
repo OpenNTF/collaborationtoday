@@ -47,6 +47,9 @@
 						<li class="${javascript:view.pageName == '/contact.xsp' ? 'active' : ''}">
 							<xp:link text="Contact" themeId="Link.Contact"/>
 						</li>
+						<li class="${javascript:view.pageName == '/top.xsp' ? 'active' : ''}">
+							<xp:link text="Top" themeId="Link.TopUsers"/>
+						</li>
 						<li class="${javascript:view.pageName == '/about.xsp' ? 'active' : ''}">
 							<xp:link text="About" themeId="Link.About"/>
 						</li>

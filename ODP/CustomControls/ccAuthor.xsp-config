@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>ccAuthor</component-type>
+    <composite-name>ccAuthor</composite-name>
+    <composite-file>/ccAuthor.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>person</property-name>
+      <property-class>com.ibm.xsp.extlib.model.ObjectDataSource</property-class>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.std.String</editor>
+        </designer-extension>
+      </property-extension>
+    </property>
+  </composite-component>
+</faces-config>

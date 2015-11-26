@@ -18,12 +18,11 @@ package org.openntf.news.http.core;
  * Author: Niklas Heidloff - niklas_heidloff@de.ibm.com
  */
 
-import java.io.UnsupportedEncodingException;
+import java.io.Serializable;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
-public class Person {
-
+public class Person implements Serializable, Comparable<Person> {
+	private static final long serialVersionUID = 1L;
 	private String _pID;
 	private String _eMailAddress;
 	private String _twitter;
@@ -31,10 +30,20 @@ public class Person {
 	private String _pictureType;
 	private String _pictureURL;
 	private String documentId;
+	private double _posts;
 
-	public Person(String pID, String displayName, String twitter,
-			String eMailAddress, String pictureType, String pictureURL,
-			String documentId) {
+	public Person(String pID, String displayName, String twitter, String eMailAddress, String pictureType, String pictureURL, String documentId) {
+		_pID = pID;
+		_eMailAddress = eMailAddress;
+		_twitter = twitter;
+		_displayName = displayName;
+		_pictureType = pictureType;
+		_pictureURL = pictureURL;
+		this.documentId = documentId;
+	}
+
+	public Person(double posts, String pID, String displayName, String twitter, String eMailAddress, String pictureType, String pictureURL, String documentId) {
+		_posts = posts;
 		_pID = pID;
 		_eMailAddress = eMailAddress;
 		_twitter = twitter;
@@ -61,8 +70,10 @@ public class Person {
 	}
 
 	public String getNameForTweet() {
-		if (_twitter == null) return _displayName;
-		if (_twitter.equalsIgnoreCase("")) return _displayName;
+		if (_twitter == null)
+			return _displayName;
+		if (_twitter.equalsIgnoreCase(""))
+			return _displayName;
 		return "@" + _twitter;
 	}
 
@@ -83,7 +94,7 @@ public class Person {
 					return _pictureURL;
 				}
 			}
-			if(_pictureType.equalsIgnoreCase("mypic")) {
+			if (_pictureType.equalsIgnoreCase("mypic")) {
 				return "/mypicApi.xsp?method=getmypic&id=" + this.documentId;
 			}
 		}
@@ -94,10 +105,9 @@ public class Person {
 		String output = "http://www.gravatar.com/avatar/";
 		try {
 			MessageDigest md = MessageDigest.getInstance("MD5");
-			output = output
-			+ hex(md.digest(getEMailAddress().getBytes("CP1252")));
-		} catch (NoSuchAlgorithmException e) {
-		} catch (UnsupportedEncodingException e) {
+			output = output + hex(md.digest(getEMailAddress().getBytes("CP1252")));
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return output;
 	}
@@ -105,9 +115,22 @@ public class Person {
 	private static String hex(byte[] array) {
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < array.length; ++i) {
-			sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(
-					1, 3));
+			sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1, 3));
 		}
 		return sb.toString();
+	}
+
+	public double getPosts() {
+		return _posts;
+	}
+
+	public int compareTo(Person o) {
+		if (getPosts() > o.getPosts()) {
+			return -1;
+		} else if (getPosts() < o.getPosts()) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 }

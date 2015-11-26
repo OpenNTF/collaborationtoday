@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:this.dataContexts>
+		<xp:dataContext
+			var="author"
+			value="#{javascript:compositeData.person}">
+		</xp:dataContext>
+	</xp:this.dataContexts>
+
+	<xp:link>
+		<xp:this.value><![CDATA[#{javascript:"home.xsp?pid="+author.getPID()}]]></xp:this.value>
+		<div
+			class="well">
+			<div
+				class="row">
+				<div
+					class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<div
+						class="newsEntryImage"
+						style="background-image:url(#{javascript:author.getPictureURL()}); width:80px; height:80px"></div>
+				</div>
+				<div
+					class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<h3>
+						<xp:text
+							value="#{javascript:author.getDisplayName()}"></xp:text>
+					</h3>
+
+				</div>
+			</div>
+		</div>
+	</xp:link>
+</xp:view>

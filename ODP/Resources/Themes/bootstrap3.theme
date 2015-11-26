@@ -97,6 +97,17 @@
 		</property>
 	</control>
 	<control>
+		<name>Link.TopUsers</name>
+		<property>
+			<name>value</name>
+			<value>/top.xsp</value>
+		</property>
+		<property>
+			<name>text</name>
+			<value>Top</value>
+		</property>
+	</control>
+	<control>
 		<name>Link.Moderation</name>
 		<property>
 			<name>value</name>

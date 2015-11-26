@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayoutBS3>
+		<xp:this.facets>
+			<xc:leftColumn
+				xp:key="leftColumn"></xc:leftColumn>
+			<xp:div
+				xp:key="middleColumn">
+				<div>
+					<ul
+						class="nav nav-tabs"
+						role="tablist">
+						<li
+							role="presentation"
+							class="active">
+							<a
+								href="#users"
+								aria-controls="users"
+								role="tab"
+								data-toggle="tab">Top Blogger</a>
+						</li>
+						<!-- 
+						<li
+							role="presentation">
+							<a
+								href="#curators"
+								aria-controls="curators"
+								role="tab"
+								data-toggle="tab">Top Curators</a>
+						</li>
+						 -->
+					</ul>
+					<div
+						class="tab-content">
+						<div
+							role="tabpanel"
+							class="tab-pane active"
+							id="users">
+							<br />
+							<div
+								class="row">
+								<xp:repeat
+									value="#{javascript:stats.authors}"
+									rows="10"
+									var="author">
+									<div
+										class="col-sm-6">
+										<xc:ccAuthor
+											person="#{author}"></xc:ccAuthor>
+									</div>
+								</xp:repeat>
+							</div>
+						</div>
+						<div
+							role="tabpanel"
+							class="tab-pane"
+							id="curators">
+							<br />
+							<xp:repeat
+								value="#{javascript:stats.curators}"
+								rows="10">
+							</xp:repeat>
+						</div>
+					</div>
+				</div>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayoutBS3>
+</xp:view>

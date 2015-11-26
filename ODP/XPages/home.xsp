@@ -6,7 +6,7 @@
 
 	<xp:this.pageTitle><![CDATA[${javascript:
 		if (!param.filter) {
-			return "Top Stories | Collaboration Today";
+			return "Collaboration Today";
 		} else if (param.filter == "all") {
 			return "Recent | Collaboration Today";
 		} else if (param.filter == "popular") {
@@ -18,12 +18,9 @@
 
 	<xc:ccLayoutBS3>
 		<xp:this.facets>
-			<xc:rightColumn
-				xp:key="rightColumn" />
-			<xc:leftColumn
-				xp:key="leftColumn" />
-			<xp:div
-				xp:key="middleColumn">
+			<xc:rightColumn xp:key="rightColumn" />
+			<xc:leftColumn xp:key="leftColumn" />
+			<xp:div xp:key="middleColumn">
 				<xp:panel
 					readonly="true"
 					loaded="${	param.filter != 'popular'}">
@@ -102,11 +99,11 @@ param.filter == 'all' ? newsCache.getEntries(param.pid) : newsCache.getEntriesBy
 				</xp:panel>
 
 				<xp:panel
-
 					readonly="true"
 					loaded="${param.filter == 'popular'}">
 					<xc:pageHeader
-						value="Popular" buttonText="Categories..." />
+						value="Popular"
+						buttonText="Categories..." />
 
 					<xp:repeat
 						id="r2"

@@ -31,6 +31,7 @@ public class Navigation implements Serializable {
 		navigation.add(new Page("Follow", "", "follow.xsp"));
 		navigation.add(new Page("Contact", "", "contact.xsp"));
 		navigation.add(new Page("About", "", "about.xsp"));
+		navigation.add(new Page("Statistics", "", "stats.xsp"));
 
 		ConfigCache configBean = (ConfigCache) ExtLibUtil.resolveVariable(FacesContext.getCurrentInstance(), "configCache");
 		try {

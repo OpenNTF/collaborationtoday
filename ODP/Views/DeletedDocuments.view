@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='C1257E9200665352'>
-<noteinfo noteid='222' unid='190E7390DC5887E1C1257E9200665568' sequence='4'>
-<created><datetime dst='true'>20150730T203745,36+02</datetime></created>
-<modified><datetime dst='true'>20150730T205826,14+02</datetime></modified>
-<revised><datetime dst='true'>20150730T205826,13+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150730T205826,14+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150730T203745,43+02</datetime></addedtofile></noteinfo>
+ replicaid='C1257CA900351E4C'>
+<noteinfo noteid='3e2' unid='99A507E4F0D62948C1257CC3005EA598' sequence='10'>
+<created><datetime dst='true'>20140423T191347,76+02</datetime></created>
+<modified><datetime>20151126T183302,23+01</datetime></modified>
+<revised><datetime>20151126T183302,22+01</datetime></revised>
+<lastaccessed><datetime>20151126T183302,22+01</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20150417T225759,24+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
@@ -30,6 +30,6 @@ AAAAAAABAP///wAFAP///wABAAAAAAAAAAAAAAAAAAEA////AAEA////AAAAAQAAAAAAAQAAAAAA
 AQAAAAAAAAAIAAAAAAABAFhDAEyAAwAAAAAAAQICAgEBAQEHBAMAAAAAAAAAACAuLjo=
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
-<item name='$Flags'><text>PY</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$Flags'><text>Y</text></item></note>
 
