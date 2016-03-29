@@ -20,6 +20,14 @@
         <designer-extension>
           <editor>com.ibm.std.String</editor>
         </designer-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>link</property-name>
+      <property-class>boolean</property-class>
+      <property-extension>
+        <required>true</required>
       </property-extension>
     </property>
   </composite-component>

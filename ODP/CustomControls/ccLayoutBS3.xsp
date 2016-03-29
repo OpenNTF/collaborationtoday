@@ -86,4 +86,5 @@ if(url.indexOf(".xsp")==-1){
 		</div>
 	</div>
 	<xc:footer />
+	<xc:googleAnalytics></xc:googleAnalytics>
 </xp:view>
