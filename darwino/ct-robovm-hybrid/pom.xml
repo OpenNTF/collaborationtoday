@@ -1,0 +1,111 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.openntf.ct</groupId>
+		<artifactId>ct</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>ct-robovm-hybrid</artifactId>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.darwino</groupId>
+			<artifactId>dwo-ios-robovm-platform-hybrid</artifactId>
+			<version>${DARWINO_VERSION}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.darwino</groupId>
+			<artifactId>dwo-web-darwino</artifactId>
+			<version>${DARWINO_VERSION}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openntf.ct</groupId>
+			<artifactId>ct-shared</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openntf.ct</groupId>
+			<artifactId>ct-mobile</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openntf.ct</groupId>
+			<artifactId>ct-webui</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.robovm</groupId>
+				<artifactId>robovm-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+				
+				<executions>
+					<execution>
+						<id>copy-native-lib</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.darwino</groupId>
+									<artifactId>dwo-native-sqlite</artifactId>
+									<version>${DARWINO_VERSION}</version>
+									<type>a</type>
+									<classifier>ios-universal</classifier>
+									<outputDirectory>libs</outputDirectory>
+									<destFileName>libJsonstoreUniversal.a</destFileName>
+								</artifactItem>
+							</artifactItems>
+							<overWriteReleases>true</overWriteReleases>
+							<overWriteSnapshots>true</overWriteSnapshots>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<profiles>
+		<profile>
+			<id>ipa</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.robovm</groupId>
+						<artifactId>robovm-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>run</id>
+								<phase>package</phase>
+								<goals>
+									<goal>create-ipa</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

@@ -1,0 +1,34 @@
+# Eclipse
+bin/
+.settings/
+.project
+.classpath
+.factorypath
+/apt_generated/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Android
+gen/
+libjsonstore-sqlite.so
+
+# RoboVM
+robovm-logs/
+libJsonstoreUniversal.a
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+hs_err_pid*

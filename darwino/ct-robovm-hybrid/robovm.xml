@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <executableName>${app.executable}</executableName>
+    <mainClass>${app.mainclass}</mainClass>
+    <os>ios</os>
+    <arch>thumbv7</arch>
+    <resources>
+        <resource>
+            <directory>resources</directory>
+        </resource>
+    </resources>
+    <forceLinkClasses>
+        <!-- Apache HTTP Client -->
+        <pattern>com.android.org.conscrypt.OpenSSLSocketFactoryImpl</pattern>
+        <pattern>org.apache.commons.logging.impl.WeakHashtable</pattern>
+        <pattern>com.android.org.conscrypt.OpenSSLProvider</pattern>
+        <pattern>org.apache.harmony.security.provider.cert.DRLCertFactory</pattern>
+        <pattern>com.android.org.bouncycastle.jce.provider.BouncyCastleProvider</pattern>
+        <pattern>org.apache.harmony.security.provider.crypto.CryptoProvider</pattern>
+        <pattern>com.android.org.conscrypt.JSSEProvider</pattern>
+        <!-- URL Connection -->
+        <pattern>com.android.okhttp.HttpHandler</pattern>
+        <pattern>java.util.logging.ConsoleHandler</pattern>
+        <pattern>java.util.logging.SimpleFormatter</pattern>
+		<!-- Library plugins -->
+		<pattern>com.darwino.platform.web.PluginDarwinoWeb</pattern>
+    </forceLinkClasses>
+    <libs>
+        <lib>libs/libJsonstoreUniversal.a</lib>
+    </libs>
+    <target>ios</target>
+    <iosInfoPList>Info.plist.xml</iosInfoPList>
+</config>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	Dwo Settings Menu Entries
+ -->
+<resources>
+    <string name="dwosettings_refresh">Refresh</string>
+    <string name="dwosettings_switchlocal">Switch to Local</string>
+    <string name="dwosettings_switchremote">Switch to Remote</string>
+    <string name="dwosettings_eraselocdata">Erase Local Data</string>
+    <string name="dwosettings_synchronize">Synchronize Data</string>
+    <string name="dwosettings_createlocaldb">Create Local Database</string>
+    <string name="dwosettings_deletelocaldb">Delete Local Database</string>
+    <string name="dwosettings_recreatelocaldb">Recreate Local Database</string>
+    <string name="dwosettings_swipedb">Swipe Local Database</string>
+    <string name="dwosettings_settings">Settings...</string>
+</resources>

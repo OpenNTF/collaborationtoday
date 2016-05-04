@@ -1,0 +1,122 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.openntf.ct</groupId>
+		<artifactId>ct</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<packaging>apk</packaging>
+
+	<artifactId>ct-android-hybrid</artifactId>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.darwino</groupId>
+			<artifactId>dwo-android-platform-hybrid</artifactId>
+			<version>${DARWINO_VERSION}</version>
+		</dependency>
+ 		
+		<dependency>
+			<groupId>com.darwino</groupId>
+			<artifactId>dwo-web-darwino</artifactId>
+			<version>${DARWINO_VERSION}</version>
+		</dependency>
+ 		
+		<dependency>
+			<groupId>org.openntf.ct</groupId>
+			<artifactId>ct-shared</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openntf.ct</groupId>
+			<artifactId>ct-mobile</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openntf.ct</groupId>
+			<artifactId>ct-webui</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>android</groupId>
+			<artifactId>android</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<directory>bin</directory>
+		<finalName>${project.artifactId}</finalName>
+		
+		<plugins>
+			<plugin>
+				<groupId>com.simpligility.maven.plugins</groupId>
+				<artifactId>android-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+				
+				<executions>
+					<execution>
+						<id>copy-native-lib</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.darwino</groupId>
+									<artifactId>dwo-native-sqlite</artifactId>
+									<version>${DARWINO_VERSION}</version>
+									<type>so</type>
+									<classifier>android-armeabi</classifier>
+									<outputDirectory>libs/armeabi</outputDirectory>
+									<destFileName>libjsonstore-sqlite.so</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.darwino</groupId>
+									<artifactId>dwo-native-sqlite</artifactId>
+									<version>${DARWINO_VERSION}</version>
+									<type>so</type>
+									<classifier>android-armeabi-v7a</classifier>
+									<outputDirectory>libs/armeabi-v7a</outputDirectory>
+									<destFileName>libjsonstore-sqlite.so</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.darwino</groupId>
+									<artifactId>dwo-native-sqlite</artifactId>
+									<version>${DARWINO_VERSION}</version>
+									<type>so</type>
+									<classifier>android-mips</classifier>
+									<outputDirectory>libs/mips</outputDirectory>
+									<destFileName>libjsonstore-sqlite.so</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.darwino</groupId>
+									<artifactId>dwo-native-sqlite</artifactId>
+									<version>${DARWINO_VERSION}</version>
+									<type>so</type>
+									<classifier>android-x86</classifier>
+									<outputDirectory>libs/x86</outputDirectory>
+									<destFileName>libjsonstore-sqlite.so</destFileName>
+								</artifactItem>
+							</artifactItems>
+							<overWriteReleases>true</overWriteReleases>
+							<overWriteSnapshots>true</overWriteSnapshots>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

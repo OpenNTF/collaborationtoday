@@ -1,0 +1,24 @@
+{
+	"connections": [
+		{
+			"enabled": true,
+			"local": true,
+			"name": "Local Server",
+			"url": "http://192.168.75.79:8080",
+			"userId": "amass",
+			"password": "floflo",
+			"dn": "cn=al mass,o=triloggroup",
+			"cn": "Al Mass"
+		}
+/* Example of a connection to IBM Bluemix		
+		{
+			"enabled": true,
+			"local": false,
+			"name": "IBM Bluemix - http://example.mybluemix.net",
+			"url": "http://example.mybluemix.net",
+			"userId": "amass",
+			"password": "floflo"
+		}
+*/		
+	]
+}
