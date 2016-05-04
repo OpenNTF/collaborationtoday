@@ -127,6 +127,7 @@ public class UserDirDatabase extends UserDir {
 		}
 	}
 	
+	@Override
 	protected UserImpl _findUserByLoginId(String id) throws UserException {
 		UserDir del = getDelegate();
 		if(del!=null) {
