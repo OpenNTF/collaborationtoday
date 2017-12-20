@@ -1,22 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="C1257E9200665352" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1e16" sequence="18" unid="C76569762222D82DC2257B150047D056">
-<created><datetime>20130217T150423,90+02</datetime></created>
-<modified><datetime dst="true">20150730T210020,89+02</datetime></modified>
-<revised><datetime dst="true">20150417T230041,64+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150730T210020,89+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150730T205125,72+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name="$Flags"><text>gC~4;</text></item>
-<item name="$TITLE"><text>topStories.xsp</text></item>
-
-
-
-
-<item name="$FileNames" sign="true"><text>topStories.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.1</text></item>
-
-
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Flags">
+    <text>gC~4;</text>
+  </item>
+  <item name="$TITLE">
+    <text>topStories.xsp</text>
+  </item>
+  <item name="$FileNames" sign="true">
+    <text>topStories.xsp</text>
+  </item>
 </note>

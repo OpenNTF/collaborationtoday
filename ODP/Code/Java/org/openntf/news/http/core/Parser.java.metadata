@@ -1,22 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C2257E440074835A" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="372" sequence="65" unid="2512693ABFB33F35C2257E440074983B">
-<created><datetime dst="true">20150514T001331,47+03</datetime></created>
-<modified><datetime dst="true">20150514T022508,88+03</datetime></modified>
-<revised><datetime dst="true">20150514T022508,87+03</datetime></revised>
-<lastaccessed><datetime dst="true">20150514T022508,88+03</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150514T001331,48+03</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name></updatedby>
-<wassignedby><name>CN=Serdar Basegmez/O=developi</name></wassignedby>
-<item name="$Flags"><text>34567Cg~[</text></item>
-<item name="$TITLE"><text>org/openntf/news/http/core/Parser.java</text></item>
-
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>org/openntf/news/http/core/Parser.java</text></item>
-
-
-
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Flags">
+    <text>34567Cg~[</text>
+  </item>
+  <item name="$TITLE">
+    <text>org/openntf/news/http/core/Parser.java</text>
+  </item>
+  <item name="$FileNames" sign="true">
+    <text>org/openntf/news/http/core/Parser.java</text>
+  </item>
 </note>

@@ -1,18 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="22a" sequence="645" unid="1EBC19CB1F2ED210C2257B150047D0FA">
-<created><datetime>20130217T150425,54+02</datetime></created>
-<modified><datetime dst="true">20150428T180603,99+02</datetime></modified>
-<revised><datetime dst="true">20150427T233513,73+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150428T180603,98+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150417T225753,23+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name="$Flags"><text>34567Cg~[</text></item>
-<item name="$TITLE"><text>biz/webgate/domino/mywebgate/util/URLFetcher.java</text></item>
-
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>biz/webgate/domino/mywebgate/util/URLFetcher.java</text></item>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Flags">
+    <text>34567Cg~[</text>
+  </item>
+  <item name="$TITLE">
+    <text>biz/webgate/domino/mywebgate/util/URLFetcher.java</text>
+  </item>
+  <item name="$FileNames" sign="true">
+    <text>biz/webgate/domino/mywebgate/util/URLFetcher.java</text>
+  </item>
 </note>

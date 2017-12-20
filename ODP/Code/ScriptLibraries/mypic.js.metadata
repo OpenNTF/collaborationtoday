@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="166" sequence="10" unid="9E124C7A87F9E7FAC1257AD900301253">
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.9" replicaid="852581FC004D6934" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="176" sequence="11" unid="9E124C7A87F9E7FAC1257AD900301253">
 <created><datetime>20121219T094504,19+01</datetime></created>
-<modified><datetime dst="true">20150428T180605,71+02</datetime></modified>
-<revised><datetime dst="true">20150417T230039,27+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150428T180605,70+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150417T225752,19+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<modified><datetime>20171220T092429,64-05</datetime></modified>
+<revised><datetime>20171220T092429,63-05</datetime></revised>
+<lastaccessed><datetime>20171220T092429,63-05</datetime></lastaccessed>
+<addedtofile><datetime>20171220T090533,71-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name="$TITLE" sign="true"><text>mypic.js</text></item>
 <item name="$Flags"><text>h534Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>

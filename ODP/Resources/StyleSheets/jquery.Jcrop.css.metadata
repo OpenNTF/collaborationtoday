@@ -1,18 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="C1257E9200665352" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1ce2" sequence="8" unid="93E44EC3A3B530C5C2257B150047CFCA">
-<created><datetime>20130217T150422,50+02</datetime></created>
-<modified><datetime dst="true">20150730T210020,33+02</datetime></modified>
-<revised><datetime dst="true">20150417T230041,10+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150730T210020,33+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150730T205122,46+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name="$TITLE"><text>jquery.Jcrop.css</text></item>
-<item name="$Flags"><text>34C=Q</text></item>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$FileModDT" sign="true"><datetime dst="true">20090420T115216,00-04</datetime></item>
-<item name="$MimeCharSet"><text>UTF-8</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>jquery.Jcrop.css</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$TITLE">
+    <text>jquery.Jcrop.css</text>
+  </item>
+  <item name="$Flags">
+    <text>34C=Q</text>
+  </item>
+  <item name="$FlagsExt">
+    <text>D</text>
+  </item>
+  <item name="$FileModDT" sign="true">
+    <datetime dst="true">20090420T115216,00-04</datetime>
+  </item>
+  <item name="$MimeCharSet">
+    <text>UTF-8</text>
+  </item>
+  <item name="$FileNames" sign="true">
+    <text>jquery.Jcrop.css</text>
+  </item>
+</note>

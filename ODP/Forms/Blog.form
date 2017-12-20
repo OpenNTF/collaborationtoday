@@ -1,70 +1,80 @@
-<?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='C1257E9200665352'>
-<noteinfo noteid='88e' unid='71131FD158D05218C2257B150047D055' sequence='6'>
-<created><datetime>20130217T150423,89+02</datetime></created>
-<modified><datetime dst='true'>20150730T210019,65+02</datetime></modified>
-<revised><datetime dst='true'>20150417T230041,24+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150730T210019,65+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150730T205111,00+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name='$Comment' sign='true'><text/></item>
-<item name='$HTMLCode' sign='true'>
-<rawitemdata type='1'>
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Comment" sign="true">
+    <text/>
+  </item>
+  <item name="$HTMLCode" sign="true">
+    <rawitemdata type="1">
 X/8QAAIADwAHAAAAAAAAAA==
-</rawitemdata></item>
-<item name='$TITLE'><text>Blog</text></item>
-<item name='$Info' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="$TITLE">
+    <text>Blog</text>
+  </item>
+  <item name="$Info" sign="true">
+    <rawitemdata type="1">
 hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
-</rawitemdata></item>
-<item name='$Flags'><text>w</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
-<item name='$$ScriptName' summary='false' sign='true'><text>Blog</text></item>
-<item name='BID' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='BCreationDate' summary='false'>
-<rawitemdata type='400'>
+</rawitemdata>
+  </item>
+  <item name="$Flags">
+    <text>w</text>
+  </item>
+  <item name="BID" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="BCreationDate" summary="false">
+    <rawitemdata type="400">
 AAAAAAAAAAA=
-</rawitemdata></item>
-<item name='PID' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='BDisplayName' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='BDescription' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='BURL' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='BFeed' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='BFeedHasRedirection' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='BLastSuccess' summary='false'>
-<rawitemdata type='400'>
+</rawitemdata>
+  </item>
+  <item name="PID" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="BDisplayName" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="BDescription" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="BURL" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="BFeed" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="BFeedHasRedirection" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="BLastSuccess" summary="false">
+    <rawitemdata type="400">
 AAAAAAAAAAA=
-</rawitemdata></item>
-<item name='BLastTry' summary='false'>
-<rawitemdata type='400'>
+</rawitemdata>
+  </item>
+  <item name="BLastTry" summary="false">
+    <rawitemdata type="400">
 AAAAAAAAAAA=
-</rawitemdata></item>
-<item name='BLastErrorMessage' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='$Fields'><textlist><text>BLastErrorMessage</text><text>BLastTry</text><text
->BLastSuccess</text><text>BFeedHasRedirection</text><text>BFeed</text><text
->BURL</text><text>BDescription</text><text>BDisplayName</text><text>PID</text><text
->BCreationDate</text><text>BID</text></textlist></item>
-<item name='$Body' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="BLastErrorMessage" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="$Fields">
+    <textlist>
+      <text>BLastErrorMessage</text>
+      <text>BLastTry</text>
+      <text>BLastSuccess</text>
+      <text>BFeedHasRedirection</text>
+      <text>BFeed</text>
+      <text>BURL</text>
+      <text>BDescription</text>
+      <text>BDisplayName</text>
+      <text>PID</text>
+      <text>BCreationDate</text>
+      <text>BID</text>
+    </textlist>
+  </item>
+  <item name="$Body" sign="true">
+    <rawitemdata type="1">
 gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8IAAEAAAqBAoMEAQCF/wwA
 AQAACklEOiDdBgAAiv/+/1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgA
@@ -118,5 +128,6 @@ AAAAZAAAAAAAAAAAAAAAAAD+/1QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4
 AHgAAAAAAABMgAMAAAAAAAECAgIBAQEBBwQCAAAAAAAAAAAAAAAAACAuLjqw/xQAAAAAAIAAAAAA
 AAAAAAAAAIr/LACKAAAEADACAAAAAAEAAgEAAAoAAAAAAAAAAAgAAAAAAEJMYXN0VHJ50ggBAAAA
 AADSCAkA////AN4GAAD3/4X/CAABAAAKgQKDBAEAhf8IAAEAAAo=
-</rawitemdata></item></note>
-
+</rawitemdata>
+  </item>
+</note>

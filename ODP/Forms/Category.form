@@ -1,42 +1,46 @@
-<?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='C1257E9200665352'>
-<noteinfo noteid='1be6' unid='7255F9B214436600C2257B150047D050' sequence='6'>
-<created><datetime>20130217T150423,84+02</datetime></created>
-<modified><datetime dst='true'>20150730T210019,92+02</datetime></modified>
-<revised><datetime dst='true'>20150417T230041,22+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150730T210019,92+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150730T205119,94+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name='$Comment' sign='true'><text/></item>
-<item name='TOrder' summary='false' sign='true'><number>0</number></item>
-<item name='$HTMLCode' sign='true'>
-<rawitemdata type='1'>
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Comment" sign="true">
+    <text/>
+  </item>
+  <item name="TOrder" summary="false" sign="true">
+    <number>0</number>
+  </item>
+  <item name="$HTMLCode" sign="true">
+    <rawitemdata type="1">
 X/8QAAIADwAHAAAAAAAAAA==
-</rawitemdata></item>
-<item name='$TITLE'><text>Category</text></item>
-<item name='$Info' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="$TITLE">
+    <text>Category</text>
+  </item>
+  <item name="$Info" sign="true">
+    <rawitemdata type="1">
 hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
-</rawitemdata></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
-<item name='$$ScriptName' summary='false' sign='true'><text>Type</text></item>
-<item name='CID' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='CDisplayName' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='CDescription' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='COrder' summary='false'><number>0</number></item>
-<item name='$Fields'><textlist><text>COrder</text><text>CDescription</text><text
->CDisplayName</text><text>CID</text></textlist></item>
-<item name='$Body' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="CID" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="CDisplayName" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="CDescription" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="COrder" summary="false">
+    <number>0</number>
+  </item>
+  <item name="$Fields">
+    <textlist>
+      <text>COrder</text>
+      <text>CDescription</text>
+      <text>CDisplayName</text>
+      <text>CID</text>
+    </textlist>
+  </item>
+  <item name="$Body" sign="true">
+    <rawitemdata type="1">
 gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8IAAEAAAqBAoMEAQCF/wwA
 AQAACklEOiDdBgAAiv/+/1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgA
@@ -54,6 +58,9 @@ AgAAAAAAAAIBAAAKAAAAAAAAAAAMAAAAAABDRGVzY3JpcHRpb25iDgEAhAAAAAAAAAAAAN4GAACK
 aWdhdG9yOiDdBgAAiv/+/1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIr/KgCKAAADADACAAAAAAAAAgEA
 AAoAAAAAAAAAAAYAAAAAAENPcmRlct4GAACK/4X/CAABAAAKgQKDBAEAhf8IAAEAAAo=
-</rawitemdata></item>
-<item name='$Flags'><text>w</text></item></note>
-
+</rawitemdata>
+  </item>
+  <item name="$Flags">
+    <text>w</text>
+  </item>
+</note>

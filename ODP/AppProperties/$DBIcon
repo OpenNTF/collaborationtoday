@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='C1257E9200665352'>
-<noteinfo noteid='1e82' unid='676427F7FD4C8059C2257B150047D105' sequence='6'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.9'
+ replicaid='852581FC004D6934'>
+<noteinfo noteid='272' unid='676427F7FD4C8059C2257B150047D105' sequence='28'>
 <created><datetime>20130217T150425,65+02</datetime></created>
-<modified><datetime dst='true'>20150730T210020,97+02</datetime></modified>
-<revised><datetime dst='true'>20150417T230040,47+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150730T210020,97+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150730T205126,84+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<modified><datetime>20171220T092438,12-05</datetime></modified>
+<revised><datetime>20171220T092438,11-05</datetime></revised>
+<lastaccessed><datetime>20171220T092438,11-05</datetime></lastaccessed>
+<addedtofile><datetime>20171220T090538,47-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name='$TITLE'><text>$DBIcon</text></item>
 <item name='$Flags'><text>34Ci~Q</text></item>
 <item name='$ImagesWide' sign='true'><number>1</number></item>

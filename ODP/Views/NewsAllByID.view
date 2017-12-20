@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='C1257E9200665352'>
-<noteinfo noteid='21a' unid='ADD988E13D3146BFC1257E9200665561' sequence='6'>
-<created><datetime dst='true'>20150730T203745,29+02</datetime></created>
-<modified><datetime dst='true'>20150730T210021,09+02</datetime></modified>
-<revised><datetime dst='true'>20150417T230039,55+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150730T210021,09+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150730T203745,35+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.9'
+ replicaid='852581FC004D6934'>
+<noteinfo noteid='13e' unid='CE1D71F37BF16E18C1257A460031B06D' sequence='36'>
+<created><datetime dst='true'>20120725T110244,29+02</datetime></created>
+<modified><datetime>20171220T092430,06-05</datetime></modified>
+<revised><datetime>20171220T092430,05-05</datetime></revised>
+<lastaccessed><datetime>20171220T092430,05-05</datetime></lastaccessed>
+<addedtofile><datetime>20171220T090532,92-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>NewsAllByID</text></item>
 <item name='$Index' sign='true'><text/></item>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <note xmlns="http://www.lotus.com/dxl" class="form">
   <item name="$Flags">
-    <text>34567Cg~[</text>
+    <text>gC~4;</text>
   </item>
   <item name="$TITLE">
-    <text>org/openntf/news/http/core/Person.java</text>
+    <text>googleAnalytics.xsp</text>
   </item>
   <item name="$FileNames" sign="true">
-    <text>org/openntf/news/http/core/Person.java</text>
+    <text>googleAnalytics.xsp</text>
   </item>
 </note>

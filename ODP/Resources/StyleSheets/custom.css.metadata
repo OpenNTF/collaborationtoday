@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="C1257E9200665352" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1c6a" sequence="11" unid="51E7C4D423A85814C2257B150047CFCD">
-<created><datetime>20130217T150422,53+02</datetime></created>
-<modified><datetime dst="true">20150730T210020,04+02</datetime></modified>
-<revised><datetime dst="true">20150728T235823,96+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150730T210020,04+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150730T205121,26+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name="$TITLE"><text>custom.css</text></item>
-<item name="$MimeType"><text>text/css</text></item>
-<item name="$Flags"><text>34C=Q</text></item>
-<item name="$MimeCharSet"><text>UTF-8</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>custom.css</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$TITLE">
+    <text>custom.css</text>
+  </item>
+  <item name="$MimeType">
+    <text>text/css</text>
+  </item>
+  <item name="$Flags">
+    <text>34C=Q</text>
+  </item>
+  <item name="$MimeCharSet">
+    <text>UTF-8</text>
+  </item>
+  <item name="$FileNames" sign="true">
+    <text>custom.css</text>
+  </item>
+</note>

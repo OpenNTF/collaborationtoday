@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config>
   <managed-bean>
+    <managed-bean-class>org.openntf.news.http.core.Statistics
+		</managed-bean-class>
+    <managed-bean-name>stats</managed-bean-name>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
     <managed-bean-class>org.openntf.ui.Navigation
 		</managed-bean-class>
     <managed-bean-name>nav</managed-bean-name>

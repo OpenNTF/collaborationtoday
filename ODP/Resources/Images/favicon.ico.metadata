@@ -1,21 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="312" sequence="29" unid="B843A6CB5E2A59EBC2257B150047CFEB">
-<created><datetime>20130217T150422,83+02</datetime></created>
-<modified><datetime dst="true">20150428T180604,89+02</datetime></modified>
-<revised><datetime dst="true">20150417T230041,50+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150428T180604,88+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150417T225754,39+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name="$TITLE"><text>favicon.ico</text></item>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$ImagesWide" sign="true"><number>1</number></item>
-<item name="$ImagesHigh" sign="true"><number>1</number></item>
-<item name="$ImagesColorize" sign="true"><number>0</number></item>
-<item name="$FileModDT" sign="true"><datetime dst="true">20120828T141135,00-07</datetime></item>
-<item name="$ImageNames" sign="true"><text>favicon.ico</text></item>
-<item name="$Flags"><text>34CiQ$</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$EditFilePath"><text>C:\Users\IBM_AD~1\AppData\Local\Temp\notes9235AE\~favicon.ico</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$TITLE">
+    <text>favicon.ico</text>
+  </item>
+  <item name="$FlagsExt">
+    <text>D</text>
+  </item>
+  <item name="$ImagesWide" sign="true">
+    <number>1</number>
+  </item>
+  <item name="$ImagesHigh" sign="true">
+    <number>1</number>
+  </item>
+  <item name="$ImagesColorize" sign="true">
+    <number>0</number>
+  </item>
+  <item name="$FileModDT" sign="true">
+    <datetime dst="true">20120828T141135,00-07</datetime>
+  </item>
+  <item name="$ImageNames" sign="true">
+    <text>favicon.ico</text>
+  </item>
+  <item name="$Flags">
+    <text>34CiQ$</text>
+  </item>
+  <item name="$EditFilePath">
+    <text>C:\Users\IBM_AD~1\AppData\Local\Temp\notes9235AE\~favicon.ico</text>
+  </item>
+</note>

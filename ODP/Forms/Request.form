@@ -1,50 +1,53 @@
-<?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='C1257E9200665352'>
-<noteinfo noteid='1dd2' unid='7421968E49F57929C2257B150047D03F' sequence='6'>
-<created><datetime>20130217T150423,67+02</datetime></created>
-<modified><datetime dst='true'>20150730T210020,81+02</datetime></modified>
-<revised><datetime dst='true'>20150417T230041,44+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150730T210020,81+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150730T205125,02+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name='$Comment' sign='true'><text/></item>
-<item name='$HTMLCode' sign='true'>
-<rawitemdata type='1'>
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Comment" sign="true">
+    <text/>
+  </item>
+  <item name="$HTMLCode" sign="true">
+    <rawitemdata type="1">
 X/8QAAIADwAHAAAAAAAAAA==
-</rawitemdata></item>
-<item name='$TITLE'><text>Request</text></item>
-<item name='$Info' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="$TITLE">
+    <text>Request</text>
+  </item>
+  <item name="$Info" sign="true">
+    <rawitemdata type="1">
 hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
-</rawitemdata></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
-<item name='$$ScriptName' summary='false' sign='true'><text>Request</text></item>
-<item name='RCreationDate' summary='false'>
-<rawitemdata type='400'>
+</rawitemdata>
+  </item>
+  <item name="RCreationDate" summary="false">
+    <rawitemdata type="400">
 AAAAAAAAAAA=
-</rawitemdata></item>
-<item name='RSubject' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='REMail' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='RCategory' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='RBody' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='RState' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='$Fields'><textlist><text>RState</text><text>RBody</text><text
->RCategory</text><text>REMail</text><text>RSubject</text><text>RCreationDate</text></textlist></item>
-<item name='$Body' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="RSubject" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="REMail" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="RCategory" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="RBody" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="RState" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="$Fields">
+    <textlist>
+      <text>RState</text>
+      <text>RBody</text>
+      <text>RCategory</text>
+      <text>REMail</text>
+      <text>RSubject</text>
+      <text>RCreationDate</text>
+    </textlist>
+  </item>
+  <item name="$Body" sign="true">
+    <rawitemdata type="1">
 gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8IAAEAAAqBAoMEAQCF/xcA
 AQAACkNyZWF0aW9uIGRhdGU6IADdBgAA9//3/yQAAQAAgAAAoAVoAQAAAAAAAAAAZAAAAAAAAAAA
@@ -70,7 +73,12 @@ ClN0YXRlOiAA3QYAAIr//v9QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAB4
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACK/yoAigAABQAwAgAAAAAAAAIB
 AAAKAAAAAAAAAAAGAAAAAABSU3RhdGViDgEAhAAAAAAAAAAAAN4GAACK/4X/CAABAAAKgQKDBAEA
 hf8IAAEAAAo=
-</rawitemdata></item>
-<item name='$PublicAccess'><text>1</text></item>
-<item name='$Flags'><text>w</text></item></note>
-
+</rawitemdata>
+  </item>
+  <item name="$PublicAccess">
+    <text>1</text>
+  </item>
+  <item name="$Flags">
+    <text>w</text>
+  </item>
+</note>

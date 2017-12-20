@@ -1,52 +1,58 @@
-<?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='C1257E9200665352'>
-<noteinfo noteid='1e26' unid='EE90FE8D1219D4ADC2257B150047D03A' sequence='6'>
-<created><datetime>20130217T150423,62+02</datetime></created>
-<modified><datetime dst='true'>20150730T210020,91+02</datetime></modified>
-<revised><datetime dst='true'>20150417T230042,18+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150730T210020,91+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150730T205125,88+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name
->CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name='$Comment' sign='true'><text/></item>
-<item name='$HTMLCode' sign='true'>
-<rawitemdata type='1'>
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Comment" sign="true">
+    <text/>
+  </item>
+  <item name="$HTMLCode" sign="true">
+    <rawitemdata type="1">
 X/8QAAIADwAHAAAAAAAAAA==
-</rawitemdata></item>
-<item name='$TITLE'><text>Type</text></item>
-<item name='$Info' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="$TITLE">
+    <text>Type</text>
+  </item>
+  <item name="$Info" sign="true">
+    <rawitemdata type="1">
 hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
-</rawitemdata></item>
-<item name='$Flags'><text>w</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
-<item name='$$ScriptName' summary='false' sign='true'><text>Type</text></item>
-<item name='TID' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='TDisplayName' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='TDescription' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='TModerators' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='TOrder' summary='false'><number>0</number></item>
-<item name='CID' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='THash' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='$Fields'><textlist><text>THash</text><text>CID</text><text>TOrder</text><text
->TModerators</text><text>TDescription</text><text>TDisplayName</text><text
->TID</text></textlist></item>
-<item name='$Body' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="$Flags">
+    <text>w</text>
+  </item>
+  <item name="TID" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="TDisplayName" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="TDescription" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="TModerators" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="TOrder" summary="false">
+    <number>0</number>
+  </item>
+  <item name="CID" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="THash" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="$Fields">
+    <textlist>
+      <text>THash</text>
+      <text>CID</text>
+      <text>TOrder</text>
+      <text>TModerators</text>
+      <text>TDescription</text>
+      <text>TDisplayName</text>
+      <text>TID</text>
+    </textlist>
+  </item>
+  <item name="$Body" sign="true">
+    <rawitemdata type="1">
 gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8IAAEAAAqBAoMEAQCF/wwA
 AQAACklEOiDdBgAAiv/+/1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgA
@@ -77,5 +83,6 @@ YWdzOiAA3QYAAIr//v9QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAB4AAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACK/yoAigAABQAwAgAAAAAAAAIBAAAK
 AAAAAAAAAAAFAAAAAABUSGFzaABiDgEAhAAAAAAAAAAAAN4GAACK/4X/JwABAAAKIChnZXRzIGFw
 cGVuZGVkIHRvIGF1dG8tdHdlZXRzKQA=
-</rawitemdata></item></note>
-
+</rawitemdata>
+  </item>
+</note>

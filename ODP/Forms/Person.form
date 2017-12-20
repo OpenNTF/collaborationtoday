@@ -1,84 +1,97 @@
-<?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='C1257E9200665352'>
-<noteinfo noteid='1dc6' unid='25D5A72DE722776DC2257B150047D042' sequence='6'>
-<created><datetime>20130217T150423,70+02</datetime></created>
-<modified><datetime dst='true'>20150730T210020,77+02</datetime></modified>
-<revised><datetime dst='true'>20150427T234930,31+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150730T210020,77+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150730T205124,88+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name='$Comment' sign='true'><text/></item>
-<item name='PCreated' summary='false'>
-<rawitemdata type='400'>
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Comment" sign="true">
+    <text/>
+  </item>
+  <item name="PCreated" summary="false">
+    <rawitemdata type="400">
 AAAAAAAAAAA=
-</rawitemdata></item>
-<item name='$HTMLCode' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="$HTMLCode" sign="true">
+    <rawitemdata type="1">
 X/8QAAIADwAHAAAAAAAAAA==
-</rawitemdata></item>
-<item name='$TITLE'><text>Person</text></item>
-<item name='$Info' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="$TITLE">
+    <text>Person</text>
+  </item>
+  <item name="$Info" sign="true">
+    <rawitemdata type="1">
 hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
-</rawitemdata></item>
-<item name='$Flags'><text>w</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
-<item name='$$ScriptName' summary='false' sign='true'><text>Person</text></item>
-<item name='PID' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='PCreationDate' summary='false'>
-<rawitemdata type='400'>
+</rawitemdata>
+  </item>
+  <item name="$Flags">
+    <text>w</text>
+  </item>
+  <item name="PID" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="PCreationDate" summary="false">
+    <rawitemdata type="400">
 AAAAAAAAAAA=
-</rawitemdata></item>
-<item name='PDisplayName' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='PTwitter' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='PStackOverflow' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='PLinkedIn' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='POpenNTF' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='PLotusRegistration' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='PEMail' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='PPictureType' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='PPictureURL' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='mypics' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='myPicNames' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='currentMypic' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='PChampion' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='$Fields'><textlist><text>PChampion</text><text>CurrentMypic</text><text
->MypicNames</text><text>Mypics</text><text>PPictureURL</text><text>PPictureType</text><text
->PEMail</text><text>PLotusRegistration</text><text>POpenNTF</text><text>PLinkedIn</text><text
->PStackOverflow</text><text>PTwitter</text><text>PDisplayName</text><text
->PCreationDate</text><text>PID</text></textlist></item>
-<item name='$Body' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="PDisplayName" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="PTwitter" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="PStackOverflow" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="PLinkedIn" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="POpenNTF" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="PLotusRegistration" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="PEMail" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="PPictureType" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="PPictureURL" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="mypics" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="myPicNames" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="currentMypic" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="PChampion" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="$Fields">
+    <textlist>
+      <text>PChampion</text>
+      <text>CurrentMypic</text>
+      <text>MypicNames</text>
+      <text>Mypics</text>
+      <text>PPictureURL</text>
+      <text>PPictureType</text>
+      <text>PEMail</text>
+      <text>PLotusRegistration</text>
+      <text>POpenNTF</text>
+      <text>PLinkedIn</text>
+      <text>PStackOverflow</text>
+      <text>PTwitter</text>
+      <text>PDisplayName</text>
+      <text>PCreationDate</text>
+      <text>PID</text>
+    </textlist>
+  </item>
+  <item name="$Body" sign="true">
+    <rawitemdata type="1">
 gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8IAAEAAAqBAoMEAQCF/wwA
 AQAACklEOiDdBgAAiv/+/1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgA
@@ -141,5 +154,6 @@ dCBNeXBpYzogAN0GAACK//7/UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgA
 eAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiv8wAIoAAAUAMAIAAAAAAAAC
 AQAACgAAAAAAAAAADAAAAAAAQ3VycmVudE15cGljYg4BAIQAAAAAAAAAAADeBgAAiv+F/wgAAQAA
 CoECgwQBAIX/CAABAAAK
-</rawitemdata></item></note>
-
+</rawitemdata>
+  </item>
+</note>

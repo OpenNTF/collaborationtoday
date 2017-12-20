@@ -1,15 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- maintenanceversion='1.4' replicaid='C1257E9200665352'>
-<noteinfo noteid='11a' unid='6C006D3CFBEA330FC1257E9200665355' sequence='22'>
-<created><datetime dst='true'>20150730T203740,05+02</datetime></created>
-<modified><datetime dst='true'>20150730T210021,27+02</datetime></modified>
-<revised><datetime dst='true'>20150730T210021,26+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150730T210021,27+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150730T203740,10+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name='IconBitmap' summary='true'>
+ maintenanceversion='1.9' replicaid='852581FC004D6934'>
+<noteinfo noteid='11e' unid='ADB7A45D56757D92C1257A4100254423' sequence='113'>
+<created><datetime dst='true'>20120720T084702,75+02</datetime></created>
+<modified><datetime>20171220T090611,35-05</datetime></modified>
+<revised><datetime>20171220T090611,34-05</datetime></revised>
+<lastaccessed><datetime>20171220T090611,34-05</datetime></lastaccessed>
+<addedtofile><datetime>20171220T090532,50-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Bruce Elgort/O=Sharepoint</name><name
+>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name
+>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Serdar Basegmez/O=developi</name><name
+>CN=Oliver Busse/O=ulcbs</name><name>CN=NotesOSS2/O=NotesOSS</name><name>CN=Oliver Busse/O=ulcbs</name><name
+>CN=Oliver Busse/O=DEV-We4IT</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<item name='IconBitmap' summary='true' sign='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
 AYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAHAAAADwAAAA8AAAAPgAAAH4AAAB/AAAA/4AAAf
@@ -24,14 +27,15 @@ L2ZvgAAACMZmZmZmZmZmZmZmbIAAAACMZmZmZmZmZmZmZsgAAAAACMZmZmZmZmZmZmyAAAAAAACM
 9mZmZmZmZm/IAAAAAAAACIz2ZmZmZm/IgAAAAAAAAAAIiMZmZmyIgAAAAAAAAAAAAACIiIiIAAAA
 AAAAUEECICABAAD/////+A4DgA==
 </rawitemdata></item>
-<item name='$DBTheme'><text>bootstrap.theme</text></item>
-<item name='$Daos'><text>0</text></item>
-<item name='$LaunchXPageRunOnServer'><text>0</text></item>
+<item name='$DBTheme' sign='true'><text>bootstrap.theme</text></item>
+<item name='$FlagsNoRefresh' sign='true'><text/></item>
+<item name='$DefaultXPage' sign='true'><text>home.xsp</text></item>
 <item name='$TemplateServerName'><text>CN=Oliver Busse/O=DEV-We4IT</text></item>
-<item name='$DefaultXPage'><text>home.xsp</text></item>
 <item name='$Flags'><text>J7!</text></item>
-<item name='$TITLE'><text>Collaboration Today</text></item>
-<item name='$PIRCRefreshModTime'><datetime dst='true'>20150730T210019,56+02</datetime></item>
-<item name='$TemplateModTime'><datetime dst='true'>20150730T205057,59+02</datetime></item>
-<item name='$TemplateFileName'><text>C:\Program Files (x86)\IBM\Notes\Data\templates\ct_150730.ntf</text></item></note>
+<item name='$PIRCRefreshModTime'><datetime>20160125T102452,41+01</datetime></item>
+<item name='$TemplateModTime'><datetime>20160125T102445,40+01</datetime></item>
+<item name='$TemplateFileName'><text>D:\NOTES\Data\templates\ct_160125.ntf</text></item>
+<item name='$Daos'><text>0</text></item>
+<item name='$LargeSummary'><text>0</text></item>
+<item name='$TITLE'><text>Collaboration Today</text></item></note>
 

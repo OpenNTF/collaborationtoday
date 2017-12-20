@@ -1,22 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="862a" sequence="35" unid="22C71E53697D7CD4C1257E900072B25E">
-<created><datetime dst="true">20150728T225247,66+02</datetime></created>
-<modified><datetime dst="true">20150729T005721,12+02</datetime></modified>
-<revised><datetime dst="true">20150728T233024,90+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150729T005721,12+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150729T005721,12+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name="$Flags"><text>gC~4;</text></item>
-
-
-<item name="$TITLE" sign="true"><text>modDropdownList.xsp</text></item>
-
-
-
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>modDropdownList.xsp</text></item>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Flags">
+    <text>gC~4;</text>
+  </item>
+  <item name="$TITLE" sign="true">
+    <text>modDropdownList.xsp</text>
+  </item>
+  <item name="$FileNames" sign="true">
+    <text>modDropdownList.xsp</text>
+  </item>
 </note>

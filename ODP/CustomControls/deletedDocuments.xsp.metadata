@@ -1,22 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="C1257E9200665352" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1c6e" sequence="18" unid="707887DC2ABC404AC1257CC3005EF515">
-<created><datetime dst="true">20140423T191711,25+02</datetime></created>
-<modified><datetime dst="true">20150730T210020,06+02</datetime></modified>
-<revised><datetime dst="true">20150417T230042,72+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150730T210020,06+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150730T205121,30+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name="$Flags"><text>gC~4;</text></item>
-<item name="$TITLE"><text>deletedDocuments.xsp</text></item>
-
-
-
-
-
-<item name="$FileNames" sign="true"><text>deletedDocuments.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5</text></item>
-
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Flags">
+    <text>gC~4;</text>
+  </item>
+  <item name="$TITLE">
+    <text>deletedDocuments.xsp</text>
+  </item>
+  <item name="$FileNames" sign="true">
+    <text>deletedDocuments.xsp</text>
+  </item>
 </note>

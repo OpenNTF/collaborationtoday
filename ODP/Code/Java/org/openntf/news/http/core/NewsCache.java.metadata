@@ -1,18 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257CA900351E4C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="37e" sequence="827" unid="D8572B648835BCEEC2257B150047D0C5">
-<created><datetime>20130217T150425,01+02</datetime></created>
-<modified><datetime dst="true">20150428T180606,03+02</datetime></modified>
-<revised><datetime dst="true">20150417T230042,04+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150428T180606,02+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20150417T225754,95+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Serdar Basegmez/O=developi</name><name>CN=Niklas Heidloff/OU=Germany/O=IBM</name><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name="$Flags"><text>34567Cg~[</text></item>
-<item name="$TITLE"><text>org/openntf/news/http/core/NewsCache.java</text></item>
-
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>org/openntf/news/http/core/NewsCache.java</text></item>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Flags">
+    <text>34567Cg~[</text>
+  </item>
+  <item name="$TITLE">
+    <text>org/openntf/news/http/core/NewsCache.java</text>
+  </item>
+  <item name="$FileNames" sign="true">
+    <text>org/openntf/news/http/core/NewsCache.java</text>
+  </item>
 </note>

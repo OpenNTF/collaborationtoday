@@ -1,120 +1,147 @@
-<?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='C1257E9200665352'>
-<noteinfo noteid='1d5e' unid='6FD12BD7EB3CC87CC2257B150047D047' sequence='6'>
-<created><datetime>20130217T150423,75+02</datetime></created>
-<modified><datetime dst='true'>20150730T210020,69+02</datetime></modified>
-<revised><datetime dst='true'>20150417T230041,30+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20150730T210020,69+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20150730T205123,74+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
-<item name='$Comment' sign='true'><text/></item>
-<item name='$HTMLCode' sign='true'>
-<rawitemdata type='1'>
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+  <item name="$Comment" sign="true">
+    <text/>
+  </item>
+  <item name="$HTMLCode" sign="true">
+    <rawitemdata type="1">
 X/8QAAIADwAHAAAAAAAAAA==
-</rawitemdata></item>
-<item name='$TITLE'><text>News</text></item>
-<item name='$Info' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="$TITLE">
+    <text>News</text>
+  </item>
+  <item name="$Info" sign="true">
+    <rawitemdata type="1">
 hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
-</rawitemdata></item>
-<item name='$Flags'><text>w</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
-<item name='$Fonts'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="$Flags">
+    <text>w</text>
+  </item>
+  <item name="$Fonts">
+    <rawitemdata type="1">
 i/8oAAEABTVDb3VyaWVyIE5ldwAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
-</rawitemdata></item>
-<item name='$$ScriptName' summary='false' sign='true'><text>News</text></item>
-<item name='NID' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NCreationDate' summary='false'>
-<rawitemdata type='400'>
+</rawitemdata>
+  </item>
+  <item name="NID" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NCreationDate" summary="false">
+    <rawitemdata type="400">
 AAAAAAAAAAA=
-</rawitemdata></item>
-<item name='NPublicationDate' summary='false'>
-<rawitemdata type='400'>
+</rawitemdata>
+  </item>
+  <item name="NPublicationDate" summary="false">
+    <rawitemdata type="400">
 AAAAAAAAAAA=
-</rawitemdata></item>
-<item name='NModerationDate' summary='false'>
-<rawitemdata type='400'>
+</rawitemdata>
+  </item>
+  <item name="NModerationDate" summary="false">
+    <rawitemdata type="400">
 AAAAAAAAAAA=
-</rawitemdata></item>
-<item name='NModerator' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NLastEditor' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NLastModified' summary='false'>
-<rawitemdata type='400'>
+</rawitemdata>
+  </item>
+  <item name="NModerator" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NLastEditor" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NLastModified" summary="false">
+    <rawitemdata type="400">
 AAAAAAAAAAA=
-</rawitemdata></item>
-<item name='NTitle' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NLink' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='PID' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NAbstract' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NImageURL' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='TID' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NState' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NSpotlight' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NSpotlightSentence' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NSpotlightPosition' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NSpotlightPicture' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NTopStory' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NTopStoryCategoryOrTop' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NTopStoryPosition' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NClicksTotal' summary='false'><number>0</number></item>
-<item name='NClicksLastWeek' summary='false'><number>0</number></item>
-<item name='NClicks' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='BID' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='NHistory' placeholder='true'>
-<rawitemdata type='0'>
-</rawitemdata></item>
-<item name='$Fields'><textlist><text>NHistory</text><text>BID</text><text
->NClicks</text><text>NClicksLastWeek</text><text>NClicksTotal</text><text
->NTopStoryPosition</text><text>NTopStoryCategoryOrTop</text><text>NTopStory</text><text
->NSpotlightPicture</text><text>NSpotlightPosition</text><text>NSpotlightSentence</text><text
->NSpotlight</text><text>NState</text><text>TID</text><text>NImageURL</text><text
->NAbstract</text><text>PID</text><text>NLink</text><text>NTitle</text><text
->NLastModified</text><text>NLastEditor</text><text>NModerator</text><text
->NModerationDate</text><text>NPublicationDate</text><text>NCreationDate</text><text
->NID</text></textlist></item>
-<item name='$Body' sign='true'>
-<rawitemdata type='1'>
+</rawitemdata>
+  </item>
+  <item name="NTitle" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NLink" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="PID" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NAbstract" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NImageURL" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="TID" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NState" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NSpotlight" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NSpotlightSentence" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NSpotlightPosition" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NSpotlightPicture" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NTopStory" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NTopStoryCategoryOrTop" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NTopStoryPosition" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NClicksTotal" summary="false">
+    <number>0</number>
+  </item>
+  <item name="NClicksLastWeek" summary="false">
+    <number>0</number>
+  </item>
+  <item name="NClicks" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="BID" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="NHistory" placeholder="true">
+    <rawitemdata type="0"/>
+  </item>
+  <item name="$Fields">
+    <textlist>
+      <text>NHistory</text>
+      <text>BID</text>
+      <text>NClicks</text>
+      <text>NClicksLastWeek</text>
+      <text>NClicksTotal</text>
+      <text>NTopStoryPosition</text>
+      <text>NTopStoryCategoryOrTop</text>
+      <text>NTopStory</text>
+      <text>NSpotlightPicture</text>
+      <text>NSpotlightPosition</text>
+      <text>NSpotlightSentence</text>
+      <text>NSpotlight</text>
+      <text>NState</text>
+      <text>TID</text>
+      <text>NImageURL</text>
+      <text>NAbstract</text>
+      <text>PID</text>
+      <text>NLink</text>
+      <text>NTitle</text>
+      <text>NLastModified</text>
+      <text>NLastEditor</text>
+      <text>NModerator</text>
+      <text>NModerationDate</text>
+      <text>NPublicationDate</text>
+      <text>NCreationDate</text>
+      <text>NID</text>
+    </textlist>
+  </item>
+  <item name="$Body" sign="true">
+    <rawitemdata type="1">
 gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8IAAEAAAqBAoMEAQCF/wwA
 AQAACklEOiDdBgAAiv/+/1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgA
@@ -230,5 +257,6 @@ AAAKgQKDBAEAhf8RAAEAAApIaXN0b3J5OiAA3QYAAIr//v9QAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAeAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACK
 /ywAigAABQAwAgAAAAAAAAIBAAAKAAAAAAAAAAAIAAAAAABOSGlzdG9yeWIOAQCEAAAAAAAAAAAA
 3gYAAIr/hf8IAAEAAAqBAoMEAQCF/wgAAQAACoECgwQBAIX/CAABAAAK
-</rawitemdata></item></note>
-
+</rawitemdata>
+  </item>
+</note>
