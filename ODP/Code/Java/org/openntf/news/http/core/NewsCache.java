@@ -40,6 +40,7 @@ import lotus.domino.View;
 import lotus.domino.ViewEntry;
 import lotus.domino.ViewNavigator;
 
+import com.ibm.commons.util.StringUtil;
 import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class NewsCache {
@@ -265,6 +266,26 @@ public class NewsCache {
 			}
 		}
 		return entries;
+	}
+	
+	/**
+	 * Returns the {@link NewsEntry} object for the given news ID.
+	 * 
+	 * @param unid the news ID of the news entry document
+	 * @return the requested news entry, or <code>null</code> if not found
+	 */
+	public NewsEntry getEntryByNID(String nid) {
+		initialize();
+		if(StringUtil.isEmpty(nid)) {
+			return null;
+		}
+		
+		for(NewsEntry ent : _newsEntries) {
+			if(StringUtil.equals(nid, ent.getID())) {
+				return ent;
+			}
+		}
+		return null;
 	}
 
 	public List<NewsEntry> getEntriesByType(final String tID) {
