@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	createForm="false" pageTitle="Entry">
+	
+	<xp:this.dataContexts>
+		<xp:dataContext var="entry" value="${javascript:newsCache.getEntryByNID(param.nid)}"/>
+	</xp:this.dataContexts>
+
+	<xc:ccLayoutBS3>
+		<xp:this.facets>
+			<xc:rightColumn xp:key="rightColumn" />
+			<xc:leftColumn xp:key="leftColumn" />
+			<xp:div xp:key="middleColumn">
+				<xc:newsEntry
+					id="lasdfekj"
+					author="#{entry.PID}"
+					typeId="#{entry.TID}"
+					imageURL="#{entry.imageURL}"
+					link="#{entry.link}"
+					newsAbstract="#{entry.abstract}"
+					nID="#{entry.ID}"
+					personDisplayName="#{javascript:personsCache.getPerson(entry.getPID()).getDisplayName()}"
+					publicationDate="#{entry.publicationDate}"
+					publicationDateString="#{entry.prettyTime}"
+					title="#{entry.title}">
+					<xc:this.category><![CDATA[#{javascript:
+						try {
+							configCache.getCategory(configCache.getType(entry.getTID()).getCategoryId()).getDisplayName()
+						} catch(e) {
+						} finally {
+							"";
+						}
+					}]]></xc:this.category>
+					<xc:this.type><![CDATA[#{javascript:
+						try {
+							configCache.getType(entry.getTID()).getDisplayName()
+						} catch(e) {
+						} finally {
+							"";
+						}
+					}]]></xc:this.type>
+				</xc:newsEntry>
+			</xp:div>
+		</xp:this.facets>
+
+	</xc:ccLayoutBS3>
+</xp:view>
