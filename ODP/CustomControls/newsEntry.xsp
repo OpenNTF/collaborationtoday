@@ -7,18 +7,13 @@
 			var="authorPictureURL"
 			value="#{javascript:personsCache.getPerson(compositeData.author).getPictureURL()}" />
 	</xp:this.dataContexts>
-
-
-	<div
-		class="newsentry">
-		<div
-			class="newsEntryImageDiv newEntryImageContainer">
+	<div class="newsentry">
+		<div class="newsEntryImageDiv newEntryImageContainer">
 			<div
 				class="newsEntryImage"
 				style="background-image:url(#{authorPictureURL});"></div>
 		</div>
-		<div
-			class="newsEntryDiv">
+		<div class="newsEntryDiv">
 			<h3>
 				<xp:link
 					value="#{javascript:compositeData.link}"
@@ -32,10 +27,8 @@
 					rendered="#{javascript:org.openntf.news.http.core.Helper.isChampion(compositeData.personID)}">
 				</xp:image>
 			</h3>
-			<div
-				class="row">
-				<div
-					class="col-xs-8 col-sm-8 col-lg-10">
+			<div class="row">
+				<div class="col-xs-8 col-sm-8 col-lg-10">
 					<p>
 						<small>
 							<xp:text>
@@ -52,12 +45,10 @@ if(qs.equals("")){
 	return context.getUrl().getPath()+qs+"&pid="+compositeData.personID
 }}]]></xp:this.value>
 							</xp:link>
-							<xp:text
-								value=" | "></xp:text>
+							<xp:text value=" | "></xp:text>
 						</small>
 						<small>
-							<xp:text
-								value="#{javascript:compositeData.publicationDateString}"></xp:text>
+							<xp:text value="#{javascript:compositeData.publicationDateString}"></xp:text>
 						</small>
 						<small>
 							<xp:text>
@@ -69,15 +60,10 @@ if(qs.equals("")){
 								<xp:this.value><![CDATA[#{javascript:" | Added by " + @ProperCase(compositeData.moderator);}]]></xp:this.value>
 							</xp:text>
 						</small>
-
-
-
 					</p>
 				</div>
-				<div
-					class="col-xs-4 col-sm-4 col-lg-2">
-					<p
-						class="pull-right">
+				<div class="col-xs-4 col-sm-4 col-lg-2">
+					<p class="pull-right">
 						<xp:link
 							style="margin-left:8px;"
 							escape="true"
@@ -103,20 +89,7 @@ if(qs.equals("")){
 								align="top"
 								src="facebook_16.png" />
 						</xp:link>
-						<xp:link
-							style="margin-left:8px;"
-							escape="true"
-							text=""
-							id="link5"
-							target="_blank">
-							<xp:this.value><![CDATA[#{javascript:"https://plus.google.com/share?url=" + compositeData.link}]]></xp:this.value>
-							<img
-								class="socialshare"
-								align="top"
-								src="gplus_16.png" />
-						</xp:link>
-						<xp:panel
-							rendered="#{javascript:configCache.isUserModerator(@UserName())}">
+						<xp:panel rendered="#{javascript:configCache.isUserModerator(@UserName())}">
 							<xp:link
 								style="margin-left:10px"
 								value="#{javascript:'/'+database.getFilePath()+'/moderateEntry.xsp?nid=' + compositeData.nID}">
@@ -130,7 +103,6 @@ if(qs.equals("")){
 					</p>
 				</div>
 			</div>
-
 			<xp:text
 				value="#{javascript:compositeData.newsAbstract}"
 				id="newsAbstract"

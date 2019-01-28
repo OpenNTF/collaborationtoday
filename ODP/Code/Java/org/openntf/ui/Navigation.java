@@ -67,13 +67,13 @@ public class Navigation implements Serializable {
 		mod = new ArrayList<Page>();
 		mod.add(new Page("Add URL", "", "add.xsp"));
 		mod.add(new Page("Queued", "", "mod.xsp"));
-		mod.add(new Page("Top Stories", "", "modTopStories.xsp"));
-		mod.add(new Page("Spotlight", "", "modSpotlight.xsp"));
-		mod.add(new Page("Popular", "", "modPopular.xsp"));
+//		mod.add(new Page("Top Stories", "", "modTopStories.xsp"));
+//		mod.add(new Page("Spotlight", "", "modSpotlight.xsp"));
+//		mod.add(new Page("Popular", "", "modPopular.xsp"));
 		mod.add(new Page("Approved", "", "modApproved.xsp"));
 		mod.add(new Page("Authors", "", "authors.xsp"));
-		mod.add(new Page("Open Requests", "", "requestsOpen.xsp"));
-		mod.add(new Page("Closed Requests", "", "requestsClosed.xsp"));
+//		mod.add(new Page("Open Requests", "", "requestsOpen.xsp"));
+//		mod.add(new Page("Closed Requests", "", "requestsClosed.xsp"));
 		mod.add(new Page("Admin", "", "admin.xsp"));
 		mod.add(new Page("Policies", "", "CurationPolicies140325.pdf"));
 	}

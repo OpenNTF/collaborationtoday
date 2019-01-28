@@ -193,7 +193,7 @@ return "go-mod";}]]></xp:this.script>
 			</xp:eventHandler>
 		</xp:button>
 		&#160;
-		<xp:button value="Cancel" id="button10" styleClass="btn">
+		<xp:button value="Cancel" id="button10" styleClass="btn btn-default">
 
 			<xp:eventHandler event="onclick" submit="true"
 				refreshMode="complete" disableValidators="true">

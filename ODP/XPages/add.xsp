@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+<xp:view
+	xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
 	pageTitle="Capture story | Collaboration Today">
 	<!-- TODO: move inline style out to a separate file -->
 	<!-- TODO: switch from sessionScope to viewScope if possible -->
-	
-	<style>.lotusTitleBar h2.lotusEllipsis { width: 380px; } .xspPagerRight { color: #848484; float: left;}</style>
-	<style>
-		.busyShown { background-image: url("Loading.gif"); background-repeat: no-repeat; height: 32px; position: relative; width: 32px; } .busyHidden {
-		display:none; }
+	<style>.lotusTitleBar h2.lotusEllipsis { width: 380px; } .xspPagerRight
+		{ color: #848484; float: left;}
+	</style>
+	<style> .busyShown { background-image: url("Loading.gif");
+		background-repeat: no-repeat; height: 32px; position: relative; width:
+		32px; } .busyHidden { display:none; }
 	</style>
 	<xp:this.beforeRenderResponse><![CDATA[#{javascript:
 		var exCon = facesContext.getExternalContext();
@@ -23,15 +27,14 @@
 			getComponent('inputText1').setValue(body);
 		}
 	}]]></xp:this.beforeRenderResponse>
-
-	<xe:keepSessionAlive id="keepSessionAlive1"/>
-
+	<xe:keepSessionAlive id="keepSessionAlive1" />
 	<xc:moderationLayout pageHeader="Capture URL">
 		<xp:this.facets>
-			<xc:moderationLeftColumn xp:key="leftColumn"/>
+			<xc:moderationLeftColumn xp:key="leftColumn" />
 		</xp:this.facets>
-		
-		<xp:div id="nikcontent" style="">
+		<xp:div
+			id="nikcontent"
+			style="">
 			<xp:scriptBlock type="text/javascript">
 				<xp:this.value><![CDATA[
 					function showBusy() {
@@ -59,15 +62,23 @@
 				]]></xp:this.value>
 			</xp:scriptBlock>
 			<div class="form-group">
-			<xp:inputText id="inputText1" styleClass="form-control"/>
+				<xp:inputText
+					id="inputText1"
+					styleClass="form-control" />
 			</div>
 			<br />
-			<div id="busy" class="busyHidden"></div>
-			<xp:button 
-				id="button1" 
-				value="#{empty viewScope.SSLError ? 'Capture and Edit' : 'Unknown SSL Certificate. Really Trust this Site?'}" 
-				styleClass="btn #{empty viewScope.SSLError?'':'btn-danger'}">
-				<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="nikcontent">
+			<div
+				id="busy"
+				class="busyHidden"></div>
+			<xp:button
+				id="button1"
+				value="#{empty viewScope.SSLError ? 'Capture and Edit' : 'Unknown SSL Certificate. Really Trust this Site?'}"
+				styleClass="btn #{empty viewScope.SSLError ? 'btn-primary':'btn-danger'}">
+				<xp:eventHandler
+					event="onclick"
+					submit="true"
+					refreshMode="partial"
+					refreshId="nikcontent">
 					<xp:this.action><![CDATA[#{javascript:
 						var url = getComponent('inputText1').getValue();
 						var docUNIDServer = org.openntf.news.http.core.Parser.getOutput(url);
@@ -82,7 +93,6 @@
 					"<input type='hidden' id='docUNID' value='" + sessionScope.get("NikFileName") + "'></input>"
 				}]]></xp:this.value>
 			</xp:text>
-			
 		</xp:div>
 	</xc:moderationLayout>
 </xp:view>
