@@ -26,6 +26,11 @@
 					url="/champion_24x24.png"
 					rendered="#{javascript:org.openntf.news.http.core.Helper.isChampion(compositeData.personID)}">
 				</xp:image>
+				&#160;
+				<xp:image
+					url="/hclmaster.png"
+					rendered="#{javascript:org.openntf.news.http.core.Helper.isMaster(compositeData.personID)}">
+				</xp:image>
 			</h3>
 			<div class="row">
 				<div class="col-xs-8 col-sm-8 col-lg-10">

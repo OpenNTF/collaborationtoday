@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="002584670080BCDF" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="222e" sequence="1" unid="22F01A76BCE564090025846700839FE7">
+<created><datetime>20190831T235741,51+00</datetime></created>
+<modified><datetime>20190831T235741,46+00</datetime></modified>
+<revised><datetime>20190831T235741,45+00</datetime></revised>
+<lastaccessed><datetime>20190831T235741,45+00</datetime></lastaccessed>
+<addedtofile><datetime>20190831T235741,45+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$TITLE"><text>hclmaster.png</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$MimeType" sign="true"><text>image/png</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20190901T015737,00+02</datetime></item>
+<item name="$ImageNames" sign="true"><text>hclmaster.png</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>
