@@ -20,4 +20,18 @@ public class Helper {
 
 		return result;
 	}
+	
+	public static boolean isMaster(String pid) {
+		boolean result = false;
+		try {
+			Document pDoc = ExtLibUtil.getCurrentDatabase().getView("PersonsByPID").getDocumentByKey(pid);
+			if (pDoc != null) {
+				result = pDoc.getItemValueString("PHCLMaster").equals("1");
+			}
+		} catch (NotesException e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
 }
