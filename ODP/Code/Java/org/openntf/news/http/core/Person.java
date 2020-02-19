@@ -149,4 +149,15 @@ public class Person implements Serializable, Comparable<Person> {
 		}
 		return result;
 	}
+	
+	public boolean isMaster(){
+		boolean result = false;
+		try {
+			Document doc = ExtLibUtil.getCurrentDatabase().getDocumentByUNID(documentId);
+			result = doc.getItemValueString("PHCLMaster").equals("1");
+		} catch (NotesException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 }

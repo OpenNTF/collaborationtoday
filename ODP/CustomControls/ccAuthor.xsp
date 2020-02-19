@@ -36,6 +36,11 @@
 								url="/champion_24x24.png"
 								rendered="#{javascript:author.isChampion()}">
 							</xp:image>
+							&#160;
+							<xp:image
+								url="/hclmaster.png"
+								rendered="#{javascript:author.isMaster()}">
+							</xp:image>
 						</h3>
 					</div>
 				</div>
@@ -65,6 +70,11 @@
 						<xp:image
 							url="/champion_24x24.png"
 							rendered="#{javascript:author.isChampion()}">
+						</xp:image>
+						&#160;
+						<xp:image
+							url="/hclmaster.png"
+							rendered="#{javascript:author.isMaster()}">
 						</xp:image>
 					</h3>
 
