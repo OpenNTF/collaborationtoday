@@ -151,7 +151,7 @@
 			<div
 				class="for-group">
 				<xp:label
-					value="HCL Master"
+					value="HCL Ambassador/HCL Lifetime Ambassador"
 					for="checkBoxHCL"></xp:label>
 				<div
 					class="checkbox">
