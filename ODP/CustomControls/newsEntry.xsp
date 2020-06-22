@@ -29,7 +29,7 @@
 				&#160;
 				<xp:image
 					url="/hclmaster.png"
-					rendered="#{javascript:org.openntf.news.http.core.Helper.isMaster(compositeData.personID)}">
+					rendered="#{javascript:org.openntf.news.http.core.Helper.isAmbassador(compositeData.personID)}">
 				</xp:image>
 			</h3>
 			<div class="row">

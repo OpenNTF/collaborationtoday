@@ -39,7 +39,7 @@
 							&#160;
 							<xp:image
 								url="/hclmaster.png"
-								rendered="#{javascript:author.isMaster()}">
+								rendered="#{javascript:author.isAmbassador()}">
 							</xp:image>
 						</h3>
 					</div>
@@ -74,7 +74,7 @@
 						&#160;
 						<xp:image
 							url="/hclmaster.png"
-							rendered="#{javascript:author.isMaster()}">
+							rendered="#{javascript:author.isAmbassador()}">
 						</xp:image>
 					</h3>
 

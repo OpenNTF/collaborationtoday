@@ -21,7 +21,7 @@ public class Helper {
 		return result;
 	}
 	
-	public static boolean isMaster(String pid) {
+	public static boolean isAmbassador(String pid) {
 		boolean result = false;
 		try {
 			Document pDoc = ExtLibUtil.getCurrentDatabase().getView("PersonsByPID").getDocumentByKey(pid);

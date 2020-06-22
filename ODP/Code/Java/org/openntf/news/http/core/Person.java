@@ -150,7 +150,7 @@ public class Person implements Serializable, Comparable<Person> {
 		return result;
 	}
 	
-	public boolean isMaster(){
+	public boolean isAmbassador(){
 		boolean result = false;
 		try {
 			Document doc = ExtLibUtil.getCurrentDatabase().getDocumentByUNID(documentId);
