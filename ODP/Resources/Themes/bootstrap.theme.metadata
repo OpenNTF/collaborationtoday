@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<note xmlns="http://www.lotus.com/dxl" class="form">
-  <item name="$TITLE">
-    <text>bootstrap.theme</text>
-  </item>
-  <item name="$Flags">
-    <text>34567Cg~`</text>
-  </item>
-  <item name="$FileNames" sign="true">
-    <text>bootstrap.theme</text>
-  </item>
-</note>
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="C1258390005B2067" version="12.0">
+<noteinfo noteid="39a" sequence="14" unid="859D30B2CDD88FE2C1258390005B2BA8">
+<created><datetime>20190128T173549,52+01</datetime></created>
+<modified><datetime>20221202T145052,56+00</datetime></modified>
+<revised><datetime>20221202T145052,55+00</datetime></revised>
+<lastaccessed><datetime>20221202T145052,55+00</datetime></lastaccessed>
+<addedtofile><datetime>20190128T173549,54+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$TITLE"><text>bootstrap.theme</text></item>
+<item name="$Flags"><text>34567Cg~`</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>bootstrap.theme</text></item></note>

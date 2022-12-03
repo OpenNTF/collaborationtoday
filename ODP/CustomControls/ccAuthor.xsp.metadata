@@ -1,12 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<note xmlns="http://www.lotus.com/dxl" class="form">
-  <item name="$Flags">
-    <text>gC~4;</text>
-  </item>
-  <item name="$TITLE">
-    <text>ccAuthor.xsp</text>
-  </item>
-  <item name="$FileNames" sign="true">
-    <text>ccAuthor.xsp</text>
-  </item>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1258390005B2067" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="272" sequence="26" unid="CD23C74A545FFDE1C1258390005B27E9">
+<created><datetime>20190128T173539,93+01</datetime></created>
+<modified><datetime dst="true">20200622T133354,43+02</datetime></modified>
+<revised><datetime dst="true">20200622T133354,42+02</datetime></revised>
+<lastaccessed><datetime dst="true">20200622T133354,42+02</datetime></lastaccessed>
+<addedtofile><datetime>20190128T173539,94+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$Flags"><text>gC~4;</text></item>
+<item name="$TITLE"><text>ccAuthor.xsp</text></item>
+
+
+
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+
+<item name="$FileNames" sign="true"><text>ccAuthor.xsp</text></item>
+
 </note>

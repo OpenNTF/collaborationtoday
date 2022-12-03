@@ -1,12 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<note xmlns="http://www.lotus.com/dxl" class="form">
-  <item name="$Flags">
-    <text>gC~4;</text>
-  </item>
-  <item name="$TITLE">
-    <text>topStories.xsp</text>
-  </item>
-  <item name="$FileNames" sign="true">
-    <text>topStories.xsp</text>
-  </item>
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="C1258390005B2067" version="12.0">
+<noteinfo noteid="2d2" sequence="18" unid="447C434F273CF59DC1258390005B297C">
+<created><datetime>20190128T173543,96+01</datetime></created>
+<modified><datetime>20221204T002408,15+00</datetime></modified>
+<revised><datetime>20221204T002408,14+00</datetime></revised>
+<lastaccessed><datetime>20221204T002408,14+00</datetime></lastaccessed>
+<addedtofile><datetime>20190128T173543,96+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$Flags"><text>gC~4;</text></item>
+<item name="$TITLE"><text>topStories.xsp</text></item>
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>topStories.xsp</text></item>
+
+
+<item name="$DesignerVersion"><text>8.5.1</text></item>
+
 </note>

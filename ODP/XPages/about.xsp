@@ -24,10 +24,10 @@
 				<p>
 					Collaboration Today is a news aggregator for&#160;
 					<xp:link
-						text="IBM Collaboration Solutions"
+						text="HCL Digital Solutions"
 						themeId="Link.Lotus" />
-					&#160;professionals covering news about various IBM products like
-					IBM Connections, IBM Domino, IBM WebSphere Portal etc. and cross
+					&#160;professionals covering news about various IBM/HCL products like
+					Connections, Notes and Domino, etc. and cross
 					product topics like mobile, cloud and analytics.
 				</p>
 				<h2>
@@ -60,8 +60,7 @@
 					<xp:link
 						text="OpenNTF Inc."
 						value="http://openntf.org/Internal/home.nsf/dx/About_openNTF" />
-					, a group of 31 member companies who are leveraging IBM
-					Collaboration Solutions technologies, and hosted by&#160;
+					, a group of various member companies who are leveraging HCL Digital Solutions, and hosted by&#160;
 					<xp:link
 						text="Prominic.NET"
 						value="http://prominic.net/" />

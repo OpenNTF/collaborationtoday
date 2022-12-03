@@ -58,7 +58,7 @@
 				<xp:viewColumn id="viewColumnhcl" columnName="PHCLMaster"
 					displayAs="hidden">
 					<xp:this.iconSrc><![CDATA[#{javascript:person.getDocument().getItemValueString("PHCLMaster").equals("1") ? "/hclmaster.png" : ""}]]></xp:this.iconSrc>
-					<xp:viewColumnHeader value="HCL Master" id="viewColumnHeaderHCL">
+					<xp:viewColumnHeader value="HCL Ambassador" id="viewColumnHeaderHCL">
 					</xp:viewColumnHeader>
 				</xp:viewColumn>
 				<xp:viewColumn columnName="PID" id="viewColumn1">

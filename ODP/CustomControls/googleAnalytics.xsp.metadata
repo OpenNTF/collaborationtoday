@@ -1,12 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<note xmlns="http://www.lotus.com/dxl" class="form">
-  <item name="$Flags">
-    <text>gC~4;</text>
-  </item>
-  <item name="$TITLE">
-    <text>googleAnalytics.xsp</text>
-  </item>
-  <item name="$FileNames" sign="true">
-    <text>googleAnalytics.xsp</text>
-  </item>
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="C1258390005B2067" version="12.0">
+<noteinfo noteid="28a" sequence="21" unid="CE6EB81309C6A7C9C1258390005B2860">
+<created><datetime>20190128T173541,12+01</datetime></created>
+<modified><datetime>20221202T144647,40+00</datetime></modified>
+<revised><datetime>20221202T144647,39+00</datetime></revised>
+<lastaccessed><datetime>20221202T144647,39+00</datetime></lastaccessed>
+<addedtofile><datetime>20190128T173541,11+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$Flags"><text>gC~4;</text></item>
+<item name="$TITLE"><text>googleAnalytics.xsp</text></item>
+
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>googleAnalytics.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
+
 </note>

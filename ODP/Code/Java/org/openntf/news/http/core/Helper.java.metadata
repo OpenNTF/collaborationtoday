@@ -1,12 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<note xmlns="http://www.lotus.com/dxl" class="form">
-  <item name="$Flags">
-    <text>34567Cg~[</text>
-  </item>
-  <item name="$TITLE">
-    <text>org/openntf/news/http/core/Helper.java</text>
-  </item>
-  <item name="$FileNames" sign="true">
-    <text>org/openntf/news/http/core/Helper.java</text>
-  </item>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1258390005B2067" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="212" sequence="10" unid="3DBDE4371E39AD3EC1258390005B2670">
+<created><datetime>20190128T173536,16+01</datetime></created>
+<modified><datetime dst="true">20200622T133314,49+02</datetime></modified>
+<revised><datetime dst="true">20200622T133314,48+02</datetime></revised>
+<lastaccessed><datetime dst="true">20200622T133314,48+02</datetime></lastaccessed>
+<addedtofile><datetime>20190128T173536,19+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>org/openntf/news/http/core/Helper.java</text></item>
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>org/openntf/news/http/core/Helper.java</text></item>
+
 </note>

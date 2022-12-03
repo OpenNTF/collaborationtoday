@@ -1,12 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<note xmlns="http://www.lotus.com/dxl" class="form">
-  <item name="$Flags">
-    <text>gC~4K</text>
-  </item>
-  <item name="$TITLE" sign="true">
-    <text>about.xsp</text>
-  </item>
-  <item name="$FileNames" sign="true">
-    <text>about.xsp</text>
-  </item>
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="C1258390005B2067" version="12.0">
+<noteinfo noteid="7a6" sequence="16" unid="600741EC7522A1B2C1258390005B3124">
+<created><datetime>20190128T173603,56+01</datetime></created>
+<modified><datetime>20221202T145205,60+00</datetime></modified>
+<revised><datetime>20221202T145205,59+00</datetime></revised>
+<lastaccessed><datetime>20221202T145205,59+00</datetime></lastaccessed>
+<addedtofile><datetime>20190128T173603,88+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$TITLE" sign="true"><text>about.xsp</text></item>
+
+
+
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+<item name="$FileNames" sign="true"><text>about.xsp</text></item>
+
 </note>

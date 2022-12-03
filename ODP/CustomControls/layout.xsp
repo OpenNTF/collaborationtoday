@@ -27,7 +27,7 @@
 		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=all" type="application/rss+xml" title="Recent" rel="alternate"/>
 		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=popular" type="application/rss+xml" title="Popular" rel="alternate"/>
 		<xp:linkResource href="${facesContext.externalContext.requestContextPath}/feed.xsp?filter=spotlight" type="application/rss+xml" title="Spotlight" rel="alternate"/>
-		<xp:metaData name="description" content="Collaboration Today - News about IBM Collaboration Solutions"></xp:metaData>
+		<xp:metaData name="description" content="Collaboration Today - News about IBM Collaboration Solutions/HCL Digital Solutions"></xp:metaData>
 		
 		<!-- Facebook Open Graph image: used to proide an icon for Facebook shares -->
 		<xp:headTag tagName="meta" rendered="true" loaded="true">

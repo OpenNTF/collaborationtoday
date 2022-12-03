@@ -23,12 +23,13 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.cyberneko.html.parsers.DOMParser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+
+import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 
 public class URLFetcher { 
 
@@ -87,10 +88,7 @@ public class URLFetcher {
 
 				try {
 					DOMParser dpHTML = new DOMParser();
-					dpHTML
-							.setProperty(
-									"http://cyberneko.org/html/properties/default-encoding",
-									"utf-8");
+					dpHTML.setProperty("http://cyberneko.org/html/properties/default-encoding", "utf-8");
 					// dpHTML.parse(new
 					// InputSource(EntityUtils.toString(entity)));
 					dpHTML.parse(new InputSource(entity.getContent()));
